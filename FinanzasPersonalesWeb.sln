@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanzasPersonalesWeb", "FinanzasPersonalesWeb\FinanzasPersonalesWeb.csproj", "{570EFB6C-2667-4FAF-8860-A2DE3C12286A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{B850AC0E-6CCE-49E6-8870-E4825997FD12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{570EFB6C-2667-4FAF-8860-A2DE3C12286A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{570EFB6C-2667-4FAF-8860-A2DE3C12286A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{570EFB6C-2667-4FAF-8860-A2DE3C12286A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B850AC0E-6CCE-49E6-8870-E4825997FD12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B850AC0E-6CCE-49E6-8870-E4825997FD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B850AC0E-6CCE-49E6-8870-E4825997FD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B850AC0E-6CCE-49E6-8870-E4825997FD12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
