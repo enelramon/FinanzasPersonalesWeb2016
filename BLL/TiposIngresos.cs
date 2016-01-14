@@ -7,7 +7,7 @@ using DAL;
 
 namespace BLL
 {
-    class TiposdeIngresos : ClaseMaestra
+    class TiposIngresos : ClaseMaestra
     {
         ConexionDb Conexion = new ConexionDb();
 
@@ -16,7 +16,7 @@ namespace BLL
         public bool EsActivo { get; set; }
         public int UsuarioId { get; set; }
 
-        public TiposdeIngresos()
+        public TiposIngresos()
         {
             this.TipoIngresoId = 0;
             this.Descripcion = "";
@@ -115,17 +115,13 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            DataTable dt = new DataTable();
-            try
-            {
-                dt = Conexion.ObtenerDatos("select " + Campos + " from TiposIngresos where " + Condicion + " " + Orden);
-            }
-            catch (Exception)
-            {
-                
-            }
+            string OrdenFinal = " ";
 
-            return dt;
+                if (!Orden.Equals(""))
+                {
+                    OrdenFinal = " Orden by " + Orden;
+                }
+                return Conexion.ObtenerDatos("select " + Campos + " from TiposIngresos where " + Condicion + " " + OrdenFinal);
         }
     }
 }

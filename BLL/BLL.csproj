@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="ClaseMaestra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TiposdeIngresos.cs" />
+    <Compile Include="TiposIngresos.cs" />
     <Compile Include="TiposEgresos.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>

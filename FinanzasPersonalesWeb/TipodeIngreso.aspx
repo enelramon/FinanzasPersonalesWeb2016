@@ -20,8 +20,7 @@
                 <tr>
             <td>
                 <asp:TextBox ID="TipoIngresoTextBox" runat="server" Width="147px"></asp:TextBox>
-                <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="62px" />
-                    </td>
+                <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="62px" />&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
             <td class="auto-style2">
@@ -70,7 +69,7 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                <asp:Button ID="GuardarButton" runat="server" Text="Guardar" Width="101px" />
+                <asp:Button ID="GuardarButton" runat="server" Text="Guardar" Width="101px" OnClick="GuardarButton_Click" />
                 <asp:Button ID="ModificarButton" runat="server" Text="Modificar" Width="98px" />
                 <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" Width="102px" />
             </td>        
