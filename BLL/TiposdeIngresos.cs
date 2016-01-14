@@ -26,7 +26,25 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            DataTable DtTipoIngreso = new DataTable();
+            DataTable DtUsuario = new DataTable();
+
+            try
+            {
+                DtTipoIngreso = Conexion.ObtenerDatos(String.Format("select * from  TiposIngresos where TipoIngresoId = {0}", IdBuscado));
+                this.Descripcion = DtTipoIngreso.Rows[0]["Descripcion"].ToString();
+                this.EsActivo = (bool)DtTipoIngreso.Rows[0]["EsActivo"];
+                this.UsuarioId = (int)DtTipoIngreso.Rows[0]["UsuarioId"];
+                retorno = true;
+            }
+            catch (Exception)
+            {
+
+                retorno = false;
+            }
+
+            return retorno;
         }
 
         public override bool Editar()
@@ -35,7 +53,14 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format(""));
+                if (this.EsActivo)
+                {
+                    retorno = Conexion.Ejecutar(string.Format("update TiposIngresos set Descripcion = '{0}', EsActivo = {1}, UsuarioId = {2} where TipoIngresoId = {3}", this.Descripcion, 1, this.UsuarioId, this.TipoIngresoId));
+                }
+                else
+                {
+                    retorno = Conexion.Ejecutar(string.Format("update TiposIngresos set Descripcion = '{0}', EsActivo = {1}, UsuarioId = {2} where TipoIngresoId = {3}", this.Descripcion, 0, this.UsuarioId, this.TipoIngresoId));
+                }
             }
             catch (Exception)
             {
@@ -52,7 +77,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format(""));
+                retorno = Conexion.Ejecutar(string.Format("delete from TiposIngresos where TipoIngresoId = {0}", this.TipoIngresoId));
             }
             catch (Exception)
             {
@@ -69,7 +94,15 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format(""));
+                if (this.EsActivo)
+                {
+                    retorno = Conexion.Ejecutar(string.Format("insert into TiposIngresos (Descripcion, EsActivo) values ('{0}',{1})", this.Descripcion,1));
+                }
+                else
+                {
+                    retorno = Conexion.Ejecutar(string.Format("insert into TiposIngresos (Descripcion, EsActivo, UsuarioId) values ('{0}',{1},{2})", this.Descripcion, 0, this.UsuarioId));
+                }
+                
             }
             catch (Exception)
             {
@@ -85,7 +118,7 @@ namespace BLL
             DataTable dt = new DataTable();
             try
             {
-                dt = Conexion.ObtenerDatos("select " + Campos + " from TiposdeIngresos where " + Condicion + " " + Orden);
+                dt = Conexion.ObtenerDatos("select " + Campos + " from TiposIngresos where " + Condicion + " " + Orden);
             }
             catch (Exception)
             {
