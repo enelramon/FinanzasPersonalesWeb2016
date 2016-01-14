@@ -38,9 +38,7 @@ namespace BLL
 
         public override bool Insertar()
         {
-            bool retorno = false;
-
-
+            throw new NotImplementedException();
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
