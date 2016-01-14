@@ -40,8 +40,6 @@ namespace BLL
             return retorno;
         }
 
-
-
         public override bool Eliminar()
         {
             ConexionDb conexion = new ConexionDb();
