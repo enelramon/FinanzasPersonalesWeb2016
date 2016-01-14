@@ -9,6 +9,18 @@ namespace BLL
 {
     class Usuarios : ClaseMaestra
     {
+        public int UsuarioId { get; set; }
+        public string Nombres { get; set; }
+        public int TipoUsuarioId { get; set; }
+        public string Password { get; set; }
+
+    public Usuarios()
+        {
+            this.UsuarioId = 0;
+            this.Nombres = "";
+            this.TipoUsuarioId = 0;
+            this.Password = "";
+        }
         public override bool Buscar(int IdBuscado)
         {
             throw new NotImplementedException();
