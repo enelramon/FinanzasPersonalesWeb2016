@@ -7,7 +7,7 @@ using DAL;
 
 namespace BLL
 {
-    class TiposIngresos : ClaseMaestra
+    public class TiposIngresos : ClaseMaestra
     {
         ConexionDb Conexion = new ConexionDb();
 
