@@ -96,7 +96,7 @@ namespace BLL
             {
                 if (this.EsActivo)
                 {
-                    retorno = Conexion.Ejecutar(string.Format("insert into TiposIngresos (Descripcion, EsActivo) values ('{0}',{1})", this.Descripcion,1));
+                    retorno = Conexion.Ejecutar(string.Format("insert into TiposIngresos (Descripcion, EsActivo, UsuarioId) values ('{0}',{1},{2})", this.Descripcion,1,this.UsuarioId));
                 }
                 else
                 {
@@ -108,7 +108,7 @@ namespace BLL
             {
 
                 retorno = false;
-        }
+            }
 
             return retorno;
         }
