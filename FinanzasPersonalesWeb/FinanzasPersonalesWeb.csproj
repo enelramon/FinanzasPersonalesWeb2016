@@ -60,7 +60,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="TipodeIngreso.aspx" />
+    <Content Include="TipoIngreso.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -86,12 +86,12 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="TipodeIngreso.aspx.cs">
-      <DependentUpon>TipodeIngreso.aspx</DependentUpon>
+    <Compile Include="TipoIngreso.aspx.cs">
+      <DependentUpon>TipoIngreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TipodeIngreso.aspx.designer.cs">
-      <DependentUpon>TipodeIngreso.aspx</DependentUpon>
+    <Compile Include="TipoIngreso.aspx.designer.cs">
+      <DependentUpon>TipoIngreso.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

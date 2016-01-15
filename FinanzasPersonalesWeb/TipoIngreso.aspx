@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TipodeIngreso.aspx.cs" Inherits="FinanzasPersonalesWeb.TipodeIngreso" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TipoIngreso.aspx.cs" Inherits="FinanzasPersonalesWeb.TipodeIngreso" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style2 {
@@ -19,8 +19,8 @@
         </tr>
                 <tr>
             <td>
-                <asp:TextBox ID="TipoIngresoTextBox" runat="server" Width="147px"></asp:TextBox>
-                <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="62px" />&nbsp;</td>
+                <asp:TextBox ID="TipoIngresoTextBox" runat="server" Width="149px"></asp:TextBox>
+                <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="62px" OnClick="BuscarButton_Click" />&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
             <td class="auto-style2">
@@ -70,8 +70,8 @@
         <tr>
             <td class="auto-style2">
                 <asp:Button ID="GuardarButton" runat="server" Text="Guardar" Width="101px" OnClick="GuardarButton_Click" />
-                <asp:Button ID="ModificarButton" runat="server" Text="Modificar" Width="98px" />
-                <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" Width="102px" />
+                <asp:Button ID="ModificarButton" runat="server" Text="Modificar" Width="98px" OnClick="ModificarButton_Click" />
+                <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" Width="102px" OnClick="EliminarButton_Click" />
             </td>        
         </tr>
     </table>
