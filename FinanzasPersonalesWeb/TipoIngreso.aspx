@@ -19,7 +19,7 @@
         </tr>
                 <tr>
             <td>
-                <asp:TextBox ID="TipoIngresoTextBox" runat="server" Width="149px"></asp:TextBox>
+                <asp:TextBox ID="TipoIngresoTextBox" runat="server" Width="149px" placeholder="Escribe el Id"></asp:TextBox>
                 <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="62px" OnClick="BuscarButton_Click" />&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -31,7 +31,7 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                <asp:TextBox ID="DescripcionTextBox" runat="server" Width="212px"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" runat="server" Width="212px" placeholder="Escribe una Descripcion"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -44,8 +44,10 @@
         </tr>
                 <tr>
             <td class="auto-style2">
-                <asp:RadioButton ID="ActivoRadioButton" runat="server" Checked="True" Text="Activo" />
-                <asp:RadioButton ID="FalsoRadioButton" runat="server" Text="No Activo" />
+                <asp:RadioButtonList ID="EstadoRadioButtonList" runat="server" Height="19px" RepeatDirection="Horizontal" Width="202px">
+                    <asp:ListItem Selected="True">Activo</asp:ListItem>
+                    <asp:ListItem>No Activo</asp:ListItem>
+                </asp:RadioButtonList>
                     </td>
             <td>
                 &nbsp;</td>

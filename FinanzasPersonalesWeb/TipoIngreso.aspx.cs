@@ -14,7 +14,7 @@ namespace FinanzasPersonalesWeb
 
         public void InicializarUsuarios()
         {
-            //UsuarioDropDownList.DataSource = Ingresos.Listado(" * ", " 1=1 ", "");
+            //UsuarioDropDownList.DataSource = Usuarios.Listado(" * ", " 1=1 ", "");
         }
 
         public int ValidarIdEntero(string IdTextBox)
@@ -33,8 +33,9 @@ namespace FinanzasPersonalesWeb
 
         public void Limpiar()
         {
+            TipoIngresoTextBox.Text = "";
             DescripcionTextBox.Text = "";
-            ActivoRadioButton.Checked = true;
+            EstadoRadioButtonList.ClearSelection();
             UsuarioDropDownList.ClearSelection();
         }
 
@@ -43,7 +44,7 @@ namespace FinanzasPersonalesWeb
             bool retorno = true;
 
             TipoIngreso.Descripcion = DescripcionTextBox.Text;
-            if (ActivoRadioButton.Checked)
+            if (EstadoRadioButtonList.SelectedIndex == 1)
             {
                 TipoIngreso.EsActivo = true;
             }
@@ -109,6 +110,7 @@ namespace FinanzasPersonalesWeb
             else
             {
                 HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                Limpiar();
             }
         }
 
@@ -132,6 +134,7 @@ namespace FinanzasPersonalesWeb
             else
             {
                 HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                Limpiar();
             }
         }
 
@@ -144,22 +147,23 @@ namespace FinanzasPersonalesWeb
                     DescripcionTextBox.Text = TipoIngreso.Descripcion.ToString();
                     if (TipoIngreso.EsActivo == true)
                     {
-                        ActivoRadioButton.Checked = true;
+                        EstadoRadioButtonList.SelectedIndex = 1;
                     }
                     else
                     {
-                        FalsoRadioButton.Checked = true;
-                        ActivoRadioButton.Checked = false;
+                        EstadoRadioButtonList.SelectedIndex = 2;
                     }
                 }
                 else
                 {
                     HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                    Limpiar();
                 }
             }
             else
             {
                 HttpContext.Current.Response.Write("<Script>alert('Ingrese un numero Valido')</Script>");
+                Limpiar();
             }
         }
     }

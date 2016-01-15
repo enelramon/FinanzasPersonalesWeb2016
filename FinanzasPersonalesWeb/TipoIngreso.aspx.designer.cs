@@ -67,22 +67,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// ActivoRadioButton control.
+        /// EstadoRadioButtonList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton ActivoRadioButton;
-        
-        /// <summary>
-        /// FalsoRadioButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton FalsoRadioButton;
+        protected global::System.Web.UI.WebControls.RadioButtonList EstadoRadioButtonList;
         
         /// <summary>
         /// Label2 control.
