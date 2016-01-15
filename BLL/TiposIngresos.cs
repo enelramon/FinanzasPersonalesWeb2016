@@ -7,7 +7,7 @@ using DAL;
 
 namespace BLL
 {
-    class TiposdeIngresos : ClaseMaestra
+    class TiposIngresos : ClaseMaestra
     {
         ConexionDb Conexion = new ConexionDb();
 
@@ -16,7 +16,7 @@ namespace BLL
         public bool EsActivo { get; set; }
         public int UsuarioId { get; set; }
 
-        public TiposdeIngresos()
+        public TiposIngresos()
         {
             this.TipoIngresoId = 0;
             this.Descripcion = "";
