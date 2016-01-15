@@ -115,17 +115,13 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            DataTable dt = new DataTable();
-            try
-            {
-                dt = Conexion.ObtenerDatos("select " + Campos + " from TiposIngresos where " + Condicion + " " + Orden);
-            }
-            catch (Exception)
-            {
-                
-            }
+            string OrdenFinal = " ";
 
-            return dt;
+                if (!Orden.Equals(""))
+                {
+                    OrdenFinal = " Orden by " + Orden;
+                }
+                return Conexion.ObtenerDatos("select " + Campos + " from TiposIngresos where " + Condicion + " " + OrdenFinal);
         }
     }
 }
