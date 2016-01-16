@@ -21,6 +21,7 @@ namespace BLL
             this.esActivo = 0;
             this.UsuarioId = 0;
         }
+
         public override bool Buscar(int IdBuscado)
         {
             throw new NotImplementedException();
