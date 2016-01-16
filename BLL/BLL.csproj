@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="ClaseMaestra.cs" />
     <Compile Include="Egresos.cs" />
+    <Compile Include="Metas.cs" />
     <Compile Include="Miembros.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TiposIngresos.cs" />
