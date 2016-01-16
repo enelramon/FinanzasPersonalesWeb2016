@@ -63,6 +63,7 @@
     <Content Include="Login.aspx" />
     <Content Include="MiembrosWebForm.aspx" />
     <Content Include="TipoIngreso.aspx" />
+    <Content Include="Transferencia.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +109,13 @@
     </Compile>
     <Compile Include="TipoIngreso.aspx.designer.cs">
       <DependentUpon>TipoIngreso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transferencia.aspx.cs">
+      <DependentUpon>Transferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transferencia.aspx.designer.cs">
+      <DependentUpon>Transferencia.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
