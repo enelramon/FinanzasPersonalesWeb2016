@@ -5,11 +5,15 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:TextBox runat="server" ID="MetaIdTextBox" placeholder="MetaId"/>
-    <asp:Button Text="Buscar" runat="server" ID="BuscarButton" /> <br />
-    <asp:TextBox runat="server" ID="DescripcionTextBox" placeholder="Descripcion"/>
-    <asp:DropDownList ID="CuentaIdDropDownList" runat="server" Height="26px" Width="149px"></asp:DropDownList>
-     <asp:Button Text="Nuevo" runat="server" ID="NuevoButton" />
+    
+    <asp:TextBox ID="MetaIdTextBox" runat="server" placeholder="Ingrese Id"></asp:TextBox>
+    <asp:Button ID="BuscarButton" runat="server" Text="Buscar" /><br />
+
+    <asp:TextBox ID="DescripcionTextBox" runat="server" placeholder="Ingrese una Descripcion"></asp:TextBox>  <br />  
+    <asp:DropDownList ID="PresupuestoIdDropDownList" runat="server" Height="26px" Width="149px"></asp:DropDownList><br /><br />
+    <asp:DropDownList ID="TipoDeIngresoDropDownList" runat="server" Height="26px" Width="149px"></asp:DropDownList><br />
+    <br />
+    <asp:Button Text="Nuevo" runat="server" ID="NuevoButton" />
     <asp:Button Text="Guardar" runat="server" ID="GuadarButton" />
     <asp:Button Text="Eliminar" runat="server" ID="Eliminar" />
 </asp:Content>

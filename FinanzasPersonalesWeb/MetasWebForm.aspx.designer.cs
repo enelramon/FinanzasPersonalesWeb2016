@@ -40,13 +40,22 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
         
         /// <summary>
-        /// CuentaIdDropDownList control.
+        /// PresupuestoIdDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CuentaIdDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList PresupuestoIdDropDownList;
+        
+        /// <summary>
+        /// TipoDeIngresoDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList TipoDeIngresoDropDownList;
         
         /// <summary>
         /// NuevoButton control.
