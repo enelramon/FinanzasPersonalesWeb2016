@@ -13,5 +13,10 @@ namespace FinanzasPersonalesWeb
         {
 
         }
+
+        protected void RbActivo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
