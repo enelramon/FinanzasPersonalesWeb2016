@@ -1,12 +1,15 @@
 create database FinanzasPersonalesWebDb
 
+use FinanzasPersonalesWebDb
+
 
 create table Transferencias(
-			TranferenciaId int primary key identity, 
-			Fecha varchar, 
-			CuentacorigenId int,
+			TransferenciaId int primary key identity, 
+			Fecha varchar(20), 
+			CuentaOrigenId int,
 			CuentaDestinoId int,
 			Monto float,
-			Observacion nvarchar,
+			Observacion nvarchar(100),
 			UsuarioId int References Usuarios(UsuarioId)
 			);
+			
