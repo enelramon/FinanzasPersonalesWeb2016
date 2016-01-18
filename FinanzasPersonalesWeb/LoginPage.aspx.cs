@@ -15,7 +15,7 @@ namespace FinanzasPersonalesWeb
     public partial class LoginPage : System.Web.UI.Page
     {
         string _connStr = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
-        //todo: Arreglar esto.
+        //todo: Arreglar esto..
         protected void Page_Load(object sender, EventArgs e)
         {
 
