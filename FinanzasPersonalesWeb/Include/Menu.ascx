@@ -23,6 +23,11 @@
                     </AnonymousTemplate>
                     <LoggedInTemplate>
                     <asp:HyperLink ID = "HyperLink1" runat = "server" Text = "Consulta Usuario" NavigateUrl = "~/cUsuarios.aspx" />
+                    <asp:HyperLink ID = "HyperLink2" runat = "server" Text = "RegistrarEgresos" NavigateUrl = "~/EgresosWebForm.aspx" />
+                    <asp:HyperLink ID = "HyperLink3" runat = "server" Text = "Registrar Metas" NavigateUrl = "~/MetasWebForm.aspx" />
+                    <asp:HyperLink ID = "HyperLink4" runat = "server" Text = "Registrar Miembros" NavigateUrl = "~/MiembrosWebForm.aspx" />
+                    <asp:HyperLink ID = "HyperLink5" runat = "server" Text = "Registrar Tipo de Ingreso" NavigateUrl = "~/TipoIngreso.aspx" />
+                    <asp:HyperLink ID = "HyperLink6" runat = "server" Text = "Registrar Transferencias" NavigateUrl = "~/Transferencia.aspx" />
                     </LoggedInTemplate>
                 </asp:LoginView>
         </td>
