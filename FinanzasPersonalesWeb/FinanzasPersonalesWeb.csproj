@@ -60,7 +60,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="Include\Menu.ascx" />
     <Content Include="MetasWebForm.aspx" />
     <Content Include="MiembrosWebForm.aspx" />
     <Content Include="TipoIngreso.aspx" />
@@ -82,12 +82,12 @@
     <Compile Include="EgresosWebForm.aspx.designer.cs">
       <DependentUpon>EgresosWebForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Include\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Include\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
     </Compile>
     <Compile Include="MetasWebForm.aspx.cs">
       <DependentUpon>MetasWebForm.aspx</DependentUpon>

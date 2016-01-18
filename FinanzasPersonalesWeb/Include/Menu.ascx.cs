@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Include
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Menu : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
