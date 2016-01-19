@@ -65,7 +65,7 @@ namespace BLL
             {
                 OrdenFinal = " Order by " + Orden;
             }
-            return conexion.ObtenerDatos("select " + Campos + " from Presupuesto where " + Condicion + " " + OrdenFinal);
+            return conexion.ObtenerDatos("select " + Campos + " from Presupuestos where " + Condicion + " " + OrdenFinal);
         }
     }
 }
