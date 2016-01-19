@@ -61,6 +61,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="TipodeIngreso.aspx" />
+    <Content Include="TipoEgreso.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +93,13 @@
     </Compile>
     <Compile Include="TipodeIngreso.aspx.designer.cs">
       <DependentUpon>TipodeIngreso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TipoEgreso.aspx.cs">
+      <DependentUpon>TipoEgreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TipoEgreso.aspx.designer.cs">
+      <DependentUpon>TipoEgreso.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
