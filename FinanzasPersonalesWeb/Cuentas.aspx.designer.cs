@@ -67,13 +67,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control CuentaTextBox.
+        /// Control CuenTextBox0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CuentaTextBox;
+        protected global::System.Web.UI.WebControls.TextBox CuenTextBox0;
         
         /// <summary>
         /// Control Label2.
@@ -85,13 +85,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control PorcientoTextBox.
+        /// Control UsuarioDropDownList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PorcientoTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList UsuarioDropDownList;
         
         /// <summary>
         /// Control GuardarButton.
