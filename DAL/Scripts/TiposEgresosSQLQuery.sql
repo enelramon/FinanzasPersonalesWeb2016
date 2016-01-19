@@ -1,3 +1,4 @@
+
 Create Table TiposEgresos
 (
 	TipoEgresoId int Identity(1,1) Primary Key,

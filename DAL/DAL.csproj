@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Scripts\Cuentas.sql" />
+    <Content Include="Scripts\MetasQuery.sql" />
     <Content Include="Scripts\TipoIngreso.sql" />
     <Content Include="Scripts\TiposEgresosSQLQuery.sql" />
   </ItemGroup>
