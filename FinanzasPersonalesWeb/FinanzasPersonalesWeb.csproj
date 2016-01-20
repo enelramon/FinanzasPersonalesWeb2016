@@ -58,11 +58,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cCuentas.aspx" />
+    <Content Include="ConsultaTipoEgreso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Cuentas.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
@@ -93,12 +94,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cCuentas.aspx.cs">
-      <DependentUpon>cCuentas.aspx</DependentUpon>
+    <Compile Include="ConsultaTipoEgreso.aspx.cs">
+      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="cCuentas.aspx.designer.cs">
-      <DependentUpon>cCuentas.aspx</DependentUpon>
+    <Compile Include="ConsultaTipoEgreso.aspx.designer.cs">
+      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cuentas.aspx.cs">
+      <DependentUpon>Cuentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cuentas.aspx.designer.cs">
+      <DependentUpon>Cuentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
