@@ -69,6 +69,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="MetasConsultasWebForm.aspx" />
     <Content Include="MetasWebForm.aspx" />
     <Content Include="MiembrosWebForm.aspx" />
     <Content Include="rUsuarios.aspx" />
@@ -133,6 +134,13 @@
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MetasConsultasWebForm.aspx.cs">
+      <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MetasConsultasWebForm.aspx.designer.cs">
+      <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="MetasWebForm.aspx.cs">
       <DependentUpon>MetasWebForm.aspx</DependentUpon>
