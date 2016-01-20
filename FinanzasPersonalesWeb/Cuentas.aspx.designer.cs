@@ -13,13 +13,13 @@ namespace FinanzasPersonalesWeb {
     public partial class Cuentas {
         
         /// <summary>
-        /// Control Label4.
+        /// Control Label04.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label Label04;
         
         /// <summary>
         /// Control CuentasTextBox.
@@ -58,13 +58,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
         
         /// <summary>
-        /// Control Label3.
+        /// Control Label03.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label Label03;
         
         /// <summary>
         /// Control CuentaTextBox.

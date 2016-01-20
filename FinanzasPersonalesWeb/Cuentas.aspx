@@ -13,7 +13,7 @@
     <table class="auto-style4">
         <tr>
             <td>
-                <asp:Label ID="Label4" runat="server" Text="Cuentas Id"></asp:Label>
+                <asp:Label ID="Label04" runat="server" Text="Cuentas Id"></asp:Label>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -23,6 +23,7 @@
                 <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="62px" OnClick="BuscarButton_Click" />&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
+        <tr>
             <td class="auto-style2">
                 <asp:Label ID="Label1" runat="server" Text="Descripcion"></asp:Label>
             </td>
@@ -38,7 +39,7 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                <asp:Label ID="Label3" runat="server" Text="Balance"></asp:Label>
+                <asp:Label ID="Label03" runat="server" Text="Balance"></asp:Label>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -60,7 +61,7 @@
                 <asp:TextBox ID="PorcientoTextBox" runat="server" Width="210px" placeholder="Escribe el Porciento"></asp:TextBox>
                     </td>
             <td>&nbsp;</td>
-        </tr
+        </tr>
         <tr>
             <td class="auto-style2">&nbsp;</td>
             <td>&nbsp;</td>
