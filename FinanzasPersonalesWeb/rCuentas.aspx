@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cuentas.aspx.cs" Inherits="FinanzasPersonalesWeb.Cuentas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rCuentas.aspx.cs" Inherits="FinanzasPersonalesWeb.Cuentas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style2 {
@@ -9,12 +9,12 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content02" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="auto-style4">
         <tr>
 
             <td>
-                <asp:Label ID="Label4" runat="server" Text="Cuentas Id"></asp:Label>
+                <asp:Label ID="Label04" runat="server" Text="Cuentas Id"></asp:Label>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -40,7 +40,7 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                <asp:Label ID="Label3" runat="server" Text="Balance"></asp:Label>
+                <asp:Label ID="Label03" runat="server" Text="Balance"></asp:Label>
             </td>
             <td>&nbsp;</td>
         </tr>

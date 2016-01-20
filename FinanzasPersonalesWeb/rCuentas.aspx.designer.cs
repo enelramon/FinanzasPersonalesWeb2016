@@ -10,16 +10,25 @@
 namespace FinanzasPersonalesWeb {
     
     
-    public partial class EgresosWebForm {
+    public partial class Cuentas {
         
         /// <summary>
-        /// Control EgresoIdTextBox.
+        /// Control Label04.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EgresoIdTextBox;
+        protected global::System.Web.UI.WebControls.Label Label04;
+        
+        /// <summary>
+        /// Control CuentasTextBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CuentasTextBox;
         
         /// <summary>
         /// Control BuscarButton.
@@ -31,58 +40,58 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// Control FechaTextBox.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control CuentaIdDropDownList.
+        /// Control DescripcionTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CuentaIdDropDownList;
+        protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
         
         /// <summary>
-        /// Control MontoTextBox.
+        /// Control Label03.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MontoTextBox;
+        protected global::System.Web.UI.WebControls.Label Label03;
         
         /// <summary>
-        /// Control MiembroIdDropDownList.
+        /// Control CuentaTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList MiembroIdDropDownList;
+        protected global::System.Web.UI.WebControls.TextBox CuentaTextBox;
         
         /// <summary>
-        /// Control TipoEgresoIdDropDownList.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TipoEgresoIdDropDownList;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control NuevoButton.
+        /// Control PorcientoTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NuevoButton;
+        protected global::System.Web.UI.WebControls.TextBox PorcientoTextBox;
         
         /// <summary>
         /// Control GuardarButton.
@@ -92,6 +101,15 @@ namespace FinanzasPersonalesWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button GuardarButton;
+        
+        /// <summary>
+        /// Control ModificarButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ModificarButton;
         
         /// <summary>
         /// Control EliminarButton.
