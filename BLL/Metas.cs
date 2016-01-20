@@ -14,7 +14,7 @@ namespace BLL
         public int PresupuestoId { get; set; }
         public int TipoIngresoId { get; set; }
         public float Monto { get; set; }
-        //public List<Presupuesto> presupuesto { get; set; }
+        public List<Presupuesto> presupuesto { get; set; }
 
         ConexionDb conexion = new ConexionDb();
         public Metas()
@@ -142,17 +142,12 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            DataTable dt = new DataTable();
-            try
-            {
-                dt = conexion.ObtenerDatos(String.Format("Select " + Campos + " from Metas where " + Condicion + " " + Orden));
-            }
-            catch (Exception)
-            {
-               
-            }
+            string ordenFinal = "";
+            ConexionDb conexion = new ConexionDb();
 
-            return dt;
+            if (!Orden.Equals(""))
+                ordenFinal = " Orden by " + Orden;
+            return conexion.ObtenerDatos("Select " + Campos + " From Metas Where " + Condicion + " " + ordenFinal);
         }
     }
 }
