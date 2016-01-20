@@ -1,19 +1,26 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FinanzasPersonalesWeb.Site" %>
+<%@ Register Src="~/Include/Menu.ascx" TagPrefix="uc1" TagName="Menu" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "~//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.we.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
+    <link href="Content/bootstrap.min.css rel="stylesheet" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-2.2.0.min.js"></script>
     <form id="form1" runat="server">
+
         <div><h1>ENCABEZADO</h1></div>
     <div>
+        <uc1:Menu runat="server" ID="Menu1"/>
+        <hr />          
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
         </asp:ContentPlaceHolder>
     </div>
  <div><h1>PIE DE PAGINA</h1></div>

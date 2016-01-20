@@ -45,10 +45,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Scripts\Cuentas.sql" />
+    <Content Include="Scripts\Miembros.sql" />
     <Content Include="Scripts\EgresosSQLQuery.sql" />
     <Content Include="Scripts\MetasQuery.sql" />
+    <Content Include="Scripts\Presupuestos.sql" />
     <Content Include="Scripts\TipoIngreso.sql" />
     <Content Include="Scripts\TiposEgresosSQLQuery.sql" />
+    <Content Include="Scripts\Transferencias.sql" />
+    <Content Include="Scripts\Usuarios.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

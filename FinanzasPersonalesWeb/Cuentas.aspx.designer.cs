@@ -10,7 +10,7 @@
 namespace FinanzasPersonalesWeb {
     
     
-    public partial class TipoIngreso {
+    public partial class Cuentas {
         
         /// <summary>
         /// Label4 control.
@@ -22,13 +22,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// TipoIngresoTextBox control.
+        /// CuentasTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TipoIngresoTextBox;
+        protected global::System.Web.UI.WebControls.TextBox CuentasTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -67,13 +67,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// EstadoRadioButtonList control.
+        /// CuentaTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList EstadoRadioButtonList;
+        protected global::System.Web.UI.WebControls.TextBox CuentaTextBox;
         
         /// <summary>
         /// Label2 control.
@@ -85,13 +85,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// UsuarioDropDownList control.
+        /// PorcientoTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList UsuarioDropDownList;
+        protected global::System.Web.UI.WebControls.TextBox PorcientoTextBox;
         
         /// <summary>
         /// GuardarButton control.

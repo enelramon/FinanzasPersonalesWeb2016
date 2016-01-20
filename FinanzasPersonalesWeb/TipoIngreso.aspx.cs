@@ -8,13 +8,13 @@ using BLL;
 
 namespace FinanzasPersonalesWeb
 {
-    public partial class TipodeIngreso : System.Web.UI.Page
+    public partial class TipoIngreso : System.Web.UI.Page
     {
-        TiposIngresos TipoIngreso = new TiposIngresos();
+        TiposIngresos TipodeIngreso = new TiposIngresos();
 
-        public void InicializarUsuarios()
+        protected void Page_Load(object sender, EventArgs e)
         {
-            //UsuarioDropDownList.DataSource = Usuarios.Listado(" * ", " 1=1 ", "");
+
         }
 
         public int ValidarIdEntero(string IdTextBox)
@@ -43,30 +43,55 @@ namespace FinanzasPersonalesWeb
         {
             bool retorno = true;
 
-            TipoIngreso.Descripcion = DescripcionTextBox.Text;
+            TipodeIngreso.Descripcion = DescripcionTextBox.Text;
             if (EstadoRadioButtonList.SelectedIndex == 1)
             {
-                TipoIngreso.EsActivo = true;
+                TipodeIngreso.EsActivo = true;
             }
             else
             {
-                TipoIngreso.EsActivo = false;
+                TipodeIngreso.EsActivo = false;
             }
-            TipoIngreso.UsuarioId = 0;
+            TipodeIngreso.UsuarioId = 0;
 
             return retorno;
-            
-        }
-        protected void Page_Load(object sender, EventArgs e)
-        {
 
         }
+
+        protected void BuscarButton_Click(object sender, EventArgs e)
+        {
+            if (ValidarIdEntero(TipoIngresoTextBox.Text) > 0)
+            {
+                if (TipodeIngreso.Buscar(ValidarIdEntero(TipoIngresoTextBox.Text)))
+                {
+                    DescripcionTextBox.Text = TipodeIngreso.Descripcion.ToString();
+                    if (TipodeIngreso.EsActivo == true)
+                    {
+                        EstadoRadioButtonList.SelectedIndex = 1;
+                    }
+                    else
+                    {
+                        EstadoRadioButtonList.SelectedIndex = 2;
+                    }
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                    Limpiar();
+                }
+            }
+            else
+            {
+                HttpContext.Current.Response.Write("<Script>alert('Ingrese un numero Valido')</Script>");
+                Limpiar();
+            }
+    }
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
             if (LlenarDatos())
             {
-                if (TipoIngreso.Insertar())
+                if (TipodeIngreso.Insertar())
                 {
                     HttpContext.Current.Response.Write("<Script>alert('Se Guardo Correctamente')</Script>");
 
@@ -89,9 +114,9 @@ namespace FinanzasPersonalesWeb
             {
                 if (LlenarDatos())
                 {
-                    TipoIngreso.TipoIngresoId = ValidarIdEntero(TipoIngresoTextBox.Text);
+                    TipodeIngreso.TipoIngresoId = ValidarIdEntero(TipoIngresoTextBox.Text);
 
-                    if (TipoIngreso.Editar())
+                    if (TipodeIngreso.Editar())
                     {
                         HttpContext.Current.Response.Write("<Script>alert('Se Modifico Correctamente')</Script>");
 
@@ -118,9 +143,9 @@ namespace FinanzasPersonalesWeb
         {
             if (ValidarIdEntero(TipoIngresoTextBox.Text) > 0)
             {
-                TipoIngreso.TipoIngresoId = ValidarIdEntero(TipoIngresoTextBox.Text);
+                TipodeIngreso.TipoIngresoId = ValidarIdEntero(TipoIngresoTextBox.Text);
 
-                if (TipoIngreso.Eliminar())
+                if (TipodeIngreso.Eliminar())
                 {
                     HttpContext.Current.Response.Write("<Script>alert('Se Elimino Correctamente')</Script>");
 
@@ -134,35 +159,6 @@ namespace FinanzasPersonalesWeb
             else
             {
                 HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
-                Limpiar();
-            }
-        }
-
-        protected void BuscarButton_Click(object sender, EventArgs e)
-        {
-            if (ValidarIdEntero(TipoIngresoTextBox.Text) > 0)
-            {
-                if (TipoIngreso.Buscar(ValidarIdEntero(TipoIngresoTextBox.Text)))
-                {
-                    DescripcionTextBox.Text = TipoIngreso.Descripcion.ToString();
-                    if (TipoIngreso.EsActivo == true)
-                    {
-                        EstadoRadioButtonList.SelectedIndex = 1;
-                    }
-                    else
-                    {
-                        EstadoRadioButtonList.SelectedIndex = 2;
-                    }
-                }
-                else
-                {
-                    HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
-                    Limpiar();
-                }
-            }
-            else
-            {
-                HttpContext.Current.Response.Write("<Script>alert('Ingrese un numero Valido')</Script>");
                 Limpiar();
             }
         }

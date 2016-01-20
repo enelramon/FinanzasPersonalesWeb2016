@@ -10,25 +10,16 @@
 namespace FinanzasPersonalesWeb {
     
     
-    public partial class TipoIngreso {
+    public partial class TipoEgreso {
         
         /// <summary>
-        /// Label4 control.
+        /// TipoEgresoIdTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// TipoIngresoTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TipoIngresoTextBox;
+        protected global::System.Web.UI.WebControls.TextBox TipoEgresoIdTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -40,15 +31,6 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
         /// DescripcionTextBox control.
         /// </summary>
         /// <remarks>
@@ -56,15 +38,6 @@ namespace FinanzasPersonalesWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
-        
-        /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
         /// EstadoRadioButtonList control.
@@ -76,15 +49,6 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.RadioButtonList EstadoRadioButtonList;
         
         /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
         /// UsuarioDropDownList control.
         /// </summary>
         /// <remarks>
@@ -92,6 +56,15 @@ namespace FinanzasPersonalesWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList UsuarioDropDownList;
+        
+        /// <summary>
+        /// NuevoButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NuevoButton;
         
         /// <summary>
         /// GuardarButton control.
@@ -103,21 +76,12 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Button GuardarButton;
         
         /// <summary>
-        /// ModificarButton control.
+        /// ElimanarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ModificarButton;
-        
-        /// <summary>
-        /// EliminarButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EliminarButton;
+        protected global::System.Web.UI.WebControls.Button ElimanarButton;
     }
 }
