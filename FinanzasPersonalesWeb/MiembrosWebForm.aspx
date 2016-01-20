@@ -10,6 +10,10 @@
 
 </html>
     <br />
+    UsuarioId:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:DropDownList ID="DropDownList1" runat="server">
+    </asp:DropDownList>
+    <br />
     Descripción: <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 16px"></asp:TextBox>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
