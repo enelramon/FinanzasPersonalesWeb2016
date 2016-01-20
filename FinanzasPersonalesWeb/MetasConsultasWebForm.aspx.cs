@@ -52,5 +52,10 @@ namespace FinanzasPersonalesWeb
                 HttpContext.Current.Response.Write("<SCRIPT>alert('Ingrese un Id')</SCRIPT>");
             }
         }
+
+        protected void BuscarButton_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -15,10 +15,10 @@
             <br /><br />
              <div class="row">
               <div class="col-xs-6">
-                <asp:TextBox runat="server" ID="ConsultaTextBox" CssClass="form-control " placeholder="Id"/>
+                <asp:TextBox runat="server" ID="ConsultaTextBox" CssClass="form-control " placeholder="Id" Height="33px" Width="496px"/>
               </div>
               <div class="col-xs-3">
-                <asp:Button Text="Buscar" runat="server" ID="BuscarButton" CssClass="btn btn-primary"/>
+                <asp:Button Text="Buscar" runat="server" ID="BuscarButton" CssClass="btn btn-primary" OnClick="BuscarButton_Click1"/>
               </div>
             </div> <br />
             <asp:GridView ID="MetasGridView" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="485px">
