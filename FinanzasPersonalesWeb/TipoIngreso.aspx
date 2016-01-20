@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TipoIngreso.aspx.cs" Inherits="FinanzasPersonalesWeb.TipodeIngreso" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TipoIngreso.aspx.cs" Inherits="FinanzasPersonalesWeb.TipoIngreso" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style2 {
@@ -27,7 +27,7 @@
         </tr>
                 <tr>
             <td class="auto-style5">
-                <asp:TextBox ID="TipoIngresoTextBox" runat="server" Width="149px"></asp:TextBox>
+                <asp:TextBox ID="TipoIngresoTextBox" runat="server" Width="149px" placeholder ="Escribe un id"></asp:TextBox>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="62px" OnClick="BuscarButton_Click" />&nbsp;</td>
             <td>&nbsp;</td>
@@ -41,7 +41,7 @@
         </tr>
         <tr>
             <td class="auto-style6">
-                <asp:TextBox ID="DescripcionTextBox" runat="server" Width="212px"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" runat="server" Width="212px" placeholder ="Escribe una descripcion"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
