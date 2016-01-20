@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TipoIngreso.aspx.cs" Inherits="FinanzasPersonalesWeb.TipodeIngreso" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TipoIngreso.aspx.cs" Inherits="FinanzasPersonalesWeb.TipoIngreso" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style2 {
@@ -17,6 +17,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <table class="auto-style4">
         <tr>
             <td class="auto-style5">
@@ -26,11 +27,12 @@
         </tr>
                 <tr>
             <td class="auto-style5">
-                <asp:TextBox ID="TipoIngresoTextBox" runat="server" Width="149px" placeholder="Escribe el Id"></asp:TextBox>
+                <asp:TextBox ID="TipoIngresoTextBox" runat="server" Width="149px" placeholder ="Escribe un id"></asp:TextBox>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="62px" OnClick="BuscarButton_Click" />&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
+        <tr>
             <td class="auto-style6">
                 <asp:Label ID="Label1" runat="server" Text="Descripcion"></asp:Label>
             </td>
@@ -39,7 +41,7 @@
         </tr>
         <tr>
             <td class="auto-style6">
-                <asp:TextBox ID="DescripcionTextBox" runat="server" Width="212px" placeholder="Escribe una Descripcion"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" runat="server" Width="212px" placeholder ="Escribe una descripcion"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -72,7 +74,7 @@
                 </asp:DropDownList>
                     </td>
             <td>&nbsp;</td>
-        </tr
+        </tr>
         <tr>
             <td class="auto-style6">&nbsp;</td>
             <td>&nbsp;</td>

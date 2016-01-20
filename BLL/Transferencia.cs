@@ -9,6 +9,7 @@ namespace BLL
 {
     public class Transferencia : ClaseMaestra
     {
+        //Arreglando
         public int TransferenciaId { get; set; }
         public string Fecha { get; set; }
         public int CuentaOrigenId { get; set; }

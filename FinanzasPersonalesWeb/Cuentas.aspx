@@ -12,6 +12,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="auto-style4">
         <tr>
+
             <td>
                 <asp:Label ID="Label04" runat="server" Text="Cuentas Id"></asp:Label>
             </td>
@@ -19,8 +20,8 @@
         </tr>
                 <tr>
             <td>
-                <asp:TextBox ID="CuentasTextBox" runat="server" Width="149px" placeholder="Escribe el Id"></asp:TextBox>
-                <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="62px" OnClick="BuscarButton_Click" />&nbsp;</td>
+                <asp:TextBox ID="CuentasTextBox" runat="server" Width="149px"></asp:TextBox>
+                <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="62px" />&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -32,7 +33,7 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                <asp:TextBox ID="DescripcionTextBox" runat="server" Width="212px" placeholder="Escribe una Descripcion"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" runat="server" Width="212px"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -45,7 +46,7 @@
         </tr>
                 <tr>
             <td class="auto-style2">
-                <asp:TextBox ID="CuentaTextBox" runat="server" Width="210px" placeholder="Escribe el Balance"></asp:TextBox>
+                <asp:TextBox ID="CuentaTextBox" runat="server" Width="210px"></asp:TextBox>
                     </td>
             <td>
                 &nbsp;</td>
@@ -58,7 +59,7 @@
         </tr>
                 <tr>
             <td class="auto-style2">
-                <asp:TextBox ID="PorcientoTextBox" runat="server" Width="210px" placeholder="Escribe el Porciento"></asp:TextBox>
+                <asp:TextBox ID="PorcientoTextBox" runat="server" Width="210px"></asp:TextBox>
                     </td>
             <td>&nbsp;</td>
         </tr>
@@ -68,9 +69,9 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                <asp:Button ID="GuardarButton" runat="server" Text="Guardar" Width="101px" OnClick="GuardarButton_Click" />
-                <asp:Button ID="ModificarButton" runat="server" Text="Modificar" Width="98px" OnClick="ModificarButton_Click" />
-                <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" Width="102px" OnClick="EliminarButton_Click" />
+                <asp:Button ID="GuardarButton" runat="server" Text="Guardar" Width="101px" />
+                <asp:Button ID="ModificarButton" runat="server" Text="Modificar" Width="98px" />
+                <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" Width="102px"  />
             </td>        
         </tr>
     </table>

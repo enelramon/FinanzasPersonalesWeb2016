@@ -9,6 +9,7 @@ namespace BLL
 {
     public class TiposIngresos : ClaseMaestra
     {
+        //Arreglando
         ConexionDb Conexion = new ConexionDb();
 
         public int TipoIngresoId { get; set; }

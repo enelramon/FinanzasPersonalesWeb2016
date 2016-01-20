@@ -9,6 +9,7 @@ namespace BLL
 {
     public class Usuarios : ClaseMaestra
     {
+        //Arreglando
         ConexionDb Conexion = new ConexionDb();
 
         public int UsuarioId { get; set; }

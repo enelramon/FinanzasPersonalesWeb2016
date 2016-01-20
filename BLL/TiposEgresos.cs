@@ -9,6 +9,7 @@ namespace BLL
 {
     class TiposEgresos : ClaseMaestra
     {
+        //Arreglando
         public int TipoEgresoId { get; set; }
         public string Descripcion { get; set; }
         public bool EsActivo { get; set; }
