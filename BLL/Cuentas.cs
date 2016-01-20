@@ -10,7 +10,6 @@ namespace BLL
     class Cuentas : ClaseMaestra
     {
 
-        //Arreglando
         public int CuentaId { get; set; }
         public int UsuarioId { get; set; }
         public string Descripcion { get; set; }

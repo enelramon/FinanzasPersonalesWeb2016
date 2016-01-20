@@ -9,7 +9,6 @@ namespace BLL
 {
     class PresupuestoDetalle : ClaseMaestra
     {
-        //Arreglando
         public int PresupuestoDetalleId { get; set; }
         public int PresupuestoId { get; set; }
         public int TipoEgresoId { get; set; }

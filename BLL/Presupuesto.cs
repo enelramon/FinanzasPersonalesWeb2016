@@ -9,8 +9,6 @@ namespace BLL
 {
     class Presupuesto : ClaseMaestra
     {
-
-        //Arreglando
         public int PresupuestoId { get; set; }
         public int UsuarioId { get; set; }
         public string Descripcion { get; set; }
