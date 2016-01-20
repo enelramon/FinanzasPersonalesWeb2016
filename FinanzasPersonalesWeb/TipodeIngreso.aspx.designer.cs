@@ -10,7 +10,7 @@
 namespace FinanzasPersonalesWeb {
     
     
-    public partial class Cuentas {
+    public partial class TipodeIngreso {
         
         /// <summary>
         /// Label4 control.
@@ -22,13 +22,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// CuentasTextBox control.
+        /// TipoIngresoTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CuentasTextBox;
+        protected global::System.Web.UI.WebControls.TextBox TipoIngresoTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -67,13 +67,22 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// CuentaTextBox control.
+        /// ActivoRadioButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CuentaTextBox;
+        protected global::System.Web.UI.WebControls.RadioButton ActivoRadioButton;
+        
+        /// <summary>
+        /// FalsoRadioButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton FalsoRadioButton;
         
         /// <summary>
         /// Label2 control.
@@ -85,13 +94,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// PorcientoTextBox control.
+        /// UsuarioDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PorcientoTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList UsuarioDropDownList;
         
         /// <summary>
         /// GuardarButton control.

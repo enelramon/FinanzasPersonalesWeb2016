@@ -17,6 +17,7 @@
     <asp:ListBox ID="ListBox1" runat="server" Width="145px"></asp:ListBox>
     <br />
     <br />
+    
     <asp:Button Text="Nuevo" runat="server" ID="NuevoButton" />
     <asp:Button Text="Guardar" runat="server" ID="GuadarButton" />
     <asp:Button Text="Eliminar" runat="server" ID="Eliminar" />

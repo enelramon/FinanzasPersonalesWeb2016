@@ -16,6 +16,7 @@
     <table style="width: 45%; height: 78px;">
         <tr>
             <td class="auto-style1"></td>
+
             <td class="auto-style1"></td>
             <td class="auto-style1"></td>
         </tr>

@@ -14,6 +14,7 @@
     <p style="height: 164px; width: 1107px">
 &nbsp;TransferenciaId&nbsp;&nbsp;
         <asp:TextBox ID="TransferenciaIdLavel" runat="server" Height="19px"></asp:TextBox>
+
 &nbsp;&nbsp;
         <asp:Button ID="Buscarbutton" runat="server" Text="Buscar" Width="87px" />
 &nbsp;&nbsp;&nbsp; Fecha&nbsp;&nbsp;

@@ -7,9 +7,8 @@ using DAL;
 
 namespace BLL
 {
-    public class TiposIngresos : ClaseMaestra
+    class TiposdeIngresos : ClaseMaestra
     {
-        //Arreglando
         ConexionDb Conexion = new ConexionDb();
 
         public int TipoIngresoId { get; set; }
@@ -17,7 +16,7 @@ namespace BLL
         public bool EsActivo { get; set; }
         public int UsuarioId { get; set; }
 
-        public TiposIngresos()
+        public TiposdeIngresos()
         {
             this.TipoIngresoId = 0;
             this.Descripcion = "";
@@ -97,7 +96,7 @@ namespace BLL
             {
                 if (this.EsActivo)
                 {
-                    retorno = Conexion.Ejecutar(string.Format("insert into TiposIngresos (Descripcion, EsActivo, UsuarioId) values ('{0}',{1},{2})", this.Descripcion,1,this.UsuarioId));
+                    retorno = Conexion.Ejecutar(string.Format("insert into TiposIngresos (Descripcion, EsActivo) values ('{0}',{1})", this.Descripcion,1));
                 }
                 else
                 {
@@ -109,20 +108,24 @@ namespace BLL
             {
 
                 retorno = false;
-            }
+        }
 
             return retorno;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            string OrdenFinal = " ";
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = Conexion.ObtenerDatos("select " + Campos + " from TiposIngresos where " + Condicion + " " + Orden);
+            }
+            catch (Exception)
+            {
+                
+            }
 
-                if (!Orden.Equals(""))
-                {
-                    OrdenFinal = " Orden by " + Orden;
-                }
-                return Conexion.ObtenerDatos("select " + Campos + " from TiposIngresos where " + Condicion + " " + OrdenFinal);
+            return dt;
         }
     }
 }
