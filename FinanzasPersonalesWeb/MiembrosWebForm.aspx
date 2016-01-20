@@ -15,6 +15,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 </html>
+
     <br />
     Activo:&nbsp;&nbsp;&nbsp;
     <asp:RadioButton ID="RbActivo" runat="server" OnCheckedChanged="RbActivo_CheckedChanged" Text="Activo" />

@@ -10,96 +10,78 @@
 namespace FinanzasPersonalesWeb {
     
     
-    public partial class Transferencia {
+    public partial class TipoEgreso {
         
         /// <summary>
-        /// TransferenciaIdLavel control.
+        /// TipoEgresoIdTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TransferenciaIdLavel;
+        protected global::System.Web.UI.WebControls.TextBox TipoEgresoIdTextBox;
         
         /// <summary>
-        /// Buscarbutton control.
+        /// BuscarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Buscarbutton;
+        protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// FechaTextBox control.
+        /// DescripcionTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
+        protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
         
         /// <summary>
-        /// CuentaOrigenTextBox control.
+        /// EstadoRadioButtonList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CuentaOrigenTextBox;
+        protected global::System.Web.UI.WebControls.RadioButtonList EstadoRadioButtonList;
         
         /// <summary>
-        /// CuentaDestinoTextBox control.
+        /// UsuarioDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CuentaDestinoTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList UsuarioDropDownList;
         
         /// <summary>
-        /// MontoTextBox control.
+        /// NuevoButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MontoTextBox;
+        protected global::System.Web.UI.WebControls.Button NuevoButton;
         
         /// <summary>
-        /// UsuarioIdTextBox control.
+        /// GuardarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UsuarioIdTextBox;
+        protected global::System.Web.UI.WebControls.Button GuardarButton;
         
         /// <summary>
-        /// Nuevobutton control.
+        /// ElimanarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Nuevobutton;
-        
-        /// <summary>
-        /// Guardarbutton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Guardarbutton;
-        
-        /// <summary>
-        /// Eliminarbutton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Eliminarbutton;
+        protected global::System.Web.UI.WebControls.Button ElimanarButton;
     }
 }

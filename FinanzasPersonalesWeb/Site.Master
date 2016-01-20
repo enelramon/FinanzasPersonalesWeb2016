@@ -12,6 +12,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
         <div><h1>ENCABEZADO</h1></div>
     <div>
         <uc1:Menu runat="server" ID="Menu1"/>

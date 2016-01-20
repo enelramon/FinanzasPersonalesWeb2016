@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cuentas.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
@@ -66,11 +67,20 @@
     <Content Include="MetasWebForm.aspx" />
     <Content Include="MiembrosWebForm.aspx" />
     <Content Include="rUsuarios.aspx" />
+    <Content Include="TipodeIngreso.aspx" />
+    <Content Include="TipoEgreso.aspx" />
     <Content Include="TipoIngreso.aspx" />
     <Content Include="Transferencia.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cuentas.aspx.cs">
+      <DependentUpon>Cuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cuentas.aspx.designer.cs">
+      <DependentUpon>Cuentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -134,6 +144,20 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TipodeIngreso.aspx.cs">
+      <DependentUpon>TipodeIngreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TipodeIngreso.aspx.designer.cs">
+      <DependentUpon>TipodeIngreso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TipoEgreso.aspx.cs">
+      <DependentUpon>TipoEgreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TipoEgreso.aspx.designer.cs">
+      <DependentUpon>TipoEgreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="TipoIngreso.aspx.cs">
       <DependentUpon>TipoIngreso.aspx</DependentUpon>
