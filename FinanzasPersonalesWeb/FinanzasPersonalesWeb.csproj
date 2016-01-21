@@ -59,7 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConsultaTipoIngresoWebForm.aspx" />
-    <Content Include="Cuentas.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
@@ -80,12 +79,6 @@
     </Compile>
     <Compile Include="ConsultaTipoIngresoWebForm.aspx.designer.cs">
       <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Cuentas.aspx.cs">
-      <DependentUpon>Cuentas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Cuentas.aspx.designer.cs">
-      <DependentUpon>Cuentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>

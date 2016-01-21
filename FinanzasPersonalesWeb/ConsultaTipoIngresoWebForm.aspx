@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     Consulta de Id
-    <asp:TextBox ID="CodigoTextBox" runat="server" Width="268px" placeholder="Escribe Id"></asp:TextBox>
+    <asp:TextBox ID="CodigoTextBox" runat="server" Width="268px"></asp:TextBox>
     <asp:Button ID="BuscarButton" runat="server" Height="26px" OnClick="BuscarButton_Click" Text="Buscar" />
     <asp:GridView ID="ConsultaGridView" runat="server" Width="427px">
     </asp:GridView>
