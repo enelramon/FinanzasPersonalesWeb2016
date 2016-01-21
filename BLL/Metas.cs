@@ -11,10 +11,9 @@ namespace BLL
         public int MetaId { get; set; }
         public string Descripcion { get; set; }
         public int UsuarioId { get; set; }
-        public int PresupuestoId { get; set; }
         public int TipoIngresoId { get; set; }
         public float Monto { get; set; }
-        //public List<Presupuesto> presupuesto { get; set; }
+        public List<Metas> metas { get; set; }
 
         ConexionDb conexion = new ConexionDb();
         public Metas()
@@ -22,20 +21,96 @@ namespace BLL
             this.MetaId = 0;
             this.Descripcion = "";
             this.UsuarioId = 0;
-            this.PresupuestoId = 0;
             this.TipoIngresoId = 0;
             this.Monto = 0.0f;
         }
 
-        public void AgregarPresupuesto(int PresupuestoId, int TipoIngresoId, float Monto)
+        public Metas(int MetaId, int TipoIngresoId,float Monto)
         {
-            //this.presupuesto.Add(new Presupuesto(PresupuestoId, TipoIngresoId, Monto));
+            this.MetaId = MetaId;
+            this.TipoIngresoId = TipoIngresoId;
+            this.Monto = Monto;
+        }
+
+        public void AgregarMetas(int MetaId, int TipoIngresoId, float Monto)
+        {
+            this.metas.Add(new Metas(MetaId, TipoIngresoId, Monto));
         }
 
 
         public void LimpiarList()
         {
-            //this.presupuesto.Clear();
+            this.metas.Clear();
+        }
+
+        public override bool Insertar()
+        {
+            bool retorno = false;
+            StringBuilder comando = new StringBuilder();
+            try
+            {
+                retorno = conexion.Ejecutar(String.Format("Insert into Metas (Descripcion,UsuarioId) Values ('{0}',{1}) ", this.Descripcion, this.UsuarioId));
+                if (retorno)
+                {
+                    this.MetaId = (int)conexion.ObtenerDatos(String.Format("select MAX(MetaId) as MetaId from Metas")).Rows[0]["MetaId"];
+                    foreach (var pro in metas)
+                    {
+                        comando.AppendLine(String.Format("insert into MetasDetalle(MetaId,TipoIngresoId,Monto) values({0},{1},{2})", pro.MetaId, pro.TipoIngresoId, pro.Monto));
+                    }
+                }
+
+                retorno = conexion.Ejecutar(comando.ToString());
+            }
+            catch (Exception)
+            {
+                retorno = false;
+            }
+
+            return retorno;
+        }
+
+        public override bool Editar()
+        {
+            bool retorno = false;
+            StringBuilder comando = new StringBuilder();
+
+            try
+            {
+                retorno = conexion.Ejecutar(String.Format("update Metas set Descripcion = '{0}', UsuarioId = {1} where MetaId = {2}", this.Descripcion, this.UsuarioId, this.MetaId));
+                if (retorno)
+                {
+                    retorno = conexion.Ejecutar(String.Format("delete from MetasDetalle where MetaId = {0}", this.MetaId));
+                    foreach (var pro in metas)
+                    {
+                        comando.AppendLine(String.Format("insert into MetasDetalle(MetaId,TipoIngresoId,Monto) values({0},{1},{2})", pro.MetaId, pro.TipoIngresoId, pro.Monto));
+                    }
+
+                    retorno = conexion.Ejecutar(comando.ToString());
+                }
+            }
+            catch (Exception)
+            {
+                retorno = false;
+            }
+
+            return retorno;
+        }
+
+        public override bool Eliminar()
+        {
+            bool retorno = false;
+
+            try
+            {
+                retorno = conexion.Ejecutar(String.Format("Delete from Metas where MetaId = {0};" +
+                    "Delete from MetasDetalle where MetaId = {0};", this.MetaId));
+            }
+            catch (Exception)
+            {
+                retorno = false;
+            }
+
+            return retorno;
         }
 
         public override bool Buscar(int IdBuscado)
@@ -58,7 +133,7 @@ namespace BLL
                     LimpiarList();
                     foreach (DataRow row in dtMetasDetalle.Rows)
                     {
-                        AgregarPresupuesto((int)row["PresupuestoId"], (int)row["TipoIngresoId"], (float)row["Monto"]);
+                        AgregarMetas((int)row["MetaId"], (int)row["TipoIngresoId"], (float)row["Monto"]);
                     }
                     retorno = true;
                 }
@@ -71,88 +146,13 @@ namespace BLL
             return retorno;
         }
 
-        public override bool Editar()
-        {
-            bool retorno = false;
-            StringBuilder comando = new StringBuilder();
-
-            try
-            {
-                retorno = conexion.Ejecutar(String.Format("update Metas set Descripcion = '{0}', UsuarioId = {1} where metaId = {2}",this.Descripcion,this.UsuarioId,this.MetaId));
-                if (retorno)
-                {
-                    retorno = conexion.Ejecutar(String.Format("delete from MetasDetalle where MetaId = {0}", this.MetaId));
-                    /*foreach (var pro in presupuesto)
-                    {
-                        comando.AppendLine(String.Format("insert into MetasDetalle(PresupuestoId,TipoIngresoId,Monto) values({0},{1},{2})", pro.PresupuestoId, pro.TipoIngresoId, pro.Monto));
-                    }*/
-
-                    retorno = conexion.Ejecutar(comando.ToString());
-                }
-            }
-            catch (Exception)
-            {
-                retorno = false;
-            }
-
-            return retorno;
-        }
-
-        public override bool Eliminar()
-        {
-            bool retorno = false;
-
-            try
-            {
-                retorno = conexion.Ejecutar("Delete from Metas where MetaId = " + this.MetaId + ";" + "Delete from MetasDetalle where MetaId =" + this.MetaId);
-            }
-            catch (Exception)
-            {
-                retorno = false;
-            }
-
-            return retorno;
-        }
-
-        public override bool Insertar()
-        {
-            bool retorno = false;
-            StringBuilder comando = new StringBuilder();
-            try
-            {
-                retorno = conexion.Ejecutar(String.Format("Insert into Ventas (Descripcion,UsuarioId) Values ({0},{1}) ",this.Descripcion,this.UsuarioId));
-                if (retorno)
-                {
-                    this.MetaId = (int)conexion.ObtenerDatos(String.Format("select MAX(MetaId) as MetaId from Metas")).Rows[0]["MetaId"];
-                    /*foreach (var pro in presupuesto)
-                    {
-                        comando.AppendLine(String.Format("insert into MetasDetalle(PresupuestoId,TipoIngresoId,Monto) values({0},{1},{2})", pro.PresupuestoId, pro.TipoIngresoId, pro.Monto));
-                    }*/
-                }
-
-                retorno = conexion.Ejecutar(comando.ToString());
-            }
-            catch (Exception)
-            {
-                retorno = false;
-            }
-
-            return retorno;
-        }
-
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            DataTable dt = new DataTable();
-            try
-            {
-                dt = conexion.ObtenerDatos(String.Format("Select " + Campos + " from Metas where " + Condicion + " " + Orden));
-            }
-            catch (Exception)
-            {
-               
-            }
+            string ordenFinal = "";
 
-            return dt;
+            if (!Orden.Equals(""))
+                ordenFinal = " Orden by " + Orden;
+            return conexion.ObtenerDatos("Select " + Campos + " From Metas Where " + Condicion + " " + ordenFinal);
         }
     }
 }

@@ -87,7 +87,6 @@
     </Compile>
     <Compile Include="ConsultaTipoIngresoWebForm.aspx.cs">
       <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConsultaTipoIngresoWebForm.aspx.designer.cs">
       <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
