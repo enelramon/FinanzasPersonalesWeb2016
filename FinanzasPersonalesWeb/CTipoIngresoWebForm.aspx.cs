@@ -8,7 +8,7 @@ using BLL;
 
 namespace FinanzasPersonalesWeb
 {
-    public partial class ConsultaTipoIngresoWebForm : System.Web.UI.Page
+    public partial class CTipoIngresoWebForm : System.Web.UI.Page
     {
         TiposIngresos TipoIngreso = new TiposIngresos();
 

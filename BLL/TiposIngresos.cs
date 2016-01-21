@@ -25,19 +25,21 @@ namespace BLL
             this.UsuarioId = 0;
         }
 
-        public override bool Buscar(int IdBuscado)
+        public override bool Insertar()
         {
             bool retorno = false;
-            DataTable DtTipoIngreso = new DataTable();
-            DataTable DtUsuario = new DataTable();
 
             try
             {
-                DtTipoIngreso = Conexion.ObtenerDatos(String.Format("select * from  TiposIngresos where TipoIngresoId = {0}", IdBuscado));
-                this.Descripcion = DtTipoIngreso.Rows[0]["Descripcion"].ToString();
-                this.EsActivo = (bool)DtTipoIngreso.Rows[0]["EsActivo"];
-                this.UsuarioId = (int)DtTipoIngreso.Rows[0]["UsuarioId"];
-                retorno = true;
+                if (this.EsActivo)
+                {
+                    retorno = Conexion.Ejecutar(string.Format("insert into TiposIngresos (Descripcion, EsActivo, UsuarioId) values ('{0}',{1},{2})", this.Descripcion,1,this.UsuarioId));
+                }
+                else
+                {
+                    retorno = Conexion.Ejecutar(string.Format("insert into TiposIngresos (Descripcion, EsActivo, UsuarioId) values ('{0}',{1},{2})", this.Descripcion, 0, this.UsuarioId));
+                }
+                
             }
             catch (Exception)
             {
@@ -47,6 +49,7 @@ namespace BLL
 
             return retorno;
         }
+        
 
         public override bool Editar()
         {
@@ -89,21 +92,19 @@ namespace BLL
             return retorno;
         }
 
-        public override bool Insertar()
+        public override bool Buscar(int IdBuscado)
         {
             bool retorno = false;
+            DataTable DtTipoIngreso = new DataTable();
+            DataTable DtUsuario = new DataTable();
 
             try
             {
-                if (this.EsActivo)
-                {
-                    retorno = Conexion.Ejecutar(string.Format("insert into TiposIngresos (Descripcion, EsActivo, UsuarioId) values ('{0}',{1},{2})", this.Descripcion,1,this.UsuarioId));
-                }
-                else
-                {
-                    retorno = Conexion.Ejecutar(string.Format("insert into TiposIngresos (Descripcion, EsActivo, UsuarioId) values ('{0}',{1},{2})", this.Descripcion, 0, this.UsuarioId));
-                }
-                
+                DtTipoIngreso = Conexion.ObtenerDatos(String.Format("select * from  TiposIngresos where TipoIngresoId = {0}", IdBuscado));
+                this.Descripcion = DtTipoIngreso.Rows[0]["Descripcion"].ToString();
+                this.EsActivo = (bool)DtTipoIngreso.Rows[0]["EsActivo"];
+                this.UsuarioId = (int)DtTipoIngreso.Rows[0]["UsuarioId"];
+                retorno = true;
             }
             catch (Exception)
             {
@@ -114,15 +115,17 @@ namespace BLL
             return retorno;
         }
 
+
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
             string OrdenFinal = " ";
 
-                if (!Orden.Equals(""))
-                {
-                    OrdenFinal = " Orden by " + Orden;
-                }
-                return Conexion.ObtenerDatos("select " + Campos + " from TiposIngresos where " + Condicion + " " + OrdenFinal);
+            if (!Orden.Equals(""))
+            {
+                OrdenFinal = " Orden by " + Orden;
+            }
+
+            return Conexion.ObtenerDatos("select " + Campos + " from TiposIngresos where " + Condicion + " " + OrdenFinal);
         }
     }
 }
