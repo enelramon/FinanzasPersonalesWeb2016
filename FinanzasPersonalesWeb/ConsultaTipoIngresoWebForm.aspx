@@ -2,11 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    Consulta de Id
-    <asp:TextBox ID="CodigoTextBox" runat="server" Width="268px"></asp:TextBox>
-    <asp:Button ID="BuscarButton" runat="server" Height="26px" OnClick="BuscarButton_Click" Text="Buscar" />
-    <asp:GridView ID="ConsultaGridView" runat="server" Width="427px">
+    Consultar por Id
+    <asp:TextBox ID="CodigoTextBox" runat="server" Width="271px" placeholder="Escribe un id"></asp:TextBox>
+
+    <asp:Button ID="BuscarButton" runat="server" OnClick="BuscarButton_Click" Text="Buscar" />
+
+    <asp:GridView ID="ConsultaGridView" runat="server" Height="133px" Width="441px">
     </asp:GridView>
-    <asp:Table ID="Table1" runat="server" Height="277px" Width="568px">
-    </asp:Table>
 </asp:Content>
