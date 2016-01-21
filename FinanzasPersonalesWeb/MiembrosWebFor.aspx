@@ -19,29 +19,29 @@
         </tr>
         <tr>
             <td class="auto-style4">Nombre:
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TbNombre" runat="server"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style4">Estado:
-                <asp:RadioButton ID="RadioButton1" runat="server" Text="Activo" />
+                <asp:RadioButton ID="RbActivo" runat="server" Text="Activo" />
 &nbsp;&nbsp;
-                <asp:RadioButton ID="RadioButton2" runat="server" Text="Inactivo" />
+                <asp:RadioButton ID="RbInactivo" runat="server" Text="Inactivo" />
 
             
       
         </tr>
                 <tr>
             <td class="auto-style4">Usuario:
-                <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:DropDownList ID="DropDownUsuario" runat="server">
                 </asp:DropDownList>
                 <br />
                 <br />
-                <asp:Button ID="BtnLimpiar" runat="server" Text="Limpiar" />
+                <asp:Button ID="BtnLimpiar" runat="server" Text="Limpiar" OnClick="BtnLimpiar_Click" />
 &nbsp;&nbsp;
-                <asp:Button ID="BtnGuardar" runat="server" Text="Guardar" />
+                <asp:Button ID="BtnGuardar" runat="server" Text="Guardar" OnClick="BtnGuardar_Click" />
 &nbsp;&nbsp;
                 <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" />
 
