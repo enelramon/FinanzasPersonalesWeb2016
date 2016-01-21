@@ -18,7 +18,7 @@ namespace DAL
 
         public ConexionDb()
         {
-            con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString);
+            con = new SqlConnection("Data Source=ROOT-PC\\SURPUSER;Initial Catalog=FinanzasPersonalesDb;Integrated Security=True");
             Cmd = new SqlCommand();
         }
 
