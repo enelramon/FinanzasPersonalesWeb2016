@@ -3,26 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <table style="width: 45%; height: 65px;">
-        <tr>
-            <td>Id</td>
-            <td>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>Descripcion</td>
-            <td>
-                <asp:TextBox ID="TextBox2" runat="server" Width="313px"></asp:TextBox>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
+    <asp:Label ID="Label1" runat="server" Text="Esta es la pagina Default, FinanzasPersonaslWeb 1-2016 Universidad Catolica Nordestana (UCNE)"></asp:Label>
 
 </asp:Content>

@@ -6,11 +6,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
+    <link href="Content/bootstrap.min.css rel="stylesheet" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-2.2.0.min.js"></script>
     <form id="form1" runat="server">
 
         <div><h1>ENCABEZADO</h1></div>
