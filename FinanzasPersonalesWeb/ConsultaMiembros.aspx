@@ -6,6 +6,10 @@
         <tr>
             <td>Filtro:
                 <asp:DropDownList ID="BuscarPorDropDown" runat="server">
+                    <asp:ListItem>MiembroId</asp:ListItem>
+                    <asp:ListItem>Nombre</asp:ListItem>
+                    <asp:ListItem>esActivo</asp:ListItem>
+                    <asp:ListItem>UsuarioId</asp:ListItem>
                 </asp:DropDownList>
 &nbsp;=
                 <asp:TextBox ID="FiltroTextBox" runat="server" Width="539px"></asp:TextBox>
