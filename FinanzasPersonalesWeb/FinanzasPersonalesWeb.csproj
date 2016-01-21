@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConsultaMiembros.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -70,7 +71,6 @@
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="MetasWebForm.aspx" />
-    <Content Include="MiembrosWebForm.aspx" />
     <Content Include="rUsuarios.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -92,6 +92,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultaMiembros.aspx.cs">
+      <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaMiembros.aspx.designer.cs">
+      <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cuentas.aspx.cs">
       <DependentUpon>Cuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,13 +147,6 @@
     </Compile>
     <Compile Include="MetasWebForm.aspx.designer.cs">
       <DependentUpon>MetasWebForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MiembrosWebForm.aspx.cs">
-      <DependentUpon>MiembrosWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MiembrosWebForm.aspx.designer.cs">
-      <DependentUpon>MiembrosWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rUsuarios.aspx.cs">

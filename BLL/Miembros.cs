@@ -14,6 +14,8 @@ namespace BLL
         public int esActivo { get; set; }
         public int UsuarioId { get; set; }
 
+        public ConexionDb con = new ConexionDb();
+
         public Miembros()
         {
             this.MiembroId = 0;
