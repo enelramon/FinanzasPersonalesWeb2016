@@ -33,7 +33,7 @@ namespace BLL
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
 
-            retorno = conexion.Ejecutar(String.Format("Insert into Egresos(Fecha,CuentaId,Monto,MiembroId,TipoEgresoId,Observacion) values('{0}',{1},{2},{3},{4},'{5}')",this.Fecha,this.CuentaId,this.Monto,this.MiembroId,this.TipoEgresoId,this.Observacion));
+            retorno = conexion.Ejecutar(String.Format("Insert into Egresos(Fecha,CuentaId,Monto,TipoEgresoId) values('{0}',{1},{2},{3})",this.Fecha,this.CuentaId,this.Monto,this.TipoEgresoId));
 
             return retorno;
         }
@@ -43,7 +43,7 @@ namespace BLL
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
             
-            retorno = conexion.Ejecutar(String.Format("Update Egresos Set Fecha = '{0}', CuentaId = {1}, Monto = {2}, MiembroId = {3}, TipoEgresoId = {4}, Observacion = '{5}'  Where EgresoId = {6}", this.Fecha, this.CuentaId, this.Monto, this.MiembroId, this.TipoEgresoId, this.Observacion,this.EgresoId));
+            retorno = conexion.Ejecutar(String.Format("Update Egresos Set Fecha = '{0}', CuentaId = {1}, Monto = {2}, TipoEgresoId = {3}, Observacion = '{4}'  Where EgresoId = {5}", this.Fecha, this.CuentaId, this.Monto,this.TipoEgresoId, this.Observacion,this.EgresoId));
             return retorno;
         }
 

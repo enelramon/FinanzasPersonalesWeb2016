@@ -8,42 +8,51 @@
             height: 86px;
             width: 136px;
         }
+        .auto-style4 {
+            width: 331px;
+        }
     </style>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <p>
-        EgresoId:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="EgresoIdTextBox" runat="server" Width="130px"></asp:TextBox>
-&nbsp;&nbsp;<asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="66px" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fecha:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="FechaTextBox" runat="server" Width="130px"></asp:TextBox>
+    <table style="width: 100%; margin-bottom: 40px;">
+        <tr>
+            <td class="auto-style4">EgresoId:<asp:TextBox ID="EgresoIdTextBox" runat="server" Height="19px" style="margin-left: 27px" Width="152px"></asp:TextBox>
+                <asp:Button ID="BuscarButton" runat="server" Height="26px" Text="Buscar" Width="80px" />
+            </td>
+            <td>Fecha:<asp:TextBox ID="FechaTextBox" runat="server" Height="19px" style="margin-left: 50px" Width="152px"></asp:TextBox>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style4">CuentaId:<asp:DropDownList ID="CuentaIdDropDownList" runat="server" Height="22px" style="margin-left: 27px" Width="155px">
+                </asp:DropDownList>
+            </td>
+            <td>Monto:<asp:TextBox ID="MontoTextBox" runat="server" Height="19px" style="margin-left: 47px" Width="152px"></asp:TextBox>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style4">MiembroId:<asp:DropDownList ID="MiembroIdDropDownList" runat="server" Height="22px" style="margin-left: 13px" Width="155px">
+                </asp:DropDownList>
+                <br />
+                <br />
+                Observacion:<asp:ListBox ID="ObservacionListBox" runat="server" style="margin-left: 7px" Width="152px"></asp:ListBox>
+            </td>
+            <td>TipoEgresoId:<asp:DropDownList ID="TipoEgresoIdDropDownList" runat="server" Height="22px" style="margin-left: 3px" Width="156px">
+                </asp:DropDownList>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+&nbsp;&nbsp;&nbsp;
+    <p style="margin-left: 120px">
+        <asp:Button ID="NuevoButton" runat="server" Height="26px" style="margin-left: 65px" Text="Nuevo" Width="80px" OnClick="NuevoButton_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="GuardarButton" runat="server" Height="26px" OnClick="GuardarButton_Click" Text="Guardar" Width="80px" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="EliminarButton" runat="server" Height="26px" Text="Eliminar" Width="81px" />
+    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
     </p>
-    CuentaId:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:DropDownList ID="CuentaIdDropDownList" runat="server" Height="22px" Width="135px">
-    </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monto:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:TextBox ID="MontoTextBox" runat="server" style="margin-left: 5px" Width="130px"></asp:TextBox>
-    <br />
-    <br />
-    MiembroId:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:DropDownList ID="MiembroIdDropDownList" runat="server" Height="22px" Width="135px">
-    </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TipoEgresoId:
-    <asp:DropDownList ID="TipoEgresoIdDropDownList" runat="server" Height="22px" Width="135px">
-    </asp:DropDownList>
-    <br />
-    <br />
-    Observaciones:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <br />
-<textarea id="ObservacionesTextArea" name="S1"></textarea><br />
-    <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" Width="80px" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="GuardarButton" runat="server" Text="Guardar" Width="80px" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" Width="80px" />
-    <br />
-&nbsp;<br />
 </asp:Content>
