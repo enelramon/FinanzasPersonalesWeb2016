@@ -59,11 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConsultaEgresoWebForm.aspx" />
+    <Content Include="ConsultaTipoIngresoWebForm.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="ConsultaTipoIngresoWebForm.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
@@ -78,16 +78,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsultaTipoIngresoWebForm.aspx.cs">
-      <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="ConsultaEgresoWebForm.aspx.cs">
       <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConsultaEgresoWebForm.aspx.designer.cs">
       <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTipoIngresoWebForm.aspx.cs">
+      <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaTipoIngresoWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
@@ -173,10 +176,6 @@
     </Compile>
     <Compile Include="Transferencia.aspx.designer.cs">
       <DependentUpon>Transferencia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultaTipoIngresoWebForm.aspx.cs">
-      <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
