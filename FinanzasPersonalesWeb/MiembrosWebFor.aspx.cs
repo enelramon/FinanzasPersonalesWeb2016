@@ -7,14 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace FinanzasPersonalesWeb
 {
-    public partial class Miembros : System.Web.UI.Page
+    public partial class MiembrosWebFor : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void RbActivo_CheckedChanged(object sender, EventArgs e)
         {
 
         }
