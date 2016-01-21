@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL;
 
 namespace FinanzasPersonalesWeb
 {
-    public partial class Cuentas : System.Web.UI.Page
+    public partial class cCuentas : System.Web.UI.Page
     {
-  
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
