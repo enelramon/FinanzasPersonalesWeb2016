@@ -1,8 +1,7 @@
-
 create table Metas
 (
 	MetaId int primary key identity(1,1),
-	Descripcion nvarchar(100),
+	Descripcion nvarchar(100) not null,
 	UsuarioId int References Usuarios(UsuarioId)
 );
 
