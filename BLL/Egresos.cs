@@ -33,7 +33,7 @@ namespace BLL
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
 
-            retorno = conexion.Ejecutar(String.Format("Insert into Egresos(Fecha,CuentaId,Monto) values('{0}',{1},{2})",this.Fecha,this.CuentaId,this.Monto));
+            retorno = conexion.Ejecutar(String.Format("Insert into Egresos(Fecha,CuentaId,Monto,TipoEgresoId) values('{0}',{1},{2},{3})",this.Fecha,this.CuentaId,this.Monto,this.TipoEgresoId));
 
             return retorno;
         }

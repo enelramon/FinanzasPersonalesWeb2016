@@ -26,20 +26,31 @@ namespace BLL.Tests
             egreso.MiembroId = 1;
             egreso.TipoEgresoId = 1;
             egreso.Monto = 0.0f;
-            egreso.Observacion = "";
+            egreso.Observacion = "Salida para pago de luz";
             Assert.IsTrue(egreso.Insertar());
         }
 
         [TestMethod()]
         public void EditarTest()
         {
-            Assert.Fail();
+            Egresos egreso = new Egresos();
+
+            egreso.Fecha = "11/10/2016";
+            egreso.CuentaId = 1;
+            egreso.MiembroId = 1;
+            egreso.TipoEgresoId = 1;
+            egreso.Monto = 10000.0f;
+            egreso.Observacion = "Salida para pago de colegio";
+            Assert.IsTrue(egreso.Editar());
         }
 
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.Fail();
+
+            Egresos egreso = new Egresos();
+            egreso.EgresoId = 2;
+            Assert.IsTrue(egreso.Eliminar());
         }
 
         [TestMethod()]

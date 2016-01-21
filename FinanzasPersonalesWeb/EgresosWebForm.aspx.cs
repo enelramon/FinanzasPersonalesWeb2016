@@ -13,12 +13,18 @@ namespace FinanzasPersonalesWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             Cuentas cuenta = new Cuentas();
+            TiposEgresos tipoEgreso = new TiposEgresos();
             if(IsPostBack == false)
             {
                 CuentaIdDropDownList.DataSource = cuenta.Listado(" * ", "1=1", "");
                 CuentaIdDropDownList.DataTextField = "Descripcion";
                 CuentaIdDropDownList.DataValueField = "CuentaId";
                 CuentaIdDropDownList.DataBind();
+
+                TipoEgresoIdDropDownList.DataSource = tipoEgreso.Listado(" * ", "1=1", "");
+                TipoEgresoIdDropDownList.DataTextField = "Descripcion";
+                TipoEgresoIdDropDownList.DataValueField = "TipoEgresoId";
+                TipoEgresoIdDropDownList.DataBind();
             }
 
         }
@@ -29,7 +35,7 @@ namespace FinanzasPersonalesWeb
             egreso.Observacion = ObservacionListBox.Text;
             egreso.Fecha = FechaTextBox.Text;
             egreso.Monto = Convert.ToSingle(MontoTextBox.Text);
-            //egreso.TipoEgresoId = Convert.ToInt32(TipoEgresoIdDropDownList.SelectedValue);
+            egreso.TipoEgresoId = Convert.ToInt32(TipoEgresoIdDropDownList.SelectedValue);
         }
         public int Convertir()
         {
@@ -50,6 +56,19 @@ namespace FinanzasPersonalesWeb
             {
                 HttpContext.Current.Response.Write("<SCRIPT>alert('Error al Guardar')</SCRIPT>");
             }
+        }
+        public void Limpiar()
+        {
+            FechaTextBox.Text = string.Empty;
+            MiembroIdDropDownList.ClearSelection();
+            MontoTextBox.Text = string.Empty;
+            TipoEgresoIdDropDownList.ClearSelection();
+            CuentaIdDropDownList.ClearSelection();
+            ObservacionListBox.Text = string.Empty;
+        }
+        protected void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();   
         }
     }
 }

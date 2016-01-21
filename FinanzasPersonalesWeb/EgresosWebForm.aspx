@@ -47,7 +47,7 @@
     </table>
 &nbsp;&nbsp;&nbsp;
     <p style="margin-left: 120px">
-        <asp:Button ID="NuevoButton" runat="server" Height="26px" style="margin-left: 65px" Text="Nuevo" Width="80px" />
+        <asp:Button ID="NuevoButton" runat="server" Height="26px" style="margin-left: 65px" Text="Nuevo" Width="80px" OnClick="NuevoButton_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="GuardarButton" runat="server" Height="26px" OnClick="GuardarButton_Click" Text="Guardar" Width="80px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
