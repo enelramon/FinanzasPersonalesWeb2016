@@ -8,7 +8,7 @@
                 <asp:DropDownList ID="ElementosDropDownList" runat="server" Height="20px" Width="150px">
                     <asp:ListItem>EgresoId:</asp:ListItem>
                     <asp:ListItem>Fecha</asp:ListItem>
-                    <asp:ListItem>Descripcion</asp:ListItem>
+                    <asp:ListItem Value="Monto">Monto</asp:ListItem>
                 </asp:DropDownList>
                 <asp:TextBox ID="DatosTextBox" runat="server" Width="400px"></asp:TextBox>
                 <asp:Button ID="ConsultaBuscarButton" runat="server" OnClick="ConsultaBuscarButton_Click" Text="Buscar" Width="80px" />
