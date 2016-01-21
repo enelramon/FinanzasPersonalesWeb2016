@@ -102,7 +102,6 @@
     </Compile>
     <Compile Include="Cuentas.aspx.cs">
       <DependentUpon>Cuentas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Cuentas.aspx.designer.cs">
       <DependentUpon>Cuentas.aspx</DependentUpon>
