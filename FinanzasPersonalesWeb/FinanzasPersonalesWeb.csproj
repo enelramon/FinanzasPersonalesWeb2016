@@ -80,6 +80,8 @@
   <ItemGroup>
     <Compile Include="ConsultaTipoIngresoWebForm.aspx.cs">
       <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="ConsultaEgresoWebForm.aspx.cs">
       <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
