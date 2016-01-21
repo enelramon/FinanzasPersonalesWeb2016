@@ -10,7 +10,7 @@
 namespace FinanzasPersonalesWeb {
     
     
-    public partial class ConsultaTipoIngresoWebForm {
+    public partial class CTipoIngresoWebForm {
         
         /// <summary>
         /// CodigoTextBox control.

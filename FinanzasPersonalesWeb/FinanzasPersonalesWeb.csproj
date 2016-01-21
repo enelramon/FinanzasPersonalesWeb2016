@@ -59,11 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConsultaEgresoWebForm.aspx" />
-    <Content Include="ConsultaTipoIngresoWebForm.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="CTipoIngresoWebForm.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
@@ -85,11 +85,12 @@
     <Compile Include="ConsultaEgresoWebForm.aspx.designer.cs">
       <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaTipoIngresoWebForm.aspx.cs">
-      <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
+    <Compile Include="CTipoIngresoWebForm.aspx.cs">
+      <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConsultaTipoIngresoWebForm.aspx.designer.cs">
-      <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
+    <Compile Include="CTipoIngresoWebForm.aspx.designer.cs">
+      <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
