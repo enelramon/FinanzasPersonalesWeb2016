@@ -7,7 +7,7 @@ using DAL;
 
 namespace BLL
 {
-    class TiposEgresos : ClaseMaestra
+    public class TiposEgresos : ClaseMaestra
     {
         //Arreglando
         public int TipoEgresoId { get; set; }

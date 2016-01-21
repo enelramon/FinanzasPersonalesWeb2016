@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConsultaTipoEgreso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -92,6 +93,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultaTipoEgreso.aspx.cs">
+      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaTipoEgreso.aspx.designer.cs">
+      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cuentas.aspx.cs">
       <DependentUpon>Cuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
