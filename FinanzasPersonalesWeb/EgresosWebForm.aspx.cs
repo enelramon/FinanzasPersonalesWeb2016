@@ -47,14 +47,30 @@ namespace FinanzasPersonalesWeb
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
             Egresos egresos = new Egresos();
-            LlenarDatos(egresos);
-            if (egresos.Insertar())
+            if (EgresoIdTextBox.Text.Length == 0)
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Guardado')</SCRIPT>");
+                LlenarDatos(egresos);
+                if (egresos.Insertar())
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Guardado')</SCRIPT>");
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al Guardar')</SCRIPT>");
+                }
             }
             else
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Error al Guardar')</SCRIPT>");
+                egresos.EgresoId = Convertir();
+                LlenarDatos(egresos);
+                if (egresos.Editar())
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Editado correctamente')</SCRIPT>");
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al editar')<SCRIPT/>");
+                }
             }
         }
         public void Limpiar()
