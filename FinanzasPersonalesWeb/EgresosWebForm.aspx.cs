@@ -13,10 +13,13 @@ namespace FinanzasPersonalesWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             Cuentas cuenta = new Cuentas();
-            CuentaIdDropDownList.DataSource = cuenta.Listado(" * ","1=1","");
-            CuentaIdDropDownList.DataTextField = "Descripcion";
-            CuentaIdDropDownList.DataValueField = "CuentaId";
-            CuentaIdDropDownList.DataBind();
+            if(IsPostBack == false)
+            {
+                CuentaIdDropDownList.DataSource = cuenta.Listado(" * ", "1=1", "");
+                CuentaIdDropDownList.DataTextField = "Descripcion";
+                CuentaIdDropDownList.DataValueField = "CuentaId";
+                CuentaIdDropDownList.DataBind();
+            }
 
         }
         public void LlenarDatos(Egresos egreso)
