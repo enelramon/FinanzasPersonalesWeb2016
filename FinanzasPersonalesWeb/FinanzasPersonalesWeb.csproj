@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConsultaTipoIngresoWebForm.aspx" />
     <Content Include="Cuentas.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
@@ -73,6 +74,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultaTipoIngresoWebForm.aspx.cs">
+      <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaTipoIngresoWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cuentas.aspx.cs">
       <DependentUpon>Cuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
