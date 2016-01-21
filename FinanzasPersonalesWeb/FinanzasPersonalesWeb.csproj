@@ -175,10 +175,6 @@
       <DependentUpon>Transferencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConsultaTipoIngresoWebForm.aspx.cs">
-      <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
