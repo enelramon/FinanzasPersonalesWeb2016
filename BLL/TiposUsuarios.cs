@@ -26,7 +26,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("insert into TiposUsuarios (Descripcion) values ('{0}')", this.Descripcion));
+                retorno = Conexion.Ejecutar(string.Format("insert into TiposUsuario (Descripcion) values ('{0}')", this.Descripcion));
             }
             catch (Exception)
             {
@@ -41,7 +41,7 @@ namespace BLL
         {
             Boolean paso = false;
 
-            paso = Conexion.Ejecutar(string.Format("Update TiposUsuarios set Descripcion = '{0}'  where IdTipoUsuario = {1}", this.Descripcion, this.IdTipoUsuario));
+            paso = Conexion.Ejecutar(string.Format("Update TiposUsuario set Descripcion = '{0}'  where IdTipoUsuario = {1}", this.Descripcion, this.IdTipoUsuario));
 
             return paso;
         }
@@ -52,7 +52,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Delete from TiposUsuarios where IdTipoUsuario = {0}", this.IdTipoUsuario));
+                retorno = Conexion.Ejecutar(string.Format("Delete from TiposUsuario where IdTipoUsuario = {0}", this.IdTipoUsuario));
             }
             catch (Exception)
             {
@@ -67,7 +67,7 @@ namespace BLL
         {
             DataTable dt = new DataTable();
 
-            dt = Conexion.ObtenerDatos("Select * from TiposUsuarios where IdTipoUsuario = {0}"+ this.IdTipoUsuario);
+            dt = Conexion.ObtenerDatos("Select * from TiposUsuario where IdTipoUsuario = {0}"+ this.IdTipoUsuario);
 
             if (dt.Rows.Count > 0)
             {
@@ -83,7 +83,7 @@ namespace BLL
         {
             string OrdenFinal = (Orden.Length>0)  ? " Order By " + Orden : " ";
 
-            return Conexion.ObtenerDatos("select " + Campos + " from Usuarios where " + Condicion +  OrdenFinal );
+            return Conexion.ObtenerDatos("select " + Campos + " from TiposUsuario where " + Condicion + OrdenFinal);
         }
     }
 
