@@ -1,5 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BLL;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace BLLTests
 {
@@ -21,7 +25,11 @@ namespace BLLTests
         [TestMethod()]
         public void EditarTest()
         {
-            Assert.Fail();
+            TiposUsuarios TipoUsuario = new TiposUsuarios();
+            TipoUsuario.IdTipoUsuario = 1;
+            TipoUsuario.Descripcion = "Usuario";
+
+            Assert.IsTrue(TipoUsuario.Editar());
         }
 
         [TestMethod()]
@@ -33,7 +41,11 @@ namespace BLLTests
         [TestMethod()]
         public void InsertarTest()
         {
-            Assert.Fail();
+            TiposUsuarios TipoUsuario = new TiposUsuarios();
+
+            TipoUsuario.Descripcion = "Administrador";
+
+            Assert.IsTrue(TipoUsuario.Insertar());
         }
 
         [TestMethod()]
