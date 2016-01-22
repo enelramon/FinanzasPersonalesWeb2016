@@ -33,7 +33,7 @@ namespace BLL
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
 
-            retorno = conexion.Ejecutar(String.Format("Insert into Egresos(Fecha,CuentaId,Monto,TipoEgresoId) values('{0}',{1},{2},{3})",this.Fecha,this.CuentaId,this.Monto,this.TipoEgresoId));
+            retorno = conexion.Ejecutar(String.Format("Insert into Egresos(Fecha,CuentaId,Monto,TipoEgresoId,Observacion) values('{0}',{1},{2},{3},'{4}')",this.Fecha,this.CuentaId,this.Monto,this.TipoEgresoId,this.Observacion));
 
             return retorno;
         }
@@ -69,7 +69,7 @@ namespace BLL
                 this.Monto = Convert.ToSingle(dt.Rows[0]["Monto"]);
                 //this.MiembroId = Convert.ToInt32(dt.Rows[0]["MiembroId"]);
                 this.TipoEgresoId = Convert.ToInt32(dt.Rows[0]["TipoEgresoId"]);
-                //this.Observacion = dt.Rows[0]["Observacion"].ToString();
+                this.Observacion = dt.Rows[0]["Observacion"].ToString();
             }
             return dt.Rows.Count > 0;
 
