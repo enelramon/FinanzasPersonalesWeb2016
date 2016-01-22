@@ -56,7 +56,8 @@ namespace BLL.Tests
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.Fail();
+            Egresos egreso = new Egresos();
+            Assert.IsTrue(egreso.Buscar(12));
         }
 
         [TestMethod()]
