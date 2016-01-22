@@ -52,6 +52,7 @@
     <Content Include="Scripts\Presupuestos.sql" />
     <Content Include="Scripts\TipoIngreso.sql" />
     <Content Include="Scripts\TiposEgresosSQLQuery.sql" />
+    <Content Include="Scripts\TiposUsuario.sql" />
     <Content Include="Scripts\Transferencias.sql" />
     <Content Include="Scripts\Usuarios.sql" />
   </ItemGroup>
