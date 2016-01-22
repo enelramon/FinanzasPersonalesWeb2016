@@ -65,11 +65,11 @@ namespace BLL
             if(dt.Rows.Count > 0)
             {
                 this.Fecha = dt.Rows[0]["Fecha"].ToString();
-                this.CuentaId = (int)dt.Rows[0]["CuentaId"];
+                this.CuentaId = Convert.ToInt32(dt.Rows[0]["CuentaId"]);
                 this.Monto = Convert.ToSingle(dt.Rows[0]["Monto"]);
-                this.MiembroId = (int)dt.Rows[0]["MiembroId"];
-                this.TipoEgresoId = (int)dt.Rows[0]["TipoEgresoId"];
-                this.Observacion = dt.Rows[0]["Observacion"].ToString();
+                //this.MiembroId = Convert.ToInt32(dt.Rows[0]["MiembroId"]);
+                this.TipoEgresoId = Convert.ToInt32(dt.Rows[0]["TipoEgresoId"]);
+                //this.Observacion = dt.Rows[0]["Observacion"].ToString();
             }
             return dt.Rows.Count > 0;
 

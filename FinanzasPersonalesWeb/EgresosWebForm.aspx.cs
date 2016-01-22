@@ -107,13 +107,13 @@ namespace FinanzasPersonalesWeb
         {
             Egresos egreso = new Egresos();
 
-            FechaTextBox.Text = egreso.Fecha;
-            MontoTextBox.Text = egreso.Monto.ToString();
-            CuentaIdDropDownList.SelectedValue = egreso.CuentaId.ToString();
-            TipoEgresoIdDropDownList.SelectedValue = egreso.TipoEgresoId.ToString();
             if (egreso.Buscar(Convertir()))
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Elementos buscados')<SCRIPT/>");
+                FechaTextBox.Text = egreso.Fecha;
+                MontoTextBox.Text = egreso.Monto.ToString();
+                CuentaIdDropDownList.SelectedValue = egreso.CuentaId.ToString();
+                TipoEgresoIdDropDownList.SelectedValue = egreso.TipoEgresoId.ToString();
+               
             }
             else
             {
