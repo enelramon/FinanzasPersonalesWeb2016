@@ -53,6 +53,7 @@ namespace FinanzasPersonalesWeb
                 if (egresos.Insertar())
                 {
                     HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Guardado')</SCRIPT>");
+                    Limpiar();
                 }
                 else
                 {
@@ -66,6 +67,7 @@ namespace FinanzasPersonalesWeb
                 if (egresos.Editar())
                 {
                     HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Editado correctamente')</SCRIPT>");
+                    Limpiar();
                 }
                 else
                 {
@@ -85,6 +87,38 @@ namespace FinanzasPersonalesWeb
         protected void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();   
+        }
+
+        protected void EliminarButton_Click(object sender, EventArgs e)
+        {
+            Egresos egreso = new Egresos();
+            egreso.EgresoId = Convertir();
+            if (egreso.Eliminar())
+            {
+                HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso eliminado')</SCRIPT>");
+            }
+            else
+            {
+                HttpContext.Current.Response.Write("<SCRIPT>alert('Error al eliminar')</SCRIPT>");
+            }
+        }
+
+        protected void BuscarButton_Click(object sender, EventArgs e)
+        {
+            Egresos egreso = new Egresos();
+
+            FechaTextBox.Text = egreso.Fecha;
+            MontoTextBox.Text = egreso.Monto.ToString();
+            CuentaIdDropDownList.SelectedValue = egreso.CuentaId.ToString();
+            TipoEgresoIdDropDownList.SelectedValue = egreso.TipoEgresoId.ToString();
+            if (egreso.Buscar(Convertir()))
+            {
+                HttpContext.Current.Response.Write("<SCRIPT>alert('Elementos buscados')<SCRIPT/>");
+            }
+            else
+            {
+                HttpContext.Current.Response.Write("<SCRIPT>alert('Error al buscar')<SCRIPT/>");
+            }
         }
     }
 }
