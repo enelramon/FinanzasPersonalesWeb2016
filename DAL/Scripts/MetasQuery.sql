@@ -16,3 +16,5 @@ create table MetasDetalle
 select * from Metas where 1=1 Order by MetaId
 
 select * from MetasDetalle
+
+select * from MetasDetalle where MetaId = 18
