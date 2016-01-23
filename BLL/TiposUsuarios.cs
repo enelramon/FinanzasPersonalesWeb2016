@@ -22,19 +22,20 @@ namespace BLL
         }
         public override bool Insertar()
         {
-            bool retorno = false;
+            String IdRetornado;
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("insert into TiposUsuario (Descripcion) values ('{0}')", this.Descripcion));
+                IdRetornado = Convert.ToString( Conexion.ObtenerValor(string.Format("insert into TiposUsuario (Descripcion) values ('{0}') select scope_identity() ", this.Descripcion)));
+                this.IdTipoUsuario = Convert.ToInt16(IdRetornado);
             }
             catch (Exception)
             {
 
-                retorno = false;
+                return false;
             }
 
-            return retorno;
+            return true;
         }
 
         public override bool Editar()
@@ -67,7 +68,7 @@ namespace BLL
         {
             DataTable dt = new DataTable();
 
-            dt = Conexion.ObtenerDatos("Select * from TiposUsuario where IdTipoUsuario = {0}"+ this.IdTipoUsuario);
+            dt = Conexion.ObtenerDatos("Select * from TiposUsuario where IdTipoUsuario =" + IdBuscado);
 
             if (dt.Rows.Count > 0)
             {
