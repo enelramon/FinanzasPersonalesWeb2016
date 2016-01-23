@@ -14,6 +14,7 @@ namespace FinanzasPersonalesWeb
         {
             Cuentas cuenta = new Cuentas();
             TiposEgresos tipoEgreso = new TiposEgresos();
+            Miembros miembro = new Miembros();
             if(IsPostBack == false)
             {
                 CuentaIdDropDownList.DataSource = cuenta.Listado(" * ", "1=1", "");
@@ -25,13 +26,18 @@ namespace FinanzasPersonalesWeb
                 TipoEgresoIdDropDownList.DataTextField = "Descripcion";
                 TipoEgresoIdDropDownList.DataValueField = "TipoEgresoId";
                 TipoEgresoIdDropDownList.DataBind();
+
+                MiembroIdDropDownList.DataSource = miembro.Listado(" * ", "1=1", "");
+                MiembroIdDropDownList.DataTextField = "Nombre";
+                MiembroIdDropDownList.DataValueField = "MiembroId";
+                MiembroIdDropDownList.DataBind();
             }
 
         }
         public void LlenarDatos(Egresos egreso)
         {
             egreso.CuentaId = Convert.ToInt32(CuentaIdDropDownList.SelectedValue);
-            //egreso.MiembroId = Convert.ToInt32(MiembroIdDropDownList.SelectedValue);
+            egreso.MiembroId = Convert.ToInt32(MiembroIdDropDownList.SelectedValue);
             egreso.Observacion = ObservacionTextBox.Text;
             egreso.Fecha = FechaTextBox.Text;
             egreso.Monto = Convert.ToSingle(MontoTextBox.Text);
@@ -113,7 +119,8 @@ namespace FinanzasPersonalesWeb
                 MontoTextBox.Text = egreso.Monto.ToString();
                 CuentaIdDropDownList.SelectedValue = egreso.CuentaId.ToString();
                 TipoEgresoIdDropDownList.SelectedValue = egreso.TipoEgresoId.ToString();
-               
+                ObservacionTextBox.Text = egreso.Observacion;
+                MiembroIdDropDownList.SelectedValue = egreso.MiembroId.ToString();
             }
             else
             {
