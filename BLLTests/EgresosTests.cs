@@ -63,6 +63,7 @@ namespace BLL.Tests
         [TestMethod()]
         public void ListadoTest()
         {
+            Egresos egreso = new Egresos();
             Assert.Fail();
         }
     }
