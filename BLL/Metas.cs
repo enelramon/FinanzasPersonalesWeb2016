@@ -156,7 +156,7 @@ namespace BLL
             string ordenFinal = "";
 
             if (!Orden.Equals(""))
-                ordenFinal = " Orden by " + Orden;
+                ordenFinal = " Order by " + Orden;
             return conexion.ObtenerDatos("Select " + Campos + " From Metas Where " + Condicion + " " + ordenFinal);
         }
     }

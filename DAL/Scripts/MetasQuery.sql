@@ -12,3 +12,7 @@ create table MetasDetalle
 	TipoIngresoId int References TiposIngresos(TipoIngresoId),
 	Monto float
 );
+
+select * from Metas where 1=1 Order by MetaId
+
+select * from MetasDetalle
