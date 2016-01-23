@@ -31,6 +31,7 @@ namespace FinanzasPersonalesWeb
                 MiembroIdDropDownList.DataTextField = "Nombre";
                 MiembroIdDropDownList.DataValueField = "MiembroId";
                 MiembroIdDropDownList.DataBind();
+
             }
 
         }
