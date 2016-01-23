@@ -42,7 +42,7 @@ namespace FinanzasPersonalesWeb
         {
             if (CodigoTextBox.Text == "")
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar Basio.');", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco.');", true);
                 return;
 
             }
@@ -69,7 +69,7 @@ namespace FinanzasPersonalesWeb
         {
             if (CodigoTextBox.Text == "")
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar Basio.');", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco');", true);
                 return;
 
             }
@@ -122,7 +122,7 @@ namespace FinanzasPersonalesWeb
         {
             if (CodigoTextBox.Text == "")
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar Basio.');", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco');", true);
                 return;
 
             }
