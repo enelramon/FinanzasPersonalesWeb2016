@@ -10,6 +10,8 @@ namespace BLL.Tests
     [TestClass()]
     public class TiposIngresosTests
     {
+        TiposIngresos TipoIngreso = new TiposIngresos();
+
         [TestMethod()]
         public void TiposIngresosTest()
         {
@@ -19,25 +21,33 @@ namespace BLL.Tests
         [TestMethod()]
         public void InsertarTest()
         {
-            Assert.Fail();
+            TipoIngreso.Descripcion = "Otros";
+            TipoIngreso.EsActivo = true;
+            TipoIngreso.UsuarioId = 0;
+            Assert.IsTrue(TipoIngreso.Insertar());
         }
 
         [TestMethod()]
         public void EditarTest()
         {
-            Assert.Fail();
+            TipoIngreso.TipoIngresoId = 4;
+            TipoIngreso.Descripcion = "costo";
+            TipoIngreso.EsActivo = false;
+            TipoIngreso.UsuarioId = 0;
+            Assert.IsTrue(TipoIngreso.Editar());
         }
 
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.Fail();
+            TipoIngreso.TipoIngresoId = 4;
+            Assert.IsTrue(TipoIngreso.Eliminar());
         }
 
         [TestMethod()]
         public void BuscarTest()
-        {
-            Assert.Fail();
+        {  
+            Assert.IsTrue(TipoIngreso.Buscar(2));
         }
 
         [TestMethod()]
