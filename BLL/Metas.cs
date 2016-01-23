@@ -23,6 +23,7 @@ namespace BLL
             this.UsuarioId = 0;
             this.TipoIngresoId = 0;
             this.Monto = 0.0f;
+            metas = new List<Metas>();
         }
 
         public Metas(int MetaId, int TipoIngresoId,float Monto)
@@ -37,6 +38,10 @@ namespace BLL
             this.metas.Add(new Metas(MetaId, TipoIngresoId, Monto));
         }
 
+        public DataTable ObtenerMetaId()
+        {
+            return conexion.ObtenerDatos(String.Format("select MAX(MetaId)+1 as MetaId from Metas"));
+        }
 
         public void LimpiarList()
         {

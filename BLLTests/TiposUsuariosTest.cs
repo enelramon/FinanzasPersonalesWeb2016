@@ -5,28 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BLL.Tests
+namespace BLLTests
 {
-    [TestClass()]
-    public class UsuariosTests
+    [TestClass]
+    public class TiposUsuariosTest
     {
-        [TestMethod()]
+        [TestMethod]
         public void UsuariosTest()
         {
             Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void InsertarTest()
-        {
-            Usuarios usuario = new Usuarios();
-
-            //usuario.Descripcion = "cta ejemplo";
-            //cuenta.Balance = 0;
-            //
-            //cuenta.Porciento = 0;
-
-            Assert.IsTrue(usuario.Insertar());
         }
 
         [TestMethod()]
@@ -38,7 +25,11 @@ namespace BLL.Tests
         [TestMethod()]
         public void EditarTest()
         {
-            Assert.Fail();
+            TiposUsuarios TipoUsuario = new TiposUsuarios();
+            TipoUsuario.IdTipoUsuario = 1;
+            TipoUsuario.Descripcion = "Usuario";
+
+            Assert.IsTrue(TipoUsuario.Editar());
         }
 
         [TestMethod()]
@@ -47,6 +38,15 @@ namespace BLL.Tests
             Assert.Fail();
         }
 
+        [TestMethod()]
+        public void InsertarTest()
+        {
+            TiposUsuarios TipoUsuario = new TiposUsuarios();
+
+            TipoUsuario.Descripcion = "Administrador";
+
+            Assert.IsTrue(TipoUsuario.Insertar());
+        }
 
         [TestMethod()]
         public void ListadoTest()
@@ -55,3 +55,4 @@ namespace BLL.Tests
         }
     }
 }
+

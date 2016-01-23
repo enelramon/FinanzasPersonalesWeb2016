@@ -28,6 +28,7 @@
                     <asp:HyperLink ID = "HyperLink4" runat = "server" Text = "Registrar Miembros" NavigateUrl = "~/MiembrosWebForm.aspx" />
                     <asp:HyperLink ID = "HyperLink5" runat = "server" Text = "Registrar Tipo de Ingreso" NavigateUrl = "~/TipoIngreso.aspx" />
                     <asp:HyperLink ID = "HyperLink6" runat = "server" Text = "Registrar Transferencias" NavigateUrl = "~/Transferencia.aspx" />
+                    <asp:HyperLink ID = "HyperLink7" runat = "server" Text = "Registrar Tipos Usuarios" NavigateUrl = "~/rTiposUsuarios.aspx" />
                     </LoggedInTemplate>
                 </asp:LoginView>
         </td>

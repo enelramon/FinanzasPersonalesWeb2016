@@ -8,10 +8,28 @@ using System.Text;
 namespace BLL.Tests
 {
     [TestClass()]
-    public class UsuariosTests
+    public class MetasTests
     {
         [TestMethod()]
-        public void UsuariosTest()
+        public void MetasTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void MetasTest1()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void AgregarMetasTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void LimpiarListTest()
         {
             Assert.Fail();
         }
@@ -19,20 +37,12 @@ namespace BLL.Tests
         [TestMethod()]
         public void InsertarTest()
         {
-            Usuarios usuario = new Usuarios();
-
-            //usuario.Descripcion = "cta ejemplo";
-            //cuenta.Balance = 0;
-            //
-            //cuenta.Porciento = 0;
-
-            Assert.IsTrue(usuario.Insertar());
-        }
-
-        [TestMethod()]
-        public void BuscarTest()
-        {
-            Assert.Fail();
+            Metas meta = new Metas();
+            meta.Descripcion = "Mi Meta Personal";
+            meta.UsuarioId = 1;
+            meta.AgregarMetas(1, 1, 200);
+            
+            Assert.IsTrue(meta.Insertar());
         }
 
         [TestMethod()]
@@ -47,6 +57,11 @@ namespace BLL.Tests
             Assert.Fail();
         }
 
+        [TestMethod()]
+        public void BuscarTest()
+        {
+            Assert.Fail();
+        }
 
         [TestMethod()]
         public void ListadoTest()
