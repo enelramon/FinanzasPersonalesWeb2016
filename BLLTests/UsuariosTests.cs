@@ -17,6 +17,19 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
+        public void InsertarTest()
+        {
+            Usuarios usuario = new Usuarios();
+
+            //usuario.Descripcion = "cta ejemplo";
+            //cuenta.Balance = 0;
+            //
+            //cuenta.Porciento = 0;
+
+            Assert.IsTrue(usuario.Insertar());
+        }
+
+        [TestMethod()]
         public void BuscarTest()
         {
             Assert.Fail();
@@ -34,11 +47,6 @@ namespace BLL.Tests
             Assert.Fail();
         }
 
-        [TestMethod()]
-        public void InsertarTest()
-        {
-            Assert.Fail();
-        }
 
         [TestMethod()]
         public void ListadoTest()
