@@ -37,7 +37,7 @@
                 </asp:DropDownList>
                 <br />
                 <br />
-                Observacion:<asp:ListBox ID="ObservacionListBox" runat="server" style="margin-left: 7px" Width="152px"></asp:ListBox>
+                Observacion:<asp:TextBox ID="ObservacionTextBox" runat="server" Height="78px" style="margin-left: 6px" TextMode="MultiLine" Width="154px"></asp:TextBox>
             </td>
             <td>TipoEgresoId:<asp:DropDownList ID="TipoEgresoIdDropDownList" runat="server" Height="22px" style="margin-left: 3px" Width="156px">
                 </asp:DropDownList>

@@ -95,7 +95,6 @@ namespace DAL
                 Cmd.Connection = con;
                 Cmd.CommandText = ComandoSql;
                 retorno = Cmd.ExecuteScalar();
-                retorno = true;
 
             }
             catch (Exception ex)

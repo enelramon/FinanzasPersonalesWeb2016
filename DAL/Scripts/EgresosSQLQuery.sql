@@ -13,7 +13,7 @@ Observacion varchar(100)
 )
 
 insert into Cuentas(Descripcion) values('Cuenta de Ahorro')
-insert into Miembros(Nombre) values('Melvin')
+insert into Miembros(Nombre) values('Juan')
 insert into TiposEgresos(Descripcion) values('Para pelicula')
 
 select *from Egresos
