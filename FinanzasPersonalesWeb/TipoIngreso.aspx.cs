@@ -80,7 +80,7 @@ namespace FinanzasPersonalesWeb
                     {
                         EstadoRadioButtonList.SelectedIndex = 2;
                     }
-                    UsuarioDropDownList.SelectedValue = TipodeIngreso.UsuarioId.ToString();
+                    //UsuarioDropDownList.SelectedValue = TipodeIngreso.UsuarioId.ToString();
                 }
                 else
                 {
