@@ -1,0 +1,1 @@
+Create table TiposUsuario (IdTipoUsuario int primary key identity(1,1),Descripcion Varchar(100))
