@@ -21,8 +21,8 @@ namespace BLL.Tests
         {
             TiposEgresos egreso = new TiposEgresos();
             egreso.Descripcion = "JEIJRTIE";
-            egreso.EsActivo = true;
-            egreso.UsuarioId = 1;
+            egreso.EsActivo = false;
+            egreso.UsuarioId = 2;
             
             Assert.IsTrue(egreso.Insertar());
         }
