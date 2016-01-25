@@ -4,7 +4,7 @@ use FinanzasPersonalesWebDb
 
 --Script Darlin
 Create table TiposUsuario (
-IdTipoUsuario int primary key identity(1,1),
+TipoUsuarioId int primary key identity(1,1),
 Descripcion Varchar(100))
 
 --Script Christopher
