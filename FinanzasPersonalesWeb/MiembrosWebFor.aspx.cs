@@ -84,5 +84,10 @@ namespace FinanzasPersonalesWeb
                 Response.Write(e2.Message);
             }
         }
+
+        protected void BtnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

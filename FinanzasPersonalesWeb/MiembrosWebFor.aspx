@@ -43,7 +43,7 @@
 &nbsp;&nbsp;
                 <asp:Button ID="BtnGuardar" runat="server" Text="Guardar" OnClick="BtnGuardar_Click" />
 &nbsp;&nbsp;
-                <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" />
+                <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click" />
 
             
       
