@@ -81,7 +81,7 @@
         <tr>
             <td>
                 <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" />
-                <asp:Button ID="GuardarButton" runat="server" CssClass="auto-style3" Text="Guardar" />
+                <asp:Button ID="GuardarButton" runat="server" CssClass="auto-style3" Text="Guardar" OnClick="GuardarButton_Click" />
                 <asp:Button ID="ElimanarButton" runat="server" CssClass="auto-style3" Text="Eliminar" />
             </td>
             <td>&nbsp;</td>

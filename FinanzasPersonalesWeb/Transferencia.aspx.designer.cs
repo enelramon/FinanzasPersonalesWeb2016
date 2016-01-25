@@ -13,13 +13,13 @@ namespace FinanzasPersonalesWeb {
     public partial class Transferencia {
         
         /// <summary>
-        /// TransferenciaIdLavel control.
+        /// TransferenciaIdTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TransferenciaIdLavel;
+        protected global::System.Web.UI.WebControls.TextBox TransferenciaIdTextBox;
         
         /// <summary>
         /// Buscarbutton control.
@@ -74,6 +74,15 @@ namespace FinanzasPersonalesWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox UsuarioIdTextBox;
+        
+        /// <summary>
+        /// ObservacionTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ObservacionTextBox;
         
         /// <summary>
         /// Nuevobutton control.
