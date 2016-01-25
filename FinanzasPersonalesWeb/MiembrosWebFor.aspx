@@ -12,7 +12,7 @@
             <td class="auto-style4">MiembroId:
                 <asp:TextBox ID="TbMiembroId" runat="server"></asp:TextBox>
 &nbsp;
-                <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" />
+                <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>

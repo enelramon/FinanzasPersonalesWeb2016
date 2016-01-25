@@ -13,7 +13,10 @@ namespace FinanzasPersonalesWeb
     public partial class MiembrosWebFor : System.Web.UI.Page
     {
         Miembros m = new Miembros();
-        
+        int IdC;
+
+        // Mensaje --->   ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco');", true); 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
@@ -73,9 +76,56 @@ namespace FinanzasPersonalesWeb
             }
         }
 
+        public int Convertir()
+        {
+            int id;
+            int.TryParse(TbMiembroId.Text, out id);
+
+            return id;
+        }
+
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
+            if (TbMiembroId.Text == "")
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El ID no debe estar vacío.');", true);
+            }
 
+            Miembros miembro = new Miembros();
+            miembro.MiembroId = Convertir();
+            if (miembro.Eliminar())
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro eliminado exitosamente.');", true);
+            }
+        }
+
+        protected void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            Miembros miembro = new Miembros();
+
+            if (!(miembro.Buscar(Convert.ToInt16(TbMiembroId.Text))))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No se encontro ningún registro con ese ID.');", true);
+                Limpiar();
+                return;
+            }
+
+            if (!TbMiembroId.Text.Equals(string.Empty))
+            {
+                int.TryParse(TbMiembroId.Text, out IdC);
+                miembro.Buscar(IdC);
+                TbNombre.Text = miembro.Nombre;
+                if (miembro.esActivo == 1)
+                {
+                    RbActivo.Checked = true;
+                }
+                else
+                {
+                    RbInactivo.Checked = true;
+                }
+                DropDownUsuario.SelectedValue = miembro.UsuarioId.ToString();
+
+            }
         }
     }
 }
