@@ -20,8 +20,8 @@ namespace DAL
         {
             //ROOT-PC\\SURPUSER 
             ////JUNIOR-PC\\ROOT no dejar la conexion apuntando a tu maquina
-            con = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=FinanzasPersonalesDb;Integrated Security=True");
-            
+           // con = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=FinanzasPersonalesDb;Integrated Security=True");
+            con = new SqlConnection(@"Data Source=DESKTOP-4C3B5SF\SQLEXPRESS;Initial Catalog=FinanzasPersonalesWebDb;Integrated Security=True");
 
             Cmd = new SqlCommand();
 

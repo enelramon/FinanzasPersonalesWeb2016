@@ -16,6 +16,7 @@ Usuario nvarchar(15),
 Contrasena nvarchar(10),
 Email nvarchar(30))
 
+
 --Script Yahaida
 CREATE TABLE [dbo].[Cuentas](
 	[CuentaId] [int] IDENTITY(1,1) NOT NULL,

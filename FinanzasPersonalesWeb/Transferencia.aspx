@@ -11,9 +11,9 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <p style="height: 34px; width: 394px">
+    <p style="height: 34px; width: 402px">
 &nbsp;TransferenciaId&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TransferenciaIdTextBox" runat="server" Height="19px"></asp:TextBox>
+        <asp:TextBox ID="TransferenciaIdTextBox" runat="server" Height="19px" Width="131px"></asp:TextBox>
 
 &nbsp;&nbsp;
         <asp:Button ID="Buscarbutton" runat="server" Text="Buscar" Width="87px" />
@@ -25,7 +25,7 @@
         <td>&nbsp;&nbsp</td>
         <td>&nbsp;&nbsp</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </tr>
-        <asp:TextBox ID="FechaTextBox" runat="server" Height="27px"></asp:TextBox>
+        <asp:TextBox ID="FechaTextBox" runat="server" Height="22px" Width="133px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp; 
     </p>
     <p style="height: 32px; width: 311px">
@@ -34,11 +34,11 @@
 &nbsp;&nbsp;&nbsp;</p>
     <p style="height: 32px; width: 1107px">
         Cuenta Destino Id&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="CuentaDestinoTextBox" runat="server" Height="21px" Width="128px"></asp:TextBox>
+        <asp:TextBox ID="CuentaDestinoTextBox" runat="server" Height="19px" Width="128px"></asp:TextBox>
 &nbsp; 
     </p>
-    <p style="height: 51px; width: 856px">
-        Monto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="MontoTextBox" runat="server"></asp:TextBox>
+    <p style="height: 51px; width: 895px">
+        Monto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="MontoTextBox" runat="server" Height="21px" Width="131px"></asp:TextBox>
 &nbsp;&nbsp; Usuario Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="UsuarioIdTextBox" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp; Observacion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="ObservacionTextBox" runat="server"></asp:TextBox>
