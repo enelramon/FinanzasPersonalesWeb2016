@@ -53,7 +53,7 @@ create table Transferencias(
 			UsuarioId int References Usuarios(UsuarioId)
 			);
 			
-			
+			select *from Transferencias
 --Script Francis
 create table Metas
 (

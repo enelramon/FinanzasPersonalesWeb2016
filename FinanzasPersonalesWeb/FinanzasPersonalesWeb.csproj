@@ -81,6 +81,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CTipoIngresoWebForm.aspx" />
     <Content Include="cTiposUsuarios.aspx" />
+    <Content Include="CTransferencias.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
@@ -118,6 +119,13 @@
     </Compile>
     <Compile Include="cTiposUsuarios.aspx.designer.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CTransferencias.aspx.cs">
+      <DependentUpon>CTransferencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CTransferencias.aspx.designer.cs">
+      <DependentUpon>CTransferencias.aspx</DependentUpon>
     </Compile>
     <Compile Include="cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
