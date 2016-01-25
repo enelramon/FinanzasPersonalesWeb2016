@@ -58,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TiposIngresosTests.cs" />
     <Compile Include="TiposUsuariosTest.cs" />
+    <Compile Include="TransferenciasTests.cs" />
     <Compile Include="UsuariosTests.cs" />
   </ItemGroup>
   <ItemGroup>
