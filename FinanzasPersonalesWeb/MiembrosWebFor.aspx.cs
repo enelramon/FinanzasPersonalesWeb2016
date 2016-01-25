@@ -36,8 +36,7 @@ namespace FinanzasPersonalesWeb
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
+                bool paso = false;
                 m = new Miembros();
                 m.Nombre = TbNombre.Text;
 
@@ -49,13 +48,14 @@ namespace FinanzasPersonalesWeb
                 {
                     m.esActivo = 0;
                 }
-                m.UsuarioId = int.Parse(DropDownUsuario.SelectedValue);
+               // m.UsuarioId = int.Parse(DropDownUsuario.SelectedValue);
 
                 if (!TbMiembroId.Text.Equals(String.Empty))
                 {
                     int id = int.Parse(TbMiembroId.Text);
+                    paso = m.Editar();
 
-                    if (m.Editar())
+                    if (paso)
                     {
                         Response.Write("Se ha editado el miembro exitosamente.");
                         Limpiar();
@@ -68,7 +68,9 @@ namespace FinanzasPersonalesWeb
 
                     if (TbMiembroId.Equals(String.Empty))
                     {
-                        if (m.Insertar())
+                       paso =  m.Insertar();
+
+                        if (paso)
                         {
                             Response.Write("Se ha insertado exitosamente.");
                             Limpiar();
@@ -79,10 +81,6 @@ namespace FinanzasPersonalesWeb
                         }
                     }
                 }
-            } catch(Exception e2)
-            {
-                Response.Write(e2.Message);
-            }
         }
 
         protected void BtnEliminar_Click(object sender, EventArgs e)
