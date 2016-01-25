@@ -7,7 +7,7 @@ using DAL;
 
 namespace BLL
 {
-    public class Transferencia : ClaseMaestra
+    public class Transferencias : ClaseMaestra
     {
         //Arreglando
         public int TransferenciaId { get; set; }
@@ -18,7 +18,7 @@ namespace BLL
         public string Observacion { get; set; }
         public int UsuarioId { get; set; }
 
-        public Transferencia()
+        public Transferencias()
         {
             this.TransferenciaId = 0;
             this.Fecha = "";
