@@ -11,7 +11,7 @@ Descripcion Varchar(100))
 create table Usuarios(
 UsuarioId Int identity(1,1) primary key,
 Nombres nvarchar(50),
-TipoUsuarioId int References TipoUsuarios(TipoUsuarioId),
+TipoUsuarioId int References TiposUsuario(TipoUsuarioId),
 Usuario nvarchar(15),
 Contrasena nvarchar(10),
 Email nvarchar(30))
