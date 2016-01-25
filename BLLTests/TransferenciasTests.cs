@@ -17,33 +17,48 @@ namespace BLL.Tests
         }
 
         [TestMethod()]
-        public void BuscarTest()
+        public void InsertarTest()
         {
-            Assert.Fail();
+            Transferencias transferencias = new Transferencias();
+            transferencias.Fecha = "Prueba";
+            transferencias.CuentaOrigenId = 1;
+            transferencias.CuentaDestinoId = 2;
+            transferencias.Monto = 1;
+            transferencias.Observacion = "Prueba";
+            transferencias.UsuarioId = 1;
+            Assert.IsTrue(transferencias.Insertar());
         }
-
         [TestMethod()]
         public void EditarTest()
         {
-            Assert.Fail();
+            Transferencias transferencias = new Transferencias();
+            transferencias.TransferenciaId = 1;
+            transferencias.Fecha = "Prueba";
+            transferencias.CuentaOrigenId = 2;
+            transferencias.CuentaDestinoId = 2;
+            transferencias.Monto = 2;
+            transferencias.Observacion = "Prueba";
+            transferencias.UsuarioId = 2;
+            Assert.IsTrue(transferencias.Editar());
         }
-
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.Fail();
+            Transferencias transferencias = new Transferencias();
+            transferencias.TransferenciaId = 3;
+            Assert.IsTrue(transferencias.Eliminar());
         }
-
         [TestMethod()]
-        public void InsertarTest()
+        public void BuscarTest()
         {
-            Assert.Fail();
+            Transferencias transferencias = new Transferencias();
+            Assert.IsTrue(transferencias.Buscar(1));
         }
-
         [TestMethod()]
         public void ListadoTest()
         {
-            Assert.Fail();
+            Transferencias transferencias = new Transferencias();
+            Assert.IsTrue(transferencias.Listado(" * ", "1=1", "").Rows.Count > 0);
         }
     }
 }
