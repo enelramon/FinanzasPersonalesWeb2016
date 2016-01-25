@@ -13,11 +13,15 @@ namespace FinanzasPersonalesWeb
     public partial class MiembrosWebFor : System.Web.UI.Page
     {
         Miembros m = new Miembros();
-        int IdM;
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuarios usuario = new Usuarios();
 
+            DropDownUsuario.DataSource = usuario.Listado(" * ", "1=1", "");
+            DropDownUsuario.DataTextField = "Nombres";
+            DropDownUsuario.DataValueField = "UsuarioId";
+            DropDownUsuario.DataBind();
         }
 
         protected void BtnLimpiar_Click(object sender, EventArgs e)
@@ -36,51 +40,37 @@ namespace FinanzasPersonalesWeb
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
-                bool paso = false;
-                m = new Miembros();
-                m.Nombre = TbNombre.Text;
+            bool paso = false;
+            Miembros miembro = new Miembros();
 
-                if(RbActivo.Checked == true)
-                {
-                    m.esActivo = 1;
-                }
-                else if(RbInactivo.Checked == true)
-                {
-                    m.esActivo = 0;
-                }
-               // m.UsuarioId = int.Parse(DropDownUsuario.SelectedValue);
+            miembro.MiembroId = (TbMiembroId.Text == "") ? 0 : Convert.ToInt16(TbMiembroId);
+            miembro.Nombre = TbNombre.Text;
 
-                if (!TbMiembroId.Text.Equals(String.Empty))
-                {
-                    int id = int.Parse(TbMiembroId.Text);
-                    paso = m.Editar();
+            if (RbActivo.Checked == true)
+            {
+                miembro.esActivo = 1;
+            }
+            else
+            {
+                miembro.esActivo = 0;
+            }
 
-                    if (paso)
-                    {
-                        Response.Write("Se ha editado el miembro exitosamente.");
-                        Limpiar();
+            miembro.UsuarioId = Convert.ToInt16(DropDownUsuario.SelectedValue);
 
-                    }
-                    else
-                    {
-                        Response.Write("Ocurrio un error.");
-                    }
+            if (miembro.MiembroId == 0)
+            {
+                paso = miembro.Insertar();
+            }
 
-                    if (TbMiembroId.Equals(String.Empty))
-                    {
-                       paso =  m.Insertar();
+            else
+            {
+                paso = miembro.Editar();
+            }
 
-                        if (paso)
-                        {
-                            Response.Write("Se ha insertado exitosamente.");
-                            Limpiar();
-                        }
-                        else
-                        {
-                            Response.Write("Ocurrio un Error.");
-                        }
-                    }
-                }
+            if (paso)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro  Guardado.');", true);
+            }
         }
 
         protected void BtnEliminar_Click(object sender, EventArgs e)
