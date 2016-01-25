@@ -28,23 +28,14 @@ namespace BLL
             this.Observacion = "";
             this.UsuarioId = 0;
         }
-        public override bool Buscar(int IdBuscado)
+
+        public override bool Insertar()
         {
-            DataTable dt = new DataTable();
+            bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-
-            dt = conexion.ObtenerDatos(String.Format("select * from Transferencias where TransferenciaId = {0}", TransferenciaId));
-
-            if (dt.Rows.Count>0)
-            {
-                this.Fecha = dt.Rows[0]["Fecha"].ToString();
-                this.CuentaOrigenId = (int)dt.Rows[0]["CuentaOrigenId"];
-                this.CuentaDestinoId = (int)dt.Rows[0]["CuentaDestinoId"];
-                this.Monto = (double)dt.Rows[0]["Monto"];
-                this.Observacion = dt.Rows[0]["Observacion"].ToString();
-                this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
-            }
-            return dt.Rows.Count > 0;
+            retorno = conexion.Ejecutar(String.Format("Insert Into Transferencias (Fecha, CuentaOrigenId, CuentaDestinoId, Monto, Observacion, UsuarioId) values('{0}', {1}, {2}, {3}, '{4}', {5})", this.Fecha, this.CuentaOrigenId, this.CuentaDestinoId, this.Monto, this.Observacion, this.UsuarioId));
+            return retorno;
+            
         }
 
         public override bool Editar()
@@ -62,14 +53,23 @@ namespace BLL
             retorno = conexion.Ejecutar(String.Format("Delete Transferencias where TransferenciaId = {0}", this.TransferenciaId));
             return retorno;
         }
-
-        public override bool Insertar()
+        public override bool Buscar(int IdBuscado)
         {
-            bool retorno = false;
+            DataTable dt = new DataTable();
             ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(String.Format("Insert Into Transferencias (Fecha, CuentaOrigenId, CuentaDestinoId, Monto, Observacion, UsuarioId) values('{0}', {1}, {2}, {3}, '{4}', {5})", this.Fecha, this.CuentaOrigenId, this.CuentaDestinoId, this.Monto, this.Observacion, this.UsuarioId));
-            return retorno;
-            
+
+            dt = conexion.ObtenerDatos(String.Format("select * from Transferencias where TransferenciaId = {0}", TransferenciaId));
+
+            if (dt.Rows.Count>0)
+            {
+                this.Fecha = dt.Rows[0]["Fecha"].ToString();
+                this.CuentaOrigenId = (int)dt.Rows[0]["CuentaOrigenId"];
+                this.CuentaDestinoId = (int)dt.Rows[0]["CuentaDestinoId"];
+                this.Monto = (double)dt.Rows[0]["Monto"];
+                this.Observacion = dt.Rows[0]["Observacion"].ToString();
+                this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
+            }
+            return dt.Rows.Count > 0;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
