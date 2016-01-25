@@ -28,7 +28,7 @@
         <tr>
             <td>
                 <asp:TextBox ID="TipoEgresoIdTextBox" runat="server" Width="166px"></asp:TextBox>
-                <asp:Button ID="BuscarButton" runat="server" CssClass="auto-style2" Height="26px" Text="Buscar" />
+                <asp:Button ID="BuscarButton" runat="server" CssClass="auto-style2" Height="26px" Text="Buscar" OnClick="BuscarButton_Click" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>

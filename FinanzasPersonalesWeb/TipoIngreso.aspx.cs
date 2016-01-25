@@ -11,10 +11,17 @@ namespace FinanzasPersonalesWeb
     public partial class TipoIngreso : System.Web.UI.Page
     {
         TiposIngresos TipodeIngreso = new TiposIngresos();
+        Usuarios Usuario = new Usuarios();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack == false)
+            {
+                UsuarioDropDownList.DataSource = Usuario.Listado(" * ", "1=1", "");
+                UsuarioDropDownList.DataTextField = "Nombres";
+                UsuarioDropDownList.DataValueField = "UsuarioId";
+                UsuarioDropDownList.DataBind();
+            }
         }
 
         public int ValidarIdEntero(string IdTextBox)
@@ -52,7 +59,7 @@ namespace FinanzasPersonalesWeb
             {
                 TipodeIngreso.EsActivo = false;
             }
-            TipodeIngreso.UsuarioId = 0;
+            TipodeIngreso.UsuarioId = ValidarIdEntero(UsuarioDropDownList.SelectedValue);
 
             return retorno;
 
@@ -73,6 +80,7 @@ namespace FinanzasPersonalesWeb
                     {
                         EstadoRadioButtonList.SelectedIndex = 2;
                     }
+                    //UsuarioDropDownList.SelectedValue = TipodeIngreso.UsuarioId.ToString();
                 }
                 else
                 {

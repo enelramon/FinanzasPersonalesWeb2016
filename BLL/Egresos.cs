@@ -33,7 +33,7 @@ namespace BLL
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
 
-            retorno = conexion.Ejecutar(String.Format("Insert into Egresos(Fecha,CuentaId,Monto,TipoEgresoId) values('{0}',{1},{2},{3})",this.Fecha,this.CuentaId,this.Monto,this.TipoEgresoId));
+            retorno = conexion.Ejecutar(String.Format("Insert into Egresos(Fecha,CuentaId,Monto,TipoEgresoId,Observacion,MiembroId) values('{0}',{1},{2},{3},'{4}',{5})",this.Fecha,this.CuentaId,this.Monto,this.TipoEgresoId,this.Observacion,this.MiembroId));
 
             return retorno;
         }
@@ -43,7 +43,7 @@ namespace BLL
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
             
-            retorno = conexion.Ejecutar(String.Format("Update Egresos Set Fecha = '{0}', CuentaId = {1}, Monto = {2}, TipoEgresoId = {3}, Observacion = '{4}'  Where EgresoId = {5}", this.Fecha, this.CuentaId, this.Monto,this.TipoEgresoId, this.Observacion,this.EgresoId));
+            retorno = conexion.Ejecutar(String.Format("Update Egresos Set Fecha = '{0}', CuentaId = {1}, Monto = {2}, TipoEgresoId = {3}, Observacion = '{4}', MiembroId Where EgresoId = {5}", this.Fecha, this.CuentaId, this.Monto,this.TipoEgresoId, this.Observacion,this.MiembroId,this.EgresoId));
             return retorno;
         }
 
@@ -65,10 +65,10 @@ namespace BLL
             if(dt.Rows.Count > 0)
             {
                 this.Fecha = dt.Rows[0]["Fecha"].ToString();
-                this.CuentaId = (int)dt.Rows[0]["CuentaId"];
+                this.CuentaId = Convert.ToInt32(dt.Rows[0]["CuentaId"]);
                 this.Monto = Convert.ToSingle(dt.Rows[0]["Monto"]);
-                this.MiembroId = (int)dt.Rows[0]["MiembroId"];
-                this.TipoEgresoId = (int)dt.Rows[0]["TipoEgresoId"];
+                this.MiembroId = Convert.ToInt32(dt.Rows[0]["MiembroId"]);
+                this.TipoEgresoId = Convert.ToInt32(dt.Rows[0]["TipoEgresoId"]);
                 this.Observacion = dt.Rows[0]["Observacion"].ToString();
             }
             return dt.Rows.Count > 0;

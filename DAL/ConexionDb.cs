@@ -18,8 +18,12 @@ namespace DAL
 
         public ConexionDb()
         {
-            con = new SqlConnection("Data Source = JUNIOR-PC\\ROOT;Initial Catalog = FinanzasPersonalesWeb;Integrated Security = true");
+            //ROOT-PC\\SURPUSER 
+            ////JUNIOR-PC\\ROOT no dejar la conexion apuntando a tu maquina
+            con = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=FinanzasPersonalesDb;Integrated Security=True");
+            
             Cmd = new SqlCommand();
+
         }
 
         /// <summary>
@@ -92,7 +96,6 @@ namespace DAL
                 Cmd.Connection = con;
                 Cmd.CommandText = ComandoSql;
                 retorno = Cmd.ExecuteScalar();
-                retorno = true;
 
             }
             catch (Exception ex)

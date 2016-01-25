@@ -7,7 +7,7 @@ using DAL;
 
 namespace BLL
 {
-    public class Transferencia : ClaseMaestra
+    public class Transferencias : ClaseMaestra
     {
         //Arreglando
         public int TransferenciaId { get; set; }
@@ -18,7 +18,7 @@ namespace BLL
         public string Observacion { get; set; }
         public int UsuarioId { get; set; }
 
-        public Transferencia()
+        public Transferencias()
         {
             this.TransferenciaId = 0;
             this.Fecha = "";
@@ -27,6 +27,31 @@ namespace BLL
             this.Monto = 0;
             this.Observacion = "";
             this.UsuarioId = 0;
+        }
+
+        public override bool Insertar()
+        {
+            bool retorno = false;
+            ConexionDb conexion = new ConexionDb();
+            retorno = conexion.Ejecutar(String.Format("Insert Into Transferencias (Fecha, CuentaOrigenId, CuentaDestinoId, Monto, Observacion, UsuarioId) values('{0}', {1}, {2}, {3}, '{4}', {5})", this.Fecha, this.CuentaOrigenId, this.CuentaDestinoId, this.Monto, this.Observacion, this.UsuarioId));
+            return retorno;
+            
+        }
+
+        public override bool Editar()
+        {
+            bool retorno = false;
+            ConexionDb conexion = new ConexionDb();
+            retorno = conexion.Ejecutar(String.Format("Update Transferencias set Fecha = '{0}', CuentaOrigen = {1}, CuentaDestino = {2}, Monto = {3}, Observacion = '{4}', UsuarioId = {5}", this.Fecha, this.CuentaOrigenId, this.CuentaDestinoId, this.Monto, this.Observacion, this.UsuarioId));
+            return retorno;
+        }
+
+        public override bool Eliminar()
+        {
+            bool retorno = false;
+            ConexionDb conexion = new ConexionDb();
+            retorno = conexion.Ejecutar(String.Format("Delete Transferencias where TransferenciaId = {0}", this.TransferenciaId));
+            return retorno;
         }
         public override bool Buscar(int IdBuscado)
         {
@@ -45,31 +70,6 @@ namespace BLL
                 this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
             }
             return dt.Rows.Count > 0;
-        }
-
-        public override bool Editar()
-        {
-            bool retorno = false;
-            ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(String.Format("Update Transferencias set Fecha = '{0}', CuentaOrigen = {1}, CuentaDestino = {2}, Monto = {3}, Observacion = '{4}', UsuarioId = {5}", this.Fecha, this.CuentaOrigenId, this.CuentaDestinoId, this.Monto, this.Observacion, this.UsuarioId));
-            return retorno;
-        }
-
-        public override bool Eliminar()
-        {
-            bool retorno = false;
-            ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(String.Format("Delete Transferencias where TransferenciaId = {0}", this.TransferenciaId));
-            return retorno;
-        }
-
-        public override bool Insertar()
-        {
-            bool retorno = false;
-            ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(String.Format("Insert Into Transferencias (Fecha, CuentaOrigenId, CuentaDestinoId, Monto, Observacion, UsuarioId) values('{0}', {1}, {2}, {3}, '{4}', {5})", this.Fecha, this.CuentaOrigenId, this.CuentaDestinoId, this.Monto, this.Observacion, this.UsuarioId));
-            return retorno;
-            
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)

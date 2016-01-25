@@ -18,7 +18,7 @@
     <table style="width: 100%; margin-bottom: 40px;">
         <tr>
             <td class="auto-style4">EgresoId:<asp:TextBox ID="EgresoIdTextBox" runat="server" Height="19px" style="margin-left: 27px" Width="152px"></asp:TextBox>
-                <asp:Button ID="BuscarButton" runat="server" Height="26px" Text="Buscar" Width="80px" />
+                <asp:Button ID="BuscarButton" runat="server" Height="26px" Text="Buscar" Width="80px" OnClick="BuscarButton_Click" />
             </td>
             <td>Fecha:<asp:TextBox ID="FechaTextBox" runat="server" Height="19px" style="margin-left: 50px" Width="152px"></asp:TextBox>
             </td>
@@ -37,7 +37,7 @@
                 </asp:DropDownList>
                 <br />
                 <br />
-                Observacion:<asp:ListBox ID="ObservacionListBox" runat="server" style="margin-left: 7px" Width="152px"></asp:ListBox>
+                Observacion:<asp:TextBox ID="ObservacionTextBox" runat="server" Height="78px" style="margin-left: 6px" TextMode="MultiLine" Width="154px"></asp:TextBox>
             </td>
             <td>TipoEgresoId:<asp:DropDownList ID="TipoEgresoIdDropDownList" runat="server" Height="22px" style="margin-left: 3px" Width="156px">
                 </asp:DropDownList>
@@ -50,8 +50,8 @@
         <asp:Button ID="NuevoButton" runat="server" Height="26px" style="margin-left: 65px" Text="Nuevo" Width="80px" OnClick="NuevoButton_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="GuardarButton" runat="server" Height="26px" OnClick="GuardarButton_Click" Text="Guardar" Width="80px" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="EliminarButton" runat="server" Height="26px" Text="Eliminar" Width="81px" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="EliminarButton" runat="server" Height="26px" Text="Eliminar" Width="81px" OnClick="EliminarButton_Click" style="margin-left: 0px" />
     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
     </p>

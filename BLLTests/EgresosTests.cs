@@ -56,13 +56,15 @@ namespace BLL.Tests
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.Fail();
+            Egresos egreso = new Egresos();
+            Assert.IsTrue(egreso.Buscar(12));
         }
 
         [TestMethod()]
         public void ListadoTest()
         {
-            Assert.Fail();
+            Egresos egreso = new Egresos();
+            Assert.IsTrue(egreso.Listado(" * ", "1=1", "").Rows.Count > 0);
         }
     }
 }

@@ -67,13 +67,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.DropDownList MiembroIdDropDownList;
         
         /// <summary>
-        /// ObservacionListBox control.
+        /// ObservacionTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ObservacionListBox;
+        protected global::System.Web.UI.WebControls.TextBox ObservacionTextBox;
         
         /// <summary>
         /// TipoEgresoIdDropDownList control.
