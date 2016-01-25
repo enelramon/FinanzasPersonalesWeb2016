@@ -28,7 +28,15 @@ namespace BLL
             ConexionDb conexion = new ConexionDb();
             bool retorno = false;
 
-            retorno = conexion.Ejecutar(String.Format("Insert Into TiposEgresos (Descripcion, EsActivo,UsuarioId) Values ('{0}',{1},{2})", this.Descripcion, this.EsActivo, this.UsuarioId));
+            if (this.EsActivo)
+            {
+                retorno = conexion.Ejecutar(String.Format("Insert Into TiposEgresos (Descripcion, EsActivo,UsuarioId) Values ('{0}',{1},{2})", this.Descripcion, 1, this.UsuarioId));
+            }
+            else
+            {
+                retorno = conexion.Ejecutar(String.Format("Insert Into TiposEgresos (Descripcion, EsActivo,UsuarioId) Values ('{0}',{1},{2})", this.Descripcion, 0, this.UsuarioId));
+            }
+
             return retorno;
         }
 
@@ -37,7 +45,16 @@ namespace BLL
             ConexionDb conexion = new ConexionDb();
             bool retorno = false;
 
-            retorno = conexion.Ejecutar(String.Format("Update TiposEgresos Set Descripcion = '{0}', EsActivo = {1},UsuarioId = {2} Where TipoEgresoId = {3}", this.Descripcion, this.EsActivo, this.UsuarioId,this.TipoEgresoId));
+            if (this.EsActivo)
+            {
+                retorno = conexion.Ejecutar(String.Format("Update TiposEgresos Set Descripcion = '{0}', EsActivo = {1},UsuarioId = {2} Where TipoEgresoId = {3}", this.Descripcion,1, this.UsuarioId, this.TipoEgresoId));
+
+            }
+            else
+            {
+                retorno = conexion.Ejecutar(String.Format("Update TiposEgresos Set Descripcion = '{0}', EsActivo = {1},UsuarioId = {2} Where TipoEgresoId = {3}", this.Descripcion, 0, this.UsuarioId, this.TipoEgresoId));
+            }
+
             return retorno;
         }
 
