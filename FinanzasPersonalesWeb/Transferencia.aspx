@@ -53,7 +53,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="GuardarButton" runat="server" OnClick="GuardarButton_Click1" Text="Guardar" Width="78px" />
         &nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Eliminarbutton" runat="server" Text="Eliminar" Width="87px" />
+        <asp:Button ID="Eliminarbutton" runat="server" Text="Eliminar" Width="87px" OnClick="Eliminarbutton_Click" />
     </p>
     <p style="height: 94px">
         &nbsp;</p>

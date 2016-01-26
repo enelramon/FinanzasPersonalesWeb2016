@@ -63,5 +63,22 @@ namespace FinanzasPersonalesWeb
                 }
             }
         }
+
+        protected void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            Transferencias transferencias = new Transferencias();
+            int id;
+            int.TryParse(TransferenciaIdTextBox.Text, out id);
+            transferencias.TransferenciaId = id;
+            if (transferencias.Eliminar())
+            {
+                HttpContext.Current.Response.Write("<Script>alert('Datos eliminados')</Script>");
+
+            }
+            else
+            {
+                HttpContext.Current.Response.Write("<Script>alert('Error, no se han eliminado los datos')</Script>");
+            }
+        }
     }
 }
