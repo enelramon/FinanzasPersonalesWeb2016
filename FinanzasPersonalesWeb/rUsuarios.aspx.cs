@@ -19,7 +19,6 @@ namespace FinanzasPersonalesWeb
         {
             Usuarios Usuario = new Usuarios();
             Boolean paso = false;
-            string Nombres;
 
             if (NombreTextBox.Text.Trim().Length == 0)
             {
@@ -47,8 +46,8 @@ namespace FinanzasPersonalesWeb
             }
             else {
                 //todo: terminar de arreglar esto.
-                Nombres = NombreTextBox.Text.ToString() + " " + ApellidoTextBox.Text.ToString();
-                Nombres = Usuario.Nombres;
+                NombreTextBox.Text = Usuario.Nombres;
+                ApellidoTextBox.Text = Usuario.Apellidos;
                 UsuarioTextBox.Text = Usuario.Usuario;
                 PassTextBox.Text = Usuario.Password;
                 EmailTextBox.Text = Usuario.Email;
