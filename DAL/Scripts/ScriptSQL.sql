@@ -10,7 +10,8 @@ Descripcion Varchar(100))
 --Script Christopher
 create table Usuarios(
 UsuarioId Int identity(1,1) primary key,
-Nombres nvarchar(50),
+Nombres nvarchar(20),
+Apellidos nvarchar(20),
 TipoUsuarioId int References TiposUsuario(TipoUsuarioId),
 Usuario nvarchar(15),
 Contrasena nvarchar(10),
