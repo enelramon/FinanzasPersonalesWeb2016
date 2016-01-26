@@ -12,7 +12,7 @@ namespace BLL
         public string Descripcion { get; set; }
         public int UsuarioId { get; set; }
         public int TipoIngresoId { get; set; }
-        public float Monto { get; set; }
+        public double Monto { get; set; }
         public List<Metas> metas { get; set; }
 
         ConexionDb conexion = new ConexionDb();
@@ -22,18 +22,18 @@ namespace BLL
             this.Descripcion = "";
             this.UsuarioId = 0;
             this.TipoIngresoId = 0;
-            this.Monto = 0.0f;
+            this.Monto = 0.00;
             metas = new List<Metas>();
         }
 
-        public Metas(int MetaId, int TipoIngresoId,float Monto)
+        public Metas(int MetaId, int TipoIngresoId,double Monto)
         {
             this.MetaId = MetaId;
             this.TipoIngresoId = TipoIngresoId;
             this.Monto = Monto;
         }
 
-        public void AgregarMetas(int MetaId, int TipoIngresoId, float Monto)
+        public void AgregarMetas(int MetaId, int TipoIngresoId, double Monto)
         {
             this.metas.Add(new Metas(MetaId, TipoIngresoId, Monto));
         }
@@ -60,7 +60,7 @@ namespace BLL
                     this.MetaId = (int)conexion.ObtenerDatos(String.Format("select MAX(MetaId) as MetaId from Metas")).Rows[0]["MetaId"];
                     foreach (var pro in metas)
                     {
-                        comando.AppendLine(String.Format("insert into MetasDetalle(MetaId,TipoIngresoId,Monto) values({0},{1},{2})", pro.MetaId, pro.TipoIngresoId, pro.Monto));
+                        comando.AppendLine(String.Format("insert into MetasDetalle(MetaId,TipoIngresoId,Monto) values({0},{1},{2})", this.MetaId, pro.TipoIngresoId, pro.Monto));
                     }
                 }
 
@@ -87,7 +87,7 @@ namespace BLL
                     retorno = conexion.Ejecutar(String.Format("delete from MetasDetalle where MetaId = {0}", this.MetaId));
                     foreach (var pro in metas)
                     {
-                        comando.AppendLine(String.Format("insert into MetasDetalle(MetaId,TipoIngresoId,Monto) values({0},{1},{2})", pro.MetaId, pro.TipoIngresoId, pro.Monto));
+                        comando.AppendLine(String.Format("insert into MetasDetalle(MetaId,TipoIngresoId,Monto) values({0},{1},{2})", this.MetaId, pro.TipoIngresoId, pro.Monto));
                     }
 
                     retorno = conexion.Ejecutar(comando.ToString());
@@ -138,14 +138,14 @@ namespace BLL
                     LimpiarList();
                     foreach (DataRow row in dtMetasDetalle.Rows)
                     {
-                        AgregarMetas((int)row["MetaId"], (int)row["TipoIngresoId"], (float)row["Monto"]);
+                        AgregarMetas((int)row["MetaId"], (int)row["TipoIngresoId"], (double)row["Monto"]);
                     }
                     retorno = true;
                 }
             }
             catch (Exception)
             {
-                retorno = false;
+                 retorno = false;
             }
 
             return retorno;

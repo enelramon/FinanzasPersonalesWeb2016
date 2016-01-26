@@ -37,21 +37,6 @@ namespace FinanzasPersonalesWeb
                 DatoGridView.DataSource = dataTable;
                 DatoGridView.DataBind();
             }
-            if (ConsultaDropDownList.SelectedIndex == 1)
-            {
-                if (CampoTextBox.Text.Trim().Length == 1)
-                {
-                    condicion = "2=2";
-                }
-                else
-                {
-                    condicion = "Descripcion =  " + CampoTextBox.Text;
-                }
-                dataTable = egreso.Listado(" TipoEgresoId, Descripcion, EsActivo,UsuarioId", condicion, "");
-                DatoGridView.DataSource = dataTable;
-                DatoGridView.DataBind();
-
-            }
         }
     }
 }

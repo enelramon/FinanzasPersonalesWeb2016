@@ -21,37 +21,53 @@ namespace BLL.Tests
         {
             Usuarios usuario = new Usuarios();
 
-            //usuario.Descripcion = "cta ejemplo";
-            //cuenta.Balance = 0;
-            //
-            //cuenta.Porciento = 0;
+            usuario.Nombres = "Prueba";
+            usuario.Usuario = "prueba1";
+            usuario.Password = "prueba123";
+            usuario.Email = "a@a.com";
+            usuario.TipoUsuarioId = 1;
 
             Assert.IsTrue(usuario.Insertar());
         }
 
         [TestMethod()]
-        public void BuscarTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void EditarTest()
         {
-            Assert.Fail();
+            Usuarios usuario = new Usuarios();
+
+            usuario.UsuarioId = 2;
+            usuario.Nombres = "Prueba Editada";
+            usuario.Usuario = "editado";
+            usuario.Password = "prueba123";
+            usuario.Email = "a@a.com";
+            usuario.TipoUsuarioId = 1;
+
+            Assert.IsTrue(usuario.Editar());
         }
 
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.Fail();
+            Usuarios usuario = new Usuarios();
+
+            usuario.UsuarioId = 4;
+
+            Assert.IsTrue(usuario.Eliminar());
         }
 
+        [TestMethod()]
+        public void BuscarTest()
+        {
+            Usuarios usuario = new Usuarios();
+
+            Assert.IsTrue(usuario.Buscar(1));
+        }
 
         [TestMethod()]
         public void ListadoTest()
         {
-            Assert.Fail();
+            Usuarios usuario = new Usuarios();
+            Assert.IsTrue(usuario.Listado(" * ", "1=1", "").Rows.Count > 0);
         }
     }
 }

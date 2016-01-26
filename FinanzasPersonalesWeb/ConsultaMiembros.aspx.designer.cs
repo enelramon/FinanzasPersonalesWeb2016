@@ -10,25 +10,25 @@
 namespace FinanzasPersonalesWeb {
     
     
-    public partial class ConsultaMiembros1 {
+    public partial class ConsultaMiembros {
         
         /// <summary>
-        /// Control BuscarPorDropDown.
+        /// Control BuscarPorDropdown.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList BuscarPorDropDown;
+        protected global::System.Web.UI.WebControls.DropDownList BuscarPorDropdown;
         
         /// <summary>
-        /// Control FiltroTextBox.
+        /// Control TbFiltro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FiltroTextBox;
+        protected global::System.Web.UI.WebControls.TextBox TbFiltro;
         
         /// <summary>
         /// Control BtnBuscar.
@@ -40,12 +40,12 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Button BtnBuscar;
         
         /// <summary>
-        /// Control GridView1.
+        /// Control MiembrosDataGrid.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView MiembrosDataGrid;
     }
 }

@@ -54,7 +54,7 @@ namespace BLL
         {
             Boolean paso = false;
 
-            paso = Conexion.Ejecutar(string.Format("Update Usuarios set Nombres = '{0}', Usuario = '{1}', Contrasena = '{2}', Email = '{3}', TipoUsuarioId = {4}  where UsuarioId = {5}", this.Nombres, this.Usuario, this.Password, this.Email, this.TipoUsuarioId));
+            paso = Conexion.Ejecutar(string.Format("Update Usuarios set Nombres = '{0}', Usuario = '{1}', Contrasena = '{2}', Email = '{3}', TipoUsuarioId = {4}  where UsuarioId = {5}", this.Nombres, this.Usuario, this.Password, this.Email, this.TipoUsuarioId, this.UsuarioId));
 
             return paso;
         }
@@ -82,7 +82,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("insert into Usuarios (Nombres, Usuario, Contrasena, Email, TipoUsuarioId) values ('{0}','{1},'{2}','{3}',{4})", this.Nombres, this.UsuarioId, this.Password, this.Email, this.TipoUsuarioId));
+                retorno = Conexion.Ejecutar(string.Format("insert into Usuarios (Nombres, Usuario, Contrasena, Email, TipoUsuarioId) values ('{0}','{1}','{2}','{3}',{4})", this.Nombres, this.Usuario, this.Password, this.Email, this.TipoUsuarioId));
             }
             catch (Exception)
             {
