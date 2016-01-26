@@ -4,14 +4,14 @@ use FinanzasPersonalesWebDb
 
 --Script Darlin
 Create table TiposUsuario (
-IdTipoUsuario int primary key identity(1,1),
+TipoUsuarioId int primary key identity(1,1),
 Descripcion Varchar(100))
 
 --Script Christopher
 create table Usuarios(
 UsuarioId Int identity(1,1) primary key,
 Nombres nvarchar(50),
-TipoUsuarioId int References TipoUsuarios(TipoUsuarioId),
+TipoUsuarioId int References TiposUsuario(TipoUsuarioId),
 Usuario nvarchar(15),
 Contrasena nvarchar(10),
 Email nvarchar(30))
@@ -51,6 +51,7 @@ create table Transferencias(
 			Observacion nvarchar(100),
 			UsuarioId int References Usuarios(UsuarioId)
 			);
+			
 			
 --Script Francis
 create table Metas

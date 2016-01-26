@@ -32,7 +32,7 @@
     </asp:DropDownList>
     <br />
     Monto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-    &nbsp;<asp:Button ID="Button5" runat="server" Text="Agregar" Width="56px" />
+    &nbsp;<asp:Button ID="Button5" runat="server" Text="Agregar" Width="56px" OnClick="Button5_Click" />
     <br />
     <br />
     <asp:Button ID="Button2" runat="server" Text="Limpiar" Width="63px" />

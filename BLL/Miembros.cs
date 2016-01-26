@@ -26,15 +26,26 @@ namespace BLL
 
         public override bool Insertar()
         {
-            bool Retorno = false;
-            Retorno = con.Ejecutar(String.Format("Insert into Miembros (MiembroId, Nombre, esActivo, UsuarioId) Values({0}, '{1}', {2}, {3})", this.MiembroId, this.Nombre, this.esActivo, this.UsuarioId));
-            return Retorno;
+            bool retorno = false;
+
+            try
+            {
+                retorno = con.Ejecutar(string.Format("insert into Miembros (Nombre, esActivo, UsuarioId) values ('{0}',{1},{2})", this.Nombre, this.esActivo, this.UsuarioId));
+            }
+            catch (Exception)
+            {
+
+                retorno = false;
+            }
+
+            return retorno;
+       
         }
 
         public override bool Editar()
         {
             bool Retorno = false;
-            Retorno = con.Ejecutar(String.Format("Update Miembros set MiembroId = {0}, Nombre = {1}, esActivo = {2}, UsuarioId = {3})", this.MiembroId, this.Nombre, this.esActivo, this.UsuarioId));
+            Retorno = con.Ejecutar(String.Format("Update Miembros set MiembroId = {0}, Nombre = '{1}', esActivo = {2}, UsuarioId = {3})", this.MiembroId, this.Nombre, this.esActivo, this.UsuarioId));
             return Retorno;
         }
 

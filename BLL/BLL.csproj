@@ -50,7 +50,7 @@
     <Compile Include="TiposIngresos.cs" />
     <Compile Include="TiposEgresos.cs" />
     <Compile Include="TiposUsuarios.cs" />
-    <Compile Include="Transferencia.cs" />
+    <Compile Include="Transferencias.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <ItemGroup>
