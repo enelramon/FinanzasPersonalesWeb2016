@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConsultaEgresoWebForm.aspx" />
+    <Content Include="ConsultaMiembros.aspx" />
     <Content Include="ConsultaTipoEgreso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -105,6 +106,13 @@
     </Compile>
     <Compile Include="ConsultaEgresoWebForm.aspx.designer.cs">
       <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaMiembros.aspx.cs">
+      <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaMiembros.aspx.designer.cs">
+      <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaTipoEgreso.aspx.cs">
       <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
