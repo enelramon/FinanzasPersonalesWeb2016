@@ -13,11 +13,18 @@ namespace FinanzasPersonalesWeb
     public partial class MiembrosWebFor : System.Web.UI.Page
     {
         Miembros m = new Miembros();
-        int IdM;
+        int IdC;
+
+        // Mensaje --->   ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco');", true); 
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuarios usuario = new Usuarios();
 
+            DropDownUsuario.DataSource = usuario.Listado(" * ", "1=1", "");
+            DropDownUsuario.DataTextField = "Nombres";
+            DropDownUsuario.DataValueField = "UsuarioId";
+            DropDownUsuario.DataBind();
         }
 
         protected void BtnLimpiar_Click(object sender, EventArgs e)
@@ -36,52 +43,88 @@ namespace FinanzasPersonalesWeb
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            bool paso = false;
+            Miembros miembro = new Miembros();
+
+            miembro.MiembroId = (TbMiembroId.Text == "") ? 0 : Convert.ToInt16(TbMiembroId);
+            miembro.Nombre = TbNombre.Text;
+
+            if (RbActivo.Checked == true)
             {
-                m = new Miembros();
-                m.Nombre = TbNombre.Text;
-
-                if(RbActivo.Checked == true)
-                {
-                    m.esActivo = 1;
-                }
-                else if(RbInactivo.Checked == true)
-                {
-                    m.esActivo = 0;
-                }
-                m.UsuarioId = int.Parse(DropDownUsuario.SelectedValue);
-
-                if (!TbMiembroId.Text.Equals(String.Empty))
-                {
-                    int id = int.Parse(TbMiembroId.Text);
-
-                    if (m.Editar())
-                    {
-                        Response.Write("Se ha editado el miembro exitosamente.");
-                        Limpiar();
-
-                    }
-                    else
-                    {
-                        Response.Write("Ocurrio un error.");
-                    }
-
-                    if (TbMiembroId.Equals(String.Empty))
-                    {
-                        if (m.Insertar())
-                        {
-                            Response.Write("Se ha insertado exitosamente.");
-                            Limpiar();
-                        }
-                        else
-                        {
-                            Response.Write("Ocurrio un Error.");
-                        }
-                    }
-                }
-            } catch(Exception e2)
+                miembro.esActivo = 1;
+            }
+            else
             {
-                Response.Write(e2.Message);
+                miembro.esActivo = 0;
+            }
+
+            miembro.UsuarioId = Convert.ToInt16(DropDownUsuario.SelectedValue);
+
+            if (miembro.MiembroId == 0)
+            {
+                paso = miembro.Insertar();
+            }
+
+            else
+            {
+                paso = miembro.Editar();
+            }
+
+            if (paso)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro  Guardado.');", true);
+            }
+        }
+
+        public int Convertir()
+        {
+            int id;
+            int.TryParse(TbMiembroId.Text, out id);
+
+            return id;
+        }
+
+        protected void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (TbMiembroId.Text == "")
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El ID no debe estar vacío.');", true);
+            }
+
+            Miembros miembro = new Miembros();
+            miembro.MiembroId = Convertir();
+            if (miembro.Eliminar())
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro eliminado exitosamente.');", true);
+            }
+        }
+
+        protected void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            Miembros miembro = new Miembros();
+
+            if (!(miembro.Buscar(Convert.ToInt16(TbMiembroId.Text))))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No se encontro ningún registro con ese ID.');", true);
+                Limpiar();
+                return;
+            }
+
+            if (!TbMiembroId.Text.Equals(string.Empty))
+            {
+                int.TryParse(TbMiembroId.Text, out IdC);
+                miembro.Buscar(IdC);
+                TbNombre.Text = miembro.Nombre;
+                if (miembro.esActivo == 1)
+                {
+                    RbActivo.Checked = true;
+                }
+                else
+                {
+                    RbInactivo.Checked = true;
+                }
+                DropDownUsuario.SelectedValue = miembro.UsuarioId.ToString();
+
             }
         }
     }

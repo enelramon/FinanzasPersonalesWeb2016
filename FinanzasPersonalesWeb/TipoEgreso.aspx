@@ -10,6 +10,9 @@
         .auto-style3 {
             margin-left: 21px;
         }
+        .auto-style4 {
+            margin-left: 21px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -80,9 +83,9 @@
         </tr>
         <tr>
             <td>
-                <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" />
-                <asp:Button ID="GuardarButton" runat="server" CssClass="auto-style3" Text="Guardar" OnClick="GuardarButton_Click" />
-                <asp:Button ID="ElimanarButton" runat="server" CssClass="auto-style3" Text="Eliminar" />
+                <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" OnClick="NuevoButton_Click" Width="77px" />
+                <asp:Button ID="GuardarButton" runat="server" CssClass="auto-style4" Text="Guardar" OnClick="GuardarButton_Click" Width="77px" />
+                <asp:Button ID="ElimanarButton" runat="server" CssClass="auto-style4" Text="Eliminar" OnClick="ElimanarButton_Click" Width="77px" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
