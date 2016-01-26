@@ -18,9 +18,12 @@ namespace FinanzasPersonalesWeb
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             Transferencias transferencia = new Transferencias();
-            
-            DatosGridView.DataSource = transferencia.Listado(" * ", " 1=1 ", "");
-            DatosGridView.DataBind();
+           
+
+            DatosDropDownList.DataSource = transferencia.Listado(" * ", " 1=1 ", "");
+            DatosDropDownList.DataTextField = "Fecha";
+            DatosDropDownList.DataValueField = "TransferenciaId";
+            DatosDropDownList.DataBind();
             
             DataTable dt = new DataTable();
             string condicion;

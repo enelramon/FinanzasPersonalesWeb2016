@@ -11,9 +11,6 @@
     <div>
     
         <asp:DropDownList ID="DatosDropDownList" runat="server" Width="108px">
-            <asp:ListItem>TransferenciaId</asp:ListItem>
-            <asp:ListItem>Fecha</asp:ListItem>
-            <asp:ListItem>UsuarioId</asp:ListItem>
         </asp:DropDownList>
         <asp:TextBox ID="DatosTextBox" runat="server" Width="286px"></asp:TextBox>
         <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="97px" OnClick="BuscarButton_Click" />
