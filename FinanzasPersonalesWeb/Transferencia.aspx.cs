@@ -80,5 +80,34 @@ namespace FinanzasPersonalesWeb
                 HttpContext.Current.Response.Write("<Script>alert('Error, no se han eliminado los datos')</Script>");
             }
         }
+
+        protected void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            Transferencias transferencia = new Transferencias();
+            int Id = 0;
+            int.TryParse(TransferenciaIdTextBox.Text, out Id);
+            transferencia.TransferenciaId = Id;
+            if (Id > 0)
+            {
+
+                if (transferencia.Buscar(Id))
+                {
+                    FechaTextBox.Text = transferencia.Fecha;
+                    CuentaOrigenTextBox.Text = transferencia.CuentaOrigenId.ToString();
+                    CuentaDestinoTextBox.Text = transferencia.CuentaDestinoId.ToString();
+                    MontoTextBox.Text = transferencia.Monto.ToString();
+                    ObservacionTextBox.Text = transferencia.Observacion;
+                    UsuarioIdTextBox.Text = transferencia.UsuarioId.ToString();
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Id No Existe')</SCRIPT>");
+                }
+            }
+            else
+            {
+                HttpContext.Current.Response.Write("<SCRIPT>alert('Id Incorrecto')</SCRIPT>");
+            }
+        }
     }
 }

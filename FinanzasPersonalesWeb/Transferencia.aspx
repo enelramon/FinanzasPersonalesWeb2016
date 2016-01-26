@@ -18,11 +18,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p style="height: 34px; width: 435px">
-&nbsp;TransferenciaId&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        TransferenciaId&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
         <asp:TextBox ID="TransferenciaIdTextBox" runat="server" Height="25px" Width="132px"></asp:TextBox>
 
 &nbsp;&nbsp;
-        <asp:Button ID="Buscarbutton" runat="server" Text="Buscar" Width="87px" />
+        <asp:Button ID="Buscarbutton" runat="server" Text="Buscar" Width="87px" OnClick="Buscarbutton_Click" />
         <tr>
         <td>
     </p>
