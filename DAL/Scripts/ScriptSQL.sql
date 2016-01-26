@@ -70,6 +70,8 @@ create table MetasDetalle
 	Monto float
 );
 
+select * from Metas
+
 --Script Miembros
 create table Miembros (
 
