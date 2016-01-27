@@ -25,7 +25,7 @@ namespace FinanzasPersonalesWeb
         protected void BuscarButton_Click1(object sender, EventArgs e)
         {
             int Id = 0;
-            if (ConsultaTextBox.Text.Length > 0)
+            if (ConsultaTextBox.Text.Length > 0 && ConsultaDropDownList.Text == "MetaId")
             {
                 bool result = Int32.TryParse(ConsultaTextBox.Text, out Id);
                 if (Id > 0)
@@ -47,9 +47,11 @@ namespace FinanzasPersonalesWeb
                 }
 
             }
-            else
+
+            if (ConsultaDropDownList.Text == "Descripcion")
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Ingrese un Id')</SCRIPT>");
+                MetasGridView.DataSource = meta.Listado(" * ", "Descripcion like '" + ConsultaTextBox.Text + "%'", "");
+                MetasGridView.DataBind();
             }
         }
     }
