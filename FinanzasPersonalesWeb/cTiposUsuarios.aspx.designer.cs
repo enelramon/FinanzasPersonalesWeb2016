@@ -31,13 +31,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.DropDownList BuscarDropDownList;
         
         /// <summary>
-        /// BuscarDropDownList0 control.
+        /// OperadorDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList BuscarDropDownList0;
+        protected global::System.Web.UI.WebControls.DropDownList OperadorDropDownList;
         
         /// <summary>
         /// FiltroTextBox control.
