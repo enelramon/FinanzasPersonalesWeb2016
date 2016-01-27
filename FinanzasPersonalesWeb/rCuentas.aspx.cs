@@ -44,6 +44,13 @@ namespace FinanzasPersonalesWeb
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
             Cuentas eli = new Cuentas();
+            eli.CuentaId = int.Parse(TextBoxIdCuenta.Text);
+            eli.Eliminar();
+
+            TextBoxDescripcion.Text = "";
+            TextBoxBalance.Text = "";
+            TextBoxPorciento.Text = "";
+
 
         }
     }
