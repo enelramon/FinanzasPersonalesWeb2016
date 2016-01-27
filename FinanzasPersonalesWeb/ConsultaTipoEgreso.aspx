@@ -6,7 +6,6 @@
         <tr>
             <td>Consultar Por:<asp:DropDownList ID="ConsultaDropDownList" runat="server" style="margin-left: 13px" Width="127px">
                 <asp:ListItem>Tipo Egreso Id</asp:ListItem>
-                <asp:ListItem>Descripcion</asp:ListItem>
                 </asp:DropDownList>
                 <asp:TextBox ID="CampoTextBox" runat="server" style="margin-left: 15px" Width="383px"></asp:TextBox>
                 <asp:Button ID="BuscarButton" runat="server" OnClick="BuscarButton_Click" style="margin-left: 19px" Text="Buscar" />
@@ -16,8 +15,10 @@
         </tr>
         <tr>
             <td>
+                <center>
                 <asp:GridView ID="DatoGridView" runat="server" style="margin-top: 7px; margin-bottom: 0px" Width="580px">
                 </asp:GridView>
+                    </center>
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
