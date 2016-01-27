@@ -32,7 +32,7 @@
                         <asp:Label ID="Label1" runat="server" Text="Cuenta Id"></asp:Label>
                     </td>
                     <td>
-                        <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" />
+                        <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
                     </td>
                 </tr>
                 <tr>

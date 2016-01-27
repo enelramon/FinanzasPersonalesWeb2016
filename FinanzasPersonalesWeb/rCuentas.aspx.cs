@@ -24,14 +24,13 @@ namespace FinanzasPersonalesWeb
             cu.Porciento = int.Parse(TextBoxPorciento.Text);
             cu.Insertar();
 
+            LimpiarCampos();
+
         }
 
         protected void BtnNuevo_Click(object sender, EventArgs e)
         {
-            TextBoxIdCuenta.Text = "";
-            TextBoxDescripcion.Text = "";
-            TextBoxBalance.Text = "";
-            TextBoxPorciento.Text = "";
+            LimpiarCampos();
 
           
         }
@@ -39,6 +38,14 @@ namespace FinanzasPersonalesWeb
         protected void BtnModificar_Click(object sender, EventArgs e)
         {
 
+            Cuentas cu = new Cuentas();
+            
+            cu.Descripcion = TextBoxDescripcion.Text;
+            cu.Balance = float.Parse(TextBoxBalance.Text);
+            cu.Porciento = int.Parse(TextBoxPorciento.Text);
+            cu.Editar();
+
+            LimpiarCampos();
         }
 
         protected void BtnEliminar_Click(object sender, EventArgs e)
@@ -47,11 +54,31 @@ namespace FinanzasPersonalesWeb
             eli.CuentaId = int.Parse(TextBoxIdCuenta.Text);
             eli.Eliminar();
 
+            LimpiarCampos();
+
+        }
+
+        void LimpiarCampos() {
+
+            TextBoxIdCuenta.Text = "";
             TextBoxDescripcion.Text = "";
             TextBoxBalance.Text = "";
             TextBoxPorciento.Text = "";
 
 
+        }
+
+        protected void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            Cuentas busca = new Cuentas();
+
+            int id = Int32.Parse(TextBoxIdCuenta.Text);
+
+            busca.Buscar(id);
+
+            TextBoxDescripcion.Text = busca.Descripcion;
+            TextBoxBalance.Text = busca.Balance.ToString();
+            TextBoxPorciento.Text = busca.Porciento.ToString();
         }
     }
 }
