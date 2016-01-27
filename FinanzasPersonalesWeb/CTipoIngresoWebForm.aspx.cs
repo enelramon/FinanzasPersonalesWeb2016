@@ -14,8 +14,8 @@ namespace FinanzasPersonalesWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ConsultaGridView.DataSource = TipoIngreso.Listado(" * ", " 1=1 ", "");
-            ConsultaGridView.DataBind();
+            LlenarGrid(" 1=1 ");
+
             if (ConsultaGridView.Rows.Count == 0)
             {
                 HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
@@ -41,27 +41,72 @@ namespace FinanzasPersonalesWeb
             CodigoTextBox.Text = "";
         }
 
+        void LlenarGrid(string Condicion)
+        {
+            ConsultaGridView.DataSource = TipoIngreso.Listado(" * ", Condicion, "");
+            ConsultaGridView.DataBind();
+        }
+
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            if (ValidarIdEntero(CodigoTextBox.Text) > 0)
+            string Condiciones = "";
+
+            if (CodigoTextBox.Text.Length > 0)
             {
-                if (TipoIngreso.Buscar(ValidarIdEntero(CodigoTextBox.Text)))
-                {
-                    ConsultaGridView.DataSource = TipoIngreso.Listado(" * ", " TipoIngresoId = " + CodigoTextBox.Text, "");
-                    ConsultaGridView.DataBind();
+                    if (TipoIngresoDropDownList.SelectedIndex == 0)
+                    {
+                        if (ValidarIdEntero(CodigoTextBox.Text) == 0)
+                        {
+                            Condiciones = " 1=1 ";
+                        }
+                        else
+                        {
+                            Condiciones = " TipoIngresoId = " + CodigoTextBox.Text;
+                        }                       
+                    }
+
+                    if (TipoIngresoDropDownList.SelectedIndex == 1)
+                    {
+                        Condiciones = " Descripcion = '" + CodigoTextBox.Text + "' ";
+                    }
+
+                    if (TipoIngresoDropDownList.SelectedIndex == 2)
+                    {
+                        if (ValidarIdEntero(CodigoTextBox.Text) == 0)
+                        {
+                            Condiciones = " 1=1 ";
+                        }
+                        else
+                        {
+                            Condiciones = " EsActivo = " + CodigoTextBox.Text;
+                        }
+                    }
+
+                    if (TipoIngresoDropDownList.SelectedIndex == 3)
+                    {
+                        if (ValidarIdEntero(CodigoTextBox.Text) == 0)
+                        {
+                            Condiciones = " 1=1 ";
+                        }
+                        else
+                        {
+                            Condiciones = " UsuarioId = " + CodigoTextBox.Text;
+                        }
+                    }
+
+                    LlenarGrid(Condiciones);
+
+                    if (ConsultaGridView.Rows.Count == 0)
+                    {
+                        HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                        LlenarGrid(" 1=1 ");                       
+                    }
 
                     Limpiar();
-                }
-                else
-                {
-                    HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
-
-                    Limpiar();
-                }
             }
             else
             {
-                HttpContext.Current.Response.Write("<Script>alert('Ingrese un numero Valido')</Script>");
+                HttpContext.Current.Response.Write("<Script>alert('Ingrese un caracter valido')</Script>");
 
                 Limpiar();
             }

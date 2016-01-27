@@ -37,7 +37,7 @@
     <br />
     <asp:Button ID="Button2" runat="server" Text="Limpiar" Width="63px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button3" runat="server" Text="Guardar" Width="58px" />
+    <asp:Button ID="Button3" runat="server" Text="Guardar" Width="58px" OnClick="Button3_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="Button4" runat="server" Text="Eliminar" Width="61px" />
     <br />

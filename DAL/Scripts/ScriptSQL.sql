@@ -10,11 +10,13 @@ Descripcion Varchar(100))
 --Script Christopher
 create table Usuarios(
 UsuarioId Int identity(1,1) primary key,
-Nombres nvarchar(50),
+Nombres nvarchar(20),
+Apellidos nvarchar(20),
 TipoUsuarioId int References TiposUsuario(TipoUsuarioId),
 Usuario nvarchar(15),
 Contrasena nvarchar(10),
 Email nvarchar(30))
+
 
 --Script Yahaida
 CREATE TABLE [dbo].[Cuentas](
@@ -52,7 +54,7 @@ create table Transferencias(
 			UsuarioId int References Usuarios(UsuarioId)
 			);
 			
-			
+			select *from Transferencias
 --Script Francis
 create table Metas
 (
@@ -68,6 +70,8 @@ create table MetasDetalle
 	TipoIngresoId int References TiposIngresos(TipoIngresoId),
 	Monto float
 );
+
+select * from Metas
 
 --Script Miembros
 create table Miembros (

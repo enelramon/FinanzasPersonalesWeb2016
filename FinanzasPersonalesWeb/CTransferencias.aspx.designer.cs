@@ -10,43 +10,34 @@
 namespace FinanzasPersonalesWeb {
     
     
-    public partial class cTiposUsuarios {
+    public partial class CTransferencias {
         
         /// <summary>
-        /// Label1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// BuscarDropDownList control.
+        /// DatosDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList BuscarDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList DatosDropDownList;
         
         /// <summary>
-        /// OperadorDropDownList control.
+        /// DatosTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList OperadorDropDownList;
-        
-        /// <summary>
-        /// FiltroTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FiltroTextBox;
+        protected global::System.Web.UI.WebControls.TextBox DatosTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -58,12 +49,12 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// GrdDatos control.
+        /// DatosGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GrdDatos;
+        protected global::System.Web.UI.WebControls.GridView DatosGridView;
     }
 }

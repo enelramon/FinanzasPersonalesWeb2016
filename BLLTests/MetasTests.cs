@@ -40,7 +40,7 @@ namespace BLL.Tests
             Metas meta = new Metas();
             meta.Descripcion = "Mi Meta Personal";
             meta.UsuarioId = 1;
-            meta.AgregarMetas(18, 1, 200);
+            meta.AgregarMetas(21, 1, 200);
             
             Assert.IsTrue(meta.Insertar());
         }
@@ -49,10 +49,10 @@ namespace BLL.Tests
         public void EditarTest()
         {
             Metas meta = new Metas();
-            meta.MetaId = 17;
-            meta.Descripcion = "Mi Meta Personal";
+            meta.MetaId = 21;
+            meta.Descripcion = "Mi Meta";
             meta.UsuarioId = 1;
-            meta.AgregarMetas(17, 1, 200);
+            meta.AgregarMetas(21, 1, 200);
 
             Assert.IsTrue(meta.Editar());
         }
@@ -69,7 +69,7 @@ namespace BLL.Tests
         public void BuscarTest()
         {
             Metas meta = new Metas();
-            Assert.IsTrue(meta.Buscar(16));
+            Assert.IsTrue(meta.Buscar(21));
         }
 
         [TestMethod()]

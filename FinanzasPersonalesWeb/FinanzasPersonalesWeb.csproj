@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
@@ -74,6 +78,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cCuentas.aspx" />
     <Content Include="ConsultaEgresoWebForm.aspx" />
     <Content Include="ConsultaMiembros.aspx" />
     <Content Include="ConsultaTipoEgreso.aspx" />
@@ -83,6 +88,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CTipoIngresoWebForm.aspx" />
     <Content Include="cTiposUsuarios.aspx" />
+    <Content Include="CTransferencias.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
@@ -91,6 +97,7 @@
     <Content Include="MetasConsultasWebForm.aspx" />
     <Content Include="MetasWebForm.aspx" />
     <Content Include="MiembrosWebFor.aspx" />
+    <Content Include="rCuentas.aspx" />
     <Content Include="rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="rUsuarios.aspx" />
@@ -100,6 +107,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cCuentas.aspx.cs">
+      <DependentUpon>cCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cCuentas.aspx.designer.cs">
+      <DependentUpon>cCuentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaEgresoWebForm.aspx.cs">
       <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -134,6 +148,13 @@
     </Compile>
     <Compile Include="cTiposUsuarios.aspx.designer.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CTransferencias.aspx.cs">
+      <DependentUpon>CTransferencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CTransferencias.aspx.designer.cs">
+      <DependentUpon>CTransferencias.aspx</DependentUpon>
     </Compile>
     <Compile Include="cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
@@ -192,6 +213,13 @@
       <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rCuentas.aspx.cs">
+      <DependentUpon>rCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rCuentas.aspx.designer.cs">
+      <DependentUpon>rCuentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="rPresupuestos.aspx.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
