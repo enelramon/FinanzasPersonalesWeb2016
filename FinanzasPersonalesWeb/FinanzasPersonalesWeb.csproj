@@ -74,6 +74,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cCuentas.aspx" />
     <Content Include="ConsultaEgresoWebForm.aspx" />
     <Content Include="ConsultaMiembros.aspx" />
     <Content Include="ConsultaTipoEgreso.aspx" />
@@ -92,6 +93,7 @@
     <Content Include="MetasConsultasWebForm.aspx" />
     <Content Include="MetasWebForm.aspx" />
     <Content Include="MiembrosWebFor.aspx" />
+    <Content Include="rCuentas.aspx" />
     <Content Include="rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="rUsuarios.aspx" />
@@ -101,6 +103,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cCuentas.aspx.cs">
+      <DependentUpon>cCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cCuentas.aspx.designer.cs">
+      <DependentUpon>cCuentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaEgresoWebForm.aspx.cs">
       <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -200,6 +209,13 @@
       <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rCuentas.aspx.cs">
+      <DependentUpon>rCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rCuentas.aspx.designer.cs">
+      <DependentUpon>rCuentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="rPresupuestos.aspx.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
