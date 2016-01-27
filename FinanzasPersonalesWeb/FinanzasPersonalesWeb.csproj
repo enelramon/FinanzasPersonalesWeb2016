@@ -78,20 +78,26 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cCuentas.aspx" />
     <Content Include="ConsultaEgresoWebForm.aspx" />
+    <Content Include="ConsultaMiembros.aspx" />
+    <Content Include="ConsultaTipoEgreso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CTipoIngresoWebForm.aspx" />
     <Content Include="cTiposUsuarios.aspx" />
+    <Content Include="CTransferencias.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="MetasConsultasWebForm.aspx" />
     <Content Include="MetasWebForm.aspx" />
     <Content Include="MiembrosWebFor.aspx" />
+    <Content Include="rCuentas.aspx" />
     <Content Include="rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="rUsuarios.aspx" />
@@ -101,12 +107,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cCuentas.aspx.cs">
+      <DependentUpon>cCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cCuentas.aspx.designer.cs">
+      <DependentUpon>cCuentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaEgresoWebForm.aspx.cs">
       <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConsultaEgresoWebForm.aspx.designer.cs">
       <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaMiembros.aspx.cs">
+      <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaMiembros.aspx.designer.cs">
+      <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTipoEgreso.aspx.cs">
+      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaTipoEgreso.aspx.designer.cs">
+      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="CTipoIngresoWebForm.aspx.cs">
       <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
@@ -121,6 +148,13 @@
     </Compile>
     <Compile Include="cTiposUsuarios.aspx.designer.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CTransferencias.aspx.cs">
+      <DependentUpon>CTransferencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CTransferencias.aspx.designer.cs">
+      <DependentUpon>CTransferencias.aspx</DependentUpon>
     </Compile>
     <Compile Include="cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
@@ -157,6 +191,13 @@
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MetasConsultasWebForm.aspx.cs">
+      <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MetasConsultasWebForm.aspx.designer.cs">
+      <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MetasWebForm.aspx.cs">
       <DependentUpon>MetasWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -172,6 +213,13 @@
       <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rCuentas.aspx.cs">
+      <DependentUpon>rCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rCuentas.aspx.designer.cs">
+      <DependentUpon>rCuentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="rPresupuestos.aspx.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

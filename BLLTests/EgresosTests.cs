@@ -64,7 +64,7 @@ namespace BLL.Tests
         public void ListadoTest()
         {
             Egresos egreso = new Egresos();
-            Assert.Fail();
+            Assert.IsTrue(egreso.Listado(" * ", "1=1", "").Rows.Count > 0);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace FinanzasPersonalesWeb
             MetasGridView.DataBind();
         }
 
-        protected void BuscarButton_Click(object sender, EventArgs e)
+        protected void BuscarButton_Click1(object sender, EventArgs e)
         {
             int Id = 0;
             if (ConsultaTextBox.Text.Length > 0)
@@ -51,11 +51,6 @@ namespace FinanzasPersonalesWeb
             {
                 HttpContext.Current.Response.Write("<SCRIPT>alert('Ingrese un Id')</SCRIPT>");
             }
-        }
-
-        protected void BuscarButton_Click1(object sender, EventArgs e)
-        {
-
         }
     }
 }

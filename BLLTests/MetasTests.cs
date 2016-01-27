@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Data;
 namespace BLL.Tests
 {
     [TestClass()]
@@ -40,7 +40,7 @@ namespace BLL.Tests
             Metas meta = new Metas();
             meta.Descripcion = "Mi Meta Personal";
             meta.UsuarioId = 1;
-            meta.AgregarMetas(1, 1, 200);
+            meta.AgregarMetas(21, 1, 200);
             
             Assert.IsTrue(meta.Insertar());
         }
@@ -48,25 +48,35 @@ namespace BLL.Tests
         [TestMethod()]
         public void EditarTest()
         {
-            Assert.Fail();
+            Metas meta = new Metas();
+            meta.MetaId = 21;
+            meta.Descripcion = "Mi Meta";
+            meta.UsuarioId = 1;
+            meta.AgregarMetas(21, 1, 200);
+
+            Assert.IsTrue(meta.Editar());
         }
 
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.Fail();
+            Metas meta = new Metas();
+            meta.MetaId = 3;
+            Assert.IsTrue(meta.Eliminar());
         }
 
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.Fail();
+            Metas meta = new Metas();
+            Assert.IsTrue(meta.Buscar(21));
         }
 
         [TestMethod()]
         public void ListadoTest()
         {
-            Assert.Fail();
+            Metas meta = new Metas();
+            Assert.IsTrue(meta.Listado(" * "," 1=1 "," MetaId ").Rows.Count > 0);
         }
     }
 }

@@ -48,7 +48,7 @@
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
-    <asp:Button ID="LimpiarButton" runat="server" Text="Limpiar" CssClass="auto-style4" />
+    <asp:Button ID="LimpiarButton" runat="server" Text="Limpiar" CssClass="auto-style4" style="width: 62px" />
     <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
     <br />
     <br />
