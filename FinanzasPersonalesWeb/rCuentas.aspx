@@ -9,15 +9,15 @@
     <style type="text/css">
 
         .auto-style2 {
-            width: 301px;
+            width: 355px;
             height: 281px;
         }
         .auto-style3 {
-            width: 109px;
+            width: 124px;
         }
         .auto-style1 {
             height: 26px;
-            width: 109px;
+            width: 124px;
         }
         </style>
 </head>
@@ -25,6 +25,7 @@
     <h1>Encabezado</h1>
     <form id="formularioCuentas" runat="server">
         <div class="auto-style2">
+            &nbsp;&nbsp;&nbsp;
             <table>
                 <tr>
                     <td class="auto-style3">
@@ -36,17 +37,18 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:TextBox ID="TextBoxIdCuenta" runat="server" Width="155px"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxIdCuenta" runat="server" Width="233px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
                         <asp:Label ID="LDescripcion" runat="server" Text="Descripcion"></asp:Label>
+                    &nbsp;
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:TextBox ID="TextBoxDescripcion" runat="server" Width="155px"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxDescripcion" runat="server" Width="230px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -56,7 +58,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:TextBox ID="TextBox1" runat="server" Width="155px"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxBalance" runat="server" Width="232px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -66,13 +68,19 @@
                 </tr>
                 <tr>
                     <td class="auto-style1">
-                        <asp:TextBox ID="TextBoxPorciento" runat="server" Width="155px"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxPorciento" runat="server" Width="231px"></asp:TextBox>
                     </td>
                 </tr>
             </table>
-            <asp:Button ID="BtnNuevo" runat="server" BorderColor="#FF66FF" BorderStyle="Outset" Text="Nuevo" Width="82px" />
-            <asp:Button ID="BtnGuardar" runat="server" BorderColor="#FF66FF" BorderStyle="Outset" Text="Guardar" Width="87px" />
-            <asp:Button ID="BtnEliminar" runat="server" BorderColor="#FF66FF" BorderStyle="Outset" Text="Eliminar" Width="71px" />
+
+            <asp:Button ID="BtnNuevo" runat="server" BorderColor="#FF66FF" BorderStyle="Outset" Text="Nuevo" Width="82px" OnClick="BtnNuevo_Click" />
+            
+            <asp:Button ID="BtnGuardar" runat="server" BorderColor="#FF66FF" BorderStyle="Outset" Text="Guardar" Width="87px" OnClick="BtnGuardar_Click" />
+
+              <asp:Button ID="BtnModificar" runat="server" BorderColor="#FF66FF" BorderStyle="Outset" Text="Modificar" Width="71px" OnClick="BtnModificar_Click" />
+
+            <asp:Button ID="BtnEliminar" runat="server" BorderColor="#FF66FF" BorderStyle="Outset" Text="Eliminar" Width="71px" OnClick="BtnEliminar_Click" />
+          
         </div>
     </form>
     <footer>
