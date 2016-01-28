@@ -9,11 +9,10 @@ namespace BLL
 {
     public class Usuarios : ClaseMaestra
     {
-        //Arreglando
         ConexionDb Conexion = new ConexionDb();
 
         public int UsuarioId { get; set; }
-        public string Nombres { get; set; }
+        public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public int TipoUsuarioId { get; set; }
         public string Usuario { get; set; }
@@ -23,7 +22,7 @@ namespace BLL
         public Usuarios()
         {
             this.UsuarioId = 0;
-            this.Nombres = "";
+            this.Nombre = "";
             this.Apellidos = "";
             this.TipoUsuarioId = 0;
             this.Usuario = "";
@@ -37,7 +36,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("insert into Usuarios (Nombres, Apellidos, Usuario, Contrasena, Email, TipoUsuarioId) values ('{0}','{1}','{2}','{3}','{4}',{5})", this.Nombres, this.Apellidos, this.Usuario, this.Password, this.Email, this.TipoUsuarioId));
+                retorno = Conexion.Ejecutar(string.Format("Insert into Usuarios (Nombre, Apellidos, Usuario, Contrasena, Email, TipoUsuarioId) values ('{0}','{1}','{2}','{3}','{4}',{5})", this.Nombre, this.Apellidos, this.Usuario, this.Password, this.Email, this.TipoUsuarioId));
             }
             catch (Exception)
             {
@@ -52,7 +51,7 @@ namespace BLL
         {
             Boolean paso = false;
 
-            paso = Conexion.Ejecutar(string.Format("Update Usuarios set Nombres = '{0}', Apellidos = '{1}', Usuario = '{2}', Contrasena = '{3}', Email = '{4}', TipoUsuarioId = {5}  where UsuarioId = {6}", this.Nombres, this.Apellidos, this.Usuario, this.Password, this.Email, this.TipoUsuarioId, this.UsuarioId));
+            paso = Conexion.Ejecutar(string.Format("Update Usuarios set Nombre = '{0}', Apellidos = '{1}', Usuario = '{2}', Contrasena = '{3}', Email = '{4}', TipoUsuarioId = {5}  where UsuarioId = {6}", this.Nombre, this.Apellidos, this.Usuario, this.Password, this.Email, this.TipoUsuarioId, this.UsuarioId));
 
             return paso;
         }
@@ -80,14 +79,14 @@ namespace BLL
             bool Encontro = false;
             DataTable dt = new DataTable();
 
-            dt = this.Listado("Nombres, Apellidos, TipoUsuarioId, Usuario, Email", "UsuarioId =" + IdBuscado, "UsuarioId Asc");
+            dt = this.Listado("Nombre, Apellidos, TipoUsuarioId, Usuario, Email", "UsuarioId =" + IdBuscado, "UsuarioId Asc");
 
             if (dt.Rows.Count > 0)
             {
                 Encontro = true;
 
                 this.UsuarioId = IdBuscado;
-                this.Nombres = (string)dt.Rows[0]["Nombres"];
+                this.Nombre = (string)dt.Rows[0]["Nombre"];
                 this.Apellidos = (string)dt.Rows[0]["Apellidos"];
                 this.Usuario = (string)dt.Rows[0]["Usuario"];
                 this.Email = (string)dt.Rows[0]["Email"];

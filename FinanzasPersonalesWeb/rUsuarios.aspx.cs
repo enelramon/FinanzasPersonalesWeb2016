@@ -46,11 +46,11 @@ namespace FinanzasPersonalesWeb
             }
             else {
                 //todo: terminar de arreglar esto.
-                NombreTextBox.Text = Usuario.Nombres;
-                ApellidoTextBox.Text = Usuario.Apellidos;
-                UsuarioTextBox.Text = Usuario.Usuario;
-                PassTextBox.Text = Usuario.Password;
-                EmailTextBox.Text = Usuario.Email;
+                Usuario.Nombre = NombreTextBox.Text;
+                Usuario.Apellidos = ApellidoTextBox.Text;
+                Usuario.Usuario = UsuarioTextBox.Text;
+                Usuario.Password =PassTextBox.Text;
+                Usuario.Email = EmailTextBox.Text;
                 Usuario.TipoUsuarioId = 1;
 
                 paso = Usuario.Insertar();
