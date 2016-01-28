@@ -14,9 +14,9 @@
     <center class="auto-style4">
              Consultar por&nbsp;
              <asp:DropDownList ID="TipoIngresoDropDownList" runat="server" Height="16px" Width="108px">
-                 <asp:ListItem>Id</asp:ListItem>
+                 <asp:ListItem Value="TipoIngresoId">TipoIngresoId</asp:ListItem>
                  <asp:ListItem Value="Descripcion">Descripcion</asp:ListItem>
-                 <asp:ListItem>Activo</asp:ListItem>
+                 <asp:ListItem Value="EsActivo">Activo</asp:ListItem>
                  <asp:ListItem Value="UsuarioId">UsuarioId</asp:ListItem>
              </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;
