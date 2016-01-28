@@ -45,7 +45,6 @@ namespace FinanzasPersonalesWeb
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe aceptar los Terminos para poder continuar.');", true);
             }
             else {
-                //todo: terminar de arreglar esto.
                 Usuario.Nombre = NombreTextBox.Text;
                 Usuario.Apellidos = ApellidoTextBox.Text;
                 Usuario.Usuario = UsuarioTextBox.Text;
