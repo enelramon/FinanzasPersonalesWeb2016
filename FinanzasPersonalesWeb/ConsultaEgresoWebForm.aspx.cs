@@ -58,7 +58,7 @@ namespace FinanzasPersonalesWeb
                 }
                 else
                 {
-                    condicion = "Descripcion = " + DatosTextBox.Text;
+                    condicion = "Monto = " + DatosTextBox.Text;
                 }
                 dataTable = egreso.Listado(" * ", condicion, "");
                 ElementosGridView.DataSource = dataTable;

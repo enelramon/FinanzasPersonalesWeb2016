@@ -9,11 +9,11 @@ namespace BLL
 {
     public class Usuarios : ClaseMaestra
     {
-        //Arreglando
         ConexionDb Conexion = new ConexionDb();
 
         public int UsuarioId { get; set; }
-        public string Nombres { get; set; }
+        public string Nombre { get; set; }
+        public string Apellidos { get; set; }
         public int TipoUsuarioId { get; set; }
         public string Usuario { get; set; }
         public string Password { get; set; }
@@ -22,39 +22,36 @@ namespace BLL
         public Usuarios()
         {
             this.UsuarioId = 0;
-            this.Nombres = "";
+            this.Nombre = "";
+            this.Apellidos = "";
             this.TipoUsuarioId = 0;
             this.Usuario = "";
             this.Password = "";
             this.Email = "";
         }
 
-        public override bool Buscar(Int32 IdBuscado)
+        public override bool Insertar()
         {
-            bool Encontro = false;
-            DataTable dt = new DataTable();
+            bool retorno = false;
 
-            dt = this.Listado("Nombres, TipoUsuarioId, Usuario, Email", "UsuarioId =" + IdBuscado, "UsuarioId Asc");
-
-            if (dt.Rows.Count > 0)
+            try
             {
-                Encontro = true;
+                retorno = Conexion.Ejecutar(string.Format("Insert into Usuarios (Nombre, Apellidos, Usuario, Contrasena, Email, TipoUsuarioId) values ('{0}','{1}','{2}','{3}','{4}',{5})", this.Nombre, this.Apellidos, this.Usuario, this.Password, this.Email, this.TipoUsuarioId));
+            }
+            catch (Exception)
+            {
 
-                this.UsuarioId = IdBuscado;
-                this.Nombres = (string)dt.Rows[0]["Nombres"];
-                this.Usuario = (string)dt.Rows[0]["Usuario"];
-                this.Email = (string)dt.Rows[0]["Email"];
+                retorno = false;
             }
 
-            return Encontro;
+            return retorno;
         }
-
 
         public override bool Editar()
         {
             Boolean paso = false;
 
-            paso = Conexion.Ejecutar(string.Format("Update Usuarios set Nombres = '{0}', Usuario = '{1}', Contrasena = '{2}', Email = '{3}', TipoUsuarioId = {4}  where UsuarioId = {5}", this.Nombres, this.Usuario, this.Password, this.Email, this.TipoUsuarioId));
+            paso = Conexion.Ejecutar(string.Format("Update Usuarios set Nombre = '{0}', Apellidos = '{1}', Usuario = '{2}', Contrasena = '{3}', Email = '{4}', TipoUsuarioId = {5}  where UsuarioId = {6}", this.Nombre, this.Apellidos, this.Usuario, this.Password, this.Email, this.TipoUsuarioId, this.UsuarioId));
 
             return paso;
         }
@@ -76,22 +73,29 @@ namespace BLL
             return retorno;
         }
 
-        public override bool Insertar()
+
+        public override bool Buscar(Int32 IdBuscado)
         {
-            bool retorno = false;
+            bool Encontro = false;
+            DataTable dt = new DataTable();
 
-            try
+            dt = this.Listado("Nombre, Apellidos, TipoUsuarioId, Usuario, Email", "UsuarioId =" + IdBuscado, "UsuarioId Asc");
+
+            if (dt.Rows.Count > 0)
             {
-                retorno = Conexion.Ejecutar(string.Format("insert into Usuarios (Nombres, Usuario, Contrasena, Email, TipoUsuarioId) values ('{0}','{1},'{2}','{3}',{4})", this.Nombres, this.UsuarioId, this.Password, this.Email, this.TipoUsuarioId));
-            }
-            catch (Exception)
-            {
+                Encontro = true;
 
-                retorno = false;
+                this.UsuarioId = IdBuscado;
+                this.Nombre = (string)dt.Rows[0]["Nombre"];
+                this.Apellidos = (string)dt.Rows[0]["Apellidos"];
+                this.Usuario = (string)dt.Rows[0]["Usuario"];
+                this.Email = (string)dt.Rows[0]["Email"];
             }
 
-            return retorno;
+            return Encontro;
         }
+
+        
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {

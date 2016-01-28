@@ -19,7 +19,6 @@ namespace FinanzasPersonalesWeb
         {
             Usuarios Usuario = new Usuarios();
             Boolean paso = false;
-            string Nombres;
 
             if (NombreTextBox.Text.Trim().Length == 0)
             {
@@ -46,12 +45,11 @@ namespace FinanzasPersonalesWeb
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe aceptar los Terminos para poder continuar.');", true);
             }
             else {
-                //todo: terminar de arreglar esto.
-                Nombres = NombreTextBox.Text.ToString() + " " + ApellidoTextBox.Text.ToString();
-                Nombres = Usuario.Nombres;
-                UsuarioTextBox.Text = Usuario.Usuario;
-                PassTextBox.Text = Usuario.Password;
-                EmailTextBox.Text = Usuario.Email;
+                Usuario.Nombre = NombreTextBox.Text;
+                Usuario.Apellidos = ApellidoTextBox.Text;
+                Usuario.Usuario = UsuarioTextBox.Text;
+                Usuario.Password =PassTextBox.Text;
+                Usuario.Email = EmailTextBox.Text;
                 Usuario.TipoUsuarioId = 1;
 
                 paso = Usuario.Insertar();
