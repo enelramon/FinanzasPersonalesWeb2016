@@ -21,7 +21,7 @@ namespace BLL.Tests
         {
             Usuarios usuario = new Usuarios();
 
-            usuario.Nombres = "Prueba";
+            usuario.Nombre = "Prueba";
             usuario.Usuario = "prueba1";
             usuario.Password = "prueba123";
             usuario.Email = "a@a.com";
@@ -36,7 +36,7 @@ namespace BLL.Tests
             Usuarios usuario = new Usuarios();
 
             usuario.UsuarioId = 2;
-            usuario.Nombres = "Prueba Editada";
+            usuario.Nombre = "Prueba Editada";
             usuario.Usuario = "editado";
             usuario.Password = "prueba123";
             usuario.Email = "a@a.com";
