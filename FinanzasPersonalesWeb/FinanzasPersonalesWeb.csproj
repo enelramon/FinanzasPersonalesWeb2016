@@ -67,6 +67,7 @@
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
+    <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="MetasWebForm.aspx" />
@@ -80,8 +81,8 @@
   <ItemGroup>
     <Compile Include="ConsultaTipoIngresoWebForm.aspx.cs">
       <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
-	  <SubType>ASPXCodeBehind</SubType>
-	  </Compile>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="ConsultaEgresoWebForm.aspx.cs">
       <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -173,11 +174,11 @@
     </Compile>
     <Compile Include="Transferencia.aspx.designer.cs">
       <DependentUpon>Transferencia.aspx</DependentUpon>
-	  <SubType>ASPXCodeBehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-	<Compile Include="ConsultaTipoIngresoWebForm.aspx.cs">
+    <Compile Include="ConsultaTipoIngresoWebForm.aspx.cs">
       <DependentUpon>ConsultaTipoIngresoWebForm.aspx</DependentUpon>
-	  <SubType>ASPXCodeBehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
