@@ -22,49 +22,17 @@ namespace FinanzasPersonalesWeb
             DataTable dataTable = new DataTable();
             string condicion;
 
-            if (ElementosDropDownList.SelectedIndex == 0)
+            if (DatosTextBox.Text.Trim().Length == 0)
             {
-                if (DatosTextBox.Text.Trim().Length == 0)
-                {
-                    condicion = "1=1";
-                }
-                else
-                {
-                    condicion = "EgresoId = " + DatosTextBox.Text;
-                }
-                dataTable = egreso.Listado(" * ", condicion, "");
-                ElementosGridView.DataSource = dataTable;
-                ElementosGridView.DataBind();
+                condicion = "1=1";
             }
-            if(ElementosDropDownList.SelectedIndex == 1)
+            else
             {
-                if(DatosTextBox.Text.Trim().Length == 0)
-                {
-                    condicion = "2=2";
-                }
-                else
-                {
-                    condicion = "Fecha = " + DatosTextBox.Text;
-                }
-                dataTable = egreso.Listado(" * ", condicion, "");
-                ElementosGridView.DataSource = dataTable;
-                ElementosGridView.DataBind();
+                condicion = ElementosDropDownList.SelectedItem.Text + " = " + DatosTextBox.Text;
             }
-            if(ElementosDropDownList.SelectedIndex == 2)
-            {
-                if(DatosTextBox.Text.Trim().Length == 0)
-                {
-                    condicion = "3=3";
-                }
-                else
-                {
-                    condicion = "Monto = " + DatosTextBox.Text;
-                }
-                dataTable = egreso.Listado(" * ", condicion, "");
-                ElementosGridView.DataSource = dataTable;
-                ElementosGridView.DataBind();
-            }
-
+            dataTable = egreso.Listado(" * ", condicion, "");
+            ElementosGridView.DataSource = dataTable;
+            ElementosGridView.DataBind();
         }
     }
 }
