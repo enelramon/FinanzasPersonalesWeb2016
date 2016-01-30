@@ -19,11 +19,6 @@ namespace FinanzasPersonalesWeb
         {
             Transferencias transferencia = new Transferencias();
            
-
-            DatosDropDownList.DataSource = transferencia.Listado(" * ", " 1=1 ", "");
-            DatosDropDownList.DataTextField = "Fecha";
-            DatosDropDownList.DataValueField = "TransferenciaId";
-            DatosDropDownList.DataBind();
             
             DataTable dt = new DataTable();
             string condicion;
@@ -72,6 +67,8 @@ namespace FinanzasPersonalesWeb
                 DatosGridView.DataSource = dt;
                 DatosGridView.DataBind();
             }
+
+            
         }
     }
 }
