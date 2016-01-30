@@ -15,10 +15,21 @@ namespace FinanzasPersonalesWeb
 
         }
 
+        public void LlenarClase(ref Usuarios Usuario)
+        {
+            Usuario.Nombre = NombreTextBox.Text;
+            Usuario.Apellidos = ApellidoTextBox.Text;
+            Usuario.TipoUsuarioId = 1;
+            Usuario.Usuario = UsuarioTextBox.Text;
+            Usuario.Password = PassTextBox.Text;
+            Usuario.Email = EmailTextBox.Text;
+        }
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
             Usuarios Usuario = new Usuarios();
             Boolean paso = false;
+            Boolean control1, control2 = false;
+
 
             if (NombreTextBox.Text.Trim().Length == 0)
             {
@@ -45,15 +56,32 @@ namespace FinanzasPersonalesWeb
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe aceptar los Terminos para poder continuar.');", true);
             }
             else {
-                //todo: terminar de arreglar esto.
-                NombreTextBox.Text = Usuario.Nombres;
-                ApellidoTextBox.Text = Usuario.Apellidos;
-                UsuarioTextBox.Text = Usuario.Usuario;
-                PassTextBox.Text = Usuario.Password;
-                EmailTextBox.Text = Usuario.Email;
-                Usuario.TipoUsuarioId = 1;
 
-                paso = Usuario.Insertar();
+                control1 = Usuario.ValidarRegistroUsuario("'" + UsuarioTextBox.Text + "'");
+                control2 = Usuario.ValidarRegistroCorreo("'" + EmailTextBox.Text + "'");
+
+                if (control1)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Usuario ya Existe.');", true);
+                    UsuarioTextBox.Focus();
+                }
+                else if (control2)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Correo ya Existe.');", true);
+                    UsuarioTextBox.Focus();
+
+                }
+                else
+                {
+                    Usuario.Nombre = NombreTextBox.Text;
+                    Usuario.Apellidos = ApellidoTextBox.Text;
+                    Usuario.TipoUsuarioId = 1;
+                    Usuario.Usuario = UsuarioTextBox.Text;
+                    Usuario.Password = PassTextBox.Text;
+                    Usuario.Email = EmailTextBox.Text;
+                }
+
+                
             }
             if (paso)
             {

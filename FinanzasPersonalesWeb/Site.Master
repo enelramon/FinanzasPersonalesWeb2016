@@ -1,29 +1,50 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FinanzasPersonalesWeb.Site" %>
+
 <%@ Register Src="~/Include/Menu.ascx" TagPrefix="uc1" TagName="Menu" %>
 
-<!DOCTYPE html PUBLIC "~//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.we.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head id="Head1" runat="server">
-    <link href="Content/bootstrap.min.css rel="stylesheet" />
+
     <title></title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="Scripts/jquery-2.2.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
 </head>
 <body>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/jquery-2.2.0.min.js"></script>
-    <form id="form1" runat="server">
+    <div class="container-fluid">
 
-        <div><h1>ENCABEZADO</h1></div>
+    <form id="form1" runat="server">
+            <button type="button" class="btn btn-default">Default</button>
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-link">Link</button>
+
+            <div>
+                <h1>ENCABEZADO</h1>
+            </div>
     <div>
-        <uc1:Menu runat="server" ID="Menu1"/>
-        <hr />          
+                <uc1:Menu runat="server" ID="Menu1" />
+                <hr />
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </div>
  <div><h1>PIE DE PAGINA</h1></div>
     </form>
+
+    </div>
 </body>
 </html>

@@ -41,9 +41,19 @@ namespace FinanzasPersonalesWeb
                 else
                 {
 
-                    filtro = "Nombres like '%" + FiltroTextBox.Text + "%'";
+                    filtro = "Nombre like '%" + FiltroTextBox.Text + "%'";
                 }
-            else if (FiltroDropDown.SelectedIndex == 2) //Usuario
+            else if (FiltroDropDown.SelectedIndex == 2) //Apellidos
+                if (FiltroTextBox.Text.Trim().Length == 0)
+                {
+                    filtro = "1=1";
+                }
+                else
+                {
+
+                    filtro = "Apellidos like '%" + FiltroTextBox.Text + "%'";
+                }
+            else if (FiltroDropDown.SelectedIndex == 3) //Usuario
                 if (FiltroTextBox.Text.Trim().Length == 0)
                 {
                     filtro = "1=1";
@@ -53,7 +63,7 @@ namespace FinanzasPersonalesWeb
 
                     filtro = "Usuario like '%" + FiltroTextBox.Text + "%'";
                 }
-            else if (FiltroDropDown.SelectedIndex == 3) //Email
+            else if (FiltroDropDown.SelectedIndex == 4) //Email
                 if (FiltroTextBox.Text.Trim().Length == 0)
                 {
                     filtro = "1=1";
@@ -64,7 +74,7 @@ namespace FinanzasPersonalesWeb
                     filtro = "Email like '%" + FiltroTextBox.Text + "%'";
                 }
 
-            dt = Usuario.Listado("UsuarioId, Nombres, TipoUsuarioId, Usuario, Email", filtro, "UsuarioId ASC");
+            dt = Usuario.Listado("UsuarioId, Nombre, Apellidos, TipoUsuarioId, Usuario, Email", filtro, "UsuarioId ASC");
             UsuarioGridView.DataSource = dt;
             UsuarioGridView.DataBind();
 

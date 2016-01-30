@@ -35,6 +35,7 @@ namespace BLL.Tests
         {
             Egresos egreso = new Egresos();
 
+            egreso.EgresoId = 16;
             egreso.Fecha = "11/10/2016";
             egreso.CuentaId = 1;
             egreso.MiembroId = 1;
@@ -49,7 +50,7 @@ namespace BLL.Tests
         {
 
             Egresos egreso = new Egresos();
-            egreso.EgresoId = 2;
+            egreso.EgresoId = 6;
             Assert.IsTrue(egreso.Eliminar());
         }
 
@@ -57,7 +58,7 @@ namespace BLL.Tests
         public void BuscarTest()
         {
             Egresos egreso = new Egresos();
-            Assert.IsTrue(egreso.Buscar(12));
+            Assert.IsTrue(egreso.Buscar(6));
         }
 
         [TestMethod()]
