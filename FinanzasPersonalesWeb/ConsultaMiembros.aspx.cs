@@ -14,8 +14,13 @@ namespace FinanzasPersonalesWeb
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-           
-		}
+            Miembros m = new Miembros();
+            DataTable dt = new DataTable();
+            string filtro = "1=1";
+
+            MiembrosDataGrid.DataSource = m.Listado(" * ", filtro, "");
+            MiembrosDataGrid.DataBind();
+        }
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -25,7 +30,7 @@ namespace FinanzasPersonalesWeb
 
             if(BuscarPorDropdown.SelectedIndex == 0) // MiembroId
             {
-                if(BuscarPorDropdown.Text.Trim().Length == 0)
+                if(TbFiltro.Text.Trim().Length == 0)
                 {
                     filtro = "1=1";
                 }
@@ -37,7 +42,7 @@ namespace FinanzasPersonalesWeb
 
             if(BuscarPorDropdown.SelectedIndex == 1) //Nombre de miembro
             {
-                if (BuscarPorDropdown.Text.Trim().Length == 0)
+                if (TbFiltro.Text.Trim().Length == 0)
                 {
                     filtro = "1=1";
                 }
@@ -49,7 +54,7 @@ namespace FinanzasPersonalesWeb
 
             if(BuscarPorDropdown.SelectedIndex == 2) // esActivo
             {
-                if (BuscarPorDropdown.Text.Trim().Length == 0)
+                if (TbFiltro.Text.Trim().Length == 0)
                 {
                     filtro = "1=1";
                 }
@@ -61,7 +66,7 @@ namespace FinanzasPersonalesWeb
 
             if(BuscarPorDropdown.SelectedIndex == 3) //UsuarioId
             {
-                if (BuscarPorDropdown.Text.Trim().Length == 0)
+                if (TbFiltro.Text.Trim().Length == 0)
                 {
                     filtro = "1=1";
                 }

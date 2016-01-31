@@ -44,8 +44,8 @@ namespace FinanzasPersonalesWeb
             for (int i = 0; i < MetasListBox.Items.Count; i++)
             {
                 int id = (int)meta.ObtenerMetaId().Rows[0]["MetaId"];
-                Double j = Convert.ToDouble(MetasListBox.Items[i].ToString());
-                meta.AgregarMetas(id, 1, j);
+                Double monto = Convert.ToDouble(MetasListBox.Items[i].ToString());
+                meta.AgregarMetas(id, 1, monto);
             }
 
             if (MetaIdTextBox.Text.Length <= 0)

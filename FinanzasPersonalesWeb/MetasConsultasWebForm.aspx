@@ -14,6 +14,12 @@
             <h2>Consultas de Metas</h2>
             <br /><br />
              <div class="row">
+                 <div class="col-xs-3">
+                     <asp:DropDownList ID="ConsultaDropDownList" CssClass="form-control " runat="server">
+                          <asp:ListItem>MetaId</asp:ListItem>
+                          <asp:ListItem>Descripcion</asp:ListItem>
+                     </asp:DropDownList>
+                 </div>
               <div class="col-xs-6">
                 <asp:TextBox runat="server" ID="ConsultaTextBox" CssClass="form-control " placeholder="Id" Height="33px" Width="496px"/>
               </div>
