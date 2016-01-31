@@ -16,7 +16,8 @@
             <td class="auto-style4">MiembroId:
                 <asp:TextBox ID="TbMiembroId" runat="server"></asp:TextBox>
 &nbsp;
-                <asp:Button ID="BtnBuscar" class ="btn btn-info" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
+   
+              <asp:Button ID="BtnBuscar" class ="btn btn-info btn-md" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -44,11 +45,11 @@
                 </asp:DropDownList>
                 <br />
                 <br />
-                <asp:Button ID="BtnLimpiar" class ="btn btn-warning" runat="server" Text="Limpiar" OnClick="BtnLimpiar_Click" />
+                <asp:Button ID="BtnLimpiar" class ="btn btn-warning btn-md" runat="server" Text="Limpiar" OnClick="BtnLimpiar_Click" />
 &nbsp;&nbsp;
-                <asp:Button ID="BtnGuardar" class ="btn btn-success" runat="server" Text="Guardar" OnClick="BtnGuardar_Click" />
+                <asp:Button ID="BtnGuardar" class ="btn btn-success btn-md" runat="server" Text="Guardar" OnClick="BtnGuardar_Click" />
 &nbsp;&nbsp;
-                <asp:Button ID="BtnEliminar" class ="btn btn-danger" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click" />
+                <asp:Button ID="BtnEliminar" class ="btn btn-danger btn-md" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click" />
 
             
       
