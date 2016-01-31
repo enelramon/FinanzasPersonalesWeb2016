@@ -4,6 +4,10 @@
         .auto-style4 {
             width: 472px;
         }
+        .auto-style5 {
+            width: 472px;
+            height: 77px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -25,10 +29,11 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style4">Estado:
-                <asp:RadioButton ID="RbActivo" runat="server" Text="Activo" />
-&nbsp;&nbsp;
-                <asp:RadioButton ID="RbInactivo" runat="server" Text="Inactivo" />
+            <td class="auto-style5">Estado:
+                <asp:RadioButtonList ID="EstadoRbList" runat="server">
+                    <asp:ListItem>Activo</asp:ListItem>
+                    <asp:ListItem>Inactivo</asp:ListItem>
+                </asp:RadioButtonList>
 
             
       

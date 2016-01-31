@@ -23,6 +23,7 @@ namespace FinanzasPersonalesWeb
             DropDownUsuario.DataTextField = "Nombres";
             DropDownUsuario.DataValueField = "UsuarioId";
             DropDownUsuario.DataBind();
+
         }
 
         protected void BtnLimpiar_Click(object sender, EventArgs e)
@@ -30,12 +31,21 @@ namespace FinanzasPersonalesWeb
             Limpiar();
         }
 
+        public void ValidarTextBoxVacio(TextBox TextoValidar)
+        {
+            if(TextoValidar.Text.Equals(string.Empty))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor llenar los campos');", true);
+                return;
+            }
+        }
+
+
         public void Limpiar()
         {
             TbMiembroId.Text = "";
             TbNombre.Text = "";
-            RbActivo.Checked = false;
-            RbInactivo.Checked = false;
+            EstadoRbList.ClearSelection();
             DropDownUsuario.ClearSelection();
         }
 
@@ -47,7 +57,9 @@ namespace FinanzasPersonalesWeb
             miembro.MiembroId = (TbMiembroId.Text == "") ? 0 : Convert.ToInt16(TbMiembroId);
             miembro.Nombre = TbNombre.Text;
 
-            if (RbActivo.Checked == true)
+            ValidarTextBoxVacio(TbNombre);
+      
+            if (EstadoRbList.SelectedIndex == 0)
             {
                 miembro.esActivo = 1;
             }
@@ -123,11 +135,11 @@ namespace FinanzasPersonalesWeb
                 TbNombre.Text = miembro.Nombre;
                 if (miembro.esActivo == 1)
                 {
-                    RbActivo.Checked = true;
+                    EstadoRbList.SelectedIndex = 0;
                 }
                 else
                 {
-                    RbInactivo.Checked = true;
+                    EstadoRbList.SelectedIndex = 1;
                 }
                 DropDownUsuario.SelectedValue = miembro.UsuarioId.ToString();
 
