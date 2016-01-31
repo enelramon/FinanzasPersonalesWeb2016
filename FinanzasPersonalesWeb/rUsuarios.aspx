@@ -21,6 +21,11 @@
 
 
     <h1>Registro</h1>
+    <div class = "row" style="margin:0 2px 0 2px" >
+    <div class="col-md-12" id="AlertNotificationDiv" runat="server">
+      <asp:Label id="AlertNotificationBox" runat="server"/>
+    </div>
+</div>
     <div class="row">
     <div class="form-group">
     <div class="col-xs-3 col-sm-3 col-lg-2 col-md-3">
