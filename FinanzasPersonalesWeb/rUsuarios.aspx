@@ -26,7 +26,7 @@
     <div class="col-xs-3 col-sm-3 col-lg-2 col-md-3">
        <h6><asp:Label ID="Label1" runat="server" Text="Nombres"></asp:Label></h6>
        <br />
-       <h6><asp:Label ID="Label2" runat="server" Text="Apellidoss"></asp:Label></h6>
+       <h6><asp:Label ID="Label2" runat="server" Text="Apellidos"></asp:Label></h6>
        <br />
        <h6><asp:Label ID="Label5" runat="server" Text="Usuario"></asp:Label></h6>
        <br />
@@ -35,15 +35,15 @@
        <h6><asp:Label ID="Label7" runat="server" Text="Correo Electronico"></asp:Label></h6>   
 </div>
  <div class="col-xs-9 col-sm-9 col-lg-5 col-md-9">
-        <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server" Text="Nombres" onclick="this.value='';" onblur="if (this.value==''){this.value='Nombres';}"></asp:TextBox>
+        <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server" Text="Nombres" placeholder="Nombres" onclick="this.value='';"></asp:TextBox>
         <br />
-        <asp:TextBox ID="ApellidoTextBox" CssClass="form-control" runat="server" Text="Apellidos" onclick="this.value='';" onblur="if (this.value==''){this.value='Apellidos';}"></asp:TextBox>
+        <asp:TextBox ID="ApellidoTextBox" CssClass="form-control" runat="server" Text="Apellidos" placeholder="Apellidos" onclick="this.value='';"></asp:TextBox>
         <br />
-        <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server" Text="Nombre de Usuario" onclick="this.value='';" onblur="if (this.value==''){this.value='Nombre de Usuario';}"></asp:TextBox>
+        <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server" Text="Nombre de Usuario" placeholder="Usuario" onclick="this.value='';"></asp:TextBox>
         <br />
-        <asp:TextBox ID="PassTextBox" CssClass="form-control" type="password" runat="server" Text="Contraseña" onclick="this.value='';" onblur="if (this.value==''){this.value='Contraseña';}"></asp:TextBox>
+        <asp:TextBox ID="PassTextBox" CssClass="form-control" type="password" runat="server" Text="Contraseña" placeholder="Contraseña" onclick="this.value='';"></asp:TextBox>
         <br />
-        <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server" Text="Correo Electronico" onclick="this.value='';" onblur="if (this.value==''){this.value='Correo Electronico';}"></asp:TextBox>
+        <asp:TextBox ID="EmailTextBox" CssClass="form-control" for="inputError" runat="server" Text="Correo Electronico" placeholder="Correo Electronico" onclick="this.value='';"></asp:TextBox>
         <br />
                </div>
 
