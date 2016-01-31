@@ -51,7 +51,9 @@ namespace FinanzasPersonalesWeb
             }
             else
             {
-                transferencia.TransferenciaId = Convert.ToInt32(TransferenciaIdTextBox.Text);
+                int id;
+                id = Convert.ToInt32(TransferenciaIdTextBox.Text);
+                transferencia.TransferenciaId = id;
                 if (transferencia.Editar())
                 {
                     HttpContext.Current.Response.Write("<SCRIPT>alert('Actualizacion Realizada')</SCRIPT>");
