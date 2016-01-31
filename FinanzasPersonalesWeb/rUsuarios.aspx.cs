@@ -79,6 +79,8 @@ namespace FinanzasPersonalesWeb
                     Usuario.Usuario = UsuarioTextBox.Text;
                     Usuario.Password = PassTextBox.Text;
                     Usuario.Email = EmailTextBox.Text;
+
+                    paso = Usuario.Insertar();
                 }
 
                 
