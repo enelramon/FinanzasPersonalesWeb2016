@@ -15,8 +15,6 @@ namespace FinanzasPersonalesWeb
         Miembros m = new Miembros();
         int IdC;
 
-        // Mensaje --->   ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco');", true); 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
@@ -73,6 +71,7 @@ namespace FinanzasPersonalesWeb
             if (paso)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro  Guardado.');", true);
+                Limpiar();
             }
         }
 
@@ -103,7 +102,14 @@ namespace FinanzasPersonalesWeb
         {
             Miembros miembro = new Miembros();
 
-            if (!(miembro.Buscar(Convert.ToInt16(TbMiembroId.Text))))
+            if (TbMiembroId.Text.Equals(string.Empty))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor llenar debidamente el campo ID');", true);
+                Limpiar();
+                return;
+            }
+
+                if (!(miembro.Buscar(Convert.ToInt16(TbMiembroId.Text))))
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No se encontro ningún registro con ese ID.');", true);
                 Limpiar();
