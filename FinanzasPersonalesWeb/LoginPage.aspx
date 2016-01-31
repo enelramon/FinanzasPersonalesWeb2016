@@ -14,14 +14,14 @@
 
                                       <asp:TextBox ID="UserName" runat="server" Font-Size="0.8em"></asp:TextBox>
                                       <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
-
+                                        <br />
                                       <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
 
                                       <asp:TextBox ID="Password" runat="server" Font-Size="0.8em" TextMode="Password"></asp:TextBox>
                                       <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
                                       <asp:CheckBox ID="RememberMe" runat="server" Text="Remember me next time." />
                                       <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
-
+                                      <br />
                                       <asp:Button ID="LoginButton" runat="server" BackColor="White" BorderColor="#507CD1" BorderStyle="Solid" BorderWidth="1px" CommandName="Login" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" Text="Log In" ValidationGroup="Login1" />
           </LayoutTemplate>
     </asp:Login>

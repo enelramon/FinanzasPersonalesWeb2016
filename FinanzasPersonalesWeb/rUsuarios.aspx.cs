@@ -15,6 +15,15 @@ namespace FinanzasPersonalesWeb
 
         }
 
+        public void LlenarClase(ref Usuarios Usuario)
+        {
+            Usuario.Nombre = NombreTextBox.Text;
+            Usuario.Apellidos = ApellidoTextBox.Text;
+            Usuario.TipoUsuarioId = 1;
+            Usuario.Usuario = UsuarioTextBox.Text;
+            Usuario.Password = PassTextBox.Text;
+            Usuario.Email = EmailTextBox.Text;
+        }
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
             Usuarios Usuario = new Usuarios();
