@@ -7,50 +7,66 @@
         .auto-style4 {
             margin-left: 106px;
         }
+        .col-centered{
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+}
+        
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Table ID="Table1" runat="server" Height="111px" Width="526px">
-        <asp:TableRow>
-            <asp:TableCell>
-                <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="NombreTextBox" runat="server"></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
+   
 
-        <asp:TableRow>
-            <asp:TableCell>
-                <asp:Label ID="Label2" runat="server" Text="Apellido"></asp:Label>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="ApellidoTextBox" runat="server"></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
 
-        <asp:TableRow>
-            <asp:TableCell><asp:Label ID="Label5" runat="server" Text="Usuario"></asp:Label></asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="UsuarioTextBox" runat="server"></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-         <asp:TableRow>
-            <asp:TableCell><asp:Label ID="Label6" runat="server" Text="Contraseña"></asp:Label></asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="PassTextBox" runat="server"></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-         <asp:TableRow>
-            <asp:TableCell><asp:Label ID="Label7" runat="server" Text="Email"></asp:Label></asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="EmailTextBox" runat="server"></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-    </asp:Table>
-    <asp:Button ID="LimpiarButton" runat="server" Text="Limpiar" CssClass="auto-style4" style="width: 62px" />
-    <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
-    <br />
-    <br />
-    <asp:CheckBox ID="AceptarCheckBox" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" Text="Acepto los Terminos y Condiciones de uso." />
-</asp:Content>
+    <h1>Registro</h1>
+    <div class="row">
+    <div class="form-group">
+    <div class="col-xs-3 col-sm-3 col-lg-2 col-md-3">
+       <h6><asp:Label ID="Label1" runat="server" Text="Nombres"></asp:Label></h6>
+       <br />
+       <h6><asp:Label ID="Label2" runat="server" Text="Apellidoss"></asp:Label></h6>
+       <br />
+       <h6><asp:Label ID="Label5" runat="server" Text="Usuario"></asp:Label></h6>
+       <br />
+       <h6><asp:Label ID="Label6" runat="server" Text="Contraseña"></asp:Label>   </h6>
+       <br /> 
+       <h6><asp:Label ID="Label7" runat="server" Text="Correo Electronico"></asp:Label></h6>   
+</div>
+ <div class="col-xs-9 col-sm-9 col-lg-5 col-md-9">
+        <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+        <br />
+        <asp:TextBox ID="ApellidoTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+        <br />
+        <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+        <br />
+        <asp:TextBox ID="PassTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+        <br />
+        <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+        <br />
+               </div>
+
+        
+    <div class="col-lg-12 col-centered">
+        <asp:CheckBox ID="AceptarCheckBox" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" Text="Acepto los Terminos y Condiciones de uso." />
+    </div>
+    <div class="col-lg-12 col-centered">
+        <asp:Button ID="LimpiarButton" runat="server" Text="Limpiar" CssClass="btn btn-warning" />
+        <asp:Button ID="GuardarButton" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="GuardarButton_Click" />
+    </div>
+        </div>
+            </div>   
+<!--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+        ControlToValidate="EmailTextBox" ErrorMessage="Email is required"
+        SetFocusOnError="True" ></asp:RequiredFieldValidator>
+
+    
+
+    
+   <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
+             ErrorMessage="Invalid Email" ControlToValidate="EmailTextBox"
+             SetFocusOnError="True"
+             ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
+                    </asp:RegularExpressionValidator>-->
+    </asp:Content>
