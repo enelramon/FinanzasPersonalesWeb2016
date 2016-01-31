@@ -34,7 +34,7 @@
        <br /> 
        <h6><asp:Label ID="Label7" runat="server" Text="Correo Electronico"></asp:Label></h6>   
 </div>
- <div class="col-xs-9 col-sm-9 col-lg-5 col-md-9">
+ <div class="col-xs-9 col-sm-9 col-lg-5 col-md-6">
         <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server" Text="Nombres" placeholder="Nombres" onclick="this.value='';"></asp:TextBox>
         <br />
         <asp:TextBox ID="ApellidoTextBox" CssClass="form-control" runat="server" Text="Apellidos" placeholder="Apellidos" onclick="this.value='';"></asp:TextBox>
@@ -43,9 +43,32 @@
         <br />
         <asp:TextBox ID="PassTextBox" CssClass="form-control" type="password" runat="server" Text="Contraseña" placeholder="Contraseña" onclick="this.value='';"></asp:TextBox>
         <br />
-        <asp:TextBox ID="EmailTextBox" CssClass="form-control" for="inputError" runat="server" Text="Correo Electronico" placeholder="Correo Electronico" onclick="this.value='';"></asp:TextBox>
+     <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server" Text="Correo Electronico" placeholder="Correo Electronico" onclick="this.value='';"></asp:TextBox>
+     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+        ControlToValidate="EmailTextBox" ErrorMessage="Email is required"
+        SetFocusOnError="True" ></asp:RequiredFieldValidator>
         <br />
+
                </div>
+        <div class="col-lg-3">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+             ErrorMessage="<-- Correo invalido, por favor confirmelo." ControlToValidate="EmailTextBox"
+             SetFocusOnError="True"
+             ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
+            </asp:RegularExpressionValidator>    
+        </div>
 
         
     <div class="col-lg-12 col-centered">
@@ -57,16 +80,10 @@
     </div>
         </div>
             </div>   
-<!--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-        ControlToValidate="EmailTextBox" ErrorMessage="Email is required"
-        SetFocusOnError="True" ></asp:RequiredFieldValidator>
+
 
     
 
     
-   <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
-             ErrorMessage="Invalid Email" ControlToValidate="EmailTextBox"
-             SetFocusOnError="True"
-             ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
-                    </asp:RegularExpressionValidator>-->
+   
     </asp:Content>

@@ -30,7 +30,7 @@ namespace FinanzasPersonalesWeb
             Boolean paso = false;
             Boolean control1, control2 = false;
 
-
+            
             if (NombreTextBox.Text.Trim().Length == 0)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe llenar los campos.');", true);
