@@ -35,6 +35,18 @@ namespace FinanzasPersonalesWeb
             }
 
         }
+
+        public int Error()
+        {
+            int contador = 0;
+
+            if(MontoTextBox.Text == "")
+            {
+                HttpContext.Current.Response.Write("<SCRIPT>alert('Debe de completar el campo monto')</SCRIPT>");
+                contador = 1;
+            }
+            return contador;
+        }
         public void LlenarDatos(Egresos egreso)
         {
             egreso.CuentaId = Convert.ToInt32(CuentaIdDropDownList.SelectedValue);
@@ -57,7 +69,7 @@ namespace FinanzasPersonalesWeb
             if (EgresoIdTextBox.Text.Length == 0)
             {
                 LlenarDatos(egresos);
-                if (egresos.Insertar())
+                if (Error() == 0 && egresos.Insertar())
                 {
                     HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Guardado')</SCRIPT>");
                     Limpiar();
@@ -69,16 +81,24 @@ namespace FinanzasPersonalesWeb
             }
             else
             {
-                egresos.EgresoId = Convertir();
-                LlenarDatos(egresos);
-                if (egresos.Editar())
+                if (egresos.Buscar(Convertir()))
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Editado correctamente')</SCRIPT>");
-                    Limpiar();
+                    egresos.EgresoId = Convertir();
+                    LlenarDatos(egresos);
+                    if (egresos.Editar())
+                    {
+                        HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Editado correctamente')</SCRIPT>");
+                        Limpiar();
+                    }
+                    else
+                    {
+                        HttpContext.Current.Response.Write("<SCRIPT>alert('Error al editar')<SCRIPT/>");
+                    }
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al editar')<SCRIPT/>");
+
+                        HttpContext.Current.Response.Write("<SCRIPT>alert('No existe ese Id')<SCRIPT/>");
                 }
             }
         }
@@ -128,5 +148,6 @@ namespace FinanzasPersonalesWeb
                 HttpContext.Current.Response.Write("<SCRIPT>alert('Error al buscar')<SCRIPT/>");
             }
         }
+
     }
 }

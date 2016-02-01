@@ -15,44 +15,67 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table style="width: 100%; margin-bottom: 40px;">
-        <tr>
-            <td class="auto-style4">EgresoId:<asp:TextBox ID="EgresoIdTextBox" runat="server" Height="19px" style="margin-left: 27px" Width="152px"></asp:TextBox>
-                <asp:Button ID="BuscarButton" runat="server" Height="26px" Text="Buscar" Width="80px" OnClick="BuscarButton_Click" />
-            </td>
-            <td>Fecha:<asp:TextBox ID="FechaTextBox" runat="server" Height="19px" style="margin-left: 50px" Width="152px"></asp:TextBox>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style4">CuentaId:<asp:DropDownList ID="CuentaIdDropDownList" runat="server" Height="22px" style="margin-left: 27px" Width="155px">
-                </asp:DropDownList>
-            </td>
-            <td>Monto:<asp:TextBox ID="MontoTextBox" runat="server" Height="19px" style="margin-left: 47px" Width="152px"></asp:TextBox>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style4">MiembroId:<asp:DropDownList ID="MiembroIdDropDownList" runat="server" Height="22px" style="margin-left: 13px" Width="155px">
-                </asp:DropDownList>
-                <br />
-                <br />
-                Observacion:<asp:TextBox ID="ObservacionTextBox" runat="server" Height="78px" style="margin-left: 6px" TextMode="MultiLine" Width="154px"></asp:TextBox>
-            </td>
-            <td>TipoEgresoId:<asp:DropDownList ID="TipoEgresoIdDropDownList" runat="server" Height="22px" style="margin-left: 3px" Width="156px">
-                </asp:DropDownList>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
-&nbsp;&nbsp;&nbsp;
-    <p style="margin-left: 120px">
-        <asp:Button ID="NuevoButton" runat="server" Height="26px" style="margin-left: 65px" Text="Nuevo" Width="80px" OnClick="NuevoButton_Click" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="GuardarButton" runat="server" Height="26px" OnClick="GuardarButton_Click" Text="Guardar" Width="80px" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="EliminarButton" runat="server" Height="26px" Text="Eliminar" Width="81px" OnClick="EliminarButton_Click" style="margin-left: 0px" />
-    <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
-    </p>
+    
+            
+        <div class="container">
+            <div class="row">
+                <div class="btn-group">
+                    <div class="col-md-4">
+                        <asp:TextBox ID="EgresoIdTextBox" runat="server" CssClass="form-control" Height="33px" style="margin-left: 27px" Width="152px"></asp:TextBox>
+                    </div>
+                    <div class="col-md-1">
+                        <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-default" Height="33px" Text="Buscar" Width="90px" OnClick="BuscarButton_Click" />
+                    </div>
+                    <div class="col-md-3">
+                        <asp:TextBox ID="FechaTextBox" runat="server" CssClass="form-control" Height="33px" style="margin-left: 50px" Width="152px"></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="btn-group">
+                    <div class="col-md-4">
+                        <br />
+                         <asp:DropDownList ID="CuentaIdDropDownList" runat="server" CssClass="form-control" Height="33px" style="margin-left: 27px" Width="155px">
+                         </asp:DropDownList>
+                    </div>
+                    <div class="col-md-4">
+                        <br />
+                        <asp:TextBox ID="MontoTextBox" runat="server" CssClass="form-control" Height="33px" style="margin-right: 456px" Width="152px"></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="btn-group">
+                    <div class ="col-md-4">
+                        <br />
+                         <asp:DropDownList ID="MiembroIdDropDownList" runat="server" CssClass="form-control" style="margin-left:27px" Height="33px"  Width="155px">
+                         </asp:DropDownList>
+                    </div>
+                    <div class="col-md-4">
+                        <br />
+                       <asp:DropDownList ID="TipoEgresoIdDropDownList" runat="server" CssClass="form-control" Height="33px" style="margin-right:456px" Width="155px">
+                       </asp:DropDownList>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="btn-group">
+                    <div class="col-md-4">
+                        <br />
+                        <asp:TextBox ID="ObservacionTextBox" runat="server" CssClass="form-control" Height="100px" style="margin-left: 27px" TextMode="MultiLine" Width="410px"></asp:TextBox>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <asp:Button ID="NuevoButton" runat="server" Height="35px" CssClass="btn btn-info" style="margin-left:65px"  Text="Nuevo" Width="90px" OnClick="NuevoButton_Click" />
+                <asp:Button ID="GuardarButton" runat="server" Height="35px" CssClass="btn btn-primary" style="margin-left:15px" OnClick="GuardarButton_Click" Text="Guardar" Width="90px" />
+                <asp:Button ID="EliminarButton" runat="server" Height="35px" CssClass="btn btn-danger" style="margin-left:15px" Text="Eliminar" Width="90px" OnClick="EliminarButton_Click" />
+            </div>
+        </div>
+    </div>
+   
 </asp:Content>
