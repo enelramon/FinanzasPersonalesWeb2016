@@ -89,8 +89,15 @@ namespace FinanzasPersonalesWeb
             if (presupuesto.Buscar(Convert.ToInt32(PresupuestoTextBox.Text)))
             {
                 presupuesto.Eliminar();
+                Limpiar();
+            }
+            else {
+                EliminarRequiredFieldValidator.IsValid = false;
+                Limpiar();
             }
             
         }
+
+       
     }
 }
