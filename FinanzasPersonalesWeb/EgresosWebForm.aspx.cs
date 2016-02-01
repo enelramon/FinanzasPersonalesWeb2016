@@ -15,7 +15,10 @@ namespace FinanzasPersonalesWeb
             Cuentas cuenta = new Cuentas();
             TiposEgresos tipoEgreso = new TiposEgresos();
             Miembros miembro = new Miembros();
-            if(IsPostBack == false)
+
+            
+
+            if (IsPostBack == false)
             {
                 CuentaIdDropDownList.DataSource = cuenta.Listado(" * ", "1=1", "");
                 CuentaIdDropDownList.DataTextField = "Descripcion";
@@ -42,18 +45,20 @@ namespace FinanzasPersonalesWeb
 
             if(MontoTextBox.Text == "")
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Debe de completar el campo monto')</SCRIPT>");
+                //HttpContext.Current.Response.Write("<SCRIPT>alert('Debe de completar el campo monto')</SCRIPT>");
                 contador = 1;
             }
             return contador;
         }
         public void LlenarDatos(Egresos egreso)
         {
+            float monto;
+            float.TryParse(MontoTextBox.Text, out monto);
             egreso.CuentaId = Convert.ToInt32(CuentaIdDropDownList.SelectedValue);
             egreso.MiembroId = Convert.ToInt32(MiembroIdDropDownList.SelectedValue);
-            egreso.Observacion = ObservacionTextBox.Text;
+            //egreso.Observacion = ObservacionTextBox.Text;
             egreso.Fecha = FechaTextBox.Text;
-            egreso.Monto = Convert.ToSingle(MontoTextBox.Text);
+            egreso.Monto = monto;
             egreso.TipoEgresoId = Convert.ToInt32(TipoEgresoIdDropDownList.SelectedValue);
         }
         public int Convertir()

@@ -24,7 +24,7 @@
                         <asp:TextBox ID="EgresoIdTextBox" runat="server" CssClass="form-control" Height="33px" style="margin-left: 27px" Width="152px"></asp:TextBox>
                     </div>
                     <div class="col-md-1">
-                        <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-default" Height="33px" Text="Buscar" Width="90px" OnClick="BuscarButton_Click" />
+                        <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-success" Height="33px" Text="Buscar" Width="90px" OnClick="BuscarButton_Click" />
                     </div>
                     <div class="col-md-3">
                         <asp:TextBox ID="FechaTextBox" runat="server" CssClass="form-control" Height="33px" style="margin-left: 50px" Width="152px"></asp:TextBox>
