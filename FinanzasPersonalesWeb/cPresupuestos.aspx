@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="cPresupuestos.aspx.cs" Inherits="FinanzasPersonalesWeb.cPresupuestos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-<%--    <!DOCTYPE html>
+    <%--    <!DOCTYPE html>
     
     <html xmlns="http://www.w3.org/1999/xhtml">
         <head runat="server">
@@ -26,7 +26,8 @@
                 <asp:ListItem>Descripcion</asp:ListItem>
             </asp:DropDownList>
             <asp:TextBox ID="BuscarTextBox" runat="server" Width="280px"></asp:TextBox>
-            <asp:Button ID="BuscarButton" runat="server" Text="Buscar" OnClick="BuscarButton_Click" />
+            <asp:Button ID="BuscarButton" runat="server" Text="Buscar" OnClick="BuscarButton_Click" ValidationGroup="Filtro" />
+            <asp:RequiredFieldValidator ID="TipoDatoFiltroRequiredFieldValidator" runat="server" ControlToValidate="FiltroDropDownList" Display="Dynamic" ErrorMessage="Porfavor elige porque campo desea filtrar.." ValidationGroup="Filtro"></asp:RequiredFieldValidator>
             <br />
             <asp:GridView ID="PresupuestoGridView" runat="server" Width="313px">
             </asp:GridView>
