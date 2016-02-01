@@ -42,7 +42,7 @@ namespace BLL
         {
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(String.Format("Update Transferencias set Fecha = '{0}', CuentaOrigen = {1}, CuentaDestino = {2}, Monto = {3}, Observacion = '{4}', UsuarioId = {5}", this.Fecha, this.CuentaOrigenId, this.CuentaDestinoId, this.Monto, this.Observacion, this.UsuarioId));
+            retorno = conexion.Ejecutar(String.Format("Update Transferencias set Fecha = '{0}', CuentaOrigenId = {1}, CuentaDestinoId = {2}, Monto = {3}, Observacion = '{4}', UsuarioId = {5} where TransferenciaId = {6}", this.Fecha, this.CuentaOrigenId, this.CuentaDestinoId, this.Monto, this.Observacion, this.UsuarioId, this.TransferenciaId));
             return retorno;
         }
 
