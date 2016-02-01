@@ -17,7 +17,8 @@
                     <asp:ListItem>UsuarioId</asp:ListItem>
                 </asp:DropDownList>
                 <asp:TextBox ID="TbFiltro" runat="server" Width="298px"></asp:TextBox>
-                <asp:Button ID="BtnBuscar" runat="server" OnClick="BtnBuscar_Click" Text="Buscar" />
+              
+                <asp:Button ID="BtnBuscar" class ="btn btn-success" runat="server" OnClick="BtnBuscar_Click" Text="Buscar" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>

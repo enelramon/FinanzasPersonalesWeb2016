@@ -12,6 +12,8 @@ namespace FinanzasPersonalesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            AlertNotificationDiv.Visible = false;
+            AlertNotificationBox.Text = "";
 
         }
 
@@ -30,7 +32,7 @@ namespace FinanzasPersonalesWeb
             Boolean paso = false;
             Boolean control1, control2 = false;
 
-
+            
             if (NombreTextBox.Text.Trim().Length == 0)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe llenar los campos.');", true);
@@ -79,18 +81,28 @@ namespace FinanzasPersonalesWeb
                     Usuario.Usuario = UsuarioTextBox.Text;
                     Usuario.Password = PassTextBox.Text;
                     Usuario.Email = EmailTextBox.Text;
+
+                    paso = Usuario.Insertar();
                 }
 
                 
             }
             if (paso)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Transaccion Exitosa.');", true);
+                if (!AlertNotificationDiv.Visible)
+                    AlertNotificationDiv.Visible = true;
+                if (!AlertNotificationBox.Visible)
+                    AlertNotificationBox.Visible = true;
+
+                AlertNotificationDiv.Attributes.Add("class", "col-md-12 col-xs-12 col-ms-12 alert alert-success alert-dismissable");
+                AlertNotificationBox.Text = "Transaccion Satisfactoria.";
             }
             else
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Ha habido un error, por favor vuelva a intentar.');", true);
+                AlertNotificationDiv.Attributes.Add("class", "col-md-12 col-xs-12 col-ms-12 alert alert-danger alert-dismissable");
+                AlertNotificationBox.Text = "Ha habido un error en la solicitud, por favor, intentelo mas tarde.";
             }
+
         }
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {

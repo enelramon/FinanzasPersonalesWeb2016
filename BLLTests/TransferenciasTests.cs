@@ -52,7 +52,7 @@ namespace BLL.Tests
         public void BuscarTest()
         {
             Transferencias transferencias = new Transferencias();
-            Assert.IsTrue(transferencias.Buscar(1));
+            Assert.IsTrue(transferencias.Buscar(6));
         }
         [TestMethod()]
         public void ListadoTest()

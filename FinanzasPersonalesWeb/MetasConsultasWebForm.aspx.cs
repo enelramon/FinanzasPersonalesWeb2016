@@ -10,7 +10,6 @@ namespace FinanzasPersonalesWeb
 {
     public partial class MetasConsultasWebForm : System.Web.UI.Page
     {
-        Metas meta = new Metas();
         protected void Page_Load(object sender, EventArgs e)
         {
             CargarGridView();
@@ -18,6 +17,7 @@ namespace FinanzasPersonalesWeb
 
         public void CargarGridView()
         {
+            Metas meta = new Metas();
             MetasGridView.DataSource = meta.Listado(" * ", " 1=1 ", "");
             MetasGridView.DataBind();
         }
@@ -25,6 +25,7 @@ namespace FinanzasPersonalesWeb
         protected void BuscarButton_Click1(object sender, EventArgs e)
         {
             int Id = 0;
+            Metas meta = new Metas();
             if (ConsultaTextBox.Text.Length > 0 && ConsultaDropDownList.Text == "MetaId")
             {
                 bool result = Int32.TryParse(ConsultaTextBox.Text, out Id);
