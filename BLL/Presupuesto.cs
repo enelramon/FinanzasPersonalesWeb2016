@@ -34,22 +34,22 @@ namespace BLL
         public override bool Insertar()
         {
             ConexionDb conexion = new ConexionDb();
-            bool retorno = false;
+            int retorno = 0;
 
             try {
-                retorno = conexion.Ejecutar(String.Format("Insert Into Presupuestos (UsuarioId,Descripcion) Values ({0},'{1}')--", this.UsuarioId, this.Descripcion));
-                if (retorno) {
+                retorno = Convert.ToInt32(conexion.ObtenerValor(String.Format("Insert Into Presupuestos (UsuarioId,Descripcion) Values ({0},'{1}'); SELECT SCOPE_IDENTITY(); --", this.UsuarioId, this.Descripcion)));
+                if (retorno > 0) {
                     foreach (PresupuestoDetalle pd in Detalle)
                     {
-                        conexion.Ejecutar("Insert Into PresupuestoDetalle (PresupuestoId,TipoEgresosId,Monto) Values ("+ PresupuestoId + "," + pd.TipoEgresoId + "," + pd.Monto + ")--");
+                        conexion.Ejecutar("Insert Into PresupuestoDetalle (PresupuestoId,TipoEgresosId,Monto) Values ("+ retorno + "," + pd.TipoEgresoId + "," + pd.Monto + ")--");
                     }
                 }
             }
             catch
             {
-                retorno = false;
+                retorno = 0;
             }
-            return retorno;
+            return retorno > 0;
         }
 
         
