@@ -64,7 +64,7 @@ namespace FinanzasPersonalesWeb
                     filtro = "UsuarioId = " + DatosTextBox.Text;
                 }
 
-                dt = transferencia.Listado(" TransferenciaId, Fecha, CuentaOrigenId, CuentaDestinoId, Monto, Observacion, UsuarioId ", filtro, "");
+                dt = transferencia.Listado(" * ", filtro, "");
                 DatosGridView.DataSource = dt;
                 DatosGridView.DataBind();
             }

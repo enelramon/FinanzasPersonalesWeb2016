@@ -36,7 +36,7 @@ namespace FinanzasPersonalesWeb
                 transferencia.Fecha = FechaTextBox.Text;
                 transferencia.CuentaOrigenId = Convert.ToInt32(CuentaOrigenTextBox.Text);
                 transferencia.CuentaDestinoId = Convert.ToInt32(CuentaDestinoTextBox.Text);
-                //transferencia.Monto = Convert.ToDouble(TransferenciaIdTextBox.Text);
+                transferencia.Monto = Convert.ToDouble(MontoTextBox.Text);
                 transferencia.Observacion = ObservacionTextBox.Text;
                 transferencia.UsuarioId = Convert.ToInt32(UsuarioIdTextBox.Text);
                 if (transferencia.Insertar())
