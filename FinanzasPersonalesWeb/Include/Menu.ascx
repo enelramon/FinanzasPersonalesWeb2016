@@ -4,49 +4,44 @@
     .auto-style1 {
         height: 43px;
     }
+
     .auto-style2 {
         height: 43px;
         width: 102px;
     }
+
     .auto-style3 {
         width: 767px;
     }
 </style>
 
-<table width="100%">
-    <tr>
-        <td align="center" class="auto-style2">
-            <asp:HyperLink ID="hyper1" runat="server" Text="Home" NavigateUrl="~/default.aspx" />
-             <td align="center" class ="auto-style3">
-                <asp:LoginView runat="server" ID ="MenuVew1">
-                    <AnonymousTemplate>
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                    <asp:HyperLink ID = "HyperLink1" runat = "server" Text = "Consulta Usuario" NavigateUrl = "~/cUsuarios.aspx" />
-                    <asp:HyperLink ID = "HyperLink2" runat = "server" Text = "RegistrarEgresos" NavigateUrl = "~/EgresosWebForm.aspx" />
-                    <asp:HyperLink ID = "HyperLink3" runat = "server" Text = "Registrar Metas" NavigateUrl = "~/MetasWebForm.aspx" />
-                    <asp:HyperLink ID = "HyperLink4" runat = "server" Text = "Registrar Miembros" NavigateUrl = "~/MiembrosWebForm.aspx" />
-                    <asp:HyperLink ID = "HyperLink5" runat = "server" Text = "Registrar Tipo de Ingreso" NavigateUrl = "~/TipoIngreso.aspx" />
-                    <asp:HyperLink ID = "HyperLink6" runat = "server" Text = "Registrar Transferencias" NavigateUrl = "~/Transferencia.aspx" />
-                    <asp:HyperLink ID = "HyperLink7" runat = "server" Text = "Registrar Tipos Usuarios" NavigateUrl = "~/rTiposUsuarios.aspx" />
-                    </LoggedInTemplate>
-                </asp:LoginView>
-        </td>
-        <td align="right" class="auto-style1">
-            <asp:LoginView runat="server" ID="LoginView1">
-                <AnonymousTemplate>
-                    Bienvenido Guest,
-                    <asp:LoginStatus runat="server" ID="LoginStatus1" />
-             <asp:HyperLink ID="HyperLink1" runat="server" Text="Registrar" NavigateUrl="~/rUsuarios.aspx" />
-                </AnonymousTemplate>
-               <LoggedInTemplate>
-                    Bienvenido
-                    <asp:LoginName runat="server" ID="LoginName1" />
-                    ,
-                    <asp:LoginStatus runat ="server" ID="LoginStatus1" />
-                </LoggedInTemplate>
-            </asp:LoginView>
+     
+<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Finanzas Personales</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="default.aspx">Home</a></li>
+        </ul>
+       <ul class="nav navbar-nav navbar-right">
             
-        </td>
-    </tr>
-</table>
+            <asp:LoginView runat="server" ID="LoginView2">
+                <AnonymousTemplate>
+                    <li style="margin-top: 4.5%"> Bienvenido Usuario, </li>
+                    <li><a href="LoginPage.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="rUsuarios.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                 </AnonymousTemplate>
+                 <LoggedInTemplate>
+                    <li style="margin-top: 6%;">Bienvenido
+                    <asp:LoginName runat="server" ID="LoginName1" />
+                    ,</li>
+                    <li role="button"><asp:LoginStatus runat="server" ID="LoginStatus1" />
+                        </li>
+                 </LoggedInTemplate>
+                </asp:LoginView>
+              </ul>
+           <ul>
+        </ul>
+    </div>
+</div>

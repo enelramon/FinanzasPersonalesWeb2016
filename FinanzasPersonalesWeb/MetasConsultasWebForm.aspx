@@ -9,41 +9,48 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <center>
+     <div class ="container">
             <br />
             <h2>Consultas de Metas</h2>
             <br /><br />
              <div class="row">
-              <div class="col-xs-6">
-                <asp:TextBox runat="server" ID="ConsultaTextBox" CssClass="form-control " placeholder="Id" Height="33px" Width="496px"/>
+                 <div class="col-xs-3 col-md-3">
+                     <asp:DropDownList ID="ConsultaDropDownList" CssClass="form-control " runat="server">
+                          <asp:ListItem>MetaId</asp:ListItem>
+                          <asp:ListItem>Descripcion</asp:ListItem>
+                     </asp:DropDownList>
+                 </div>
+              <div class="col-xs-6 col-md-6">
+                <asp:TextBox runat="server" ID="ConsultaTextBox" CssClass="form-control " placeholder="Id"/>
               </div>
-              <div class="col-xs-3">
+              <div class="col-xs-3 col-md-3">
                 <asp:Button Text="Buscar" runat="server" ID="BuscarButton" CssClass="btn btn-primary" OnClick="BuscarButton_Click1"/>
               </div>
             </div> <br />
-            <asp:GridView ID="MetasGridView" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="485px">
-                <AlternatingRowStyle BackColor="White" />
-                <Columns>
-                    <asp:BoundField FooterText="MetaId" />
-                    <asp:BoundField FooterText="Descripcion" />
-                    <asp:BoundField FooterText="UsuarioI" />
-                </Columns>
-                <Columns>
-                    <asp:BoundField FooterText="Descripcion" />
-                </Columns>
-                <Columns>
-                    <asp:BoundField FooterText="Balance" />
-                </Columns>
-                <EditRowStyle BackColor="#2461BF" />
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EFF3FB" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
-            </asp:GridView>
-        </center>
+            <center>
+                <asp:GridView ID="MetasGridView" runat="server" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="600px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
+                    <Columns>
+                        <asp:BoundField FooterText="MetaId" />
+                        <asp:BoundField FooterText="Descripcion" />
+                        <asp:BoundField FooterText="UsuarioI" />
+<asp:BoundField FooterText="Descripcion"></asp:BoundField>
+<asp:BoundField FooterText="Balance"></asp:BoundField>
+                    </Columns>
+                    <Columns>
+                        <asp:BoundField FooterText="Descripcion" />
+                    </Columns>
+                    <Columns>
+                        <asp:BoundField FooterText="Balance" />
+                    </Columns>
+                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#242121" />
+                </asp:GridView>
+            </center>
+        </div>
 </asp:Content>

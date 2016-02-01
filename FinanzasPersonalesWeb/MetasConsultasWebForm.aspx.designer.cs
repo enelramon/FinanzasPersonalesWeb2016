@@ -13,6 +13,15 @@ namespace FinanzasPersonalesWeb {
     public partial class MetasConsultasWebForm {
         
         /// <summary>
+        /// ConsultaDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ConsultaDropDownList;
+        
+        /// <summary>
         /// ConsultaTextBox control.
         /// </summary>
         /// <remarks>
