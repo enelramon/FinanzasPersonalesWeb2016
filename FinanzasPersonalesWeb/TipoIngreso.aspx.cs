@@ -42,7 +42,7 @@ namespace FinanzasPersonalesWeb
         {
             TipoIngresoTextBox.Text = "";
             DescripcionTextBox.Text = "";
-            EstadoRadioButtonList.ClearSelection();
+            EstadoRadioButtonList.SelectedIndex = 0;
             UsuarioDropDownList.ClearSelection();
         }
 
