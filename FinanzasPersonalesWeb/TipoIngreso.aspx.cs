@@ -42,7 +42,7 @@ namespace FinanzasPersonalesWeb
         {
             TipoIngresoTextBox.Text = "";
             DescripcionTextBox.Text = "";
-            EstadoRadioButtonList.ClearSelection();
+            EstadoRadioButtonList.SelectedIndex = 0;
             UsuarioDropDownList.ClearSelection();
         }
 
@@ -50,16 +50,27 @@ namespace FinanzasPersonalesWeb
         {
             bool retorno = true;
 
-            TipodeIngreso.Descripcion = DescripcionTextBox.Text;
-            if (EstadoRadioButtonList.SelectedIndex == 1)
+            if (DescripcionTextBox.Text.Length > 0)
             {
-                TipodeIngreso.EsActivo = true;
+                TipodeIngreso.Descripcion = DescripcionTextBox.Text;
+
+                if (EstadoRadioButtonList.SelectedIndex == 1)
+                {
+                    TipodeIngreso.EsActivo = true;
+                }
+                else
+                {
+                    TipodeIngreso.EsActivo = false;
+                }
+
+                TipodeIngreso.UsuarioId = ValidarIdEntero(UsuarioDropDownList.SelectedValue);
+
+                retorno = true;
             }
             else
             {
-                TipodeIngreso.EsActivo = false;
+                retorno = false;
             }
-            TipodeIngreso.UsuarioId = ValidarIdEntero(UsuarioDropDownList.SelectedValue);
 
             return retorno;
 
@@ -72,6 +83,7 @@ namespace FinanzasPersonalesWeb
                 if (TipodeIngreso.Buscar(ValidarIdEntero(TipoIngresoTextBox.Text)))
                 {
                     DescripcionTextBox.Text = TipodeIngreso.Descripcion.ToString();
+
                     if (TipodeIngreso.EsActivo == true)
                     {
                         EstadoRadioButtonList.SelectedIndex = 1;
@@ -80,7 +92,15 @@ namespace FinanzasPersonalesWeb
                     {
                         EstadoRadioButtonList.SelectedIndex = 2;
                     }
-                    //UsuarioDropDownList.SelectedValue = TipodeIngreso.UsuarioId.ToString();
+
+                    if (TipodeIngreso.UsuarioId == 0)
+                    {
+                        HttpContext.Current.Response.Write("<Script>alert('El Usuario no puede ser Nulo o Cero')</Script>");
+                    }
+                    else
+                    {
+                        UsuarioDropDownList.SelectedValue = TipodeIngreso.UsuarioId.ToString();
+                    }
                 }
                 else
                 {
@@ -120,24 +140,32 @@ namespace FinanzasPersonalesWeb
         {
             if (ValidarIdEntero(TipoIngresoTextBox.Text) > 0)
             {
-                if (LlenarDatos())
+                if (TipodeIngreso.Buscar(ValidarIdEntero(TipoIngresoTextBox.Text)))
                 {
-                    TipodeIngreso.TipoIngresoId = ValidarIdEntero(TipoIngresoTextBox.Text);
-
-                    if (TipodeIngreso.Editar())
+                    if (LlenarDatos())
                     {
-                        HttpContext.Current.Response.Write("<Script>alert('Se Modifico Correctamente')</Script>");
+                        TipodeIngreso.TipoIngresoId = ValidarIdEntero(TipoIngresoTextBox.Text);
 
-                        Limpiar();
+                        if (TipodeIngreso.Editar())
+                        {
+                            HttpContext.Current.Response.Write("<Script>alert('Se Modifico Correctamente')</Script>");
+
+                            Limpiar();
+                        }
+                        else
+                        {
+                            HttpContext.Current.Response.Write("<Script>alert('Error al Modificar')</Script>");
+                        }
                     }
                     else
                     {
-                        HttpContext.Current.Response.Write("<Script>alert('Error al Modificar')</Script>");
+                        HttpContext.Current.Response.Write("<Script>alert('Faltan Datos')</Script>");
                     }
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<Script>alert('Faltan Datos')</Script>");
+                    HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                    Limpiar();
                 }
             }
             else
@@ -151,17 +179,25 @@ namespace FinanzasPersonalesWeb
         {
             if (ValidarIdEntero(TipoIngresoTextBox.Text) > 0)
             {
-                TipodeIngreso.TipoIngresoId = ValidarIdEntero(TipoIngresoTextBox.Text);
-
-                if (TipodeIngreso.Eliminar())
+                if (TipodeIngreso.Buscar(ValidarIdEntero(TipoIngresoTextBox.Text)))
                 {
-                    HttpContext.Current.Response.Write("<Script>alert('Se Elimino Correctamente')</Script>");
+                    TipodeIngreso.TipoIngresoId = ValidarIdEntero(TipoIngresoTextBox.Text);
 
-                    Limpiar();
+                    if (TipodeIngreso.Eliminar())
+                    {
+                        HttpContext.Current.Response.Write("<Script>alert('Se Elimino Correctamente')</Script>");
+
+                        Limpiar();
+                    }
+                    else
+                    {
+                        HttpContext.Current.Response.Write("<Script>alert('Error al Eliminar')</Script>");
+                    }
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<Script>alert('Error al Eliminar')</Script>");
+                    HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                    Limpiar();
                 }
             }
             else

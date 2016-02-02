@@ -31,6 +31,7 @@ namespace FinanzasPersonalesWeb
                 {
                     cmd.Parameters.AddWithValue("@Usuario", Login1.UserName);
                     cmd.Parameters.AddWithValue("@Contrasena", Login1.Password);
+
                     conn.Open();
 
                     Object obj = cmd.ExecuteScalar();

@@ -15,8 +15,6 @@ namespace FinanzasPersonalesWeb
         Miembros m = new Miembros();
         int IdC;
 
-        // Mensaje --->   ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco');", true); 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
@@ -25,6 +23,9 @@ namespace FinanzasPersonalesWeb
             DropDownUsuario.DataTextField = "Nombres";
             DropDownUsuario.DataValueField = "UsuarioId";
             DropDownUsuario.DataBind();
+            EstadoRbList.SelectedIndex = 1;
+            AlertNotificationDiv.Visible = false;
+            AlertNotificationBox.Text = "";
         }
 
         protected void BtnLimpiar_Click(object sender, EventArgs e)
@@ -32,12 +33,21 @@ namespace FinanzasPersonalesWeb
             Limpiar();
         }
 
+        public void ValidarTextBoxVacio(TextBox TextoValidar)
+        {
+            if(TextoValidar.Text.Equals(string.Empty))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor llenar los campos');", true);
+                return;
+            }
+        }
+
+
         public void Limpiar()
         {
             TbMiembroId.Text = "";
             TbNombre.Text = "";
-            RbActivo.Checked = false;
-            RbInactivo.Checked = false;
+            EstadoRbList.ClearSelection();
             DropDownUsuario.ClearSelection();
         }
 
@@ -46,10 +56,13 @@ namespace FinanzasPersonalesWeb
             bool paso = false;
             Miembros miembro = new Miembros();
 
-            miembro.MiembroId = (TbMiembroId.Text == "") ? 0 : Convert.ToInt16(TbMiembroId);
+            miembro.MiembroId = (TbMiembroId.Text == "") ? 0 : Convert.ToInt16(TbMiembroId.Text);
             miembro.Nombre = TbNombre.Text;
 
-            if (RbActivo.Checked == true)
+            ValidarTextBoxVacio(TbNombre);
+   
+      
+            if (EstadoRbList.SelectedIndex == 0)
             {
                 miembro.esActivo = 1;
             }
@@ -72,8 +85,17 @@ namespace FinanzasPersonalesWeb
 
             if (paso)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro  Guardado.');", true);
+
+                if (!AlertNotificationDiv.Visible)
+                    AlertNotificationDiv.Visible = true;
+                if (!AlertNotificationBox.Visible)
+                    AlertNotificationBox.Visible = true;
+
+                AlertNotificationDiv.Attributes.Add("class", "col-md-12 col-xs-12 col-ms-12 alert alert-success alert-dismissable");
+                AlertNotificationBox.Text = "Registro Guardado.";
+                Limpiar();
             }
+
         }
 
         public int Convertir()
@@ -103,7 +125,14 @@ namespace FinanzasPersonalesWeb
         {
             Miembros miembro = new Miembros();
 
-            if (!(miembro.Buscar(Convert.ToInt16(TbMiembroId.Text))))
+            if (TbMiembroId.Text.Equals(string.Empty))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor llenar debidamente el campo ID');", true);
+                Limpiar();
+                return;
+            }
+
+                if (!(miembro.Buscar(Convert.ToInt16(TbMiembroId.Text))))
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No se encontro ningún registro con ese ID.');", true);
                 Limpiar();
@@ -117,11 +146,11 @@ namespace FinanzasPersonalesWeb
                 TbNombre.Text = miembro.Nombre;
                 if (miembro.esActivo == 1)
                 {
-                    RbActivo.Checked = true;
+                    EstadoRbList.SelectedIndex = 0;
                 }
                 else
                 {
-                    RbInactivo.Checked = true;
+                    EstadoRbList.SelectedIndex = 1;
                 }
                 DropDownUsuario.SelectedValue = miembro.UsuarioId.ToString();
 

@@ -34,22 +34,22 @@ namespace BLL
         public override bool Insertar()
         {
             ConexionDb conexion = new ConexionDb();
-            bool retorno = false;
+            int retorno = 0;
 
             try {
-                retorno = conexion.Ejecutar(String.Format("Insert Into Presupuestos (UsuarioId,Descripcion) Values ({0},'{1}')", this.UsuarioId, this.Descripcion));
-                if (retorno) {
+                retorno = Convert.ToInt32(conexion.ObtenerValor(String.Format("Insert Into Presupuestos (UsuarioId,Descripcion) Values ({0},'{1}'); SELECT SCOPE_IDENTITY(); --", this.UsuarioId, this.Descripcion)));
+                if (retorno > 0) {
                     foreach (PresupuestoDetalle pd in Detalle)
                     {
-                        conexion.Ejecutar("Insert Into PresupuestoDetalle (PresupuestoId,TipoEgresosId,Monto) Values ("+ PresupuestoId + "," + pd.TipoEgresoId + "," + pd.Monto + ")");
+                        conexion.Ejecutar("Insert Into PresupuestoDetalle (PresupuestoId,TipoEgresosId,Monto) Values ("+ retorno + "," + pd.TipoEgresoId + "," + pd.Monto + ")--");
                     }
                 }
             }
             catch
             {
-                retorno = false;
+                retorno = 0;
             }
-            return retorno;
+            return retorno > 0;
         }
 
         
@@ -58,13 +58,13 @@ namespace BLL
             ConexionDb conexion = new ConexionDb();
             bool retorno = false;
             try {
-                retorno = conexion.Ejecutar(String.Format("Update Presupuestos Set UsuarioId = {0}, Descripcion = '{1}' Where PresupuestoId = {2}", this.UsuarioId, this.Descripcion, this.PresupuestoId));
+                retorno = conexion.Ejecutar(String.Format("Update Presupuestos Set UsuarioId = {0}, Descripcion = '{1}' Where PresupuestoId = {2} --", this.UsuarioId, this.Descripcion, this.PresupuestoId));
                 if (retorno)
                 {
-                    conexion.Ejecutar(String.Format("Delete from PresupuestoDetalle Where PresupuestoId = {0}", this.PresupuestoId));
+                    conexion.Ejecutar(String.Format("Delete from PresupuestoDetalle Where PresupuestoId = {0} --", this.PresupuestoId));
                     foreach (PresupuestoDetalle pd in Detalle)
                     {
-                        conexion.Ejecutar(String.Format("Insert Into PresupuestoDetalle (PresupuestoId,TipoEgresosId,Monto) Values ({0},{1},{2})", this.PresupuestoId, pd.TipoEgresoId, pd.Monto));
+                        conexion.Ejecutar(String.Format("Insert Into PresupuestoDetalle (PresupuestoId,TipoEgresosId,Monto) Values ({0},{1},{2})--", this.PresupuestoId, pd.TipoEgresoId, pd.Monto));
                     }
                 }
             }
@@ -81,11 +81,11 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("Delete from Presupuestos Where PresupuestoId = {0}", this.PresupuestoId));
+                retorno = conexion.Ejecutar(String.Format("Delete from Presupuestos Where PresupuestoId = {0} --", this.PresupuestoId));
             
                 if (retorno)
                 {
-                    conexion.Ejecutar(String.Format("Delete from PresupuestoDetalle Where PresupuestoId = {0}", this.PresupuestoId));                
+                    conexion.Ejecutar(String.Format("Delete from PresupuestoDetalle Where PresupuestoId = {0} --", this.PresupuestoId));                
                 }
             }catch
             {
@@ -98,20 +98,21 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             DataTable dt = new DataTable();
+            DataTable detalleDt = new DataTable();
 
             try
             {
-                dt = conexion.ObtenerDatos(String.Format("Select * From Presupuestos Where PresupuestoId = {0}", IdBuscado));
+                dt = conexion.ObtenerDatos(String.Format("Select * From Presupuestos Where PresupuestoId = {0} --", IdBuscado));
                 if (dt.Rows.Count > 0)
                 {
                     this.PresupuestoId = (int)dt.Rows[0]["PresupuestoId"];
                     this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
                     this.Descripcion = dt.Rows[0]["Descripcion"].ToString();
                 }
-                dt = conexion.ObtenerDatos(String.Format("Select * From PresupuestoDetalle Where PresupuestoId = {0}", IdBuscado));
-                if (dt.Rows.Count > 0)
+                detalleDt = conexion.ObtenerDatos(String.Format("Select * From PresupuestoDetalle Where PresupuestoId = {0} --", IdBuscado));
+                if (detalleDt.Rows.Count > 0)
                 {
-                    foreach (DataRow dr in dt.Rows)
+                    foreach (DataRow dr in detalleDt.Rows)
                         this.AgregarDetalle((int)dr["TipoEgresosId"], Convert.ToSingle(dr["Monto"]));
                 }
             }
@@ -133,7 +134,7 @@ namespace BLL
             {
                 OrdenFinal = " Order by " + Orden;
             }
-            return conexion.ObtenerDatos("select " + Campos + " from Presupuestos where " + Condicion + " " + OrdenFinal);
+            return conexion.ObtenerDatos("select " + Campos + " from Presupuestos where " + Condicion + " " + OrdenFinal + " --");
         }
 
 

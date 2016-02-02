@@ -12,13 +12,27 @@ namespace FinanzasPersonalesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            AlertNotificationDiv.Visible = false;
+            AlertNotificationBox.Text = "";
 
         }
 
+        public void LlenarClase(ref Usuarios Usuario)
+        {
+            Usuario.Nombre = NombreTextBox.Text;
+            Usuario.Apellidos = ApellidoTextBox.Text;
+            Usuario.TipoUsuarioId = 1;
+            Usuario.Usuario = UsuarioTextBox.Text;
+            Usuario.Password = PassTextBox.Text;
+            Usuario.Email = EmailTextBox.Text;
+        }
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
             Usuarios Usuario = new Usuarios();
             Boolean paso = false;
+            Boolean control1, control2 = false;
+            LlenarClase(ref Usuario);
+
 
             if (NombreTextBox.Text.Trim().Length == 0)
             {
@@ -45,24 +59,50 @@ namespace FinanzasPersonalesWeb
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe aceptar los Terminos para poder continuar.');", true);
             }
             else {
-                Usuario.Nombre = NombreTextBox.Text;
-                Usuario.Apellidos = ApellidoTextBox.Text;
-                Usuario.Usuario = UsuarioTextBox.Text;
-                Usuario.Password =PassTextBox.Text;
-                Usuario.Email = EmailTextBox.Text;
-                Usuario.TipoUsuarioId = 1;
 
-                paso = Usuario.Insertar();
-            }
-            if (paso)
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Transaccion Exitosa.');", true);
-            }
-            else
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Ha habido un error, por favor vuelva a intentar.');", true);
+                control1 = Usuario.ValidarRegistroUsuario("'" + UsuarioTextBox.Text + "'");
+                control2 = Usuario.ValidarRegistroCorreo("'" + EmailTextBox.Text + "'");
+
+                if (control1)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Usuario ya Existe.');", true);
+                    UsuarioTextBox.Focus();
+                }
+                else if (control2)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Correo ya Existe.');", true);
+                    EmailTextBox.Focus();
+
+                }
+                else
+                {
+                    paso = Usuario.Insertar();
+                }
+
+                if (paso)
+                {
+                    if (!AlertNotificationDiv.Visible)
+                        AlertNotificationDiv.Visible = true;
+                    if (!AlertNotificationBox.Visible)
+                        AlertNotificationBox.Visible = true;
+
+                    AlertNotificationDiv.Attributes.Add("class", "col-md-12 col-xs-12 col-ms-12 alert alert-success alert-dismissable");
+                    AlertNotificationBox.Text = "Transaccion Satisfactoria.";
+                }
+                else
+                {
+                    if (!AlertNotificationDiv.Visible)
+                        AlertNotificationDiv.Visible = true;
+                    if (!AlertNotificationBox.Visible)
+                        AlertNotificationBox.Visible = true;
+
+                    AlertNotificationDiv.Attributes.Add("class", "col-md-12 col-xs-12 col-ms-12 alert alert-danger alert-dismissable");
+                    AlertNotificationBox.Text = "Ha habido un error en la solicitud, por favor, intentelo mas tarde.";
+                }
+
             }
         }
+        
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
 

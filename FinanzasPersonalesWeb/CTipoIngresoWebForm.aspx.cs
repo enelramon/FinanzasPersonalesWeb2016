@@ -10,8 +10,6 @@ namespace FinanzasPersonalesWeb
 {
     public partial class CTipoIngresoWebForm : System.Web.UI.Page
     {
-        TiposIngresos TipoIngreso = new TiposIngresos();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             LlenarGrid(" 1=1 ");
@@ -43,6 +41,8 @@ namespace FinanzasPersonalesWeb
 
         void LlenarGrid(string Condicion)
         {
+            TiposIngresos TipoIngreso = new TiposIngresos();
+
             ConsultaGridView.DataSource = TipoIngreso.Listado(" * ", Condicion, "");
             ConsultaGridView.DataBind();
         }
@@ -53,24 +53,31 @@ namespace FinanzasPersonalesWeb
 
             if (CodigoTextBox.Text.Length > 0)
             {
-                    if (TipoIngresoDropDownList.SelectedIndex == 0)
+                if (TipoIngresoDropDownList.SelectedIndex == 0 || TipoIngresoDropDownList.SelectedIndex == 1 || TipoIngresoDropDownList.SelectedIndex == 3)
+                {
+                    if (ValidarIdEntero(CodigoTextBox.Text) == 0)
                     {
-                        if (ValidarIdEntero(CodigoTextBox.Text) == 0)
-                        {
-                            Condiciones = " 1=1 ";
-                        }
-                        else
-                        {
-                            Condiciones = " TipoIngresoId = " + CodigoTextBox.Text;
-                        }                       
+                        Condiciones = " 1=1 ";
                     }
-
-                    if (TipoIngresoDropDownList.SelectedIndex == 1)
+                    else
                     {
-                        Condiciones = " Descripcion = '" + CodigoTextBox.Text + "' ";
+                        Condiciones = TipoIngresoDropDownList.SelectedItem.Text + " = " + CodigoTextBox.Text;
                     }
+                    
+                }
 
-                    if (TipoIngresoDropDownList.SelectedIndex == 2)
+                if (TipoIngresoDropDownList.SelectedIndex == 1)
+                {
+                    Condiciones = " Descripcion like '%" + CodigoTextBox.Text + "%' ";
+                }
+
+                if (TipoIngresoDropDownList.SelectedIndex == 2)
+                {
+                    if (CodigoTextBox.Text == "0")
+                    {
+                        Condiciones = " EsActivo = " + CodigoTextBox.Text;
+                    }
+                    else
                     {
                         if (ValidarIdEntero(CodigoTextBox.Text) == 0)
                         {
@@ -81,28 +88,18 @@ namespace FinanzasPersonalesWeb
                             Condiciones = " EsActivo = " + CodigoTextBox.Text;
                         }
                     }
+                       
+                }
 
-                    if (TipoIngresoDropDownList.SelectedIndex == 3)
-                    {
-                        if (ValidarIdEntero(CodigoTextBox.Text) == 0)
-                        {
-                            Condiciones = " 1=1 ";
-                        }
-                        else
-                        {
-                            Condiciones = " UsuarioId = " + CodigoTextBox.Text;
-                        }
-                    }
+                LlenarGrid(Condiciones);
 
-                    LlenarGrid(Condiciones);
+                if (ConsultaGridView.Rows.Count == 0)
+                {
+                    HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                    LlenarGrid(" 1=1 ");                       
+                }
 
-                    if (ConsultaGridView.Rows.Count == 0)
-                    {
-                        HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
-                        LlenarGrid(" 1=1 ");                       
-                    }
-
-                    Limpiar();
+                Limpiar();
             }
             else
             {

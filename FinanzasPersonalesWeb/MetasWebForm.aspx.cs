@@ -9,12 +9,10 @@ using BLL;
 namespace FinanzasPersonalesWeb
 {
     public partial class MetasWebForm : System.Web.UI.Page
-    {
-        Metas meta = new Metas();
-        TiposIngresos tipo = new TiposIngresos();
+    {  
         protected void Page_Load(object sender, EventArgs e)
         {
-           // LlenarDropDownList();
+            // LlenarDropDownList();
         }
 
         public void Limpiar()
@@ -29,6 +27,7 @@ namespace FinanzasPersonalesWeb
 
         public void LlenarDropDownList()
         {
+            TiposIngresos tipo = new TiposIngresos();
             TipoDeIngresoDropDownList.DataSource = tipo.Listado(" * ", "1=1", "TipoIgresoId");
             TipoDeIngresoDropDownList.DataTextField = "Descripcion";
             TipoDeIngresoDropDownList.DataValueField = "TipoIgresoId";
@@ -37,6 +36,7 @@ namespace FinanzasPersonalesWeb
 
         protected void GuadarButton_Click1(object sender, EventArgs e)
         {
+            Metas meta = new Metas();
             meta.Descripcion = DescripcionTextBox.Text;
             meta.UsuarioId = 1;
             meta.LimpiarList();
@@ -44,8 +44,8 @@ namespace FinanzasPersonalesWeb
             for (int i = 0; i < MetasListBox.Items.Count; i++)
             {
                 int id = (int)meta.ObtenerMetaId().Rows[0]["MetaId"];
-                Double j = Convert.ToDouble(MetasListBox.Items[i].ToString());
-                meta.AgregarMetas(id, 1, j);
+                Double monto = Convert.ToDouble(MetasListBox.Items[i].ToString());
+                meta.AgregarMetas(id, 1, monto);
             }
 
             if (MetaIdTextBox.Text.Length <= 0)
@@ -88,6 +88,7 @@ namespace FinanzasPersonalesWeb
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             int Id = 0;
+            Metas meta = new Metas();
             int.TryParse(MetaIdTextBox.Text, out Id);
             if (Id > 0)
             {
@@ -129,6 +130,7 @@ namespace FinanzasPersonalesWeb
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
             int Id = 0;
+            Metas meta = new Metas();
             int.TryParse(MetaIdTextBox.Text, out Id);
             if (Id > 0)
             {

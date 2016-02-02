@@ -19,26 +19,21 @@ namespace FinanzasPersonalesWeb
         {
             Transferencias transferencia = new Transferencias();
            
-
-            DatosDropDownList.DataSource = transferencia.Listado(" * ", " 1=1 ", "");
-            DatosDropDownList.DataTextField = "Fecha";
-            DatosDropDownList.DataValueField = "TransferenciaId";
-            DatosDropDownList.DataBind();
             
             DataTable dt = new DataTable();
-            string condicion;
+            string filtro = "1=1";
 
             if (DatosDropDownList.SelectedIndex == 0)
             {
                 if (DatosTextBox.Text.Trim().Length == 0)
                 {
-                    condicion = "1=1";
+                    filtro = "1=1";
                 }
                 else
                 {
-                    condicion = "TransferenciaId = " + DatosTextBox.Text;
+                    filtro = "TransferenciaId = " + DatosTextBox.Text;
                 }
-                dt = transferencia.Listado(" * ", condicion, "");
+                dt = transferencia.Listado(" * ", filtro, "");
                 DatosGridView.DataSource = dt;
                 DatosGridView.DataBind();
             }
@@ -46,14 +41,15 @@ namespace FinanzasPersonalesWeb
             {
                 if (DatosTextBox.Text.Trim().Length == 0)
                 {
-                    condicion = "2=2";
+                    filtro = "2=2";
                 }
                 else
                 {
-                    condicion = "Fecha = " + DatosTextBox.Text;
+
+                    filtro = "Fecha like '%" + DatosTextBox.Text + "%'";
                 }
 
-                dt = transferencia.Listado(" * ", condicion, "");
+                dt = transferencia.Listado(" * ", filtro, "");
                 DatosGridView.DataSource = dt;
                 DatosGridView.DataBind();
             }
@@ -61,17 +57,19 @@ namespace FinanzasPersonalesWeb
             {
                 if (DatosTextBox.Text.Trim().Length == 0)
                 {
-                    condicion = "3=3";
+                    filtro = "3=3";
                 }
                 else
                 {
-                    condicion = "UsuarioId" + DatosTextBox.Text;
+                    filtro = "UsuarioId = " + DatosTextBox.Text;
                 }
 
-                dt = transferencia.Listado(" * ", condicion, "");
+                dt = transferencia.Listado(" * ", filtro, "");
                 DatosGridView.DataSource = dt;
                 DatosGridView.DataBind();
             }
+
+            
         }
     }
 }

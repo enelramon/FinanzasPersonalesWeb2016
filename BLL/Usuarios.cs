@@ -107,5 +107,38 @@ namespace BLL
             }
             return Conexion.ObtenerDatos("select " + Campos + " from Usuarios where " + Condicion + " " + OrdenFinal);
         }
+
+        public bool ValidarRegistroUsuario(string UsuarioBuscado)
+        {
+            bool Encontro = false;
+            DataTable dt = new DataTable();
+
+            dt = this.Listado("Usuario", "Usuario =" + UsuarioBuscado, "Usuario ASC");
+
+            if (dt.Rows.Count > 0)
+            {
+                Encontro = true;
+
+                this.Usuario = (string)dt.Rows[0]["Usuario"];
+            }
+
+            return Encontro;
+        }
+        public bool ValidarRegistroCorreo(string CorreoBuscado)
+        {
+            bool Encontro = false;
+            DataTable dt = new DataTable();
+
+            dt = this.Listado("Email", "Email = " + CorreoBuscado, "Usuario ASC");
+
+            if (dt.Rows.Count > 0)
+            {
+                Encontro = true;
+
+                this.Email = (string)dt.Rows[0]["Email"];
+            }
+
+            return Encontro;
+        }
     }
 }
