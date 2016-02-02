@@ -45,7 +45,7 @@ namespace BLL
         public override bool Editar()
         {
             bool Retorno = false;
-            Retorno = con.Ejecutar(String.Format("Update Miembros set MiembroId = {0}, Nombre = '{1}', esActivo = {2}, UsuarioId = {3})", this.MiembroId, this.Nombre, this.esActivo, this.UsuarioId));
+            Retorno = con.Ejecutar(String.Format("Update Miembros set Nombre = '{0}', esActivo = {1}, UsuarioId = {2} where MiembroId = {3}", this.Nombre, this.esActivo, this.UsuarioId, this.MiembroId));
             return Retorno;
         }
 

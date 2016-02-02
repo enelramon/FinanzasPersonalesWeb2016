@@ -32,8 +32,6 @@ namespace BLL.Tests
         public void EditarTest()
         {
             Miembros miembro = new Miembros();
-
-            miembro.MiembroId = 1;
             miembro.Nombre = "NOmbre de miembro editado";
             miembro.esActivo = 0;
             miembro.UsuarioId = 4;
