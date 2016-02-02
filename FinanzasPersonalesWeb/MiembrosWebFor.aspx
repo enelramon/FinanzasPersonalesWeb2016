@@ -11,10 +11,18 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table style="width: 100%; height: 133px;">
+    <h3>Registro de Miembros</h3><br />
+        <div class = "row" style="margin:0 2px 0 2px" >
+    <div class="col-md-12" id="AlertNotificationDiv" runat="server">
+      <asp:Label id="AlertNotificationBox" runat="server"/>
+    </div>
+</div>
+    <table align = "right" style="width: 100%; height: 133px; ">
         <tr>
             <td class="auto-style4">MiembroId:
                 <asp:TextBox ID="TbMiembroId" runat="server"></asp:TextBox>
+                <asp:CompareValidator runat="server" Operator="DataTypeCheck" Type="Integer" 
+ ControlToValidate="TbMiembroId" ErrorMessage="Así no" />
 &nbsp;
    
               <asp:Button ID="BtnBuscar" class ="btn btn-info btn-sm" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
@@ -27,7 +35,7 @@
 
 </form>
         <tr>
-            <td span class="auto-style4">Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+            <td class="auto-style4">Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
                 <asp:TextBox ID="TbNombre" runat="server"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
