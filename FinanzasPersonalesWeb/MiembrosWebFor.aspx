@@ -17,13 +17,17 @@
                 <asp:TextBox ID="TbMiembroId" runat="server"></asp:TextBox>
 &nbsp;
    
-              <asp:Button ID="BtnBuscar" class ="btn btn-info btn-md" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
+              <asp:Button ID="BtnBuscar" class ="btn btn-info btn-sm" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
+
+        <form class="w3-container">
+
+</form>
         <tr>
-            <td class="auto-style4">Nombre:
+            <td span class="auto-style4">Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
                 <asp:TextBox ID="TbNombre" runat="server"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
@@ -31,6 +35,7 @@
         </tr>
         <tr>
             <td class="auto-style5">Estado:
+                <br>
                 <asp:RadioButtonList ID="EstadoRbList" runat="server">
                     <asp:ListItem>Activo</asp:ListItem>
                     <asp:ListItem>Inactivo</asp:ListItem>
@@ -40,16 +45,16 @@
       
         </tr>
                 <tr>
-            <td class="auto-style4">Usuario:
+            <td class="auto-style4">Usuario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:DropDownList ID="DropDownUsuario" runat="server">
                 </asp:DropDownList>
                 <br />
                 <br />
-                <asp:Button ID="BtnLimpiar" class ="btn btn-warning btn-md" runat="server" Text="Limpiar" OnClick="BtnLimpiar_Click" />
+                <asp:Button ID="BtnLimpiar" class ="btn btn-warning btn-sm" runat="server" Text="Limpiar" OnClick="BtnLimpiar_Click" />
 &nbsp;&nbsp;
-                <asp:Button ID="BtnGuardar" class ="btn btn-success btn-md" runat="server" Text="Guardar" OnClick="BtnGuardar_Click" />
+                <asp:Button ID="BtnGuardar" class ="btn btn-success btn-sm" runat="server" Text="Guardar" OnClick="BtnGuardar_Click" />
 &nbsp;&nbsp;
-                <asp:Button ID="BtnEliminar" class ="btn btn-danger btn-md" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click" />
+                <asp:Button ID="BtnEliminar" class ="btn btn-danger btn-sm" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click" />
 
             
       

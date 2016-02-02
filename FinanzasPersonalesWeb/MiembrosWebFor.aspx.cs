@@ -23,6 +23,7 @@ namespace FinanzasPersonalesWeb
             DropDownUsuario.DataTextField = "Nombres";
             DropDownUsuario.DataValueField = "UsuarioId";
             DropDownUsuario.DataBind();
+            EstadoRbList.SelectedIndex = 1;
 
         }
 
