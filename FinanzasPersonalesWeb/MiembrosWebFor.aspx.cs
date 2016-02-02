@@ -56,7 +56,7 @@ namespace FinanzasPersonalesWeb
             bool paso = false;
             Miembros miembro = new Miembros();
 
-            miembro.MiembroId = (TbMiembroId.Text == "") ? 0 : Convert.ToInt16(TbMiembroId);
+            miembro.MiembroId = (TbMiembroId.Text == "") ? 0 : Convert.ToInt16(TbMiembroId.Text);
             miembro.Nombre = TbNombre.Text;
 
             ValidarTextBoxVacio(TbNombre);
