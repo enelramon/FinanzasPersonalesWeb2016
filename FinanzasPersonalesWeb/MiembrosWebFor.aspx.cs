@@ -71,7 +71,15 @@ namespace FinanzasPersonalesWeb
                 miembro.esActivo = 0;
             }
 
-            miembro.UsuarioId = Convert.ToInt16(DropDownUsuario.SelectedValue);
+            if (DropDownUsuario.SelectedItem.Text == "")
+            {
+                miembro.UsuarioId = 0;
+            }
+            else
+            {
+                miembro.UsuarioId = Convert.ToInt16(DropDownUsuario.SelectedValue);
+            }
+            
 
             if (miembro.MiembroId == 0)
             {
@@ -83,7 +91,7 @@ namespace FinanzasPersonalesWeb
                 paso = miembro.Editar();
             }
 
-            if (paso)
+            if (paso == true)
             {
 
                 if (!AlertNotificationDiv.Visible)
