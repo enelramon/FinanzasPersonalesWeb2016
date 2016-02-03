@@ -7,9 +7,6 @@
         .auto-style2 {
             margin-left: 20px;
         }
-        .auto-style3 {
-            margin-left: 21px;
-        }
         .auto-style4 {
             margin-left: 21px;
         }
@@ -43,7 +40,8 @@
         </tr>
         <tr>
             <td>
-                <asp:TextBox ID="DescripcionTextBox" runat="server" Width="163px"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" runat="server" Width="151px"></asp:TextBox>
+                <asp:Label ID="MensajeLabel" runat="server"></asp:Label>
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
