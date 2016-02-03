@@ -88,7 +88,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="cPresupuestos.aspx" />
-    <Content Include="CTipoIngresoWebForm.aspx" />
+    <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
     <Content Include="cTiposUsuarios.aspx" />
     <Content Include="CTransferencias.aspx" />
     <Content Include="cUsuarios.aspx" />
@@ -105,7 +105,7 @@
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="rUsuarios.aspx" />
     <Content Include="TipoEgreso.aspx" />
-    <Content Include="TipoIngreso.aspx" />
+    <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="Transferencia.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -152,12 +152,12 @@
     <Compile Include="cPresupuestos.aspx.designer.cs">
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CTipoIngresoWebForm.aspx.cs">
-      <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
+    <Compile Include="Consultas\cTipoIngresoWebForm.aspx.cs">
+      <DependentUpon>cTipoIngresoWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CTipoIngresoWebForm.aspx.designer.cs">
-      <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
+    <Compile Include="Consultas\cTipoIngresoWebForm.aspx.designer.cs">
+      <DependentUpon>cTipoIngresoWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="cTiposUsuarios.aspx.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
@@ -272,12 +272,12 @@
     <Compile Include="TipoEgreso.aspx.designer.cs">
       <DependentUpon>TipoEgreso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TipoIngreso.aspx.cs">
-      <DependentUpon>TipoIngreso.aspx</DependentUpon>
+    <Compile Include="Registros\rTipoIngreso.aspx.cs">
+      <DependentUpon>rTipoIngreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TipoIngreso.aspx.designer.cs">
-      <DependentUpon>TipoIngreso.aspx</DependentUpon>
+    <Compile Include="Registros\rTipoIngreso.aspx.designer.cs">
+      <DependentUpon>rTipoIngreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Transferencia.aspx.cs">
       <DependentUpon>Transferencia.aspx</DependentUpon>
@@ -305,7 +305,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Registros\" />
     <Folder Include="Reportes\" />
     <Folder Include="ReportViewers\" />
   </ItemGroup>
