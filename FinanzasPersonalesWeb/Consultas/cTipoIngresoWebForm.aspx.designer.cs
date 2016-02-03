@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb {
+namespace FinanzasPersonalesWeb.Consultas {
     
     
-    public partial class CTipoIngresoWebForm {
+    public partial class cTipoIngresoWebForm {
         
         /// <summary>
         /// Label1 control.
