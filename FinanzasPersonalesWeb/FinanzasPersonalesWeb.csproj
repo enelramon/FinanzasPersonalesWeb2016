@@ -96,8 +96,8 @@
     <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="MetasConsultasWebForm.aspx" />
-    <Content Include="MetasWebForm.aspx" />
+    <Content Include="Consultas\cMetasWebForm.aspx" />
+    <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="MiembrosWebFor.aspx" />
     <Content Include="rCuentas.aspx" />
     <Content Include="rPresupuestos.aspx" />
@@ -200,19 +200,19 @@
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MetasConsultasWebForm.aspx.cs">
-      <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
+    <Compile Include="Consultas\cMetasWebForm.aspx.cs">
+      <DependentUpon>cMetasWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MetasConsultasWebForm.aspx.designer.cs">
-      <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
+    <Compile Include="Consultas\cMetasWebForm.aspx.designer.cs">
+      <DependentUpon>cMetasWebForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MetasWebForm.aspx.cs">
-      <DependentUpon>MetasWebForm.aspx</DependentUpon>
+    <Compile Include="Registros\rMetasWebForm.aspx.cs">
+      <DependentUpon>rMetasWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MetasWebForm.aspx.designer.cs">
-      <DependentUpon>MetasWebForm.aspx</DependentUpon>
+    <Compile Include="Registros\rMetasWebForm.aspx.designer.cs">
+      <DependentUpon>rMetasWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="MiembrosWebFor.aspx.cs">
       <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
