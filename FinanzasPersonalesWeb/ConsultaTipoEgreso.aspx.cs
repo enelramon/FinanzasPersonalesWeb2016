@@ -40,13 +40,13 @@ namespace FinanzasPersonalesWeb
             if (ConsultaDropDownList.SelectedIndex == 1)
             {
                 
-                if (CampoTextBox.Text.Trim().Length == 0)
+                if (CampoTextBox.Text.Trim().Length == 1)
                 {
                     condicion = "2=2";
                 }
                 else
                 {
-                    condicion = "EsActivo = " + CampoTextBox.Text;
+                    condicion = " Descripcion like '%" + CampoTextBox.Text +"%";
                 }
                 dataTable = egreso.Listado(" TipoEgresoId, Descripcion, EsActivo,UsuarioId", condicion, "");
                 DatoGridView.DataSource = dataTable;

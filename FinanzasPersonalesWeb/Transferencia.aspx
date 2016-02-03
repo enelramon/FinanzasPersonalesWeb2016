@@ -17,44 +17,60 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <p style="height: 34px; width: 435px">
-        TransferenciaId&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-        <asp:TextBox ID="TransferenciaIdTextBox" runat="server" Height="25px" Width="132px"></asp:TextBox>
+    <div class="container">
+        <div class="row">
+        <div class="col-md-2">
+   
+            <h6><asp:Label ID="Label6" runat="server" Text="TransferenciaId"></asp:Label></h6>
+            <br />
+            <h6><asp:Label ID="Label3" runat="server" Text="Fecha"></asp:Label></h6>    
+            <br />
+            <h6><asp:Label ID="Label7" runat="server" Text="Cuenta origen Id"></asp:Label></h6>   
+            <br />
+            <h6><asp:Label ID="Label1" runat="server" Text="Cuenta Destino Id"></asp:Label></h6>
+            <br />
+            <h6><asp:Label ID="Label2" runat="server" Text="Monto"></asp:Label></h6>   
+            <br />
+            <h6><asp:Label ID="Label4" runat="server" Text="Observacion"></asp:Label></h6>   
+            <br />
+            <h6><asp:Label ID="Label5" runat="server" Text="Usuario Id"></asp:Label></h6>   
+          
+        </div>
+        <div class="col-md-2">
+          
+            <asp:TextBox ID="TransferenciaIdTextBox" runat="server"></asp:TextBox>    
+            <br />
+            <br />
+            <br />
+            <asp:TextBox ID="FechaTextBox" runat="server" CssClass="form-class"></asp:TextBox>
+            <br />
+            <br />
+            <asp:TextBox ID="CuentaOrigenTextBox" runat="server" CssClass="form-class"></asp:TextBox>
+            <br />
+            <br />
+            <asp:TextBox ID="CuentaDestinoTextBox" runat="server" CssClass="form-class"></asp:TextBox>
+            <br />
+            <br />
+            <br />
+            <asp:TextBox ID="MontoTextBox" runat="server" CssClass="form-class"></asp:TextBox>
+            <br />
+            <br />
+            <asp:TextBox ID="ObservacionTextBox" runat="server" CssClass="form-class"></asp:TextBox>
+            <br />
+            <br />
+            <asp:TextBox ID="UsuarioIdTextBox" runat="server" CssClass="form-class"></asp:TextBox>
+      
+        </div>
 
-&nbsp;&nbsp;
-        <asp:Button ID="Buscarbutton" runat="server" Text="Buscar" Width="87px" OnClick="Buscarbutton_Click" />
-        <tr>
-        <td>
-    </p>
-    <p style="height: 32px; width: 313px">
-        Fecha<td/>
-        <td>&nbsp;&nbsp</td>
-        <td>&nbsp;&nbsp</td>
-            </tr>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:TextBox ID="FechaTextBox" runat="server" Height="25px" Width="132px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp; 
-    </p>
-    <p style="height: 32px; width: 311px">
-        Cuenta Origen Id&nbsp; &nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="CuentaOrigenTextBox" runat="server" Height="25px" Width="132px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;</p>
-    <p style="height: 32px; width: 1107px">
-        Cuenta Destino Id&nbsp;&nbsp; &nbsp;
-        <asp:TextBox ID="CuentaDestinoTextBox" runat="server" Height="25px" Width="132px"></asp:TextBox>
-&nbsp; 
-    </p>
-    <p style="height: 58px; width: 979px">
-        Monto&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="MontoTextBox" runat="server" Height="25px" Width="132px"></asp:TextBox>
-&nbsp;&nbsp; Usuario Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="UsuarioIdTextBox" runat="server" Height="25px" Width="132px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp; Observacion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="ObservacionTextBox" runat="server" Height="25px" Width="132px"></asp:TextBox>
-        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-    <p style="height: 40px; width: 381px">
-&nbsp;<asp:Button ID="Nuevobutton" runat="server" Text="Nuevo" Width="87px" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="GuardarButton" runat="server" OnClick="GuardarButton_Click1" Text="Guardar" Width="78px" />
-        &nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Eliminarbutton" runat="server" Text="Eliminar" Width="87px" OnClick="Eliminarbutton_Click" />
-    </p>
-    <p style="height: 94px">
-        &nbsp;</p>
-</asp:Content>
+        <div class="col-md-8">
+            <asp:Button ID="Buscarbutton" runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="Buscarbutton_Click" />
+        </div>
+            </div>
+        <div class="col-md-12">
+           <asp:Button ID="Nuevobutton" runat="server" CssClass="btn btn-primary" Text="Nuevo"/>
+           <asp:Button ID="GuardarButton" runat="server" OnClick="GuardarButton_Click1" CssClass="btn btn-success" Text="Guardar"/>
+           <asp:Button ID="Eliminarbutton" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClick="Eliminarbutton_Click" />
+
+        </div>
+    </div>
+        </asp:Content>
