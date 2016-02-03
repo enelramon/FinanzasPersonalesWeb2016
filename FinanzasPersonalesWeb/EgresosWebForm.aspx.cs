@@ -139,19 +139,28 @@ namespace FinanzasPersonalesWeb
         {
             Egresos egreso = new Egresos();
 
-            if (egreso.Buscar(Convertir()))
+
+            if(EgresoIdTextBox.Text.Length == 0)
             {
-                FechaTextBox.Text = egreso.Fecha;
-                MontoTextBox.Text = egreso.Monto.ToString();
-                CuentaIdDropDownList.SelectedValue = egreso.CuentaId.ToString();
-                TipoEgresoIdDropDownList.SelectedValue = egreso.TipoEgresoId.ToString();
-                ObservacionTextBox.Text = egreso.Observacion;
-                MiembroIdDropDownList.SelectedValue = egreso.MiembroId.ToString();
+                HttpContext.Current.Response.Write("<SCRIPT>alert('Debe de llenar el campo EgresoId')</SCRIPT>");
             }
             else
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Error al buscar')<SCRIPT/>");
+                if (egreso.Buscar(Convertir()))
+                {
+                    FechaTextBox.Text = egreso.Fecha;
+                    MontoTextBox.Text = egreso.Monto.ToString();
+                    CuentaIdDropDownList.SelectedValue = egreso.CuentaId.ToString();
+                    TipoEgresoIdDropDownList.SelectedValue = egreso.TipoEgresoId.ToString();
+                    ObservacionTextBox.Text = egreso.Observacion;
+                    MiembroIdDropDownList.SelectedValue = egreso.MiembroId.ToString();
+                }
+                else 
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al buscar')<SCRIPT/>");
+                }
             }
+           
         }
 
     }
