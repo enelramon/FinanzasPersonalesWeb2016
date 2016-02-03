@@ -81,6 +81,7 @@
     <Content Include="cCuentas.aspx" />
     <Content Include="ConsultaEgresoWebForm.aspx" />
     <Content Include="ConsultaMiembros.aspx" />
+    <Content Include="Consultas\cUsuarios.aspx" />
     <Content Include="ConsultaTipoEgreso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -129,6 +130,13 @@
     </Compile>
     <Compile Include="ConsultaMiembros.aspx.designer.cs">
       <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cUsuarios.aspx.cs">
+      <DependentUpon>cUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cUsuarios.aspx.designer.cs">
+      <DependentUpon>cUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaTipoEgreso.aspx.cs">
       <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
@@ -295,6 +303,11 @@
       <Project>{e40cad30-152e-41dd-bd41-247771f316c4}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Registros\" />
+    <Folder Include="Reportes\" />
+    <Folder Include="ReportViewers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
