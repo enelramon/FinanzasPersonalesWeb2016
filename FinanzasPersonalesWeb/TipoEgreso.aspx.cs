@@ -18,6 +18,19 @@ namespace FinanzasPersonalesWeb
             DescripcionTextBox.Text = "";
         }
 
+        public int  Validar()
+        {
+            if (DescripcionTextBox.Text.Length == 0)
+            {
+                MensajeLabel.Text = "Debe llenar la descripcion";
+                return 1;
+            }
+            else
+            {
+                MensajeLabel.Text = "";
+                return 0;
+            }
+        }
         public void LLenarDatos(TiposEgresos egreso)
         {
 
@@ -34,11 +47,14 @@ namespace FinanzasPersonalesWeb
         {
             DataTable dt = new DataTable();
             Usuarios usuario = new Usuarios();
-            dt = usuario.Listado(" *","1=1","");
-            UsuarioDropDownList.DataSource = dt;
-            UsuarioDropDownList.DataValueField = "UsuarioId";
-            UsuarioDropDownList.DataTextField = "Nombres";
-            UsuarioDropDownList.DataBind();
+            if (IsPostBack == false)
+            {
+                dt = usuario.Listado(" *", "1=1", "");
+                UsuarioDropDownList.DataSource = dt;
+                UsuarioDropDownList.DataTextField = "Nombres";
+                UsuarioDropDownList.DataValueField = "UsuarioId";
+                UsuarioDropDownList.DataBind();
+            }
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
@@ -47,15 +63,21 @@ namespace FinanzasPersonalesWeb
 
             int idBuscado;
             int.TryParse(TipoEgresoIdTextBox.Text, out idBuscado);
-            egreso.Buscar(idBuscado);
-            TipoEgresoIdTextBox.Text = egreso.TipoEgresoId.ToString();
-            DescripcionTextBox.Text = egreso.Descripcion;
-            if (egreso.EsActivo)
-                EstadoRadioButtonList.SelectedIndex = 0;
-            else
-                EstadoRadioButtonList.SelectedIndex = 1;
+            if (egreso.Buscar(idBuscado))
+            {
+                TipoEgresoIdTextBox.Text = egreso.TipoEgresoId.ToString();
+                DescripcionTextBox.Text = egreso.Descripcion;
+                if (egreso.EsActivo)
+                    EstadoRadioButtonList.SelectedIndex = 0;
+                else
+                    EstadoRadioButtonList.SelectedIndex = 1;
 
-           // UsuarioDropDownList.SelectedValue = egreso.UsuarioId;
+                UsuarioDropDownList.SelectedValue = egreso.UsuarioId.ToString();
+            }
+            else
+            {
+                HttpContext.Current.Response.Write("<SCRIPT>alert('Error al buscar el tipo egreso')</SCRIPT>");
+            }
         }
 
         protected void NuevoButton_Click(object sender, EventArgs e)
@@ -73,13 +95,26 @@ namespace FinanzasPersonalesWeb
             {
                 egreso.TipoEgresoId = id;
                 LLenarDatos(egreso);
-                if(egreso.Editar())
+                if (Validar() == 0 && egreso.Editar())
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Tipo egreso editado')</SCRIPT>");
                     Limpiar();
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al editar el tipo egreso')</SCRIPT>");
+                }
             }
-            else if(TipoEgresoIdTextBox.Text.Equals(""))
+            else if (TipoEgresoIdTextBox.Text.Equals(""))
             {
-                if (egreso.Insertar())
-                    Limpiar();
+                if (Validar() == 0 && egreso.Insertar())
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Tipo egreso guardado')</SCRIPT>");
+                    Limpiar();                }
+                else
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al guardar el tipo egreso')</SCRIPT>");
+                }
             }
            
         }
@@ -94,7 +129,12 @@ namespace FinanzasPersonalesWeb
             if (!TipoEgresoIdTextBox.Equals(""))
                 if (egreso.Eliminar())
                 {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Tipo egreso eliminado')</SCRIPT>");
                     Limpiar();
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al eliminar el tipo egreso')</SCRIPT>");
                 }
         }
     }

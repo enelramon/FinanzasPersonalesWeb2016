@@ -10,34 +10,25 @@
 namespace FinanzasPersonalesWeb {
     
     
-    public partial class ConsultaTipoEgreso {
+    public partial class cPresupuestos {
         
         /// <summary>
-        /// Label2 control.
+        /// FiltroDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.DropDownList FiltroDropDownList;
         
         /// <summary>
-        /// ConsultaDropDownList control.
+        /// BuscarTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ConsultaDropDownList;
-        
-        /// <summary>
-        /// CampoTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CampoTextBox;
+        protected global::System.Web.UI.WebControls.TextBox BuscarTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -49,12 +40,21 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// DatoGridView control.
+        /// TipoDatoFiltroRequiredFieldValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView DatoGridView;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator TipoDatoFiltroRequiredFieldValidator;
+        
+        /// <summary>
+        /// PresupuestoGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView PresupuestoGridView;
     }
 }

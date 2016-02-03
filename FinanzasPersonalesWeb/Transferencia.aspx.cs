@@ -36,7 +36,7 @@ namespace FinanzasPersonalesWeb
                 transferencia.Fecha = FechaTextBox.Text;
                 transferencia.CuentaOrigenId = Convert.ToInt32(CuentaOrigenTextBox.Text);
                 transferencia.CuentaDestinoId = Convert.ToInt32(CuentaDestinoTextBox.Text);
-                //transferencia.Monto = Convert.ToDouble(TransferenciaIdTextBox.Text);
+                transferencia.Monto = Convert.ToDouble(MontoTextBox.Text);
                 transferencia.Observacion = ObservacionTextBox.Text;
                 transferencia.UsuarioId = Convert.ToInt32(UsuarioIdTextBox.Text);
                 if (transferencia.Insertar())
@@ -51,7 +51,9 @@ namespace FinanzasPersonalesWeb
             }
             else
             {
-                transferencia.TransferenciaId = Convert.ToInt32(TransferenciaIdTextBox.Text);
+                int id;
+                id = Convert.ToInt32(TransferenciaIdTextBox.Text);
+                transferencia.TransferenciaId = id;
                 if (transferencia.Editar())
                 {
                     HttpContext.Current.Response.Write("<SCRIPT>alert('Actualizacion Realizada')</SCRIPT>");
