@@ -23,7 +23,9 @@ namespace FinanzasPersonalesWeb
             DropDownUsuario.DataTextField = "Nombres";
             DropDownUsuario.DataValueField = "UsuarioId";
             DropDownUsuario.DataBind();
-
+            EstadoRbList.SelectedIndex = 1;
+            AlertNotificationDiv.Visible = false;
+            AlertNotificationBox.Text = "";
         }
 
         protected void BtnLimpiar_Click(object sender, EventArgs e)
@@ -54,10 +56,11 @@ namespace FinanzasPersonalesWeb
             bool paso = false;
             Miembros miembro = new Miembros();
 
-            miembro.MiembroId = (TbMiembroId.Text == "") ? 0 : Convert.ToInt16(TbMiembroId);
+            miembro.MiembroId = (TbMiembroId.Text == "") ? 0 : Convert.ToInt16(TbMiembroId.Text);
             miembro.Nombre = TbNombre.Text;
 
             ValidarTextBoxVacio(TbNombre);
+   
       
             if (EstadoRbList.SelectedIndex == 0)
             {
@@ -82,9 +85,17 @@ namespace FinanzasPersonalesWeb
 
             if (paso)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro  Guardado.');", true);
+
+                if (!AlertNotificationDiv.Visible)
+                    AlertNotificationDiv.Visible = true;
+                if (!AlertNotificationBox.Visible)
+                    AlertNotificationBox.Visible = true;
+
+                AlertNotificationDiv.Attributes.Add("class", "col-md-12 col-xs-12 col-ms-12 alert alert-success alert-dismissable");
+                AlertNotificationBox.Text = "Registro Guardado.";
                 Limpiar();
             }
+
         }
 
         public int Convertir()

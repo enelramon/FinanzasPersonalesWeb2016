@@ -65,7 +65,7 @@ namespace FinanzasPersonalesWeb
 
             PresupuestoTextBox.Text = "";
             DescripcionTextBox.Text = "";
-
+            MontoTextBox.Text = "";
             ViewState["Detalle"] = dt;
             this.BindGrid();
         }
