@@ -7,46 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb {
+namespace FinanzasPersonalesWeb.Consultas {
     
     
-    public partial class cTiposUsuarios {
+    public partial class MetasConsultasWebForm {
         
         /// <summary>
-        /// Label1 control.
+        /// ConsultaDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.DropDownList ConsultaDropDownList;
         
         /// <summary>
-        /// BuscarDropDownList control.
+        /// ConsultaTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList BuscarDropDownList;
-        
-        /// <summary>
-        /// OperadorDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList OperadorDropDownList;
-        
-        /// <summary>
-        /// FiltroTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FiltroTextBox;
+        protected global::System.Web.UI.WebControls.TextBox ConsultaTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -58,12 +40,12 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// GrdDatos control.
+        /// MetasGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GrdDatos;
+        protected global::System.Web.UI.WebControls.GridView MetasGridView;
     }
 }

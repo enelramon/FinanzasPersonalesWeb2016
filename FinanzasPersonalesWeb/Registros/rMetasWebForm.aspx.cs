@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
 
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Registros
 {
     public partial class MetasWebForm : System.Web.UI.Page
     {  
