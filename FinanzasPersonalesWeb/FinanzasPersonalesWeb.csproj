@@ -88,7 +88,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="cPresupuestos.aspx" />
     <Content Include="CTipoIngresoWebForm.aspx" />
-    <Content Include="cTiposUsuarios.aspx" />
+    <Content Include="Consultas\cTiposUsuarios.aspx" />
     <Content Include="CTransferencias.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
@@ -101,7 +101,7 @@
     <Content Include="MiembrosWebFor.aspx" />
     <Content Include="rCuentas.aspx" />
     <Content Include="rPresupuestos.aspx" />
-    <Content Include="rTiposUsuarios.aspx" />
+    <Content Include="Registros\rTiposUsuarios.aspx" />
     <Content Include="rUsuarios.aspx" />
     <Content Include="TipoEgreso.aspx" />
     <Content Include="TipoIngreso.aspx" />
@@ -151,11 +151,11 @@
     <Compile Include="CTipoIngresoWebForm.aspx.designer.cs">
       <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="cTiposUsuarios.aspx.cs">
+    <Compile Include="Consultas\cTiposUsuarios.aspx.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="cTiposUsuarios.aspx.designer.cs">
+    <Compile Include="Consultas\cTiposUsuarios.aspx.designer.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="CTransferencias.aspx.cs">
@@ -236,11 +236,11 @@
     <Compile Include="rPresupuestos.aspx.designer.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="rTiposUsuarios.aspx.cs">
+    <Compile Include="Registros\rTiposUsuarios.aspx.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="rTiposUsuarios.aspx.designer.cs">
+    <Compile Include="Registros\rTiposUsuarios.aspx.designer.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="rUsuarios.aspx.cs">
@@ -297,8 +297,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Consultas\" />
-    <Folder Include="Registros\" />
     <Folder Include="Reportes\" />
     <Folder Include="ReportViewers\" />
   </ItemGroup>
