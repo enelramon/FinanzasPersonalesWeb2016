@@ -254,7 +254,6 @@
     </Compile>
     <Compile Include="ReportViewers\ListadoTiposUsuarioViewer.aspx.cs">
       <DependentUpon>ListadoTiposUsuarioViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReportViewers\ListadoTiposUsuarioViewer.aspx.designer.cs">
       <DependentUpon>ListadoTiposUsuarioViewer.aspx</DependentUpon>
