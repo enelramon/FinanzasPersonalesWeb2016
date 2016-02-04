@@ -81,7 +81,7 @@
       <DependentUpon>FinanzasPersonalesWebDb.mdf</DependentUpon>
     </Content>
     <Content Include="cCuentas.aspx" />
-    <Content Include="cEgresos.aspx" />
+    <Content Include="Consultas\cEgresos.aspx" />
     <Content Include="ConsultaMiembros.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
     <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
@@ -119,11 +119,11 @@
     <Compile Include="cCuentas.aspx.designer.cs">
       <DependentUpon>cCuentas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="cEgresos.aspx.cs">
+    <Compile Include="Consultas\cEgresos.aspx.cs">
       <DependentUpon>cEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="cEgresos.aspx.designer.cs">
+    <Compile Include="Consultas\cEgresos.aspx.designer.cs">
       <DependentUpon>cEgresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaMiembros.aspx.cs">
@@ -313,7 +313,6 @@
     <EmbeddedResource Include="Reportes\ListadoUsuariosxTipo.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <Folder Include="Reportes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
