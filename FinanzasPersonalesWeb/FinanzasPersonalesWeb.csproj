@@ -95,7 +95,7 @@
     <Content Include="cPresupuestos.aspx" />
     <Content Include="CTransferencias.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="rEgresos.aspx" />
+    <Content Include="Registros\rEgresos.aspx" />
     <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
@@ -189,11 +189,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="rEgresos.aspx.cs">
+    <Compile Include="Registros\rEgresos.aspx.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="rEgresos.aspx.designer.cs">
+    <Compile Include="Registros\rEgresos.aspx.designer.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Include\Menu.ascx.cs">
