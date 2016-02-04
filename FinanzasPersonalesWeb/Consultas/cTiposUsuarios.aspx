@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cTiposUsuarios.aspx.cs" Inherits="FinanzasPersonalesWeb.Consulta.cTiposUsuarios" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cTiposUsuarios.aspx.cs" Inherits="FinanzasPersonalesWeb.Consultas.cTiposUsuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .table-striped {
@@ -27,8 +27,6 @@
                 <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
             </Columns>
         </asp:GridView>
-        <asp:Button ID="Button1" runat="server"  CssClass=".btn-primary" Text="Imprimir"  style="margin-left: 2px" />
-
-
+        <asp:HyperLink ID="HyperLink1" runat="server">Imprimir</asp:HyperLink>
     </div>
 </asp:Content>

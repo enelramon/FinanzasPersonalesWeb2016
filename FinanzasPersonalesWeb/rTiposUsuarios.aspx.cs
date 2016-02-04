@@ -11,7 +11,7 @@ namespace FinanzasPersonalesWeb.Registro
     public partial class rTiposUsuarios : System.Web.UI.Page
     {
 
-        public void LlenarClase(ref TiposUsuarios TipoUsuario)
+        public void LlenarClase(TiposUsuarios TipoUsuario)
         {
             TipoUsuario.IdTipoUsuario = (CodigoTextBox.Text == "") ? 0 : Convert.ToInt16(CodigoTextBox.Text);
             TipoUsuario.Descripcion = DescripcionTextBox.Text;
@@ -98,7 +98,7 @@ namespace FinanzasPersonalesWeb.Registro
         {
             bool Paso = false;
             TiposUsuarios TipoUsuario = new TiposUsuarios();
-            LlenarClase(ref TipoUsuario);
+            LlenarClase(TipoUsuario);
 
             if (TipoUsuario.IdTipoUsuario == 0)
             {
