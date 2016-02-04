@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb {
+namespace FinanzasPersonalesWeb.Consultas {
     
     
-    public partial class cUsuarios {
+    public partial class cTipoIngresoWebForm {
         
         /// <summary>
         /// Label1 control.
@@ -22,22 +22,22 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// FiltroDropDown control.
+        /// TipoIngresoDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList FiltroDropDown;
+        protected global::System.Web.UI.WebControls.DropDownList TipoIngresoDropDownList;
         
         /// <summary>
-        /// FiltroTextBox control.
+        /// CodigoTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FiltroTextBox;
+        protected global::System.Web.UI.WebControls.TextBox CodigoTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -49,12 +49,12 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// UsuarioGridView control.
+        /// ConsultaGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView UsuarioGridView;
+        protected global::System.Web.UI.WebControls.GridView ConsultaGridView;
     }
 }
