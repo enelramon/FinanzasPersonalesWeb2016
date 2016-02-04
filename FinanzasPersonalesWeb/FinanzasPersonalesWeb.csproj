@@ -79,7 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cCuentas.aspx" />
-    <Content Include="ConsultaEgresoWebForm.aspx" />
+    <Content Include="cEgresos.aspx" />
     <Content Include="ConsultaMiembros.aspx" />
     <Content Include="ConsultaTipoEgreso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -116,12 +116,12 @@
     <Compile Include="cCuentas.aspx.designer.cs">
       <DependentUpon>cCuentas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaEgresoWebForm.aspx.cs">
-      <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
+    <Compile Include="cEgresos.aspx.cs">
+      <DependentUpon>cEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConsultaEgresoWebForm.aspx.designer.cs">
-      <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
+    <Compile Include="cEgresos.aspx.designer.cs">
+      <DependentUpon>cEgresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaMiembros.aspx.cs">
       <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
