@@ -152,14 +152,12 @@
     </Compile>
     <Compile Include="CTipoIngresoWebForm.aspx.cs">
       <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CTipoIngresoWebForm.aspx.designer.cs">
       <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="cTiposUsuarios.aspx.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="cTiposUsuarios.aspx.designer.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
@@ -173,7 +171,6 @@
     </Compile>
     <Compile Include="cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="cUsuarios.aspx.designer.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
@@ -213,14 +210,12 @@
     </Compile>
     <Compile Include="MetasConsultasWebForm.aspx.cs">
       <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MetasConsultasWebForm.aspx.designer.cs">
       <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="MetasWebForm.aspx.cs">
       <DependentUpon>MetasWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MetasWebForm.aspx.designer.cs">
       <DependentUpon>MetasWebForm.aspx</DependentUpon>
@@ -284,7 +279,6 @@
     </Compile>
     <Compile Include="TipoIngreso.aspx.cs">
       <DependentUpon>TipoIngreso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TipoIngreso.aspx.designer.cs">
       <DependentUpon>TipoIngreso.aspx</DependentUpon>

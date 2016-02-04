@@ -8,7 +8,7 @@ using BLL;
 using System.Data;
 using DAL;
 
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Consulta
 {
     public partial class cTiposUsuarios : System.Web.UI.Page
     {

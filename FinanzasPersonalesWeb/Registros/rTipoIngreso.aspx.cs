@@ -6,9 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
 
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Registros
 {
-    public partial class TipoIngreso : System.Web.UI.Page
+    public partial class rTipoIngreso : System.Web.UI.Page
     {
         TiposIngresos TipodeIngreso = new TiposIngresos();
         Usuarios Usuario = new Usuarios();
