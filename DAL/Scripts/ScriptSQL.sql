@@ -72,16 +72,18 @@ create table MetasDetalle
 
 select * from Metas
 
---Script Miembros
+--Script Angel
 create table Miembros (
 
 MiembroId int primary key identity(1,1),
-Nombre varchar(20),
+Nombres varchar(30),
+Apelidos varchar(60),
+Parentesco varchar(20),
 esActivo int,
 UsuarioId int foreign key References Usuarios(UsuarioId)
 
-
 )
+go
 --Script Newlin
 
 /****** Object:  Table [dbo].[Presupuestos]    Script Date: 1/18/2016 8:54:42 PM ******/

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CTipoIngresoWebForm.aspx.cs" Inherits="FinanzasPersonalesWeb.CTipoIngresoWebForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cTipoIngresoWebForm.aspx.cs" Inherits="FinanzasPersonalesWeb.Consultas.cTipoIngresoWebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    <style type="text/css">
         .col-centered

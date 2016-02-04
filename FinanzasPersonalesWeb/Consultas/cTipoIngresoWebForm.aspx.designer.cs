@@ -7,28 +7,37 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb {
+namespace FinanzasPersonalesWeb.Consultas {
     
     
-    public partial class MetasConsultasWebForm {
+    public partial class cTipoIngresoWebForm {
         
         /// <summary>
-        /// ConsultaDropDownList control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ConsultaDropDownList;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// ConsultaTextBox control.
+        /// TipoIngresoDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConsultaTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList TipoIngresoDropDownList;
+        
+        /// <summary>
+        /// CodigoTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CodigoTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -40,12 +49,12 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// MetasGridView control.
+        /// ConsultaGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView MetasGridView;
+        protected global::System.Web.UI.WebControls.GridView ConsultaGridView;
     }
 }

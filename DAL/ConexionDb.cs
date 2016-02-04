@@ -18,10 +18,8 @@ namespace DAL
 
         public ConexionDb()
         {
-            //DARLENISM\SQLEXPRESS - TipoIngresosScrit
-            //ROOT-PC\\SURPUSER 
-            ////JUNIOR-PC\\ROOT no dejar la conexion apuntando a tu maquina
-            con = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=FinanzasPersonalesWebDb;Integrated Security=True");
+             
+            con = new SqlConnection(ConfigurationManager.ConnectionStrings["FinanzasPersonalesWebDbConnectionString"].ConnectionString);
             Cmd = new SqlCommand();
 
         }
