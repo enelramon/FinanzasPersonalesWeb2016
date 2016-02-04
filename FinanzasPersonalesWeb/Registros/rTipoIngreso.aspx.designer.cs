@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb {
+namespace FinanzasPersonalesWeb.Registros {
     
     
-    public partial class TipoIngreso {
+    public partial class rTipoIngreso {
         
         /// <summary>
         /// Label1 control.

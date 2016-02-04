@@ -25,13 +25,7 @@
     <div class="container-fluid">
 
     <form id="form1" runat="server">
-            <button type="button" class="btn btn-default">Default</button>
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-success">Success</button>
-            <button type="button" class="btn btn-info">Info</button>
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-danger">Danger</button>
-            <button type="button" class="btn btn-link">Link</button>
+           
 
             <div>
                 <h1>ENCABEZADO</h1>
@@ -39,7 +33,12 @@
     <div>
                 <uc1:Menu runat="server" ID="Menu1" />
                 <hr />
+
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+            
+
+
         </asp:ContentPlaceHolder>
     </div>
  <div><h1>PIE DE PAGINA</h1></div>

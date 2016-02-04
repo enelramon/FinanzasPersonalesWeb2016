@@ -44,7 +44,7 @@
       <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
@@ -79,6 +79,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\FinanzasPersonalesWebDb.mdf" />
+    <Content Include="App_Data\FinanzasPersonalesWebDb_log.ldf">
+      <DependentUpon>FinanzasPersonalesWebDb.mdf</DependentUpon>
+    </Content>
     <Content Include="cCuentas.aspx" />
     <Content Include="ConsultaEgresoWebForm.aspx" />
     <Content Include="ConsultaMiembros.aspx" />
@@ -89,7 +93,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="cPresupuestos.aspx" />
     <Content Include="CTipoIngresoWebForm.aspx" />
-    <Content Include="Consultas\cTiposUsuarios.aspx" />
+    <Content Include="cTiposUsuarios.aspx" />
     <Content Include="CTransferencias.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
@@ -97,13 +101,14 @@
     <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="Consultas\cMetasWebForm.aspx" />
-    <Content Include="Registros\rMetasWebForm.aspx" />
+    <Content Include="MetasConsultasWebForm.aspx" />
+    <Content Include="MetasWebForm.aspx" />
     <Content Include="MiembrosWebFor.aspx" />
     <Content Include="rCuentas.aspx" />
+    <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="ReportViewers\ListadoTiposUsuarioViewer.aspx" />
     <Content Include="rPresupuestos.aspx" />
-    <Content Include="Registros\rTiposUsuarios.aspx" />
+    <Content Include="rTiposUsuarios.aspx" />
     <Content Include="rUsuarios.aspx" />
     <Content Include="TipoEgreso.aspx" />
     <Content Include="TipoIngreso.aspx" />
@@ -148,16 +153,14 @@
     </Compile>
     <Compile Include="CTipoIngresoWebForm.aspx.cs">
       <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CTipoIngresoWebForm.aspx.designer.cs">
       <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\cTiposUsuarios.aspx.cs">
+    <Compile Include="cTiposUsuarios.aspx.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\cTiposUsuarios.aspx.designer.cs">
+    <Compile Include="cTiposUsuarios.aspx.designer.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="CTransferencias.aspx.cs">
@@ -169,7 +172,6 @@
     </Compile>
     <Compile Include="cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="cUsuarios.aspx.designer.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
@@ -188,6 +190,11 @@
     <Compile Include="EgresosWebForm.aspx.designer.cs">
       <DependentUpon>EgresosWebForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\FinanzasPersonalesWebDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Include\Menu.ascx.cs">
       <DependentUpon>Menu.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,19 +209,17 @@
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\cMetasWebForm.aspx.cs">
-      <DependentUpon>cMetasWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="MetasConsultasWebForm.aspx.cs">
+      <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\cMetasWebForm.aspx.designer.cs">
-      <DependentUpon>cMetasWebForm.aspx</DependentUpon>
+    <Compile Include="MetasConsultasWebForm.aspx.designer.cs">
+      <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registros\rMetasWebForm.aspx.cs">
-      <DependentUpon>rMetasWebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="MetasWebForm.aspx.cs">
+      <DependentUpon>MetasWebForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registros\rMetasWebForm.aspx.designer.cs">
-      <DependentUpon>rMetasWebForm.aspx</DependentUpon>
+    <Compile Include="MetasWebForm.aspx.designer.cs">
+      <DependentUpon>MetasWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="MiembrosWebFor.aspx.cs">
       <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
@@ -231,6 +236,13 @@
     <Compile Include="rCuentas.aspx.designer.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.cs">
+      <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.designer.cs">
+      <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReportViewers\ListadoTiposUsuarioViewer.aspx.cs">
       <DependentUpon>ListadoTiposUsuarioViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,11 +257,11 @@
     <Compile Include="rPresupuestos.aspx.designer.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registros\rTiposUsuarios.aspx.cs">
+    <Compile Include="rTiposUsuarios.aspx.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registros\rTiposUsuarios.aspx.designer.cs">
+    <Compile Include="rTiposUsuarios.aspx.designer.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="rUsuarios.aspx.cs">
@@ -275,7 +287,6 @@
     </Compile>
     <Compile Include="TipoIngreso.aspx.cs">
       <DependentUpon>TipoIngreso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TipoIngreso.aspx.designer.cs">
       <DependentUpon>TipoIngreso.aspx</DependentUpon>
@@ -292,6 +303,17 @@
   <ItemGroup>
     <Content Include="Site.Master" />
     <Content Include="packages.config" />
+    <Content Include="App_Code\FinanzasPersonalesWebDbDataSet.xsc">
+      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="App_Code\FinanzasPersonalesWebDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinanzasPersonalesWebDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Code\FinanzasPersonalesWebDbDataSet.xss">
+      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -306,6 +328,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Consultas\" />
+    <Folder Include="Registros\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reportes\ListadoUsuariosxTipo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Folder Include="Reportes\" />
   </ItemGroup>
   <PropertyGroup>

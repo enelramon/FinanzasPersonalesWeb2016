@@ -10,7 +10,7 @@
 namespace FinanzasPersonalesWeb {
     
     
-    public partial class CTipoIngresoWebForm {
+    public partial class cUsuarios {
         
         /// <summary>
         /// Label1 control.
@@ -22,22 +22,22 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// TipoIngresoDropDownList control.
+        /// FiltroDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TipoIngresoDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList FiltroDropDown;
         
         /// <summary>
-        /// CodigoTextBox control.
+        /// FiltroTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CodigoTextBox;
+        protected global::System.Web.UI.WebControls.TextBox FiltroTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -49,12 +49,21 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// ConsultaGridView control.
+        /// UsuarioGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ConsultaGridView;
+        protected global::System.Web.UI.WebControls.GridView UsuarioGridView;
+        
+        /// <summary>
+        /// ImprimirHyperLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink ImprimirHyperLink;
     }
 }
