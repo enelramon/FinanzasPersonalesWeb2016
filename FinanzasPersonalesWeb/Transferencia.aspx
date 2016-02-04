@@ -62,15 +62,32 @@
       
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-2">
             <asp:Button ID="Buscarbutton" runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="Buscarbutton_Click" />
         </div>
-            </div>
-        <div class="col-md-12">
+            <div class="col-md-4">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
            <asp:Button ID="Nuevobutton" runat="server" CssClass="btn btn-primary" Text="Nuevo"/>
            <asp:Button ID="GuardarButton" runat="server" OnClick="GuardarButton_Click1" CssClass="btn btn-success" Text="Guardar"/>
            <asp:Button ID="Eliminarbutton" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClick="Eliminarbutton_Click" />
 
         </div>
+            </div>
+
     </div>
+
         </asp:Content>
