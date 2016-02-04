@@ -199,11 +199,6 @@
     <Compile Include="EgresosWebForm.aspx.designer.cs">
       <DependentUpon>EgresosWebForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\FinanzasPersonalesWebDbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Include\Menu.ascx.cs">
       <DependentUpon>Menu.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -301,17 +296,6 @@
   <ItemGroup>
     <Content Include="Site.Master" />
     <Content Include="packages.config" />
-    <Content Include="App_Code\FinanzasPersonalesWebDbDataSet.xsc">
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="App_Code\FinanzasPersonalesWebDbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinanzasPersonalesWebDbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="App_Code\FinanzasPersonalesWebDbDataSet.xss">
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -325,7 +309,9 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\ListadoUsuariosxTipo.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
