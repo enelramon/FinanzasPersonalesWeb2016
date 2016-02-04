@@ -7,7 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb.Consulta {
+namespace FinanzasPersonalesWeb.Consultas
+{
     
     
     public partial class cTiposUsuarios {
