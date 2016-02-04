@@ -92,7 +92,7 @@
     <Content Include="CTransferencias.aspx" />
     <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="EgresosWebForm.aspx" />
+    <Content Include="rEgresos.aspx" />
     <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
@@ -179,12 +179,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EgresosWebForm.aspx.cs">
-      <DependentUpon>EgresosWebForm.aspx</DependentUpon>
+    <Compile Include="rEgresos.aspx.cs">
+      <DependentUpon>rEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EgresosWebForm.aspx.designer.cs">
-      <DependentUpon>EgresosWebForm.aspx</DependentUpon>
+    <Compile Include="rEgresos.aspx.designer.cs">
+      <DependentUpon>rEgresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Include\Menu.ascx.cs">
       <DependentUpon>Menu.ascx</DependentUpon>

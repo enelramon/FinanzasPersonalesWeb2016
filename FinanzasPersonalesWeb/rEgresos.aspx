@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EgresosWebForm.aspx.cs" Inherits="FinanzasPersonalesWeb.EgresosWebForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rEgresos.aspx.cs" Inherits="FinanzasPersonalesWeb.EgresosWebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         #TextArea1 {
