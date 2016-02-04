@@ -44,6 +44,7 @@
       <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
@@ -100,6 +101,7 @@
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="MiembrosWebFor.aspx" />
     <Content Include="rCuentas.aspx" />
+    <Content Include="ReportViewers\ListadoTiposUsuarioViewer.aspx" />
     <Content Include="rPresupuestos.aspx" />
     <Content Include="Registros\rTiposUsuarios.aspx" />
     <Content Include="rUsuarios.aspx" />
@@ -229,6 +231,13 @@
     <Compile Include="rCuentas.aspx.designer.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReportViewers\ListadoTiposUsuarioViewer.aspx.cs">
+      <DependentUpon>ListadoTiposUsuarioViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoTiposUsuarioViewer.aspx.designer.cs">
+      <DependentUpon>ListadoTiposUsuarioViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="rPresupuestos.aspx.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -298,7 +307,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Reportes\" />
-    <Folder Include="ReportViewers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
