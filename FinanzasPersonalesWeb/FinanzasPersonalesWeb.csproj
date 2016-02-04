@@ -107,7 +107,6 @@
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
-    <Content Include="ReportViewers\ListadoTiposUsuarioViewer.aspx" />
     <Content Include="rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="rUsuarios.aspx" />
@@ -255,13 +254,6 @@
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.designer.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ReportViewers\ListadoTiposUsuarioViewer.aspx.cs">
-      <DependentUpon>ListadoTiposUsuarioViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReportViewers\ListadoTiposUsuarioViewer.aspx.designer.cs">
-      <DependentUpon>ListadoTiposUsuarioViewer.aspx</DependentUpon>
-    </Compile>
     <Compile Include="rPresupuestos.aspx.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -338,7 +330,6 @@
     <EmbeddedResource Include="Reportes\ListadoUsuariosxTipo.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <Folder Include="Reportes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
