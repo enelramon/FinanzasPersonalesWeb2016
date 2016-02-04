@@ -76,7 +76,7 @@ namespace FinanzasPersonalesWeb
                 }
                 else
                 {
-                    LlenarClase(ref Usuario);
+                    LlenarClase(Usuario);
 
                     paso = Usuario.Insertar();
                 }
