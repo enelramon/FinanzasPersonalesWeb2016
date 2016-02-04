@@ -86,31 +86,31 @@
     <Content Include="cCuentas.aspx" />
     <Content Include="ConsultaEgresoWebForm.aspx" />
     <Content Include="ConsultaMiembros.aspx" />
+    <Content Include="Consultas\cMetasWebForm.aspx" />
+    <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
+    <Content Include="Consultas\cTiposUsuarios.aspx" />
+    <Content Include="Consultas\cUsuarios.aspx" />
     <Content Include="ConsultaTipoEgreso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="cPresupuestos.aspx" />
-    <Content Include="CTipoIngresoWebForm.aspx" />
-    <Content Include="cTiposUsuarios.aspx" />
     <Content Include="CTransferencias.aspx" />
-    <Content Include="cUsuarios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
     <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="MetasConsultasWebForm.aspx" />
-    <Content Include="MetasWebForm.aspx" />
     <Content Include="MiembrosWebFor.aspx" />
     <Content Include="rCuentas.aspx" />
+    <Content Include="Registros\rMetasWebForm.aspx" />
+    <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="rUsuarios.aspx" />
     <Content Include="TipoEgreso.aspx" />
-    <Content Include="TipoIngreso.aspx" />
     <Content Include="Transferencia.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -136,6 +136,34 @@
     <Compile Include="ConsultaMiembros.aspx.designer.cs">
       <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\cMetasWebForm.aspx.cs">
+      <DependentUpon>cMetasWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cMetasWebForm.aspx.designer.cs">
+      <DependentUpon>cMetasWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cTipoIngresoWebForm.aspx.cs">
+      <DependentUpon>cTipoIngresoWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cTipoIngresoWebForm.aspx.designer.cs">
+      <DependentUpon>cTipoIngresoWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cTiposUsuarios.aspx.cs">
+      <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cTiposUsuarios.aspx.designer.cs">
+      <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cUsuarios.aspx.cs">
+      <DependentUpon>cUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cUsuarios.aspx.designer.cs">
+      <DependentUpon>cUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaTipoEgreso.aspx.cs">
       <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,30 +178,12 @@
     <Compile Include="cPresupuestos.aspx.designer.cs">
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CTipoIngresoWebForm.aspx.cs">
-      <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CTipoIngresoWebForm.aspx.designer.cs">
-      <DependentUpon>CTipoIngresoWebForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="cTiposUsuarios.aspx.cs">
-      <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="cTiposUsuarios.aspx.designer.cs">
-      <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CTransferencias.aspx.cs">
       <DependentUpon>CTransferencias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CTransferencias.aspx.designer.cs">
       <DependentUpon>CTransferencias.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="cUsuarios.aspx.cs">
-      <DependentUpon>cUsuarios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="cUsuarios.aspx.designer.cs">
-      <DependentUpon>cUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -208,18 +218,6 @@
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MetasConsultasWebForm.aspx.cs">
-      <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MetasConsultasWebForm.aspx.designer.cs">
-      <DependentUpon>MetasConsultasWebForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MetasWebForm.aspx.cs">
-      <DependentUpon>MetasWebForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MetasWebForm.aspx.designer.cs">
-      <DependentUpon>MetasWebForm.aspx</DependentUpon>
-    </Compile>
     <Compile Include="MiembrosWebFor.aspx.cs">
       <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -234,6 +232,20 @@
     </Compile>
     <Compile Include="rCuentas.aspx.designer.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rMetasWebForm.aspx.cs">
+      <DependentUpon>rMetasWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rMetasWebForm.aspx.designer.cs">
+      <DependentUpon>rMetasWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rTipoIngreso.aspx.cs">
+      <DependentUpon>rTipoIngreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rTipoIngreso.aspx.designer.cs">
+      <DependentUpon>rTipoIngreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
@@ -277,12 +289,6 @@
     <Compile Include="TipoEgreso.aspx.designer.cs">
       <DependentUpon>TipoEgreso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TipoIngreso.aspx.cs">
-      <DependentUpon>TipoIngreso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TipoIngreso.aspx.designer.cs">
-      <DependentUpon>TipoIngreso.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Transferencia.aspx.cs">
       <DependentUpon>Transferencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -319,10 +325,7 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Consultas\" />
-    <Folder Include="Registros\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Reportes\ListadoUsuariosxTipo.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
