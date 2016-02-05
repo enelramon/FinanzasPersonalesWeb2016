@@ -41,7 +41,7 @@ namespace BLL
                 if (retorno > 0) {
                     foreach (PresupuestoDetalle pd in Detalle)
                     {
-                        conexion.Ejecutar("Insert Into PresupuestoDetalle (PresupuestoId,TipoEgresosId,Monto) Values ("+ retorno + "," + pd.TipoEgresoId + "," + pd.Monto + ")--");
+                        conexion.Ejecutar("Insert Into PresupuestoDetalle (PresupuestoId,TipoEgresoId,Monto) Values ("+ retorno + "," + pd.TipoEgresoId + "," + pd.Monto + ")--");
                     }
                 }
             }
@@ -64,7 +64,7 @@ namespace BLL
                     conexion.Ejecutar(String.Format("Delete from PresupuestoDetalle Where PresupuestoId = {0} --", this.PresupuestoId));
                     foreach (PresupuestoDetalle pd in Detalle)
                     {
-                        conexion.Ejecutar(String.Format("Insert Into PresupuestoDetalle (PresupuestoId,TipoEgresosId,Monto) Values ({0},{1},{2})--", this.PresupuestoId, pd.TipoEgresoId, pd.Monto));
+                        conexion.Ejecutar(String.Format("Insert Into PresupuestoDetalle (PresupuestoId,TipoEgresoId,Monto) Values ({0},{1},{2})--", this.PresupuestoId, pd.TipoEgresoId, pd.Monto));
                     }
                 }
             }
@@ -113,7 +113,7 @@ namespace BLL
                 if (detalleDt.Rows.Count > 0)
                 {
                     foreach (DataRow dr in detalleDt.Rows)
-                        this.AgregarDetalle((int)dr["TipoEgresosId"], Convert.ToSingle(dr["Monto"]));
+                        this.AgregarDetalle((int)dr["TipoEgresoId"], Convert.ToSingle(dr["Monto"]));
                 }
             }
             catch
