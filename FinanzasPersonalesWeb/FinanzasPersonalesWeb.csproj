@@ -80,6 +80,15 @@
     <Content Include="App_Data\FinanzasPersonalesWebDb_log.ldf">
       <DependentUpon>FinanzasPersonalesWebDb.mdf</DependentUpon>
     </Content>
+    <Content Include="bin\BLL.dll" />
+    <Content Include="bin\BLL.pdb" />
+    <Content Include="bin\DAL.dll" />
+    <Content Include="bin\DAL.pdb" />
+    <Content Include="bin\FinanzasPersonalesWeb.dll" />
+    <Content Include="bin\FinanzasPersonalesWeb.pdb" />
+    <Content Include="bin\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.xml" />
     <Content Include="cCuentas.aspx" />
     <Content Include="ConsultaEgresoWebForm.aspx" />
     <Content Include="ConsultaMiembros.aspx" />
@@ -97,9 +106,13 @@
     <Content Include="Default.aspx" />
     <Content Include="EgresosWebForm.aspx" />
     <Content Include="Ejemplo.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="MiembrosWebFor.aspx" />
+    <Content Include="obj\Debug\FinanzasPersonalesWeb.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\FinanzasPersonalesWeb.dll" />
+    <Content Include="obj\Debug\FinanzasPersonalesWeb.pdb" />
     <Content Include="rCuentas.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
@@ -107,6 +120,23 @@
     <Content Include="rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="rUsuarios.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\FinanzasPersonalesWeb.csprojResolveAssemblyReference.cache" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="bin\FinanzasPersonalesWeb.dll.config" />
+    <Content Include="bin\Reportes\ListadoUsuariosxTipo.rdlc" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.2.0.js" />
+    <Content Include="Scripts\jquery-2.2.0.min.js" />
     <Content Include="TipoEgreso.aspx" />
     <Content Include="Transferencia.aspx" />
     <Content Include="Web.config" />
@@ -293,6 +323,7 @@
   <ItemGroup>
     <Content Include="Site.Master" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-2.2.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -308,6 +339,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\ListadoUsuariosxTipo.rdlc">
