@@ -39,13 +39,13 @@ namespace FinanzasPersonalesWeb
 
         }
 
-        public int Error()
+        public int MiError()
         {
             int contador = 0;
 
             if(MontoTextBox.Text == "")
             {
-                //HttpContext.Current.Response.Write("<SCRIPT>alert('Debe de completar el campo monto')</SCRIPT>");
+                HttpContext.Current.Response.Write("<SCRIPT>alert('Debe de completar el campo monto')</SCRIPT>");
                 contador = 1;
             }
             return contador;
@@ -53,13 +53,18 @@ namespace FinanzasPersonalesWeb
         public void LlenarDatos(Egresos egreso)
         {
             float monto;
+            int cuentaId, miembroId, tipoEgresoId;
             float.TryParse(MontoTextBox.Text, out monto);
-            egreso.CuentaId = Convert.ToInt32(CuentaIdDropDownList.SelectedValue);
-            egreso.MiembroId = Convert.ToInt32(MiembroIdDropDownList.SelectedValue);
+            int.TryParse(CuentaIdDropDownList.SelectedValue, out cuentaId);
+            int.TryParse(MiembroIdDropDownList.SelectedValue, out miembroId);
+            int.TryParse(TipoEgresoIdDropDownList.SelectedValue, out tipoEgresoId);
+
+            egreso.CuentaId = cuentaId;
+            egreso.MiembroId = miembroId;
             //egreso.Observacion = ObservacionTextBox.Text;
             egreso.Fecha = FechaTextBox.Text;
             egreso.Monto = monto;
-            egreso.TipoEgresoId = Convert.ToInt32(TipoEgresoIdDropDownList.SelectedValue);
+            egreso.TipoEgresoId = tipoEgresoId;
         }
         public int Convertir()
         {
@@ -74,7 +79,7 @@ namespace FinanzasPersonalesWeb
             if (EgresoIdTextBox.Text.Length == 0)
             {
                 LlenarDatos(egresos);
-                if (Error() == 0 && egresos.Insertar())
+                if (MiError() == 0 && egresos.Insertar())
                 {
                     HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Guardado')</SCRIPT>");
                     Limpiar();
@@ -139,19 +144,28 @@ namespace FinanzasPersonalesWeb
         {
             Egresos egreso = new Egresos();
 
-            if (egreso.Buscar(Convertir()))
+
+            if(EgresoIdTextBox.Text.Length == 0)
             {
-                FechaTextBox.Text = egreso.Fecha;
-                MontoTextBox.Text = egreso.Monto.ToString();
-                CuentaIdDropDownList.SelectedValue = egreso.CuentaId.ToString();
-                TipoEgresoIdDropDownList.SelectedValue = egreso.TipoEgresoId.ToString();
-                ObservacionTextBox.Text = egreso.Observacion;
-                MiembroIdDropDownList.SelectedValue = egreso.MiembroId.ToString();
+                HttpContext.Current.Response.Write("<SCRIPT>alert('Debe de llenar el campo EgresoId')</SCRIPT>");
             }
             else
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Error al buscar')<SCRIPT/>");
+                if (egreso.Buscar(Convertir()))
+                {
+                    FechaTextBox.Text = egreso.Fecha;
+                    MontoTextBox.Text = egreso.Monto.ToString();
+                    CuentaIdDropDownList.SelectedValue = egreso.CuentaId.ToString();
+                    TipoEgresoIdDropDownList.SelectedValue = egreso.TipoEgresoId.ToString();
+                    ObservacionTextBox.Text = egreso.Observacion;
+                    MiembroIdDropDownList.SelectedValue = egreso.MiembroId.ToString();
+                }
+                else 
+                {
+                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al buscar')<SCRIPT/>");
+                }
             }
+           
         }
 
     }

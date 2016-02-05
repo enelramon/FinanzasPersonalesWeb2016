@@ -6,13 +6,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
 
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Registros
 {
     public partial class MetasWebForm : System.Web.UI.Page
     {  
         protected void Page_Load(object sender, EventArgs e)
         {
-            // LlenarDropDownList();
+             //LlenarDropDownList();
         }
 
         public void Limpiar()
@@ -28,9 +28,9 @@ namespace FinanzasPersonalesWeb
         public void LlenarDropDownList()
         {
             TiposIngresos tipo = new TiposIngresos();
-            TipoDeIngresoDropDownList.DataSource = tipo.Listado(" * ", "1=1", "TipoIgresoId");
+            TipoDeIngresoDropDownList.DataSource = tipo.Listado(" * ", "1=1", "TipoIngresoId");
             TipoDeIngresoDropDownList.DataTextField = "Descripcion";
-            TipoDeIngresoDropDownList.DataValueField = "TipoIgresoId";
+            TipoDeIngresoDropDownList.DataValueField = "TipoIngresoId";
             TipoDeIngresoDropDownList.DataBind();
         }
 
@@ -39,13 +39,14 @@ namespace FinanzasPersonalesWeb
             Metas meta = new Metas();
             meta.Descripcion = DescripcionTextBox.Text;
             meta.UsuarioId = 1;
+            meta.TipoIngresoId = Convert.ToInt32(TipoDeIngresoDropDownList.SelectedValue);
             meta.LimpiarList();
 
             for (int i = 0; i < MetasListBox.Items.Count; i++)
             {
                 int id = (int)meta.ObtenerMetaId().Rows[0]["MetaId"];
                 Double monto = Convert.ToDouble(MetasListBox.Items[i].ToString());
-                meta.AgregarMetas(id, 1, monto);
+                meta.AgregarMetas(id,meta.TipoIngresoId , monto);
             }
 
             if (MetaIdTextBox.Text.Length <= 0)

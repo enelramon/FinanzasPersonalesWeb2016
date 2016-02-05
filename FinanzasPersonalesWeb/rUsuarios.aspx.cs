@@ -17,7 +17,7 @@ namespace FinanzasPersonalesWeb
 
         }
 
-        public void LlenarClase(ref Usuarios Usuario)
+        public void LlenarClase( Usuarios Usuario)
         {
             Usuario.Nombre = NombreTextBox.Text;
             Usuario.Apellidos = ApellidoTextBox.Text;
@@ -31,7 +31,7 @@ namespace FinanzasPersonalesWeb
             Usuarios Usuario = new Usuarios();
             Boolean paso = false;
             Boolean control1, control2 = false;
-            LlenarClase(ref Usuario);
+            LlenarClase( Usuario);
 
 
             if (NombreTextBox.Text.Trim().Length == 0)
@@ -76,6 +76,8 @@ namespace FinanzasPersonalesWeb
                 }
                 else
                 {
+                    LlenarClase(Usuario);
+
                     paso = Usuario.Insertar();
                 }
 

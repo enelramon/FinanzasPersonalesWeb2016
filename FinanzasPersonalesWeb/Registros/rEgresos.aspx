@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EgresosWebForm.aspx.cs" Inherits="FinanzasPersonalesWeb.EgresosWebForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rEgresos.aspx.cs" Inherits="FinanzasPersonalesWeb.EgresosWebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         #TextArea1 {
@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="btn-group">
                     <div class="col-md-4">
-                        <asp:TextBox ID="EgresoIdTextBox" runat="server" CssClass="form-control" Height="33px" style="margin-left: 27px" Width="152px"></asp:TextBox>
+                        <asp:TextBox ID="EgresoIdTextBox" runat="server" CssClass="form-control" placeHolder="EgresoId" Height="33px" style="margin-left: 27px" Width="152px"></asp:TextBox>
                     </div>
                     <div class="col-md-1">
                         <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-success" Height="33px" Text="Buscar" Width="90px" OnClick="BuscarButton_Click" />
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-4">
                         <br />
-                        <asp:TextBox ID="MontoTextBox" runat="server" CssClass="form-control" Height="33px" style="margin-right: 456px" Width="152px"></asp:TextBox>
+                        <asp:TextBox ID="MontoTextBox" runat="server" CssClass="form-control" Height="33px" placeholder="Monto" style="margin-right: 456px" Width="152px"></asp:TextBox>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                 <div class="btn-group">
                     <div class ="col-md-4">
                         <br />
-                         <asp:DropDownList ID="MiembroIdDropDownList" runat="server" CssClass="form-control" style="margin-left:27px" Height="33px"  Width="155px">
+                         <asp:DropDownList ID="MiembroIdDropDownList" runat="server" palceholder="CuentaId" CssClass="form-control" style="margin-left:27px" Height="33px"  Width="155px">
                          </asp:DropDownList>
                     </div>
                     <div class="col-md-4">
@@ -62,7 +62,7 @@
                 <div class="btn-group">
                     <div class="col-md-4">
                         <br />
-                        <asp:TextBox ID="ObservacionTextBox" runat="server" CssClass="form-control" Height="100px" style="margin-left: 27px" TextMode="MultiLine" Width="410px"></asp:TextBox>
+                        <asp:TextBox ID="ObservacionTextBox" runat="server" CssClass="form-control" Height="100px" placeholder="Obsevaciones" style="margin-left: 27px" TextMode="MultiLine" Width="410px"></asp:TextBox>
                         <br />
                     </div>
                 </div>

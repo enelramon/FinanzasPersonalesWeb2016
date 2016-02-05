@@ -11,6 +11,7 @@ namespace BLL
     {
         public int MiembroId { get; set; }
         public string Nombre { get; set; }
+
         public int esActivo { get; set; }
         public int UsuarioId { get; set; }
 

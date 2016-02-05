@@ -140,5 +140,22 @@ namespace BLL
 
             return Encontro;
         }
+        public bool ValidarUsuario(string Usuario, string contra)
+        {
+            bool Encontro = false;
+            DataTable dt = new DataTable();
+
+            dt = this.Listado("UsuarioId, Usuario, Contrasena", "Usuario = " + Usuario + " and Password = " + Password, "UsuarioId ASC");
+
+            if (dt.Rows.Count > 0)
+            {
+                Encontro = true;
+
+                this.Usuario = (string)dt.Rows[0]["Usuario"];
+                this.Password = (string)dt.Rows[0]["Contrasena"];
+            }
+
+            return Encontro;
+        }
     }
 }
