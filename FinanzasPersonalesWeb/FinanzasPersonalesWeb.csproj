@@ -90,7 +90,7 @@
     <Content Include="bin\Microsoft.ReportViewer.WebForms.dll" />
     <Content Include="bin\Microsoft.ReportViewer.WebForms.xml" />
     <Content Include="cCuentas.aspx" />
-    <Content Include="ConsultaEgresoWebForm.aspx" />
+    <Content Include="Consultas\cEgresos.aspx" />
     <Content Include="ConsultaMiembros.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
     <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
@@ -104,7 +104,7 @@
     <Content Include="cPresupuestos.aspx" />
     <Content Include="CTransferencias.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="EgresosWebForm.aspx" />
+    <Content Include="Registros\rEgresos.aspx" />
     <Content Include="Ejemplo.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Include\Menu.ascx" />
@@ -149,12 +149,12 @@
     <Compile Include="cCuentas.aspx.designer.cs">
       <DependentUpon>cCuentas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaEgresoWebForm.aspx.cs">
-      <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
+    <Compile Include="Consultas\cEgresos.aspx.cs">
+      <DependentUpon>cEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConsultaEgresoWebForm.aspx.designer.cs">
-      <DependentUpon>ConsultaEgresoWebForm.aspx</DependentUpon>
+    <Compile Include="Consultas\cEgresos.aspx.designer.cs">
+      <DependentUpon>cEgresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaMiembros.aspx.cs">
       <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
@@ -219,12 +219,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EgresosWebForm.aspx.cs">
-      <DependentUpon>EgresosWebForm.aspx</DependentUpon>
+    <Compile Include="Registros\rEgresos.aspx.cs">
+      <DependentUpon>rEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EgresosWebForm.aspx.designer.cs">
-      <DependentUpon>EgresosWebForm.aspx</DependentUpon>
+    <Compile Include="Registros\rEgresos.aspx.designer.cs">
+      <DependentUpon>rEgresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Include\Menu.ascx.cs">
       <DependentUpon>Menu.ascx</DependentUpon>
@@ -345,9 +345,6 @@
     <EmbeddedResource Include="Reportes\ListadoUsuariosxTipo.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
