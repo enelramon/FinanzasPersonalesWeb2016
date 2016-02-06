@@ -7,22 +7,22 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
-          <LayoutTemplate>
-
-                                      <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
-
-                                      <asp:TextBox ID="UserName" runat="server" Font-Size="0.8em"></asp:TextBox>
-                                      <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
-                                        <br />
-                                      <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
-
-                                      <asp:TextBox ID="Password" runat="server" Font-Size="0.8em" TextMode="Password"></asp:TextBox>
-                                      <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
-                                      <asp:CheckBox ID="RememberMe" runat="server" Text="Remember me next time." />
-                                      <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
-                                      <br />
-                                      <asp:Button ID="LoginButton" runat="server" BackColor="White" BorderColor="#507CD1" BorderStyle="Solid" BorderWidth="1px" CommandName="Login" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" Text="Log In" ValidationGroup="Login1" />
-          </LayoutTemplate>
-    </asp:Login>
+      <asp:TextBox ID="UsuarioTextBox" runat="server" />
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
+            ControlToValidate="UsuarioTextBox"
+            Display="Dynamic" 
+            ErrorMessage="Cannot be empty." 
+            runat="server" />
+     <asp:TextBox ID="ContrasenaTextBox" TextMode="Password" 
+             runat="server" />
+     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
+            ControlToValidate="ContrasenaTextBox"
+            ErrorMessage="Cannot be empty." 
+            runat="server" />
+              <asp:CheckBox ID="RememberMeCheckBox" runat="server" />
+        <asp:Button ID="Submit1" OnClick="Login1_Authenticate" Text="Acceder" 
+       runat="server" />
+    <p>
+      <asp:Label ID="Msg" ForeColor="red" runat="server" />
+    </p>
 </asp:Content>
