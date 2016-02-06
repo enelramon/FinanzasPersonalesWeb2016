@@ -91,8 +91,8 @@
     <Content Include="bin\Microsoft.ReportViewer.WebForms.xml" />
     <Content Include="cCuentas.aspx" />
     <Content Include="Consultas\cEgresos.aspx" />
-    <Content Include="ConsultaMiembros.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
+    <Content Include="Consultas\cMiembros.aspx" />
     <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
     <Content Include="Consultas\cTiposUsuarios.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
@@ -109,12 +109,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="MiembrosWebFor.aspx" />
     <Content Include="obj\Debug\FinanzasPersonalesWeb.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\FinanzasPersonalesWeb.dll" />
     <Content Include="obj\Debug\FinanzasPersonalesWeb.pdb" />
     <Content Include="rCuentas.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
+    <Content Include="Registros\rMiembros.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="rPresupuestos.aspx" />
@@ -156,19 +156,19 @@
     <Compile Include="Consultas\cEgresos.aspx.designer.cs">
       <DependentUpon>cEgresos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaMiembros.aspx.cs">
-      <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsultaMiembros.aspx.designer.cs">
-      <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Consultas\cMetasWebForm.aspx.cs">
       <DependentUpon>cMetasWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\cMetasWebForm.aspx.designer.cs">
       <DependentUpon>cMetasWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cMiembros.aspx.cs">
+      <DependentUpon>cMiembros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cMiembros.aspx.designer.cs">
+      <DependentUpon>cMiembros.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cTipoIngresoWebForm.aspx.cs">
       <DependentUpon>cTipoIngresoWebForm.aspx</DependentUpon>
@@ -240,13 +240,6 @@
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MiembrosWebFor.aspx.cs">
-      <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MiembrosWebFor.aspx.designer.cs">
-      <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rCuentas.aspx.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>
@@ -261,6 +254,13 @@
     </Compile>
     <Compile Include="Registros\rMetasWebForm.aspx.designer.cs">
       <DependentUpon>rMetasWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rMiembros.aspx.cs">
+      <DependentUpon>rMiembros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rMiembros.aspx.designer.cs">
+      <DependentUpon>rMiembros.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rTipoIngreso.aspx.cs">
       <DependentUpon>rTipoIngreso.aspx</DependentUpon>
