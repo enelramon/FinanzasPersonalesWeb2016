@@ -8,7 +8,7 @@ using BLL;
 using System.Data;
 
 
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Consultas
 {
 	public partial class ConsultaMiembros : System.Web.UI.Page
 	{
@@ -31,7 +31,7 @@ namespace FinanzasPersonalesWeb
             if(BuscarPorDropdown.SelectedIndex == 0) // MiembroId
             {
                 if(TbFiltro.Text.Trim().Length == 0)
-                {
+                { 
                     filtro = "1=1";
                 }
                 else

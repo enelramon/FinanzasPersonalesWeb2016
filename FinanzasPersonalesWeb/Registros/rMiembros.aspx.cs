@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using BLL;
 
 
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Registros
 {
     public partial class MiembrosWebFor : System.Web.UI.Page
     {
@@ -20,10 +20,9 @@ namespace FinanzasPersonalesWeb
             Usuarios usuario = new Usuarios();
 
             DropDownUsuario.DataSource = usuario.Listado(" * ", "1=1", "");
-            DropDownUsuario.DataTextField = "Nombres";
+            DropDownUsuario.DataTextField = "Nombre";
             DropDownUsuario.DataValueField = "UsuarioId";
             DropDownUsuario.DataBind();
-            EstadoRbList.SelectedIndex = 1;
             AlertNotificationDiv.Visible = false;
             AlertNotificationBox.Text = "";
         }
@@ -61,16 +60,6 @@ namespace FinanzasPersonalesWeb
 
             ValidarTextBoxVacio(TbNombre);
    
-      
-            if (EstadoRbList.SelectedIndex == 0)
-            {
-                miembro.esActivo = 1;
-            }
-            else
-            {
-                miembro.esActivo = 0;
-            }
-
             if (DropDownUsuario.SelectedItem.Text == "")
             {
                 miembro.UsuarioId = 0;
@@ -79,7 +68,17 @@ namespace FinanzasPersonalesWeb
             {
                 miembro.UsuarioId = Convert.ToInt16(DropDownUsuario.SelectedValue);
             }
-            
+
+            if (EstadoRbList.SelectedIndex == 0)
+            {
+                miembro.esActivo = 1;
+              
+            }
+            if (EstadoRbList.SelectedIndex == 1)
+            {
+                miembro.esActivo = 0;
+            }
+
 
             if (miembro.MiembroId == 0)
             {
