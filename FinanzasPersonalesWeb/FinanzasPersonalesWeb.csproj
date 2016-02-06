@@ -114,6 +114,7 @@
     <Content Include="obj\Debug\FinanzasPersonalesWeb.pdb" />
     <Content Include="rCuentas.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
+    <Content Include="Registros\rMiembros.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="rPresupuestos.aspx" />
@@ -253,6 +254,13 @@
     </Compile>
     <Compile Include="Registros\rMetasWebForm.aspx.designer.cs">
       <DependentUpon>rMetasWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rMiembros.aspx.cs">
+      <DependentUpon>rMiembros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rMiembros.aspx.designer.cs">
+      <DependentUpon>rMiembros.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rTipoIngreso.aspx.cs">
       <DependentUpon>rTipoIngreso.aspx</DependentUpon>
