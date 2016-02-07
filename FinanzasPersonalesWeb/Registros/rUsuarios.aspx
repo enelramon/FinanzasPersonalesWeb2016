@@ -46,6 +46,10 @@
                 </h6>
                 <br />
                 <h6>
+                    <asp:Label ID="Label3" runat="server" Text="Repetir Contraseña"></asp:Label>
+                </h6>
+                <br />
+                <h6>
                     <asp:Label ID="Label7" runat="server" Text="Correo Electronico"></asp:Label></h6>
             </div>
             <div class="col-xs-9 col-sm-9 col-lg-5 col-md-6">
@@ -56,6 +60,8 @@
                 <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server" Text="Nombre de Usuario" placeholder="Usuario" onclick="this.value='';"></asp:TextBox>
                 <br />
                 <asp:TextBox ID="PassTextBox" CssClass="form-control" type="password" runat="server" Text="Contraseña" placeholder="Contraseña" onclick="this.value='';"></asp:TextBox>
+                <br />
+                <asp:TextBox ID="ConPassTextBox" CssClass="form-control" type="password" runat="server" Text="Repetir Contraseña" placeholder="Repetir Contraseña" onclick="this.value='';"></asp:TextBox>
                 <br />
                 <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server" Text="Correo Electronico" placeholder="Correo Electronico" onclick="this.value='';"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
