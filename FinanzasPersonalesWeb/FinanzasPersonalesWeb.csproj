@@ -87,7 +87,7 @@
     <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
     <Content Include="Consultas\cTiposUsuarios.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
-    <Content Include="ConsultaTipoEgreso.aspx" />
+    <Content Include="Consultas\cTipoEgreso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -107,7 +107,7 @@
     <Content Include="rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="rUsuarios.aspx" />
-    <Content Include="TipoEgreso.aspx" />
+    <Content Include="Registros\rTipoEgreso.aspx" />
     <Content Include="Transferencia.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -161,12 +161,12 @@
     <Compile Include="Consultas\cUsuarios.aspx.designer.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaTipoEgreso.aspx.cs">
-      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
+    <Compile Include="Consultas\cTipoEgreso.aspx.cs">
+      <DependentUpon>cTipoEgreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConsultaTipoEgreso.aspx.designer.cs">
-      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
+    <Compile Include="Consultas\cTipoEgreso.aspx.designer.cs">
+      <DependentUpon>cTipoEgreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="cPresupuestos.aspx.cs">
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
@@ -274,12 +274,12 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="TipoEgreso.aspx.cs">
-      <DependentUpon>TipoEgreso.aspx</DependentUpon>
+    <Compile Include="Registros\rTipoEgreso.aspx.cs">
+      <DependentUpon>rTipoEgreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TipoEgreso.aspx.designer.cs">
-      <DependentUpon>TipoEgreso.aspx</DependentUpon>
+    <Compile Include="Registros\rTipoEgreso.aspx.designer.cs">
+      <DependentUpon>rTipoEgreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Transferencia.aspx.cs">
       <DependentUpon>Transferencia.aspx</DependentUpon>
@@ -313,7 +313,6 @@
     <EmbeddedResource Include="Reportes\ListadoUsuariosxTipo.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <Folder Include="Reportes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
