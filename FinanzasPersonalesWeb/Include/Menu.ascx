@@ -23,7 +23,34 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="default.aspx">Home</a></li>
-        </ul>
+            <% if (Request.IsAuthenticated) { %>
+            <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registros <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Agregar Nueva Cuenta</a></li>
+            <li><a href="#">Agregar Nueva Meta</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Registrar Nuevo Ingreso</a></li>
+            <li><a href="#">Registrar Nuevo Egreso</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultas <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+            <li><a href="default.aspx">Home</a></li>
+            <% } %>
+            </ul>
        <ul class="nav navbar-nav navbar-right">
             
             <asp:LoginView runat="server" ID="LoginView2">
@@ -41,8 +68,6 @@
                  </LoggedInTemplate>
                 </asp:LoginView>
               </ul>
-           <ul>
-        </ul>
     </div>
 </div>
 
