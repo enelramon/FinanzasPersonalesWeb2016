@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
 
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Registros
 {
     public partial class rUsuarios : System.Web.UI.Page
     {
@@ -76,7 +76,12 @@ namespace FinanzasPersonalesWeb
                 }
                 else
                 {
-                    LlenarClase(Usuario);
+                    Usuario.Nombre = NombreTextBox.Text;
+                    Usuario.Apellidos = ApellidoTextBox.Text;
+                    Usuario.TipoUsuarioId = 1;
+                    Usuario.Usuario = UsuarioTextBox.Text;
+                    Usuario.Password = PassTextBox.Text;
+                    Usuario.Email = EmailTextBox.Text;
 
                     paso = Usuario.Insertar();
                 }
