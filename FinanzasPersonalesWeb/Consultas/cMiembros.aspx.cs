@@ -8,7 +8,7 @@ using BLL;
 using System.Data;
 
 
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Consultas
 {
 	public partial class ConsultaMiembros : System.Web.UI.Page
 	{
@@ -31,7 +31,7 @@ namespace FinanzasPersonalesWeb
             if(BuscarPorDropdown.SelectedIndex == 0) // MiembroId
             {
                 if(TbFiltro.Text.Trim().Length == 0)
-                {
+                { 
                     filtro = "1=1";
                 }
                 else
@@ -76,7 +76,30 @@ namespace FinanzasPersonalesWeb
                 }
             }
 
-            dt = m.Listado("MiembroId, Nombre, esActivo, UsuarioId ", filtro, "");
+            if (BuscarPorDropdown.SelectedIndex == 4) //apellido
+            {
+                if (TbFiltro.Text.Trim().Length == 0)
+                {
+                    filtro = "1=1";
+                }
+                else
+                {
+                    filtro = "Apellidos like '%" + TbFiltro.Text + "%'";
+                }
+            } 
+
+            if (BuscarPorDropdown.SelectedIndex == 5) //parentesco
+            {
+                if (TbFiltro.Text.Trim().Length == 0)
+                {
+                    filtro = "1=1";
+                }
+                else
+                {
+                    filtro = "Parentesco like '%" + TbFiltro.Text + "%'";
+                }
+            }
+            dt = m.Listado("MiembroId, Nombre, esActivo, UsuarioId, Apellidos, Parentesco ", filtro, "");
             MiembrosDataGrid.DataSource = dt;
             MiembrosDataGrid.DataBind();
 

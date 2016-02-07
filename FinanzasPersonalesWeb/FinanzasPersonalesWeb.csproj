@@ -121,14 +121,12 @@
     </Compile>
     <Compile Include="cEgresos.aspx.cs">
       <DependentUpon>cEgresos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="cEgresos.aspx.designer.cs">
       <DependentUpon>cEgresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaMiembros.aspx.cs">
       <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConsultaMiembros.aspx.designer.cs">
       <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
@@ -191,7 +189,6 @@
     </Compile>
     <Compile Include="rEgresos.aspx.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="rEgresos.aspx.designer.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
@@ -212,7 +209,6 @@
     </Compile>
     <Compile Include="MiembrosWebFor.aspx.cs">
       <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MiembrosWebFor.aspx.designer.cs">
       <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
@@ -262,7 +258,6 @@
     </Compile>
     <Compile Include="rUsuarios.aspx.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="rUsuarios.aspx.designer.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>

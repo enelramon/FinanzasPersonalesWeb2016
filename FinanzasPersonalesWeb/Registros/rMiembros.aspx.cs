@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using BLL;
 
 
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Registros
 {
     public partial class MiembrosWebFor : System.Web.UI.Page
     {
@@ -20,10 +20,9 @@ namespace FinanzasPersonalesWeb
             Usuarios usuario = new Usuarios();
 
             DropDownUsuario.DataSource = usuario.Listado(" * ", "1=1", "");
-            DropDownUsuario.DataTextField = "Nombres";
+            DropDownUsuario.DataTextField = "Nombre";
             DropDownUsuario.DataValueField = "UsuarioId";
             DropDownUsuario.DataBind();
-            EstadoRbList.SelectedIndex = 1;
             AlertNotificationDiv.Visible = false;
             AlertNotificationBox.Text = "";
         }
@@ -35,7 +34,7 @@ namespace FinanzasPersonalesWeb
 
         public void ValidarTextBoxVacio(TextBox TextoValidar)
         {
-            if(TextoValidar.Text.Equals(string.Empty))
+            if (TextoValidar.Text.Equals(string.Empty))
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor llenar los campos');", true);
                 return;
@@ -47,6 +46,8 @@ namespace FinanzasPersonalesWeb
         {
             TbMiembroId.Text = "";
             TbNombre.Text = "";
+            TbApellido.Text = "";
+            TbParentesco.Text = "";
             EstadoRbList.ClearSelection();
             DropDownUsuario.ClearSelection();
         }
@@ -56,28 +57,40 @@ namespace FinanzasPersonalesWeb
             bool paso = false;
             Miembros miembro = new Miembros();
 
+            ValidarTextBoxVacio(TbNombre);
+            ValidarTextBoxVacio(TbApellido);
+            ValidarTextBoxVacio(TbParentesco);
+
             miembro.MiembroId = (TbMiembroId.Text == "") ? 0 : Convert.ToInt16(TbMiembroId.Text);
             miembro.Nombre = TbNombre.Text;
+            miembro.Apellidos = TbApellido.Text;
+            miembro.Parentesco = TbParentesco.Text;
 
-            ValidarTextBoxVacio(TbNombre);
-   
-      
+
+            if (DropDownUsuario.SelectedItem.Text == "")
+            {
+                miembro.UsuarioId = 0;
+            }
+            else
+            {
+                miembro.UsuarioId = Convert.ToInt16(DropDownUsuario.SelectedValue);
+            }
+
             if (EstadoRbList.SelectedIndex == 0)
             {
                 miembro.esActivo = 1;
+
             }
-            else
+            if (EstadoRbList.SelectedIndex == 1)
             {
                 miembro.esActivo = 0;
             }
 
-            miembro.UsuarioId = Convert.ToInt16(DropDownUsuario.SelectedValue);
 
-            if (miembro.MiembroId == 0)
+            if (TbMiembroId.Text == "")
             {
                 paso = miembro.Insertar();
             }
-
             else
             {
                 paso = miembro.Editar();
@@ -85,14 +98,7 @@ namespace FinanzasPersonalesWeb
 
             if (paso)
             {
-
-                if (!AlertNotificationDiv.Visible)
-                    AlertNotificationDiv.Visible = true;
-                if (!AlertNotificationBox.Visible)
-                    AlertNotificationBox.Visible = true;
-
-                AlertNotificationDiv.Attributes.Add("class", "col-md-12 col-xs-12 col-ms-12 alert alert-success alert-dismissable");
-                AlertNotificationBox.Text = "Registro Guardado.";
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro guardado exitosamente.');", true);
                 Limpiar();
             }
 
@@ -132,18 +138,23 @@ namespace FinanzasPersonalesWeb
                 return;
             }
 
-                if (!(miembro.Buscar(Convert.ToInt16(TbMiembroId.Text))))
+            if (!(miembro.Buscar(Convert.ToInt16(TbMiembroId.Text))))
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No se encontro ningún registro con ese ID.');", true);
                 Limpiar();
                 return;
-            }
+            } 
 
             if (!TbMiembroId.Text.Equals(string.Empty))
             {
                 int.TryParse(TbMiembroId.Text, out IdC);
+
                 miembro.Buscar(IdC);
                 TbNombre.Text = miembro.Nombre;
+                TbApellido.Text = miembro.Apellidos;
+                TbParentesco.Text = miembro.Parentesco;
+
+
                 if (miembro.esActivo == 1)
                 {
                     EstadoRbList.SelectedIndex = 0;
@@ -153,7 +164,7 @@ namespace FinanzasPersonalesWeb
                     EstadoRbList.SelectedIndex = 1;
                 }
                 DropDownUsuario.SelectedValue = miembro.UsuarioId.ToString();
-
+                 
             }
         }
     }
