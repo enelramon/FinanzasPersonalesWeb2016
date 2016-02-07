@@ -10,7 +10,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -24,25 +24,28 @@
 <body>
     <div class="container-fluid">
 
-    <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
+        <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <div>
+                <uc1:Menu runat="server" ID="Menu1" />
+                <br />
+                <br />
+
+            </div>
             <div>
                 <h1>ENCABEZADO</h1>
-            </div>
-    <div>
-                <uc1:Menu runat="server" ID="Menu1" />
                 <hr />
 
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            
-            
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
-
-        </asp:ContentPlaceHolder>
-    </div>
- <div><h1>PIE DE PAGINA</h1></div>
-    </form>
+                </asp:ContentPlaceHolder>
+            </div>
+            <div>
+                <hr />
+                <h1>PIE DE PAGINA</h1>
+            </div>
+        </form>
 
     </div>
 </body>
