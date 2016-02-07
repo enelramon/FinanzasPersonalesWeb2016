@@ -11,7 +11,8 @@ namespace BLL
     {
         public int MiembroId { get; set; }
         public string Nombre { get; set; }
-
+        public string Apellidos { get; set; }
+        public string Parentesco { get; set; }
         public int esActivo { get; set; }
         public int UsuarioId { get; set; }
 
@@ -21,6 +22,8 @@ namespace BLL
         {
             this.MiembroId = 0;
             this.Nombre = String.Empty;
+            this.Apellidos = String.Empty;
+            this.Parentesco = "No Especificado";
             this.esActivo = 0;
             this.UsuarioId = 0;
         }
@@ -31,7 +34,7 @@ namespace BLL
 
             try
             {
-                retorno = con.Ejecutar(string.Format("insert into Miembros (Nombre, esActivo, UsuarioId) values ('{0}',{1},{2})", this.Nombre, this.esActivo, this.UsuarioId));
+                retorno = con.Ejecutar(string.Format("insert into Miembros (Nombre, Apellidos, Parentesco, esActivo, UsuarioId) values ('{0}','{1}','{2}',{3},{4})", this.Nombre, this.Apellidos, this.Parentesco, this.esActivo, this.UsuarioId));
             }
             catch (Exception)
             {
@@ -44,9 +47,10 @@ namespace BLL
         }
 
         public override bool Editar()
+
         {
             bool Retorno = false;
-            Retorno = con.Ejecutar(String.Format("Update Miembros set Nombre = '{0}', esActivo = {1}, UsuarioId = {2} where MiembroId = {3}", this.Nombre, this.esActivo, this.UsuarioId, this.MiembroId));
+            Retorno = con.Ejecutar(String.Format("Update Miembros set Nombre = '{0}', esActivo = {1}, UsuarioId = {2}, Apellidos = '{3}', Parentesco = '{4}' where MiembroId = {5}", this.Nombre, this.esActivo, this.UsuarioId, this.Apellidos, this.Parentesco, this.MiembroId));
             return Retorno;
         }
 
@@ -66,8 +70,11 @@ namespace BLL
             {
                 this.MiembroId = (int)dt.Rows[0]["MiembroId"];
                 this.Nombre = dt.Rows[0]["Nombre"].ToString();
+                this.Apellidos = dt.Rows[0]["Apellidos"].ToString();
+                this.Parentesco = dt.Rows[0]["Parentesco"].ToString();
                 this.esActivo = (int)dt.Rows[0]["esActivo"];
                 this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
+                
 
             }
 

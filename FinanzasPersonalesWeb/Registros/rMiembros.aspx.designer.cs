@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb.Registros
-{
-
-
-    public partial class MiembrosWebFor
-    {
-
+namespace FinanzasPersonalesWeb.Registros {
+    
+    
+    public partial class MiembrosWebFor {
+        
         /// <summary>
         /// Control AlertNotificationDiv.
         /// </summary>
@@ -22,7 +20,7 @@ namespace FinanzasPersonalesWeb.Registros
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl AlertNotificationDiv;
-
+        
         /// <summary>
         /// Control AlertNotificationBox.
         /// </summary>
@@ -31,7 +29,7 @@ namespace FinanzasPersonalesWeb.Registros
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label AlertNotificationBox;
-
+        
         /// <summary>
         /// Control TbMiembroId.
         /// </summary>
@@ -40,7 +38,7 @@ namespace FinanzasPersonalesWeb.Registros
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TbMiembroId;
-
+        
         /// <summary>
         /// Control BtnBuscar.
         /// </summary>
@@ -49,7 +47,7 @@ namespace FinanzasPersonalesWeb.Registros
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnBuscar;
-
+        
         /// <summary>
         /// Control TbNombre.
         /// </summary>
@@ -58,7 +56,25 @@ namespace FinanzasPersonalesWeb.Registros
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TbNombre;
-
+        
+        /// <summary>
+        /// Control TbApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbApellido;
+        
+        /// <summary>
+        /// Control TbParentesco.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbParentesco;
+        
         /// <summary>
         /// Control EstadoRbList.
         /// </summary>
@@ -67,7 +83,7 @@ namespace FinanzasPersonalesWeb.Registros
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList EstadoRbList;
-
+        
         /// <summary>
         /// Control DropDownUsuario.
         /// </summary>
@@ -76,7 +92,7 @@ namespace FinanzasPersonalesWeb.Registros
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownUsuario;
-
+        
         /// <summary>
         /// Control BtnLimpiar.
         /// </summary>
@@ -85,7 +101,7 @@ namespace FinanzasPersonalesWeb.Registros
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnLimpiar;
-
+        
         /// <summary>
         /// Control BtnGuardar.
         /// </summary>
@@ -94,7 +110,7 @@ namespace FinanzasPersonalesWeb.Registros
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnGuardar;
-
+        
         /// <summary>
         /// Control BtnEliminar.
         /// </summary>

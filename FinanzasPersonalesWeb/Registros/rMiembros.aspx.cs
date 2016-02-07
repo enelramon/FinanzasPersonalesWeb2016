@@ -46,6 +46,8 @@ namespace FinanzasPersonalesWeb.Registros
         {
             TbMiembroId.Text = "";
             TbNombre.Text = "";
+            TbApellido.Text = "";
+            TbParentesco.Text = "";
             EstadoRbList.ClearSelection();
             DropDownUsuario.ClearSelection();
         }
@@ -55,10 +57,15 @@ namespace FinanzasPersonalesWeb.Registros
             bool paso = false;
             Miembros miembro = new Miembros();
 
+            ValidarTextBoxVacio(TbNombre);
+            ValidarTextBoxVacio(TbApellido);
+            ValidarTextBoxVacio(TbParentesco);
+
             miembro.MiembroId = (TbMiembroId.Text == "") ? 0 : Convert.ToInt16(TbMiembroId.Text);
             miembro.Nombre = TbNombre.Text;
+            miembro.Apellidos = TbApellido.Text;
+            miembro.Parentesco = TbParentesco.Text;
 
-            ValidarTextBoxVacio(TbNombre);
 
             if (DropDownUsuario.SelectedItem.Text == "")
             {
@@ -80,26 +87,18 @@ namespace FinanzasPersonalesWeb.Registros
             }
 
 
-            if (miembro.MiembroId == 0)
+            if (TbMiembroId.Text == "")
             {
                 paso = miembro.Insertar();
             }
-
             else
             {
                 paso = miembro.Editar();
             }
 
-            if (paso == true)
+            if (paso)
             {
-
-                if (!AlertNotificationDiv.Visible)
-                    AlertNotificationDiv.Visible = true;
-                if (!AlertNotificationBox.Visible)
-                    AlertNotificationBox.Visible = true;
-
-                AlertNotificationDiv.Attributes.Add("class", "col-md-12 col-xs-12 col-ms-12 alert alert-success alert-dismissable");
-                AlertNotificationBox.Text = "Registro Guardado.";
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro guardado exitosamente.');", true);
                 Limpiar();
             }
 
@@ -144,13 +143,18 @@ namespace FinanzasPersonalesWeb.Registros
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No se encontro ningún registro con ese ID.');", true);
                 Limpiar();
                 return;
-            }
+            } 
 
             if (!TbMiembroId.Text.Equals(string.Empty))
             {
                 int.TryParse(TbMiembroId.Text, out IdC);
+
                 miembro.Buscar(IdC);
                 TbNombre.Text = miembro.Nombre;
+                TbApellido.Text = miembro.Apellidos;
+                TbParentesco.Text = miembro.Parentesco;
+
+
                 if (miembro.esActivo == 1)
                 {
                     EstadoRbList.SelectedIndex = 0;
