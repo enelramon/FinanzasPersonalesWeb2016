@@ -164,7 +164,7 @@ namespace FinanzasPersonalesWeb.Registros
                     EstadoRbList.SelectedIndex = 1;
                 }
                 DropDownUsuario.SelectedValue = miembro.UsuarioId.ToString();
-
+                 
             }
         }
     }

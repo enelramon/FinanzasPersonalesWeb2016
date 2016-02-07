@@ -6,7 +6,7 @@ using System.Text;
 using DAL;
 
 namespace BLL
-{
+{ 
    public  class Cuentas : ClaseMaestra
     {
 

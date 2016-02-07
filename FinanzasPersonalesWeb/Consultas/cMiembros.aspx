@@ -9,12 +9,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width:100%;">
         <tr>
-            <td>Buscar por:
+            <td>Buscar por: 
                 <asp:DropDownList ID="BuscarPorDropdown" runat="server">
                     <asp:ListItem>MiembroId</asp:ListItem>
                     <asp:ListItem>Nombre</asp:ListItem>
                     <asp:ListItem>esActivo</asp:ListItem>
                     <asp:ListItem>UsuarioId</asp:ListItem>
+                    <asp:ListItem>Apellidos</asp:ListItem>
+                    <asp:ListItem>Parentesco</asp:ListItem>
                 </asp:DropDownList>
                 <asp:TextBox ID="TbFiltro" runat="server" Width="298px"></asp:TextBox>
               

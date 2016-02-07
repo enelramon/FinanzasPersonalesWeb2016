@@ -75,7 +75,7 @@ namespace BLL
                 this.esActivo = (int)dt.Rows[0]["esActivo"];
                 this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
                 
-
+                  
             }
 
             return dt.Rows.Count > 0;
