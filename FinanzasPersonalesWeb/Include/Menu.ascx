@@ -25,19 +25,27 @@
             <li class="active"><a href="default.aspx">Home</a></li>
             <% if (Request.IsAuthenticated) { %>
             <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registros <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-pencil"></span> Registros <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Agregar Nueva Cuenta</a></li>
-            <li><a href="#">Agregar Nueva Meta</a></li>
+            <li class="dropdown-header">Configuracion</li>
+            <li><a href="Registros/rCuentas.aspx">Agregar Nueva Cuenta</a></li>
+            <li><a href="Registros/rMetas.aspx">Agregar Nueva Meta</a></li>
+            <li><a href="Registros/rMiembros.aspx">Agregar Nuevo Miembro</a></li>
+            <li><a href="Registros/rMetas.aspx">Agregar Meta</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Registrar Nuevo Ingreso</a></li>
-            <li><a href="#">Registrar Nuevo Egreso</a></li>
+            <li class="dropdown-header">Economia</li>
+            <li><a href="Registros/rIngresos.aspx">Registrar Nuevo Ingreso</a></li>
+            <li><a href="Registros/rTipoIngresos.aspx">Agregar Tipo de Ingreso</a></li>
+            <li><a href="Registros/rEgresos.aspx">Registrar Nuevo Egreso</a></li>
+            <li><a href="Registros/rTipoEgresos.aspx">Agregar Tipo de Egreso</a></li>
+            <li><a href="Registros/rPresupuestos.aspx">Agregar Presupuesto</a></li>
+            <li><a href="Registros/rPresupuestos.aspx">Registrar Transferencia</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultas <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-book"></span> Consultas <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -48,7 +56,7 @@
             <li><a href="#">One more separated link</a></li>
           </ul>
         </li>
-            <li><a href="default.aspx">Home</a></li>
+            <li><a href="default.aspx">No se que hacer aqui...</a></li>
             <% } %>
             </ul>
        <ul class="nav navbar-nav navbar-right">
