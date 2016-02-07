@@ -45,6 +45,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-book"></span> Consultas <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li class="dropdown-header">Consultas</li>
+                    <li><a href="Consultas/cUsuarios.aspx">Consultar Usuarios</a></li>
                     <li><a href="Consultas/cCuentas.aspx">Consultar Cuentas</a></li>
                     <li><a href="Consultas/cMetas.aspx">Consultar Metas</a></li>
                     <li><a href="Consultas/cMiembros.aspx">Consultar Miembros</a></li>
