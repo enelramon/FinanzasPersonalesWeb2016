@@ -7,6 +7,11 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="row" style="margin: 0 2px 0 2px">
+        <div class="col-md-12" id="AlertNotificationDiv" runat="server">
+            <asp:Label ID="AlertNotificationBox" runat="server" />
+        </div>
+    </div>
       <asp:TextBox ID="UsuarioTextBox" runat="server" />
     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
             ControlToValidate="UsuarioTextBox"
