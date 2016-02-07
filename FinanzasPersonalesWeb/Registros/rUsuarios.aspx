@@ -29,9 +29,9 @@
         </div>
     </div>
     <div class="container-fluid">
-    <div class="row">
+
         <div class="form-group">
-            <div class="col-xs-3 col-sm-3 col-lg-2 col-md-3">
+            <div class="col-lg-2">
                 <h6>
                     <asp:Label ID="Label1" runat="server" Text="Nombres"></asp:Label></h6>
                 <br />
@@ -52,25 +52,25 @@
                 <h6>
                     <asp:Label ID="Label7" runat="server" Text="Correo Electronico"></asp:Label></h6>
             </div>
-            <div class="col-xs-9 col-sm-9 col-lg-5 col-md-6">
-                <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server" Text="Nombres" placeholder="Nombres" onclick="this.value='';"></asp:TextBox>
+            <div class="col-lg-3">
+                <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server" Text="Nombres"  onclick="this.value='';"></asp:TextBox>
                 <br />
-                <asp:TextBox ID="ApellidoTextBox" CssClass="form-control" runat="server" Text="Apellidos" placeholder="Apellidos" onclick="this.value='';"></asp:TextBox>
+                <asp:TextBox ID="ApellidoTextBox" CssClass="form-control" runat="server" Text="Apellidos" onclick="this.value='';"></asp:TextBox>
                 <br />
-                <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server" Text="Nombre de Usuario" placeholder="Usuario" onclick="this.value='';"></asp:TextBox>
+                <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server" Text="Nombre de Usuario" onclick="this.value='';"></asp:TextBox>
                 <br />
-                <asp:TextBox ID="PassTextBox" CssClass="form-control" type="password" runat="server" Text="Contraseña" placeholder="Contraseña" onclick="this.value='';"></asp:TextBox>
+                <asp:TextBox ID="PassTextBox" CssClass="form-control" type="password" runat="server" Text="Contraseña" onclick="this.value='';"></asp:TextBox>
                 <br />
-                <asp:TextBox ID="ConPassTextBox" CssClass="form-control" type="password" runat="server" Text="Repetir Contraseña" placeholder="Repetir Contraseña" onclick="this.value='';"></asp:TextBox>
+                <asp:TextBox ID="ConPassTextBox" CssClass="form-control" type="password" runat="server" Text="Repetir Contraseña" onclick="this.value='';"></asp:TextBox>
                 <br />
-                <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server" Text="Correo Electronico" placeholder="Correo Electronico" onclick="this.value='';"></asp:TextBox>
+                <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server" Text="Correo Electronico" onclick="this.value='';"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
                     ControlToValidate="EmailTextBox" ErrorMessage="Email is required"
                     SetFocusOnError="True"></asp:RequiredFieldValidator>
                 <br />
 
             </div>
-            <div class="col-lg-3">
+            <div>
                 <br />
                 <br />
                 <br />
@@ -82,6 +82,9 @@
                 <br />
                 <br />
                 <br />
+                <br />
+                <br /> 
+                <br />  
                 <br />
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
                     ErrorMessage="<-- Correo invalido, por favor confirmelo." ControlToValidate="EmailTextBox"
@@ -99,7 +102,6 @@
                 <asp:Button ID="GuardarButton" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="GuardarButton_Click" />
             </div>
         </div>
-    </div>
         </div>
 
 
