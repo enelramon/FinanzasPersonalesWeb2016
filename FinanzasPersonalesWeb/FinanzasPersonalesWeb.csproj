@@ -81,7 +81,6 @@
       <DependentUpon>FinanzasPersonalesWebDb.mdf</DependentUpon>
     </Content>
     <Content Include="cCuentas.aspx" />
-    <Content Include="cEgresos.aspx" />
     <Content Include="Consultas\cEgresos.aspx" />
     <Content Include="Consultas\cMiembros.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
@@ -102,7 +101,6 @@
     <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="MiembrosWebFor.aspx" />
     <Content Include="rCuentas.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
@@ -119,14 +117,6 @@
     </Compile>
     <Compile Include="cCuentas.aspx.designer.cs">
       <DependentUpon>cCuentas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="cEgresos.aspx.cs">
-      <DependentUpon>cEgresos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="cEgresos.aspx.designer.cs">
-      <DependentUpon>cEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\cEgresos.aspx.cs">
@@ -210,11 +200,6 @@
       <DependentUpon>rEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FinanzasPersonalesWebDbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Registros\rEgresos.aspx.designer.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -249,14 +234,6 @@
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MiembrosWebFor.aspx.cs">
-      <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MiembrosWebFor.aspx.designer.cs">
-      <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -324,17 +301,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Site.Master" />
-    <Content Include="FinanzasPersonalesWebDbDataSet.xsc">
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="FinanzasPersonalesWebDbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinanzasPersonalesWebDbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="FinanzasPersonalesWebDbDataSet.xss">
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
