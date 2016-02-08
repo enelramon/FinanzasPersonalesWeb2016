@@ -101,6 +101,7 @@
     <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="MiembrosWebFor.aspx" />
     <Content Include="rCuentas.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
@@ -130,6 +131,7 @@
     </Compile>
     <Compile Include="ConsultaMiembros.aspx.cs">
       <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConsultaMiembros.aspx.designer.cs">
       <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
