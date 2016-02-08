@@ -1,15 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MiembrosWebFor.aspx.cs" Inherits="FinanzasPersonalesWeb.MiembrosWebFor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rMiembros.aspx.cs" Inherits="FinanzasPersonalesWeb.Registros.MiembrosWebFor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style4 {
-            width: 472px;
-        }
-        .auto-style5 {
-            width: 472px;
-            height: 77px;
-        }
-    </style>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h3>Registro de Miembros</h3><br />
         <div class = "row" style="margin:0 2px 0 2px" >
@@ -17,10 +8,10 @@
       <asp:Label id="AlertNotificationBox" runat="server"/>
     </div>
 </div>
-    <table align = "right" style="width: 100%; height: 133px; ">
+    
         <tr>
-            <td class="auto-style4">MiembroId:
-                <asp:TextBox ID="TbMiembroId" runat="server"></asp:TextBox>
+            <td class="auto-style4">MiembroId:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TbMiembroId" runat="server" MaxLength="8"></asp:TextBox>
                 <asp:CompareValidator runat="server" Operator="DataTypeCheck" Type="Integer" 
  ControlToValidate="TbMiembroId" ErrorMessage="Así no" />
 &nbsp;
@@ -29,18 +20,25 @@
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
+        
         </tr>
 
-        <form class="w3-container">
-
-</form>
-        <tr>
-            <td class="auto-style4">Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-                <asp:TextBox ID="TbNombre" runat="server"></asp:TextBox>
+        
+            <td class="auto-style4">
+    <br />
+    Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                <asp:TextBox ID="TbNombre" runat="server" MaxLength="20"></asp:TextBox><br>
+            </td> </tr>
+                        <br><td class="auto-style4">Apellidos:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                <asp:TextBox ID="TbApellido" runat="server" MaxLength="100"></asp:TextBox><br>
             </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
+                                  <br><td class="auto-style4">Parentesco:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                <asp:TextBox ID="TbParentesco" runat="server" MaxLength="20"></asp:TextBox>
+
+        
+        <br />
+    <br />
+        
         <tr>
             <td class="auto-style5">Estado:
                 <br>
@@ -67,5 +65,5 @@
             
       
         </tr>
-        </table>
+        
 </asp:Content>

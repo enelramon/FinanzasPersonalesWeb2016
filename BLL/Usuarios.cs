@@ -145,7 +145,7 @@ namespace BLL
             bool Encontro = false;
             DataTable dt = new DataTable();
 
-            dt = this.Listado("UsuarioId, Usuario, Contrasena", "Usuario = " + Usuario + " and Password = " + Password, "UsuarioId ASC");
+            dt = this.Listado("UsuarioId, Usuario, Contrasena", "Usuario = '" + Usuario + "' and Contrasena = '" + contra +"'", "UsuarioId ASC");
 
             if (dt.Rows.Count > 0)
             {

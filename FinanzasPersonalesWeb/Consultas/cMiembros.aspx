@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ConsultaMiembros.aspx.cs" Inherits="FinanzasPersonalesWeb.ConsultaMiembros" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cMiembros.aspx.cs" Inherits="FinanzasPersonalesWeb.Consultas.ConsultaMiembros" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style4 {
@@ -9,16 +9,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width:100%;">
         <tr>
-            <td>Buscar por:
+            <td>Buscar por: 
                 <asp:DropDownList ID="BuscarPorDropdown" runat="server">
                     <asp:ListItem>MiembroId</asp:ListItem>
                     <asp:ListItem>Nombre</asp:ListItem>
                     <asp:ListItem>esActivo</asp:ListItem>
                     <asp:ListItem>UsuarioId</asp:ListItem>
+                    <asp:ListItem>Apellidos</asp:ListItem>
+                    <asp:ListItem>Parentesco</asp:ListItem>
                 </asp:DropDownList>
                 <asp:TextBox ID="TbFiltro" runat="server" Width="298px"></asp:TextBox>
               
-                <asp:Button ID="BtnBuscar" class ="btn btn-success" runat="server" OnClick="BtnBuscar_Click" Text="Buscar" />
+                <asp:Button ID="BtnBuscar" class ="btn btn-success btn-sm" runat="server" OnClick="BtnBuscar_Click" Text="Buscar" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
