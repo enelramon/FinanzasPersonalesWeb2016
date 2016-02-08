@@ -104,6 +104,7 @@
     <Content Include="rCuentas.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
+    <Content Include="ReportViewers\ListadoEgresosxTipoViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
@@ -196,6 +197,11 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="FinanzasPersonalesWebDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rEgresos.aspx.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -261,6 +267,13 @@
       <DependentUpon>rTipoIngreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ReportViewers\ListadoEgresosxTipoViewer.aspx.cs">
+      <DependentUpon>ListadoEgresosxTipoViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoEgresosxTipoViewer.aspx.designer.cs">
+      <DependentUpon>ListadoEgresosxTipoViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -301,6 +314,17 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Site.Master" />
+    <Content Include="FinanzasPersonalesWebDbDataSet.xsc">
+      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="FinanzasPersonalesWebDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinanzasPersonalesWebDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="FinanzasPersonalesWebDbDataSet.xss">
+      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -318,9 +342,7 @@
     <Folder Include="App_Code\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reportes\UsuarioRpt.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\EgresoRpt.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
