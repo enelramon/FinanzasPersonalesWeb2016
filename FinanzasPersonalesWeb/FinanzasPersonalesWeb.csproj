@@ -136,7 +136,6 @@
     </Compile>
     <Compile Include="Consultas\cMetas.aspx.cs">
       <DependentUpon>cMetas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\cMetas.aspx.designer.cs">
       <DependentUpon>cMetas.aspx</DependentUpon>
@@ -252,7 +251,6 @@
     </Compile>
     <Compile Include="Registros\rMetas.aspx.cs">
       <DependentUpon>rMetas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Registros\rMetas.aspx.designer.cs">
       <DependentUpon>rMetas.aspx</DependentUpon>
@@ -268,7 +266,6 @@
     </Compile>
     <Compile Include="ReportViewers\ListadoEgresosxTipoViewer.aspx.cs">
       <DependentUpon>ListadoEgresosxTipoViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReportViewers\ListadoEgresosxTipoViewer.aspx.designer.cs">
       <DependentUpon>ListadoEgresosxTipoViewer.aspx</DependentUpon>
