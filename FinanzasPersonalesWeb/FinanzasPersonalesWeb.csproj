@@ -87,7 +87,7 @@
     <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
     <Content Include="Consultas\cTiposUsuarios.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
-    <Content Include="Consultas\cTipoEgreso.aspx" />
+    <Content Include="ConsultaTipoEgreso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -169,8 +169,8 @@
     <Compile Include="Consultas\cUsuarios.aspx.designer.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\cTipoEgreso.aspx.cs">
-      <DependentUpon>cTipoEgreso.aspx</DependentUpon>
+    <Compile Include="ConsultaTipoEgreso.aspx.cs">
+      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\cTipoEgreso.aspx.designer.cs">
@@ -309,12 +309,12 @@
     <Compile Include="Registros\rUsuarios.aspx.designer.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registros\rTipoEgreso.aspx.cs">
-      <DependentUpon>rTipoEgreso.aspx</DependentUpon>
+    <Compile Include="TipoEgreso.aspx.cs">
+      <DependentUpon>TipoEgreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registros\rTipoEgreso.aspx.designer.cs">
-      <DependentUpon>rTipoEgreso.aspx</DependentUpon>
+    <Compile Include="TipoEgreso.aspx.designer.cs">
+      <DependentUpon>TipoEgreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -366,6 +366,7 @@
     <EmbeddedResource Include="Reportes\UsuarioRpt.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
