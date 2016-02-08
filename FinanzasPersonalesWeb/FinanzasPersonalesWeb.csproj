@@ -81,7 +81,6 @@
       <DependentUpon>FinanzasPersonalesWebDb.mdf</DependentUpon>
     </Content>
     <Content Include="cCuentas.aspx" />
-    <Content Include="cEgresos.aspx" />
     <Content Include="Consultas\cEgresos.aspx" />
     <Content Include="Consultas\cMiembros.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
@@ -94,7 +93,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="cPresupuestos.aspx" />
-    <Content Include="CTransferencias.aspx" />
+    <Content Include="Consultas\cTransferencias.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Registros\rEgresos.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
@@ -102,14 +101,13 @@
     <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="MiembrosWebFor.aspx" />
     <Content Include="rCuentas.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
-    <Content Include="Transferencia.aspx" />
+    <Content Include="Registros\rTransferencia.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -119,14 +117,6 @@
     </Compile>
     <Compile Include="cCuentas.aspx.designer.cs">
       <DependentUpon>cCuentas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="cEgresos.aspx.cs">
-      <DependentUpon>cEgresos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="cEgresos.aspx.designer.cs">
-      <DependentUpon>cEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\cEgresos.aspx.cs">
@@ -190,12 +180,12 @@
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CTransferencias.aspx.cs">
-      <DependentUpon>CTransferencias.aspx</DependentUpon>
+    <Compile Include="Consultas\cTransferencias.aspx.cs">
+      <DependentUpon>cTransferencias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CTransferencias.aspx.designer.cs">
-      <DependentUpon>CTransferencias.aspx</DependentUpon>
+    <Compile Include="Consultas\cTransferencias.aspx.designer.cs">
+      <DependentUpon>cTransferencias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.cs">
@@ -209,11 +199,6 @@
     <Compile Include="Registros\rEgresos.aspx.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FinanzasPersonalesWebDbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Registros\rEgresos.aspx.designer.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
@@ -249,14 +234,6 @@
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MiembrosWebFor.aspx.cs">
-      <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MiembrosWebFor.aspx.designer.cs">
-      <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -312,29 +289,18 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Transferencia.aspx.cs">
-      <DependentUpon>Transferencia.aspx</DependentUpon>
+    <Compile Include="Registros\rTransferencia.aspx.cs">
+      <DependentUpon>rTransferencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Transferencia.aspx.designer.cs">
-      <DependentUpon>Transferencia.aspx</DependentUpon>
+    <Compile Include="Registros\rTransferencia.aspx.designer.cs">
+      <DependentUpon>rTransferencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Site.Master" />
-    <Content Include="FinanzasPersonalesWebDbDataSet.xsc">
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="FinanzasPersonalesWebDbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinanzasPersonalesWebDbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="FinanzasPersonalesWebDbDataSet.xss">
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
