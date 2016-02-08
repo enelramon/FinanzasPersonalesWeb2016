@@ -81,9 +81,9 @@
       <DependentUpon>FinanzasPersonalesWebDb.mdf</DependentUpon>
     </Content>
     <Content Include="cCuentas.aspx" />
-    <Content Include="Consultas\cEgresos.aspx" />
+    <Content Include="cEgresos.aspx" />
+    <Content Include="ConsultaMiembros.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
-    <Content Include="Consultas\cMiembros.aspx" />
     <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
     <Content Include="Consultas\cTiposUsuarios.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
@@ -121,12 +121,18 @@
     <Compile Include="cCuentas.aspx.designer.cs">
       <DependentUpon>cCuentas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\cEgresos.aspx.cs">
+    <Compile Include="cEgresos.aspx.cs">
       <DependentUpon>cEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\cEgresos.aspx.designer.cs">
+    <Compile Include="cEgresos.aspx.designer.cs">
       <DependentUpon>cEgresos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaMiembros.aspx.cs">
+      <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaMiembros.aspx.designer.cs">
+      <DependentUpon>ConsultaMiembros.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cMetasWebForm.aspx.cs">
       <DependentUpon>cMetasWebForm.aspx</DependentUpon>
@@ -201,7 +207,7 @@
       <DependentUpon>rEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registros\rEgresos.aspx.designer.cs">
+    <Compile Include="rEgresos.aspx.designer.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rMiembros.aspx.cs">
@@ -231,6 +237,12 @@
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MiembrosWebFor.aspx.cs">
+      <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MiembrosWebFor.aspx.designer.cs">
+      <DependentUpon>MiembrosWebFor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rCuentas.aspx.cs">
@@ -282,6 +294,14 @@
     <Compile Include="rTiposUsuarios.aspx.designer.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="rUsuarios.aspx.cs">
+      <DependentUpon>rUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rUsuarios.aspx.designer.cs">
+      <DependentUpon>rUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
     <Compile Include="Registros\rUsuarios.aspx.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

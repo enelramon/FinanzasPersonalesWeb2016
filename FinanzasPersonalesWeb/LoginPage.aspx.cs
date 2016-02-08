@@ -25,7 +25,7 @@ namespace FinanzasPersonalesWeb
 
             paso = Usuario.ValidarUsuario(UsuarioTextBox.Text, ContrasenaTextBox.Text);
 
-            if (paso )
+            if (paso)
             {
                 FormsAuthentication.RedirectFromLoginPage(Usuario.Usuario, RememberMeCheckBox.Checked);
             }
