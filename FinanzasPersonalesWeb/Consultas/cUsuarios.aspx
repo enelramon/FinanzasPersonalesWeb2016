@@ -13,7 +13,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12 col-centered">
+            <div class="">
                 <asp:Label ID="Label1" runat="server" Text="Buscar Por: "></asp:Label>
                 <asp:DropDownList ID="FiltroDropDown" runat="server">
                     <asp:ListItem Value="UsuarioId">ID</asp:ListItem>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12 col-centered">
+            <div class="">
                 <asp:GridView ID="UsuarioGridView" runat="server" Width="632px"></asp:GridView>
 
                 <asp:HyperLink ID="ImprimirHyperLink" runat="server" NavigateUrl="~/ReportViewers/ListadoUsuariosxTipoViewer.aspx">Imprimir</asp:HyperLink>
