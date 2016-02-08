@@ -349,6 +349,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Reportes\EgresoRpt.rdlc" />
     <EmbeddedResource Include="Reportes\MetasRpt.rdlc" />
+    <EmbeddedResource Include="Reportes\UsuarioRpt.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
