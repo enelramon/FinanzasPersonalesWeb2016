@@ -105,6 +105,7 @@
     <Content Include="Registros\rMetas.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="ReportViewers\ListadoEgresosxTipoViewer.aspx" />
+    <Content Include="ReportViewers\ListadoMetasxTipoViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
@@ -273,6 +274,13 @@
     <Compile Include="ReportViewers\ListadoEgresosxTipoViewer.aspx.designer.cs">
       <DependentUpon>ListadoEgresosxTipoViewer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReportViewers\ListadoMetasxTipoViewer.aspx.cs">
+      <DependentUpon>ListadoMetasxTipoViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoMetasxTipoViewer.aspx.designer.cs">
+      <DependentUpon>ListadoMetasxTipoViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -341,6 +349,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\EgresoRpt.rdlc" />
+    <EmbeddedResource Include="Reportes\MetasRpt.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
