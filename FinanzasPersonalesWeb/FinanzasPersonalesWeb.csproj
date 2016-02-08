@@ -338,9 +338,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\EgresoRpt.rdlc" />
-    <EmbeddedResource Include="Reportes\UsuarioRpt.rdlc">
+    <Content Include="Reportes\UsuarioRpt.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
