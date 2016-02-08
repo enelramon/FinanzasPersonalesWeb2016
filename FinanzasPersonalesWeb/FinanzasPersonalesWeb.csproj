@@ -173,8 +173,8 @@
       <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\cTipoEgreso.aspx.designer.cs">
-      <DependentUpon>cTipoEgreso.aspx</DependentUpon>
+    <Compile Include="ConsultaTipoEgreso.aspx.designer.cs">
+      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="cPresupuestos.aspx.cs">
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
@@ -296,6 +296,7 @@
     </Compile>
     <Compile Include="rUsuarios.aspx.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="rUsuarios.aspx.designer.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
@@ -318,8 +319,12 @@
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="TipoEgreso.aspx.cs">
+      <DependentUpon>TipoEgreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="TipoEgreso.aspx.designer.cs">
+      <DependentUpon>TipoEgreso.aspx</DependentUpon>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
