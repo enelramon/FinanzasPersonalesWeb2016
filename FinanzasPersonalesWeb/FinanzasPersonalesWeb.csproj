@@ -269,7 +269,6 @@
     </Compile>
     <Compile Include="ReportViewers\ListadoEgresosxTipoViewer.aspx.cs">
       <DependentUpon>ListadoEgresosxTipoViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReportViewers\ListadoEgresosxTipoViewer.aspx.designer.cs">
       <DependentUpon>ListadoEgresosxTipoViewer.aspx</DependentUpon>
