@@ -83,7 +83,7 @@
     <Content Include="cCuentas.aspx" />
     <Content Include="Consultas\cEgresos.aspx" />
     <Content Include="Consultas\cMiembros.aspx" />
-    <Content Include="Consultas\cMetasWebForm.aspx" />
+    <Content Include="Consultas\cMetas.aspx" />
     <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
     <Content Include="Consultas\cTiposUsuarios.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
@@ -102,7 +102,7 @@
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="rCuentas.aspx" />
-    <Content Include="Registros\rMetasWebForm.aspx" />
+    <Content Include="Registros\rMetas.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="ReportViewers\ListadoEgresosxTipoViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
@@ -134,12 +134,12 @@
     <Compile Include="Consultas\cMiembros.aspx.designer.cs">
       <DependentUpon>cMiembros.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\cMetasWebForm.aspx.cs">
-      <DependentUpon>cMetasWebForm.aspx</DependentUpon>
+    <Compile Include="Consultas\cMetas.aspx.cs">
+      <DependentUpon>cMetas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\cMetasWebForm.aspx.designer.cs">
-      <DependentUpon>cMetasWebForm.aspx</DependentUpon>
+    <Compile Include="Consultas\cMetas.aspx.designer.cs">
+      <DependentUpon>cMetas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\cTipoIngresoWebForm.aspx.cs">
@@ -250,12 +250,12 @@
       <DependentUpon>rCuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registros\rMetasWebForm.aspx.cs">
-      <DependentUpon>rMetasWebForm.aspx</DependentUpon>
+    <Compile Include="Registros\rMetas.aspx.cs">
+      <DependentUpon>rMetas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registros\rMetasWebForm.aspx.designer.cs">
-      <DependentUpon>rMetasWebForm.aspx</DependentUpon>
+    <Compile Include="Registros\rMetas.aspx.designer.cs">
+      <DependentUpon>rMetas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Registros\rTipoIngreso.aspx.cs">
