@@ -92,7 +92,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="cPresupuestos.aspx" />
+    <Content Include="Consultas\cPresupuestos.aspx" />
     <Content Include="CTransferencias.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Registros\rEgresos.aspx" />
@@ -103,8 +103,9 @@
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
+    <Content Include="ReportViewers\ListadoPresupuestoReportViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
-    <Content Include="rPresupuestos.aspx" />
+    <Content Include="Registros\rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Registros\rTipoEgreso.aspx" />
@@ -168,11 +169,11 @@
     <Compile Include="Consultas\cTipoEgreso.aspx.designer.cs">
       <DependentUpon>cTipoEgreso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="cPresupuestos.aspx.cs">
+    <Compile Include="Consultas\cPresupuestos.aspx.cs">
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="cPresupuestos.aspx.designer.cs">
+    <Compile Include="Consultas\cPresupuestos.aspx.designer.cs">
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="CTransferencias.aspx.cs">
@@ -189,10 +190,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FinanzasPersonalesWebDbDataSet.Designer.cs">
+    <Compile Include="App_Code\ListadoPresupuestoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+      <DependentUpon>ListadoPresupuestoDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Registros\rEgresos.aspx.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
@@ -244,6 +246,13 @@
     <Compile Include="Registros\rTipoIngreso.aspx.designer.cs">
       <DependentUpon>rTipoIngreso.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReportViewers\ListadoPresupuestoReportViewer.aspx.cs">
+      <DependentUpon>ListadoPresupuestoReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoPresupuestoReportViewer.aspx.designer.cs">
+      <DependentUpon>ListadoPresupuestoReportViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -251,11 +260,11 @@
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.designer.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="rPresupuestos.aspx.cs">
+    <Compile Include="Registros\rPresupuestos.aspx.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="rPresupuestos.aspx.designer.cs">
+    <Compile Include="Registros\rPresupuestos.aspx.designer.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="rTiposUsuarios.aspx.cs">
@@ -298,16 +307,19 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Site.Master" />
-    <Content Include="FinanzasPersonalesWebDbDataSet.xsc">
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    <Content Include="App_Code\ListadoPresupuestoDataSet.xsc">
+      <DependentUpon>ListadoPresupuestoDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="FinanzasPersonalesWebDbDataSet.xsd">
+    <None Include="App_Code\ListadoPresupuestoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinanzasPersonalesWebDbDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>ListadoPresupuestoDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="FinanzasPersonalesWebDbDataSet.xss">
-      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    <Content Include="App_Code\ListadoPresupuestoDataSet.xss">
+      <DependentUpon>ListadoPresupuestoDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -322,11 +334,9 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Code\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Reportes\UsuarioRpt.rdlc">
+    <EmbeddedResource Include="Reportes\ListadoPresupuesto.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
