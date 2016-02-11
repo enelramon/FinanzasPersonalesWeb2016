@@ -106,6 +106,7 @@
     <Content Include="ReportViewers\ListadoPresupuestoReportViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="Registros\rPresupuestos.aspx" />
+    <Content Include="Rpts\WebForm1.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Registros\rTipoEgreso.aspx" />
@@ -262,6 +263,13 @@
     </Compile>
     <Compile Include="Registros\rPresupuestos.aspx.designer.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rpts\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rpts\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="rTiposUsuarios.aspx.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
