@@ -103,7 +103,6 @@
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
-    <Content Include="Reportes\Report1.rdlc.txt" />
     <Content Include="ReportViewers\ListadoPresupuestoReportViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="Registros\rPresupuestos.aspx" />
@@ -172,14 +171,12 @@
     </Compile>
     <Compile Include="Consultas\cPresupuestos.aspx.cs">
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\cPresupuestos.aspx.designer.cs">
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cTransferencias.aspx.cs">
       <DependentUpon>cTransferencias.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\cTransferencias.aspx.designer.cs">
       <DependentUpon>cTransferencias.aspx</DependentUpon>
@@ -249,7 +246,6 @@
     </Compile>
     <Compile Include="ReportViewers\ListadoPresupuestoReportViewer.aspx.cs">
       <DependentUpon>ListadoPresupuestoReportViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReportViewers\ListadoPresupuestoReportViewer.aspx.designer.cs">
       <DependentUpon>ListadoPresupuestoReportViewer.aspx</DependentUpon>
@@ -263,7 +259,6 @@
     </Compile>
     <Compile Include="Registros\rPresupuestos.aspx.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Registros\rPresupuestos.aspx.designer.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
@@ -298,7 +293,6 @@
     </Compile>
     <Compile Include="Registros\rTransferencia.aspx.cs">
       <DependentUpon>rTransferencia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Registros\rTransferencia.aspx.designer.cs">
       <DependentUpon>rTransferencia.aspx</DependentUpon>
@@ -334,6 +328,9 @@
       <Project>{e40cad30-152e-41dd-bd41-247771f316c4}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
