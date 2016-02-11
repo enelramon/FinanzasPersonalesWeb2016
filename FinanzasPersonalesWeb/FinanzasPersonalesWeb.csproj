@@ -103,6 +103,7 @@
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
+    <Content Include="Reportes\Report1.rdlc" />
     <Content Include="ReportViewers\ListadoPresupuestoReportViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="Registros\rPresupuestos.aspx" />
@@ -333,15 +334,6 @@
       <Project>{e40cad30-152e-41dd-bd41-247771f316c4}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <EmbeddedResource Include="Reportes\ListadoPresupuesto.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <Content Include="Reportes\Report1.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
