@@ -86,6 +86,7 @@
     <Content Include="Consultas\cMiembros.aspx" />
     <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
     <Content Include="Consultas\cTiposUsuarios.aspx" />
+    <Content Include="Consultas\cTransferencias.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
     <Content Include="Consultas\cTipoEgreso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -102,6 +103,7 @@
     <Content Include="Registros\rMiembros.aspx" />
     <Content Include="Registros\rPaises.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
+    <Content Include="Registros\rTransferencia.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
@@ -152,6 +154,13 @@
     </Compile>
     <Compile Include="Consultas\cTiposUsuarios.aspx.designer.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cTransferencias.aspx.cs">
+      <DependentUpon>cTransferencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cTransferencias.aspx.designer.cs">
+      <DependentUpon>cTransferencias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
@@ -230,6 +239,13 @@
     </Compile>
     <Compile Include="Registros\rTipoIngreso.aspx.designer.cs">
       <DependentUpon>rTipoIngreso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rTransferencia.aspx.cs">
+      <DependentUpon>rTransferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rTransferencia.aspx.designer.cs">
+      <DependentUpon>rTransferencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
