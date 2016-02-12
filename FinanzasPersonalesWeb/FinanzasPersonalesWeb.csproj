@@ -84,6 +84,7 @@
     <Content Include="Consultas\cEgresos.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
     <Content Include="Consultas\cMiembros.aspx" />
+    <Content Include="Consultas\cPresupuestos.aspx" />
     <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
     <Content Include="Consultas\cTiposUsuarios.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
@@ -92,7 +93,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Consultas\cPresupuestos.aspx" />
     <Content Include="CTransferencias.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Registros\rEgresos.aspx" />
@@ -102,10 +102,10 @@
     <Content Include="rCuentas.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
+    <Content Include="Registros\rPresupuestos.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="ReportViewers\ListadoPresupuestoReportViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
-    <Content Include="Registros\rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Registros\rTipoEgreso.aspx" />
@@ -141,6 +141,13 @@
     <Compile Include="Consultas\cMiembros.aspx.designer.cs">
       <DependentUpon>cMiembros.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\cPresupuestos.aspx.cs">
+      <DependentUpon>cPresupuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cPresupuestos.aspx.designer.cs">
+      <DependentUpon>cPresupuestos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cTipoIngresoWebForm.aspx.cs">
       <DependentUpon>cTipoIngresoWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -168,13 +175,6 @@
     </Compile>
     <Compile Include="Consultas\cTipoEgreso.aspx.designer.cs">
       <DependentUpon>cTipoEgreso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultas\cPresupuestos.aspx.cs">
-      <DependentUpon>cPresupuestos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Consultas\cPresupuestos.aspx.designer.cs">
-      <DependentUpon>cPresupuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="CTransferencias.aspx.cs">
       <DependentUpon>CTransferencias.aspx</DependentUpon>
@@ -239,6 +239,13 @@
     <Compile Include="Registros\rMiembros.aspx.designer.cs">
       <DependentUpon>rMiembros.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rPresupuestos.aspx.cs">
+      <DependentUpon>rPresupuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rPresupuestos.aspx.designer.cs">
+      <DependentUpon>rPresupuestos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rTipoIngreso.aspx.cs">
       <DependentUpon>rTipoIngreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -259,13 +266,6 @@
     </Compile>
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.designer.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Registros\rPresupuestos.aspx.cs">
-      <DependentUpon>rPresupuestos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Registros\rPresupuestos.aspx.designer.cs">
-      <DependentUpon>rPresupuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="rTiposUsuarios.aspx.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
@@ -351,7 +351,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52474</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
