@@ -19,7 +19,7 @@ namespace FinanzasPersonalesWeb.ReportViewers
 
                 RptViewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
                 RptViewer.Reset();
-                RptViewer.LocalReport.ReportPath = Server.MapPath(@"~\Reportes\ListadoUsuariosxTipo.rdlc");
+                RptViewer.LocalReport.ReportPath = Server.MapPath(@"~\Rpts\UsuarioReport.rdlc");
 
                 RptViewer.LocalReport.DataSources.Clear();
 
