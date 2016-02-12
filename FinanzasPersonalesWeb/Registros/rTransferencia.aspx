@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Transferencia.aspx.cs" Inherits="FinanzasPersonalesWeb.Transferencia" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rTransferencia.aspx.cs" Inherits="FinanzasPersonalesWeb.Transferencia" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         #TextArea1 {
@@ -81,7 +81,7 @@
             <br />
             <br />
             <br />
-           <asp:Button ID="Nuevobutton" runat="server" CssClass="btn btn-primary" Text="Nuevo"/>
+           <asp:Button ID="Nuevobutton" runat="server" CssClass="btn btn-primary" Text="Nuevo" OnClick="Nuevobutton_Click"/>
            <asp:Button ID="GuardarButton" runat="server" OnClick="GuardarButton_Click1" CssClass="btn btn-success" Text="Guardar"/>
            <asp:Button ID="Eliminarbutton" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClick="Eliminarbutton_Click" />
 

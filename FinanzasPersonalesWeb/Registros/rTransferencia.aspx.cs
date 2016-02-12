@@ -111,5 +111,10 @@ namespace FinanzasPersonalesWeb
                 HttpContext.Current.Response.Write("<SCRIPT>alert('Id Incorrecto')</SCRIPT>");
             }
         }
+
+        protected void Nuevobutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

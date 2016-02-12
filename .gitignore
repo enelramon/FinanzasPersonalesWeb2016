@@ -190,7 +190,7 @@ UpgradeLog*.htm
 #*.ldf
 
 # Business Intelligence projects
-*.rdl.data
+#*.rdl.data
 *.bim.layout
 *.bim_*.settings
 
@@ -210,4 +210,3 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
-/FinanzasPersonalesWeb

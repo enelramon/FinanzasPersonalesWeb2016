@@ -178,7 +178,6 @@
     </Compile>
     <Compile Include="CTransferencias.aspx.cs">
       <DependentUpon>CTransferencias.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CTransferencias.aspx.designer.cs">
       <DependentUpon>CTransferencias.aspx</DependentUpon>
@@ -297,7 +296,6 @@
     </Compile>
     <Compile Include="Transferencia.aspx.cs">
       <DependentUpon>Transferencia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Transferencia.aspx.designer.cs">
       <DependentUpon>Transferencia.aspx</DependentUpon>
