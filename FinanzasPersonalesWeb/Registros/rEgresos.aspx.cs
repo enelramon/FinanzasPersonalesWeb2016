@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
+using System.Web.Services;
 
 namespace FinanzasPersonalesWeb
 {
@@ -37,6 +38,16 @@ namespace FinanzasPersonalesWeb
 
             }
 
+        }
+
+        [WebMethod]
+        public static string[] GetSugestions(string filtro)
+        {
+            List<string> sugestions = new List<string>();
+
+            sugestions = Egresos.ObservacionesAnteriores(filtro);
+
+            return sugestions.ToArray();
         }
 
         public int MiError()

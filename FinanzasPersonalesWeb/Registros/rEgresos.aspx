@@ -13,6 +13,40 @@
         }
     </style>
 
+       <script type="text/javascript">
+        $(function () {
+            $("[id$=ObservacionTextBox]").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '<%=ResolveUrl("~/Registros/rEgresos.aspx/GetSugestions") %>',
+                        data: "{ 'filtro': '" + request.term + "'}",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            response($.map(data.d, function (item) {
+                                return {
+                                    label: item,
+                                    val:0 //item.split('-')[1]
+                                }
+                            }))
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        }
+                    });
+                },
+                select: function (e, i) {
+                    //$("[id$=hfCustomerId]").val(i.item.val);
+                },
+                minLength: 1
+            });
+        });   
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
@@ -63,6 +97,7 @@
                     <div class="col-md-4">
                         <br />
                         <asp:TextBox ID="ObservacionTextBox" runat="server" CssClass="form-control" Height="100px" placeholder="Obsevaciones" style="margin-left: 27px" TextMode="MultiLine" Width="410px"></asp:TextBox>
+                        
                         <br />
                     </div>
                 </div>
