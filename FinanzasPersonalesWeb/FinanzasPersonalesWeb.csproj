@@ -92,8 +92,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Consultas\cPresupuestos.aspx" />
-    <Content Include="Consultas\cTransferencias.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Registros\rEgresos.aspx" />
     <Content Include="Ejemplo.html" />
@@ -102,15 +100,12 @@
     <Content Include="rCuentas.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
+    <Content Include="Registros\rPaises.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
-    <Content Include="ReportViewers\ListadoPresupuestoReportViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
-    <Content Include="Registros\rPresupuestos.aspx" />
-    <Content Include="Rpts\WebForm1.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Registros\rTipoEgreso.aspx" />
-    <Content Include="Registros\rTransferencia.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -170,30 +165,12 @@
     <Compile Include="Consultas\cTipoEgreso.aspx.designer.cs">
       <DependentUpon>cTipoEgreso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\cPresupuestos.aspx.cs">
-      <DependentUpon>cPresupuestos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultas\cPresupuestos.aspx.designer.cs">
-      <DependentUpon>cPresupuestos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultas\cTransferencias.aspx.cs">
-      <DependentUpon>cTransferencias.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultas\cTransferencias.aspx.designer.cs">
-      <DependentUpon>cTransferencias.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="App_Code\ListadoPresupuestoDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ListadoPresupuestoDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Registros\rEgresos.aspx.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
@@ -238,6 +215,13 @@
     <Compile Include="Registros\rMiembros.aspx.designer.cs">
       <DependentUpon>rMiembros.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rPaises.aspx.cs">
+      <DependentUpon>rPaises.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rPaises.aspx.designer.cs">
+      <DependentUpon>rPaises.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rTipoIngreso.aspx.cs">
       <DependentUpon>rTipoIngreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,31 +229,12 @@
     <Compile Include="Registros\rTipoIngreso.aspx.designer.cs">
       <DependentUpon>rTipoIngreso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ReportViewers\ListadoPresupuestoReportViewer.aspx.cs">
-      <DependentUpon>ListadoPresupuestoReportViewer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ReportViewers\ListadoPresupuestoReportViewer.aspx.designer.cs">
-      <DependentUpon>ListadoPresupuestoReportViewer.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.designer.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Registros\rPresupuestos.aspx.cs">
-      <DependentUpon>rPresupuestos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Registros\rPresupuestos.aspx.designer.cs">
-      <DependentUpon>rPresupuestos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Rpts\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Rpts\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="rTiposUsuarios.aspx.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
@@ -299,31 +264,10 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Registros\rTransferencia.aspx.cs">
-      <DependentUpon>rTransferencia.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Registros\rTransferencia.aspx.designer.cs">
-      <DependentUpon>rTransferencia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Site.Master" />
-    <Content Include="App_Code\ListadoPresupuestoDataSet.xsc">
-      <DependentUpon>ListadoPresupuestoDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="App_Code\ListadoPresupuestoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ListadoPresupuestoDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <Content Include="App_Code\ListadoPresupuestoDataSet.xss">
-      <DependentUpon>ListadoPresupuestoDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -339,6 +283,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Rpts\Report1.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
