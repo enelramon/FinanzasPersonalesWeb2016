@@ -75,6 +75,23 @@ namespace BLL
 
         }
 
+        public static List<string> ObservacionesAnteriores(string filtro)
+        {
+            ConexionDb conexion = new ConexionDb();
+            DataTable dt = new DataTable();
+            List<string> lista = new List<string>();
+
+            dt = conexion.ObtenerDatos("Select Distinct Observacion  From Egresos Where Observacion like '" + filtro  + "%'"); //se obtienen todas las observaciones distintas
+
+            foreach (DataRow row in dt.Rows) //se recorre el resultado
+            {
+                lista.Add(row[0].ToString());
+
+            }
+
+            return lista;
+        }
+
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
             string ordenFinal = "";

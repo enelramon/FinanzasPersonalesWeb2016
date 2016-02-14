@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using BLL;
 using System.Data;
 
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Consultas
 {
     public partial class cUsuarios : System.Web.UI.Page
     {

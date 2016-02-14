@@ -6,9 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using BLL;
-namespace FinanzasPersonalesWeb
+namespace FinanzasPersonalesWeb.Consultas
 {
-    public partial class CTransferencias : System.Web.UI.Page
+    public partial class cTransferencias : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

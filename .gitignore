@@ -190,7 +190,7 @@ UpgradeLog*.htm
 #*.ldf
 
 # Business Intelligence projects
-*.rdl.data
+#*.rdl.data
 *.bim.layout
 *.bim_*.settings
 

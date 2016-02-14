@@ -10,7 +10,7 @@
 </div>
     
         <tr>
-            <td class="auto-style4">MiembroId:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <td class="auto-style4">MiembroId:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="TbMiembroId" runat="server" MaxLength="8"></asp:TextBox>
                 <asp:CompareValidator runat="server" Operator="DataTypeCheck" Type="Integer" 
  ControlToValidate="TbMiembroId" ErrorMessage="Así no" />

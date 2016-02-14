@@ -14,7 +14,8 @@ namespace FinanzasPersonalesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            AlertNotificationDiv.Visible = false;
+            AlertNotificationBox.Text = "";
         }
         protected void Login1_Authenticate(Object sender, EventArgs e)
         {
@@ -22,7 +23,7 @@ namespace FinanzasPersonalesWeb
             Boolean paso = false;
 
 
-            paso = Usuario.ValidarUsuario(UsuarioTextBox.Text, ContrasenaTextBox.Text);
+            paso = true;// Usuario.ValidarUsuario(UsuarioTextBox.Text, ContrasenaTextBox.Text);
 
             if (paso)
             {
@@ -30,7 +31,13 @@ namespace FinanzasPersonalesWeb
             }
             else
             {
+                if (!AlertNotificationDiv.Visible)
+                    AlertNotificationDiv.Visible = true;
+                if (!AlertNotificationBox.Visible)
+                    AlertNotificationBox.Visible = true;
 
+                AlertNotificationDiv.Attributes.Add("class", "col-md-12 col-xs-12 col-ms-12 alert alert-danger alert-dismissable");
+                AlertNotificationBox.Text = "Ha habido un error en la solicitud, por favor, intentelo mas tarde.";
             }
           }
         }

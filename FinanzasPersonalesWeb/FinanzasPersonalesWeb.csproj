@@ -205,21 +205,18 @@
     </Compile>
     <Compile Include="ConsultaTipoEgreso.aspx.cs">
       <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConsultaTipoEgreso.aspx.designer.cs">
       <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="cPresupuestos.aspx.cs">
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="cPresupuestos.aspx.designer.cs">
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="CTransferencias.aspx.cs">
       <DependentUpon>CTransferencias.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CTransferencias.aspx.designer.cs">
       <DependentUpon>CTransferencias.aspx</DependentUpon>
@@ -302,7 +299,6 @@
     </Compile>
     <Compile Include="rPresupuestos.aspx.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="rPresupuestos.aspx.designer.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>
@@ -316,7 +312,6 @@
     </Compile>
     <Compile Include="rUsuarios.aspx.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="rUsuarios.aspx.designer.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
@@ -330,14 +325,12 @@
     </Compile>
     <Compile Include="TipoEgreso.aspx.cs">
       <DependentUpon>TipoEgreso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TipoEgreso.aspx.designer.cs">
       <DependentUpon>TipoEgreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Transferencia.aspx.cs">
       <DependentUpon>Transferencia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Transferencia.aspx.designer.cs">
       <DependentUpon>Transferencia.aspx</DependentUpon>
