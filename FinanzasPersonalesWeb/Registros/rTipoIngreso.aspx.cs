@@ -18,7 +18,7 @@ namespace FinanzasPersonalesWeb.Registros
             if (IsPostBack == false)
             {
                 UsuarioDropDownList.DataSource = Usuario.Listado(" * ", "1=1", "");
-                UsuarioDropDownList.DataTextField = "Nombre";
+                UsuarioDropDownList.DataTextField = "Nombres";
                 UsuarioDropDownList.DataValueField = "UsuarioId";
                 UsuarioDropDownList.DataBind();
             }
@@ -54,7 +54,7 @@ namespace FinanzasPersonalesWeb.Registros
             {
                 TipodeIngreso.Descripcion = DescripcionTextBox.Text;
 
-                if (EstadoRadioButtonList.SelectedIndex == 0)
+                if (EstadoRadioButtonList.SelectedIndex == 1)
                 {
                     TipodeIngreso.EsActivo = true;
                 }
@@ -86,11 +86,11 @@ namespace FinanzasPersonalesWeb.Registros
 
                     if (TipodeIngreso.EsActivo == true)
                     {
-                        EstadoRadioButtonList.SelectedIndex = 0;
+                        EstadoRadioButtonList.SelectedIndex = 1;
                     }
                     else
                     {
-                        EstadoRadioButtonList.SelectedIndex = 1;
+                        EstadoRadioButtonList.SelectedIndex = 2;
                     }
 
                     if (TipodeIngreso.UsuarioId == 0)
