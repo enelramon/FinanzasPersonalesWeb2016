@@ -80,65 +80,37 @@
     <Content Include="App_Data\FinanzasPersonalesWebDb_log.ldf">
       <DependentUpon>FinanzasPersonalesWebDb.mdf</DependentUpon>
     </Content>
-    <Content Include="bin\BLL.dll" />
-    <Content Include="bin\BLL.pdb" />
-    <Content Include="bin\DAL.dll" />
-    <Content Include="bin\DAL.pdb" />
-    <Content Include="bin\FinanzasPersonalesWeb.dll" />
-    <Content Include="bin\FinanzasPersonalesWeb.pdb" />
-    <Content Include="bin\Microsoft.ReportViewer.Common.dll" />
-    <Content Include="bin\Microsoft.ReportViewer.WebForms.dll" />
-    <Content Include="bin\Microsoft.ReportViewer.WebForms.xml" />
     <Content Include="cCuentas.aspx" />
     <Content Include="Consultas\cEgresos.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
     <Content Include="Consultas\cMiembros.aspx" />
     <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
     <Content Include="Consultas\cTiposUsuarios.aspx" />
+    <Content Include="Consultas\cTransferencias.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
-    <Content Include="ConsultaTipoEgreso.aspx" />
+    <Content Include="Consultas\cTipoEgreso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="cPresupuestos.aspx" />
-    <Content Include="CTransferencias.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Registros\rEgresos.aspx" />
     <Content Include="Ejemplo.html" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="obj\Debug\FinanzasPersonalesWeb.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\FinanzasPersonalesWeb.dll" />
-    <Content Include="obj\Debug\FinanzasPersonalesWeb.pdb" />
     <Content Include="rCuentas.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
+    <Content Include="Registros\rPaises.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
+    <Content Include="Registros\rTransferencia.aspx" />
+    <Content Include="ReportViewers\ListadoTipoIngresoTipoViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
-    <Content Include="rPresupuestos.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
-    <Content Include="rUsuarios.aspx" />
-    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Registros\rUsuarios.aspx" />
+    <Content Include="Registros\rTipoEgreso.aspx" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\FinanzasPersonalesWeb.csprojResolveAssemblyReference.cache" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="bin\FinanzasPersonalesWeb.dll.config" />
-    <Content Include="bin\Reportes\ListadoUsuariosxTipo.rdlc" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
-    <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
-    <Content Include="TipoEgreso.aspx" />
-    <Content Include="Transferencia.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +156,13 @@
     <Compile Include="Consultas\cTiposUsuarios.aspx.designer.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\cTransferencias.aspx.cs">
+      <DependentUpon>cTransferencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cTransferencias.aspx.designer.cs">
+      <DependentUpon>cTransferencias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -191,23 +170,12 @@
     <Compile Include="Consultas\cUsuarios.aspx.designer.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaTipoEgreso.aspx.cs">
-      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
+    <Compile Include="Consultas\cTipoEgreso.aspx.cs">
+      <DependentUpon>cTipoEgreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConsultaTipoEgreso.aspx.designer.cs">
-      <DependentUpon>ConsultaTipoEgreso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="cPresupuestos.aspx.cs">
-      <DependentUpon>cPresupuestos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="cPresupuestos.aspx.designer.cs">
-      <DependentUpon>cPresupuestos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CTransferencias.aspx.cs">
-      <DependentUpon>CTransferencias.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CTransferencias.aspx.designer.cs">
-      <DependentUpon>CTransferencias.aspx</DependentUpon>
+    <Compile Include="Consultas\cTipoEgreso.aspx.designer.cs">
+      <DependentUpon>cTipoEgreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -259,12 +227,33 @@
     <Compile Include="Registros\rMiembros.aspx.designer.cs">
       <DependentUpon>rMiembros.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rPaises.aspx.cs">
+      <DependentUpon>rPaises.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rPaises.aspx.designer.cs">
+      <DependentUpon>rPaises.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rTipoIngreso.aspx.cs">
       <DependentUpon>rTipoIngreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Registros\rTipoIngreso.aspx.designer.cs">
       <DependentUpon>rTipoIngreso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rTransferencia.aspx.cs">
+      <DependentUpon>rTransferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rTransferencia.aspx.designer.cs">
+      <DependentUpon>rTransferencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoTipoIngresoTipoViewer.aspx.cs">
+      <DependentUpon>ListadoTipoIngresoTipoViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoTipoIngresoTipoViewer.aspx.designer.cs">
+      <DependentUpon>ListadoTipoIngresoTipoViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
@@ -273,12 +262,6 @@
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.designer.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="rPresupuestos.aspx.cs">
-      <DependentUpon>rPresupuestos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="rPresupuestos.aspx.designer.cs">
-      <DependentUpon>rPresupuestos.aspx</DependentUpon>
-    </Compile>
     <Compile Include="rTiposUsuarios.aspx.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -286,11 +269,19 @@
     <Compile Include="rTiposUsuarios.aspx.designer.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="rUsuarios.aspx.cs">
+    <Compile Include="Registros\rUsuarios.aspx.cs">
+      <DependentUpon>rUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rUsuarios.aspx.designer.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="rUsuarios.aspx.designer.cs">
-      <DependentUpon>rUsuarios.aspx</DependentUpon>
+    <Compile Include="Registros\rTipoEgreso.aspx.cs">
+      <DependentUpon>rTipoEgreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rTipoEgreso.aspx.designer.cs">
+      <DependentUpon>rTipoEgreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -299,24 +290,10 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="TipoEgreso.aspx.cs">
-      <DependentUpon>TipoEgreso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TipoEgreso.aspx.designer.cs">
-      <DependentUpon>TipoEgreso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Transferencia.aspx.cs">
-      <DependentUpon>Transferencia.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Transferencia.aspx.designer.cs">
-      <DependentUpon>Transferencia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Site.Master" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-2.2.0.min.map" />
+    <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -331,13 +308,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
-    <Folder Include="obj\Debug\TempPE\" />
+    <EmbeddedResource Include="Rpts\Report1.rdlc" />
+    <EmbeddedResource Include="Rpts\TipoIngresoRpt.rdlc" />
+    <EmbeddedResource Include="Rpts\UsuarioReport.rdlc" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reportes\ListadoUsuariosxTipo.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <Folder Include="App_Code\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
