@@ -10,7 +10,7 @@
 namespace FinanzasPersonalesWeb.Consultas {
     
     
-    public partial class MetasConsultasWebForm {
+    public partial class cMetasWebForm {
         
         /// <summary>
         /// ConsultaDropDownList control.
