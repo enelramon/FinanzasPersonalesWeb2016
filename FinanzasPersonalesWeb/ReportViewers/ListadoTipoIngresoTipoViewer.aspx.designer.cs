@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb.Consultas {
+namespace FinanzasPersonalesWeb.ReportViewers {
     
     
-    public partial class cMetasWebForm {
+    public partial class ListadoTipoIngresoTipoViewer {
         
         /// <summary>
-        /// ConsultaDropDownList control.
+        /// ScriptManager2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ConsultaDropDownList;
+        protected global::System.Web.UI.ScriptManager ScriptManager2;
         
         /// <summary>
-        /// ConsultaTextBox control.
+        /// ReportViewer1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConsultaTextBox;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
         
         /// <summary>
-        /// BuscarButton control.
+        /// RptViewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BuscarButton;
-        
-        /// <summary>
-        /// MetasGridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView MetasGridView;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer RptViewer;
     }
 }

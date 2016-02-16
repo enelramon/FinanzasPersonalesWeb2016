@@ -11,8 +11,10 @@
     </style>
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row">
+    <div class="container">
+        <div class="row">
         <div class="form-group">
+
             <div class="col-xs-3 col-sm-3 col-lg-2 col-md-3">
            
                     <h6><asp:Label ID="Label1" runat="server" Text="Tipo de Ingresos Id"></asp:Label></h6>
@@ -54,5 +56,6 @@
                     </div>
             </div>
         </div>
+    </div>
     </div>
 </asp:Content>

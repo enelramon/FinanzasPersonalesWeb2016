@@ -8,7 +8,7 @@ using BLL;
 
 namespace FinanzasPersonalesWeb.Consultas
 {
-    public partial class MetasConsultasWebForm : System.Web.UI.Page
+    public partial class cMetasWebForm : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

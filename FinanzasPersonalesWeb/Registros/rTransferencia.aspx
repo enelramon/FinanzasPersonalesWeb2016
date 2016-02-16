@@ -21,7 +21,8 @@
         <div class="row">
         <div class="col-md-2">
    
-            <h6><asp:Label ID="Label6" runat="server" Text="TransferenciaId"></asp:Label></h6>
+            <h6><asp:Label ID="Label" runat="server" Text="TransferenciaId">
+                </asp:Label></h6>
             <br />
             <h6><asp:Label ID="Label3" runat="server" Text="Fecha"></asp:Label></h6>    
             <br />
