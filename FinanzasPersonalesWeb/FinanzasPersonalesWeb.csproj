@@ -104,7 +104,9 @@
     <Content Include="Registros\rPaises.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="Registros\rTransferencia.aspx" />
+    <Content Include="ReportViewers\ListadoEgresos.aspx" />
     <Content Include="ReportViewers\ListadoTipoIngresoViewer.aspx" />
+    <Content Include="ReportViewers\ListadoUsuarios.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
@@ -253,12 +255,26 @@
     <Compile Include="Registros\rTransferencia.aspx.designer.cs">
       <DependentUpon>rTransferencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReportViewers\ListadoEgresos.aspx.cs">
+      <DependentUpon>ListadoEgresos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoEgresos.aspx.designer.cs">
+      <DependentUpon>ListadoEgresos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReportViewers\ListadoTipoIngresoViewer.aspx.cs">
       <DependentUpon>ListadoTipoIngresoViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReportViewers\ListadoTipoIngresoViewer.aspx.designer.cs">
       <DependentUpon>ListadoTipoIngresoViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoUsuarios.aspx.cs">
+      <DependentUpon>ListadoUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoUsuarios.aspx.designer.cs">
+      <DependentUpon>ListadoUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
@@ -324,7 +340,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Rpts\ListadoDeEgresos.rdlc" />
+    <EmbeddedResource Include="Rpts\EgresosRpt.rdlc" />
     <EmbeddedResource Include="Rpts\TipoIngresoRpt.rdlc" />
     <EmbeddedResource Include="Rpts\UsuarioReport.rdlc" />
   </ItemGroup>
