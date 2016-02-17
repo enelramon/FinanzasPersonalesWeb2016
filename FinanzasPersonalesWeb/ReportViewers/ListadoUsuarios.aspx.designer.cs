@@ -22,12 +22,12 @@ namespace FinanzasPersonalesWeb.ReportViewers {
         protected global::System.Web.UI.ScriptManager ScriptManager2;
         
         /// <summary>
-        /// ReportViewer1 control.
+        /// RptViewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer RptViewer;
     }
 }

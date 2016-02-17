@@ -16,14 +16,14 @@ namespace FinanzasPersonalesWeb.ReportViewers
             {
                 Usuarios Usuario = new Usuarios();
 
-                ReportViewer1.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
-                ReportViewer1.Reset();
-                ReportViewer1.LocalReport.ReportPath = Server.MapPath(@"~\Rpts/UsuariosReport.rdlc");
+                RptViewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
+                RptViewer.Reset();
+                RptViewer.LocalReport.ReportPath = Server.MapPath(@"~\Rpts/UsuariosReport.rdlc");
 
-                ReportViewer1.LocalReport.DataSources.Clear();
+                RptViewer.LocalReport.DataSources.Clear();
 
-                ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Usuarios", Usuario.Listado(" * ", "1=1", "")));
-                ReportViewer1.LocalReport.Refresh();
+                RptViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Usuarios", Usuario.Listado(" * ", "1=1", "")));
+                RptViewer.LocalReport.Refresh();
             }
         }
     }
