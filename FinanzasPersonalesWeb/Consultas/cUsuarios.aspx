@@ -30,7 +30,7 @@
             <div class="">
                 <asp:GridView ID="UsuarioGridView" runat="server" Width="632px"></asp:GridView>
 
-                <asp:HyperLink ID="ImprimirHyperLink" runat="server" NavigateUrl="~/ReportViewers/ListadoUsuariosxTipoViewer.aspx">Imprimir</asp:HyperLink>
+                <asp:HyperLink ID="ImprimirHyperLink" runat="server" NavigateUrl="~/ReportViewers/ListadoUSuarios.aspx">Imprimir</asp:HyperLink>
 
             </div>
         </div>
