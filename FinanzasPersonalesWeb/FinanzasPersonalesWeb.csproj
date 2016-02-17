@@ -308,7 +308,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Rpts\Report1.rdlc" />
     <EmbeddedResource Include="Rpts\TipoIngresoRpt.rdlc" />
     <EmbeddedResource Include="Rpts\UsuarioReport.rdlc" />
   </ItemGroup>
