@@ -324,7 +324,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Rpts\ListadoDeEgresos.rdlc" />
+    <EmbeddedResource Include="Rpts\EgresosRpt.rdlc" />
     <EmbeddedResource Include="Rpts\TipoIngresoRpt.rdlc" />
     <EmbeddedResource Include="Rpts\UsuarioReport.rdlc" />
   </ItemGroup>
