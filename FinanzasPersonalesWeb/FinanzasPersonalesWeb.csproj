@@ -106,6 +106,7 @@
     <Content Include="Registros\rTransferencia.aspx" />
     <Content Include="ReportViewers\ListadoEgresos.aspx" />
     <Content Include="ReportViewers\ListadoTipoIngresoViewer.aspx" />
+    <Content Include="ReportViewers\ListadoUsuarios.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="rTiposUsuarios.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
@@ -267,6 +268,13 @@
     </Compile>
     <Compile Include="ReportViewers\ListadoTipoIngresoViewer.aspx.designer.cs">
       <DependentUpon>ListadoTipoIngresoViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoUsuarios.aspx.cs">
+      <DependentUpon>ListadoUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoUsuarios.aspx.designer.cs">
+      <DependentUpon>ListadoUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
