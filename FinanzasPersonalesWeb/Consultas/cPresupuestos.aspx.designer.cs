@@ -10,25 +10,25 @@
 namespace FinanzasPersonalesWeb.Consultas {
     
     
-    public partial class cMetasWebForm {
+    public partial class cPresupuestos {
         
         /// <summary>
-        /// ConsultaDropDownList control.
+        /// FiltroDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ConsultaDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList FiltroDropDownList;
         
         /// <summary>
-        /// ConsultaTextBox control.
+        /// BuscarTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConsultaTextBox;
+        protected global::System.Web.UI.WebControls.TextBox BuscarTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -40,12 +40,21 @@ namespace FinanzasPersonalesWeb.Consultas {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// MetasGridView control.
+        /// TipoDatoFiltroRequiredFieldValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView MetasGridView;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator TipoDatoFiltroRequiredFieldValidator;
+        
+        /// <summary>
+        /// PresupuestoGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView PresupuestoGridView;
     }
 }

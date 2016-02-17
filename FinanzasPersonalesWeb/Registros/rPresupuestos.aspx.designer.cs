@@ -7,28 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb.Registros {
+namespace FinanzasPersonalesWeb.Consultas {
     
     
-    public partial class rMetasWebForm {
+    public partial class rPresupuestos {
         
         /// <summary>
-        /// Label1 control.
+        /// PresupuestoTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// MetaIdTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MetaIdTextBox;
+        protected global::System.Web.UI.WebControls.TextBox PresupuestoTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -40,13 +31,22 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// Label2 control.
+        /// UsuarioDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.DropDownList UsuarioDropDownList;
+        
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
         /// DescripcionTextBox control.
@@ -58,31 +58,31 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
         
         /// <summary>
-        /// Label4 control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// TipoDeIngresoDropDownList control.
+        /// TipoEgresoDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TipoDeIngresoDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList TipoEgresoDropDownList;
         
         /// <summary>
-        /// Label3 control.
+        /// TipoEgresoRequiredFieldValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator TipoEgresoRequiredFieldValidator;
         
         /// <summary>
         /// MontoTextBox control.
@@ -94,6 +94,15 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.TextBox MontoTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        
+        /// <summary>
         /// AgregarButton control.
         /// </summary>
         /// <remarks>
@@ -103,40 +112,40 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.Button AgregarButton;
         
         /// <summary>
-        /// Label5 control.
+        /// MontoRegularExpressionValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator MontoRegularExpressionValidator;
         
         /// <summary>
-        /// MetasListBox control.
+        /// DetalleGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox MetasListBox;
+        protected global::System.Web.UI.WebControls.GridView DetalleGridView;
         
         /// <summary>
-        /// NuevoButton control.
+        /// LimpiarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NuevoButton;
+        protected global::System.Web.UI.WebControls.Button LimpiarButton;
         
         /// <summary>
-        /// GuadarButton control.
+        /// GuardarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GuadarButton;
+        protected global::System.Web.UI.WebControls.Button GuardarButton;
         
         /// <summary>
         /// EliminarButton control.
@@ -146,5 +155,23 @@ namespace FinanzasPersonalesWeb.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button EliminarButton;
+        
+        /// <summary>
+        /// EliminarRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator EliminarRequiredFieldValidator;
+        
+        /// <summary>
+        /// EliminarRegularExpressionValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator EliminarRegularExpressionValidator;
     }
 }

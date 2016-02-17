@@ -184,6 +184,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FinanzasPersonalesWebDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rEgresos.aspx.cs">
       <DependentUpon>rEgresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -294,6 +299,17 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Site.Master" />
+    <Content Include="FinanzasPersonalesWebDbDataSet.xsc">
+      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="FinanzasPersonalesWebDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinanzasPersonalesWebDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="FinanzasPersonalesWebDbDataSet.xss">
+      <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -308,7 +324,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Rpts\Report1.rdlc" />
+    <EmbeddedResource Include="Rpts\ListadoDeEgresos.rdlc" />
     <EmbeddedResource Include="Rpts\TipoIngresoRpt.rdlc" />
     <EmbeddedResource Include="Rpts\UsuarioReport.rdlc" />
   </ItemGroup>

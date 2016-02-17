@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rMetasWebForm.aspx.cs" Inherits="FinanzasPersonalesWeb.Registros.MetasWebForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rMetasWebForm.aspx.cs" Inherits="FinanzasPersonalesWeb.Registros.rMetasWebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 </asp:Content>

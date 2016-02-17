@@ -7,45 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb.Consultas {
+namespace FinanzasPersonalesWeb.Registros {
     
     
-    public partial class cMetasWebForm {
+    public partial class rPaises {
         
         /// <summary>
-        /// ConsultaDropDownList control.
+        /// IdTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ConsultaDropDownList;
+        protected global::System.Web.UI.WebControls.TextBox IdTextBox;
         
         /// <summary>
-        /// ConsultaTextBox control.
+        /// NombreTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConsultaTextBox;
+        protected global::System.Web.UI.WebControls.TextBox NombreTextBox;
         
         /// <summary>
-        /// BuscarButton control.
+        /// NuevoButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BuscarButton;
+        protected global::System.Web.UI.WebControls.Button NuevoButton;
         
         /// <summary>
-        /// MetasGridView control.
+        /// GuadarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView MetasGridView;
+        protected global::System.Web.UI.WebControls.Button GuadarButton;
+        
+        /// <summary>
+        /// EliminarButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EliminarButton;
     }
 }
