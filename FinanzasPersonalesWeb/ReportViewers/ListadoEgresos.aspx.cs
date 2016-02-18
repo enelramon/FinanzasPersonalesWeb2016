@@ -16,14 +16,14 @@ namespace FinanzasPersonalesWeb.ReportViewers
             {
                 Egresos egreso = new Egresos();
 
-                ReportViewer1.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
-                ReportViewer1.Reset();
-                ReportViewer1.LocalReport.ReportPath = Server.MapPath(@"~\Rpts/EgresosRpt.rdlc");
+                EgresosReportViewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
+                EgresosReportViewer.Reset();
+                EgresosReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Rpts/EgresosRpt.rdlc");
 
-                ReportViewer1.LocalReport.DataSources.Clear();
+                EgresosReportViewer.LocalReport.DataSources.Clear();
 
-                ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("EgresosDataSet", egreso.Listado(" * ", "1=1", "")));
-                ReportViewer1.LocalReport.Refresh();
+                EgresosReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("EgresosDataSet", egreso.Listado(" * ", "1=1", "")));
+                EgresosReportViewer.LocalReport.Refresh();
             }
         }
     }
