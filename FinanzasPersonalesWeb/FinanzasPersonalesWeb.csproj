@@ -105,6 +105,7 @@
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="Registros\rTransferencia.aspx" />
     <Content Include="ReportViewers\ListadoEgresos.aspx" />
+    <Content Include="ReportViewers\ListadoTipoEgreso.aspx" />
     <Content Include="ReportViewers\ListadoTipoIngresoViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuarios.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
@@ -120,6 +121,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FinanzasDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="App_Code\TipoEgresoDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoEgresoDataSet.xsd</DependentUpon>
     </Content>
     <Compile Include="cCuentas.aspx.cs">
       <DependentUpon>cCuentas.aspx</DependentUpon>
@@ -267,6 +273,13 @@
     <Compile Include="ReportViewers\ListadoEgresos.aspx.designer.cs">
       <DependentUpon>ListadoEgresos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReportViewers\ListadoTipoEgreso.aspx.cs">
+      <DependentUpon>ListadoTipoEgreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoTipoEgreso.aspx.designer.cs">
+      <DependentUpon>ListadoTipoEgreso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReportViewers\ListadoTipoIngresoViewer.aspx.cs">
       <DependentUpon>ListadoTipoIngresoViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -334,6 +347,17 @@
     <Content Include="App_Code\FinanzasDataSet.xss">
       <DependentUpon>FinanzasDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="App_Code\TipoEgresoDataSet.xsc">
+      <DependentUpon>TipoEgresoDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="App_Code\TipoEgresoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TipoEgresoDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Code\TipoEgresoDataSet.xss">
+      <DependentUpon>TipoEgresoDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="FinanzasPersonalesWebDbDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>FinanzasPersonalesWebDbDataSet.Designer.cs</LastGenOutput>
@@ -358,6 +382,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Rpts\EgresosRpt.rdlc" />
     <EmbeddedResource Include="Rpts\ListadoUsuariosxTipo.rdlc" />
+    <EmbeddedResource Include="Rpts\TipoEgreso.rdlc" />
     <EmbeddedResource Include="Rpts\TipoIngresoRpt.rdlc" />
     <EmbeddedResource Include="Rpts\UsuarioReport.rdlc" />
   </ItemGroup>
