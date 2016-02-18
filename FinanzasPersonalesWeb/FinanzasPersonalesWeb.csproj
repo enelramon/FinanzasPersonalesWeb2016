@@ -116,6 +116,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\FinanzasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinanzasDataSet.xsd</DependentUpon>
+    </Content>
     <Compile Include="cCuentas.aspx.cs">
       <DependentUpon>cCuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -318,6 +323,17 @@
     <Content Include="FinanzasPersonalesWebDbDataSet.xsc">
       <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="App_Code\FinanzasDataSet.xsc">
+      <DependentUpon>FinanzasDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="App_Code\FinanzasDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinanzasDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="App_Code\FinanzasDataSet.xss">
+      <DependentUpon>FinanzasDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="FinanzasPersonalesWebDbDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>FinanzasPersonalesWebDbDataSet.Designer.cs</LastGenOutput>
@@ -341,12 +357,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Rpts\EgresosRpt.rdlc" />
+    <EmbeddedResource Include="Rpts\ListadoUsuariosxTipo.rdlc" />
     <EmbeddedResource Include="Rpts\TipoIngresoRpt.rdlc" />
     <EmbeddedResource Include="Rpts\UsuarioReport.rdlc" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Code\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -358,7 +373,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52474</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
