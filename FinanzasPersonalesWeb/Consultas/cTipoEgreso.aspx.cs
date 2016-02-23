@@ -46,7 +46,7 @@ namespace FinanzasPersonalesWeb
                 }
                 else
                 {
-                    condicion = " Descripcion like '%" + CampoTextBox.Text +"%";
+                    condicion = " Descripcion like '%" +CampoTextBox.Text +"%'";
                 }
                 dataTable = egreso.Listado(" TipoEgresoId, Descripcion, EsActivo,UsuarioId", condicion, "");
                 DatoGridView.DataSource = dataTable;
