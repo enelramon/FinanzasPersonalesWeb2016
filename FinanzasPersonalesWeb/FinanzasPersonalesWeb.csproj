@@ -76,6 +76,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\ListadoPresupuestoDataSet.xsc">
+      <DependentUpon>ListadoPresupuestoDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="App_Code\ListadoPresupuestoDataSet.xss">
+      <DependentUpon>ListadoPresupuestoDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="App_Code\ListadoPresupuestoDataSet1.Designer.cs">
+      <DependentUpon>ListadoPresupuestoDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Content>
     <Content Include="App_Data\FinanzasPersonalesWebDb.mdf" />
     <Content Include="App_Data\FinanzasPersonalesWebDb_log.ldf">
       <DependentUpon>FinanzasPersonalesWebDb.mdf</DependentUpon>
@@ -107,6 +118,7 @@
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="Registros\rTransferencia.aspx" />
     <Content Include="ReportViewers\ListadoEgresos.aspx" />
+    <Content Include="ReportViewers\ListadoPresupuestoReportViewer.aspx" />
     <Content Include="ReportViewers\ListadoTipoEgreso.aspx" />
     <Content Include="ReportViewers\ListadoTipoIngresoViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuarios.aspx" />
@@ -289,6 +301,13 @@
     <Compile Include="ReportViewers\ListadoEgresos.aspx.designer.cs">
       <DependentUpon>ListadoEgresos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReportViewers\ListadoPresupuestoReportViewer.aspx.cs">
+      <DependentUpon>ListadoPresupuestoReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoPresupuestoReportViewer.aspx.designer.cs">
+      <DependentUpon>ListadoPresupuestoReportViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReportViewers\ListadoTipoEgreso.aspx.cs">
       <DependentUpon>ListadoTipoEgreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -366,6 +385,11 @@
     <Content Include="App_Code\TipoEgresoDataSet.xsc">
       <DependentUpon>TipoEgresoDataSet.xsd</DependentUpon>
     </Content>
+    <None Include="App_Code\ListadoPresupuestoDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ListadoPresupuestoDataSet1.Designer.cs</LastGenOutput>
+    </None>
     <None Include="App_Code\TipoEgresoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>TipoEgresoDataSet1.Designer.cs</LastGenOutput>
