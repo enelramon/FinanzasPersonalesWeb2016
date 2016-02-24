@@ -84,6 +84,7 @@
     <Content Include="Consultas\cEgresos.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
     <Content Include="Consultas\cMiembros.aspx" />
+    <Content Include="Consultas\cPresupuestos.aspx" />
     <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
     <Content Include="Consultas\cTiposUsuarios.aspx" />
     <Content Include="Consultas\cTransferencias.aspx" />
@@ -102,6 +103,7 @@
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
     <Content Include="Registros\rPaises.aspx" />
+    <Content Include="Registros\rPresupuestos.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="Registros\rTransferencia.aspx" />
     <Content Include="ReportViewers\ListadoEgresos.aspx" />
@@ -154,6 +156,13 @@
     </Compile>
     <Compile Include="Consultas\cMiembros.aspx.designer.cs">
       <DependentUpon>cMiembros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cPresupuestos.aspx.cs">
+      <DependentUpon>cPresupuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cPresupuestos.aspx.designer.cs">
+      <DependentUpon>cPresupuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cTipoIngresoWebForm.aspx.cs">
       <DependentUpon>cTipoIngresoWebForm.aspx</DependentUpon>
@@ -251,6 +260,13 @@
     </Compile>
     <Compile Include="Registros\rPaises.aspx.designer.cs">
       <DependentUpon>rPaises.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rPresupuestos.aspx.cs">
+      <DependentUpon>rPresupuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rPresupuestos.aspx.designer.cs">
+      <DependentUpon>rPresupuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rTipoIngreso.aspx.cs">
       <DependentUpon>rTipoIngreso.aspx</DependentUpon>
