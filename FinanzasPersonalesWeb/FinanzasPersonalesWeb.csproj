@@ -114,6 +114,7 @@
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
     <Content Include="Registros\rPaises.aspx" />
+    <Content Include="Registros\rPersonas.aspx" />
     <Content Include="Registros\rPresupuestos.aspx" />
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="Registros\rTransferencia.aspx" />
@@ -272,6 +273,13 @@
     </Compile>
     <Compile Include="Registros\rPaises.aspx.designer.cs">
       <DependentUpon>rPaises.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rPersonas.aspx.cs">
+      <DependentUpon>rPersonas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rPersonas.aspx.designer.cs">
+      <DependentUpon>rPersonas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rPresupuestos.aspx.cs">
       <DependentUpon>rPresupuestos.aspx</DependentUpon>

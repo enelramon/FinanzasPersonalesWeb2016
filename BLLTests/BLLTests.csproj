@@ -74,6 +74,7 @@
     <Compile Include="MetasTests.cs" />
     <Compile Include="EgresosTests.cs" />
     <Compile Include="MiembrosTests.cs" />
+    <Compile Include="PersonasTests.cs" />
     <Compile Include="PresupuestoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TiposEgresosTests.cs" />

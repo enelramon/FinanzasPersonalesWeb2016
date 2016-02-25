@@ -123,3 +123,21 @@ Create Table TiposEgresos
 	EsActivo bit,
 	UsuarioId Int
 )
+
+
+
+
+go
+create table Personas(
+	PersonaId int identity(1,1) Primary key,
+	Nombres varchar(50)
+)
+go
+create table PersonasTelefonos(
+	Id int identity(1,1) Primary key,
+	PersonaId int foreign key References Personas(PersonaId),
+	TipoId Int ,
+	Telefono varchar(12)
+)
+
+go
