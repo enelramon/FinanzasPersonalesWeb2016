@@ -35,6 +35,7 @@ namespace FinanzasPersonalesWeb.Registros
             {
                 return 0;
             }
+
             return Id;
         }
 

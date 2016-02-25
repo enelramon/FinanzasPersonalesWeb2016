@@ -13,14 +13,16 @@ namespace FinanzasPersonalesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Cuentas cuenta = new Cuentas();
-            TiposEgresos tipoEgreso = new TiposEgresos();
-            Miembros miembro = new Miembros();
+           
 
             
 
             if (IsPostBack == false)
             {
+ Cuentas cuenta = new Cuentas();
+            TiposEgresos tipoEgreso = new TiposEgresos();
+            Miembros miembro = new Miembros();
+
                 CuentaIdDropDownList.DataSource = cuenta.Listado(" * ", "1=1", "");
                 CuentaIdDropDownList.DataTextField = "Descripcion";
                 CuentaIdDropDownList.DataValueField = "CuentaId";
