@@ -125,7 +125,8 @@ Create Table TiposEgresos
 )
 
 
-
+select * from Cuentas
+insert into Cuentas(UsuarioId,Descripcion,Balance,Porciento) values(5,'Prueba 2',300,5.2)
 
 go
 create table Personas(
