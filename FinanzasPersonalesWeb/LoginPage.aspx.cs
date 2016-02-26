@@ -23,7 +23,7 @@ namespace FinanzasPersonalesWeb
             Boolean paso = false;
 
 
-            Usuario.ValidarUsuario(UsuarioTextBox.Text, ContrasenaTextBox.Text);
+            paso = Usuario.ValidarUsuario(UsuarioTextBox.Text, ContrasenaTextBox.Text);
 
             if (paso)
             {
