@@ -12,12 +12,12 @@ namespace BLL
     {
         ConexionDb Conexion = new ConexionDb();
 
-        public int IdTipoUsuario { get; set; }
+        public int TipoUsuarioId { get; set; }
         public string Descripcion { get; set; }
 
        public  TiposUsuarios()
         {
-            this.IdTipoUsuario = 0;
+            this.TipoUsuarioId = 0;
             this.Descripcion = "";
         }
         public override bool Insertar()
@@ -27,7 +27,7 @@ namespace BLL
             try
             {
                 IdRetornado = Convert.ToString( Conexion.ObtenerValor(string.Format("insert into TiposUsuario (Descripcion) values ('{0}') select scope_identity() ", this.Descripcion)));
-                this.IdTipoUsuario = Convert.ToInt16(IdRetornado);
+                this.TipoUsuarioId = Convert.ToInt16(IdRetornado);
             }
             catch (Exception)
             {
@@ -42,7 +42,7 @@ namespace BLL
         {
             Boolean paso = false;
 
-            paso = Conexion.Ejecutar(string.Format("Update TiposUsuario set Descripcion = '{0}'  where IdTipoUsuario = {1}", this.Descripcion, this.IdTipoUsuario));
+            paso = Conexion.Ejecutar(string.Format("Update TiposUsuario set Descripcion = '{0}'  where TipoUsuarioId = {1}", this.Descripcion, this.TipoUsuarioId));
 
             return paso;
         }
@@ -53,7 +53,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Delete from TiposUsuario where IdTipoUsuario = {0}", this.IdTipoUsuario));
+                retorno = Conexion.Ejecutar(string.Format("Delete from TiposUsuario where TipoUsuarioId = {0}", this.TipoUsuarioId));
             }
             catch (Exception)
             {
@@ -68,11 +68,11 @@ namespace BLL
         {
             DataTable dt = new DataTable();
 
-            dt = Conexion.ObtenerDatos("Select * from TiposUsuario where IdTipoUsuario =" + IdBuscado);
+            dt = Conexion.ObtenerDatos("Select * from TiposUsuario where TipoUsuarioId =" + IdBuscado);
 
             if (dt.Rows.Count > 0)
             {
-                this.IdTipoUsuario = (int)dt.Rows[0]["IdTipoUsuario"];
+                this.TipoUsuarioId = (int)dt.Rows[0]["IdTipoUsuario"];
                 this.Descripcion = (string)dt.Rows[0]["Descripcion"];
                
             }

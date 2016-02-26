@@ -13,12 +13,12 @@ namespace FinanzasPersonalesWeb.Registro
 
         public void LlenarClase(TiposUsuarios TipoUsuario)
         {
-            TipoUsuario.IdTipoUsuario = (TipoUsuarioIdTextBox.Text == "") ? 0 : Convert.ToInt16(TipoUsuarioIdTextBox.Text);
+            TipoUsuario.TipoUsuarioId = (TipoUsuarioIdTextBox.Text == "") ? 0 : Convert.ToInt16(TipoUsuarioIdTextBox.Text);
             TipoUsuario.Descripcion = DescripcionTextBox.Text;
         }
         public void LlenarCampos(TiposUsuarios TipoUsuario)
         {
-            TipoUsuarioIdTextBox.Text = Convert.ToString(TipoUsuario.IdTipoUsuario);
+            TipoUsuarioIdTextBox.Text = Convert.ToString(TipoUsuario.TipoUsuarioId);
             DescripcionTextBox.Text = TipoUsuario.Descripcion;
         }
         public void Limpiar()
@@ -99,7 +99,7 @@ namespace FinanzasPersonalesWeb.Registro
             TiposUsuarios TipoUsuario = new TiposUsuarios();
             LlenarClase(TipoUsuario);
 
-            if (TipoUsuario.IdTipoUsuario == 0)
+            if (TipoUsuario.TipoUsuarioId == 0)
             {
                 Paso = TipoUsuario.Insertar();
             }
