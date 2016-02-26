@@ -19,94 +19,95 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Registro de Usuarios</div>
+
+        <div class="panel-body">
+            <div class="form-horizontal col-md-12" role="form">
+
+                <%--Nombre--%>
+                <div class="form-group">
+                    <label for="NombreTextBox" class="col-md-3 control-label input-sm">Nombre: </label>
+                    <div class="col-md-8 col-sm-2 col-xs-4">
+                        <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server" placeholder="Nombre"></asp:TextBox>
+
+                    </div>
+                    <div class="col-md-1 col-sm-2 col-xs-4">
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+
+                <%--Apellido--%>
+                <div class="form-group">
+                    <label for="ApellidoTextBox" class="col-md-3 control-label input-sm">Apellido:</label>
+                    <div class="col-md-8">
+                        <asp:TextBox ID="ApellidoTextBox" CssClass="form-control" runat="server" placeholder="Apellido"></asp:TextBox>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
 
 
 
-    <h1>Registro</h1>
-    <div class="row" style="margin: 0 2px 0 2px">
-        <div class="col-md-12" id="AlertNotificationDiv" runat="server">
-            <asp:Label ID="AlertNotificationBox" runat="server" />
+
+                <%--Usuario--%>
+                <div class="form-group">
+                    <label for="UsuarioTextBox" class="col-md-3 control-label input-sm">Usuario:</label>
+                    <div class="col-md-8">
+                        <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server" placeholder="Usuario"></asp:TextBox>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+
+                <%--Contrasena--%>
+                <div class="form-group">
+                    <label for="PassTextBox" class="col-md-3 control-label input-sm">Contraseña:</label>
+                    <div class="col-md-8">
+                        <asp:TextBox ID="PassTextBox" CssClass="form-control" type="password" runat="server" placeholder="Contraseña"></asp:TextBox>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+
+                <%--Repetir Contraseña--%>
+                <div class="form-group">
+                    <label for="RptPassTextBox" class="col-md-3 control-label input-sm">Repetir Contraseña:</label>
+                    <div class="col-md-8">
+                        <asp:TextBox ID="RptPassTextBox" CssClass="form-control" type="password" runat="server" placeholder="Repetir Contraseña"></asp:TextBox>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+
+                <%--Email--%>
+                <div class="form-group">
+                    <label for="EmailTextBox" class="col-md-3 control-label input-sm">Correo Electronico:</label>
+                    <div class="col-md-8">
+                        <asp:TextBox ID="EmailTextBox" TextMode="Email" CssClass="form-control" runat="server" placeholder="Correo Electronico" ></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                            ControlToValidate="EmailTextBox" ErrorMessage="Email is required"
+                            SetFocusOnError="True"></asp:RequiredFieldValidator>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+                <div class="form-group col-lg-12 col-centered">
+                    <asp:CheckBox ID="AceptarCheckBox" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" Text="Acepto los Terminos y Condiciones de uso." />
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="text-center">
+                <div class="form-group" style="display: inline-block">
+
+                    <asp:Button ID="LimpiarButton" runat="server" Text="Limpiar" CssClass="btn btn-warning" />
+                    <asp:Button ID="GuardarButton" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="GuardarButton_Click" />
+
+                </div>
+            </div>
+
         </div>
     </div>
-    <div class="container-fluid">
-
-        <div class="form-group">
-            <div class="col-lg-2">
-                <h6>
-                    <asp:Label ID="Label1" runat="server" Text="Nombres"></asp:Label></h6>
-                <br />
-                <h6>
-                    <asp:Label ID="Label2" runat="server" Text="Apellidos"></asp:Label></h6>
-                <br />
-                <h6>
-                    <asp:Label ID="Label5" runat="server" Text="Usuario"></asp:Label></h6>
-                <br />
-                <h6>
-                    <asp:Label ID="Label6" runat="server" Text="Contraseña"></asp:Label>
-                </h6>
-                <br />
-                <h6>
-                    <asp:Label ID="Label3" runat="server" Text="Repetir Contraseña"></asp:Label>
-                </h6>
-                <br />
-                <h6>
-                    <asp:Label ID="Label7" runat="server" Text="Correo Electronico"></asp:Label></h6>
-            </div>
-            <div class="col-lg-3">
-                <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server" Text="Nombres"  onclick="this.value='';"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="ApellidoTextBox" CssClass="form-control" runat="server" Text="Apellidos" onclick="this.value='';"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server" Text="Nombre de Usuario" onclick="this.value='';"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="PassTextBox" CssClass="form-control" type="password" runat="server" Text="Contraseña" onclick="this.value='';"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="ConPassTextBox" CssClass="form-control" type="password" runat="server" Text="Repetir Contraseña" onclick="this.value='';"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server" Text="Correo Electronico" onclick="this.value='';"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                    ControlToValidate="EmailTextBox" ErrorMessage="Email is required"
-                    SetFocusOnError="True"></asp:RequiredFieldValidator>
-                <br />
-
-            </div>
-            <div>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br /> 
-                <br />  
-                <br />
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
-                    ErrorMessage="<-- Correo invalido, por favor confirmelo." ControlToValidate="EmailTextBox"
-                    SetFocusOnError="True"
-                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
-                </asp:RegularExpressionValidator>
-            </div>
-
-
-            <div class="col-lg-12 col-centered">
-                <asp:CheckBox ID="AceptarCheckBox" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" Text="Acepto los Terminos y Condiciones de uso." />
-            </div>
-            <div class="col-lg-12 col-centered">
-                <asp:Button ID="LimpiarButton" runat="server" Text="Limpiar" CssClass="btn btn-warning" />
-                <asp:Button ID="GuardarButton" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="GuardarButton_Click" />
-            </div>
-        </div>
-        </div>
-
-
-
-
-
-
 </asp:Content>
