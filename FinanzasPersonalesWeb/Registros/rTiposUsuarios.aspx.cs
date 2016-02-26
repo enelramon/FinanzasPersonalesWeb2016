@@ -42,15 +42,14 @@ namespace FinanzasPersonalesWeb.Registro
         {
             if (TipoUsuarioIdTextBox.Text == "")
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco.');", true);
+                Utilitarios.ShowToastr(this.Page, "El ID no puede estar en Blanco.", "Advertencia", "Warning");
                 return;
-
             }
 
             TiposUsuarios TipoUsuario = new TiposUsuarios();
             if (!(TipoUsuario.Buscar(Convert.ToInt16(TipoUsuarioIdTextBox.Text))))
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro No Encontrado.');", true);
+                Utilitarios.ShowToastr(this.Page, "Registro no encontrado.", "Error", "Error");
                 Limpiar();
                 return;
             }
@@ -69,7 +68,7 @@ namespace FinanzasPersonalesWeb.Registro
         {
             if (TipoUsuarioIdTextBox.Text == "")
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco');", true);
+                Utilitarios.ShowToastr(this.Page, "El ID no puede estar en Blanco.", "Advertencia", "Warning");
                 return;
 
             }
@@ -77,7 +76,7 @@ namespace FinanzasPersonalesWeb.Registro
 
             if (!(TipoUsuario.Buscar(Convert.ToInt16(TipoUsuarioIdTextBox.Text))))
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro No Encontrado.');", true);
+                Utilitarios.ShowToastr(this.Page, "Registro no encontrado.", "Error", "Error");
                 Limpiar();
                 return;
             }
@@ -111,7 +110,7 @@ namespace FinanzasPersonalesWeb.Registro
 
             if (Paso)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro  Guardado.');", true);
+                Utilitarios.ShowToastr(this.Page, "Transaccion Exitosa.", "Felicidades", "Success");
                 LlenarCampos(TipoUsuario);
                 Habilitar();
             }
@@ -122,7 +121,7 @@ namespace FinanzasPersonalesWeb.Registro
         {
             if (TipoUsuarioIdTextBox.Text == "")
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco');", true);
+                Utilitarios.ShowToastr(this.Page, "El ID no puede estar en Blanco.", "Advertencia", "Warning");
                 return;
 
             }
@@ -130,14 +129,14 @@ namespace FinanzasPersonalesWeb.Registro
 
             if (!(TipoUsuario.Buscar(Convert.ToInt16(TipoUsuarioIdTextBox.Text))))
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro No Encontrado.');", true);
+                Utilitarios.ShowToastr(this.Page, "Registro no encontrado.", "Error", "Error");
                 Limpiar();
                 return;
             }
 
             if (TipoUsuario.Eliminar())
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro  Eliminado.');", true);
+                Utilitarios.ShowToastr(this.Page, "Transaccion Exitosa.", "Felicidades", "Success");
 
             }
         }
