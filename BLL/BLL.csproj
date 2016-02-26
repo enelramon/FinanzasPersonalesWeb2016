@@ -58,8 +58,11 @@
     <Compile Include="ClaseMaestra.cs" />
     <Compile Include="Cuentas.cs" />
     <Compile Include="Egresos.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="Metas.cs" />
     <Compile Include="Miembros.cs" />
+    <Compile Include="Personas.cs" />
+    <Compile Include="PersonasTelefonos.cs" />
     <Compile Include="Presupuesto.cs" />
     <Compile Include="PresupuestoDetalle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

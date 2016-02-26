@@ -7,54 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb {
+namespace FinanzasPersonalesWeb.Consultas {
     
     
-    public partial class ConsultaEgresoWebForm {
+    public partial class cPresupuestos {
         
         /// <summary>
-        /// ElementosDropDownList control.
+        /// FiltroDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ElementosDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList FiltroDropDownList;
         
         /// <summary>
-        /// DatosTextBox control.
+        /// BuscarTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DatosTextBox;
+        protected global::System.Web.UI.WebControls.TextBox BuscarTextBox;
         
         /// <summary>
-        /// ConsultaBuscarButton control.
+        /// BuscarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ConsultaBuscarButton;
+        protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// ElementosGridView control.
+        /// TipoDatoFiltroRequiredFieldValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ElementosGridView;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator TipoDatoFiltroRequiredFieldValidator;
         
         /// <summary>
-        /// ImprimirLinkButton control.
+        /// PresupuestoGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ImprimirLinkButton;
+        protected global::System.Web.UI.WebControls.GridView PresupuestoGridView;
     }
 }

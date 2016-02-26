@@ -43,6 +43,7 @@
                             <SortedDescendingCellStyle BackColor="#CAC9C9" />
                             <SortedDescendingHeaderStyle BackColor="#33276A" />
                         </asp:GridView>
+                        <asp:LinkButton ID="ImprimirLinkButton" runat="server" Text="Imprimir" CssClass="btn btn-success btn-block" PostBackUrl="~/ReportViewers/ListadoEgresos.aspx" />
                     </div>
                 </div>
             </div>

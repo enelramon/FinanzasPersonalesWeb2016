@@ -51,7 +51,7 @@ namespace FinanzasPersonalesWeb
             {
                 dt = usuario.Listado(" *", "1=1", "");
                 UsuarioDropDownList.DataSource = dt;
-                UsuarioDropDownList.DataTextField = "Nombres";
+                UsuarioDropDownList.DataTextField = "Nombre";
                 UsuarioDropDownList.DataValueField = "UsuarioId";
                 UsuarioDropDownList.DataBind();
             }
