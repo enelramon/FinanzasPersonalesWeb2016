@@ -14,20 +14,34 @@ namespace FinanzasPersonalesWeb.Consultas
     {
         protected void BuscarPor_Click(object sender, EventArgs e)
         {
-            //ConexionDb Conexion = new ConexionDb();
             DataTable dt = new DataTable();
-            //string Comodin = "";
-            //if (OperadorDropDownList.SelectedIndex == 0)
-            //{
-            //    Comodin = "%";
-            //}
+            string filtro = "1=1";
+            TiposUsuarios TipoUsuario = new TiposUsuarios();
+            if (OperadorDropDownList.SelectedIndex == 0) //ID
+            {
+                if (FiltroTextBox.Text.Trim().Length == 0)
+                {
+                    filtro = "1=1";
+                }
+                else
+                {
+                    filtro = "TipoUsuarioId = " + FiltroTextBox.Text;
+                }
+            }
+            else if (OperadorDropDownList.SelectedIndex == 1) //Nombre
+                if (FiltroTextBox.Text.Trim().Length == 0)
+                {
+                    filtro = "1=1";
+                }
+                else
+                {
 
+                    filtro = "Descripcion like '%" + FiltroTextBox.Text + "%'";
+                }
 
-            //dt = Conexion.ObtenerDatos("Select IdTipoUsuario as Codigo,Descripcion from TiposUsuario Where  " + BuscarDropDownList.SelectedValue + " " + OperadorDropDownList.SelectedValue + " '" + Comodin + FiltroTextBox.Text.Trim() + Comodin + "'");
-
-            GrdDatos.DataSource = dt;
-            GrdDatos.DataBind();
-
-        }
+            dt = TipoUsuario.Listado("TipoUsuarioId, Descripcion", filtro, "TipoUsuarioId ASC");
+            //UsuarioGridView.DataSource = dt;
+            //UsuarioGridView.DataBind();
+        }   //
     }
 }
