@@ -106,6 +106,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Registros\rCuentas.aspx" />
     <Content Include="Registros\rEgresos.aspx" />
     <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
@@ -133,6 +134,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Registros\rCuentas.aspx.cs">
+      <DependentUpon>rCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rCuentas.aspx.designer.cs">
+      <DependentUpon>rCuentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Utilitarios.cs" />
     <Content Include="App_Code\FinanzasDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
