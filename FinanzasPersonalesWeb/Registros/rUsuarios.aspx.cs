@@ -12,8 +12,6 @@ namespace FinanzasPersonalesWeb.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            AlertNotificationDiv.Visible = false;
-            AlertNotificationBox.Text = "";
 
         }
 
@@ -31,33 +29,33 @@ namespace FinanzasPersonalesWeb.Registros
             Usuarios Usuario = new Usuarios();
             Boolean paso = false;
             Boolean control1, control2 = false;
-            LlenarClase( Usuario);
+            LlenarClase(Usuario);
 
-
+            if (PassTextBox.Text != RptPassTextBox.Text)
+            {
+                Utilitarios.ShowToastr(this.Page, "Las contraseñas no coinciden.", "Advertencia", "Warning");
+            }
             if (NombreTextBox.Text.Trim().Length == 0)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe llenar los campos.');", true);
+                Utilitarios.ShowToastr(this.Page, "Debe llenar los campos faltantes.", "Advertencia", "Warning");
             }
             else if (ApellidoTextBox.Text.Trim().Length == 0)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe llenar los campos.');", true);
+                Utilitarios.ShowToastr(this.Page, "Debe llenar los campos faltantes.", "Advertencia", "Warning");
             }
             else if (UsuarioTextBox.Text.Trim().Length == 0)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe llenar los campos.');", true);
+                Utilitarios.ShowToastr(this.Page, "Debe llenar los campos faltantes.", "Advertencia", "Warning");
             }
             else if (PassTextBox.Text.Trim().Length == 0)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe llenar los campos.');", true);
+                Utilitarios.ShowToastr(this.Page, "Debe llenar los campos faltantes.", "Advertencia", "Warning");
             }
             else if (EmailTextBox.Text.Trim().Length == 0)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe llenar los campos.');", true);
+                Utilitarios.ShowToastr(this.Page, "Debe llenar los campos faltantes.", "Advertencia", "Warning");
             }
-            if (AceptarCheckBox.Checked == false)
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe aceptar los Terminos para poder continuar.');", true);
-            }
+
             else {
 
                 control1 = Usuario.ValidarRegistroUsuario("'" + UsuarioTextBox.Text + "'");
@@ -65,15 +63,14 @@ namespace FinanzasPersonalesWeb.Registros
 
                 if (control1)
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Usuario ya Existe.');", true);
-                    UsuarioTextBox.Focus();
+                    Utilitarios.ShowToastr(this.Page, "Este usuario ya existe.", "Error", "Error");
                 }
                 else if (control2)
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Correo ya Existe.');", true);
-                    EmailTextBox.Focus();
+                    Utilitarios.ShowToastr(this.Page, "Este correo ya existe.", "Error", "Error");
 
                 }
+
                 else
                 {
                     Usuario.Nombre = NombreTextBox.Text;
@@ -88,23 +85,11 @@ namespace FinanzasPersonalesWeb.Registros
 
                 if (paso)
                 {
-                    if (!AlertNotificationDiv.Visible)
-                        AlertNotificationDiv.Visible = true;
-                    if (!AlertNotificationBox.Visible)
-                        AlertNotificationBox.Visible = true;
-
-                    AlertNotificationDiv.Attributes.Add("class", "col-md-12 col-xs-12 col-ms-12 alert alert-success alert-dismissable");
-                    AlertNotificationBox.Text = "Transaccion Satisfactoria.";
+                    Utilitarios.ShowToastr(this.Page, "Transaccion Exitosa.", "Felicidades", "Success");
                 }
                 else
                 {
-                    if (!AlertNotificationDiv.Visible)
-                        AlertNotificationDiv.Visible = true;
-                    if (!AlertNotificationBox.Visible)
-                        AlertNotificationBox.Visible = true;
 
-                    AlertNotificationDiv.Attributes.Add("class", "col-md-12 col-xs-12 col-ms-12 alert alert-danger alert-dismissable");
-                    AlertNotificationBox.Text = "Ha habido un error en la solicitud, por favor, intentelo mas tarde.";
                 }
 
             }

@@ -26,7 +26,7 @@ namespace BLLTests
         public void EditarTest()
         {
             TiposUsuarios TipoUsuario = new TiposUsuarios();
-            TipoUsuario.IdTipoUsuario = 1;
+            TipoUsuario.TipoUsuarioId = 1;
             TipoUsuario.Descripcion = "Usuario";
 
             Assert.IsTrue(TipoUsuario.Editar());

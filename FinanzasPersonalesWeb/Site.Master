@@ -15,18 +15,14 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
-    <script src="Scripts/jquery-2.2.0.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    
-<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/toastr.min.css" rel="stylesheet" />
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css"
-        rel="stylesheet" />
+    <script src="/Scripts/jquery-2.2.0.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/toastr.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"
-        type="text/javascript"></script>
 
 
 </head>

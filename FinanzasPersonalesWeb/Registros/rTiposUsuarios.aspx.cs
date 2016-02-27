@@ -13,24 +13,24 @@ namespace FinanzasPersonalesWeb.Registro
 
         public void LlenarClase(TiposUsuarios TipoUsuario)
         {
-            TipoUsuario.IdTipoUsuario = (CodigoTextBox.Text == "") ? 0 : Convert.ToInt16(CodigoTextBox.Text);
+            TipoUsuario.TipoUsuarioId = (TipoUsuarioIdTextBox.Text == "") ? 0 : Convert.ToInt16(TipoUsuarioIdTextBox.Text);
             TipoUsuario.Descripcion = DescripcionTextBox.Text;
         }
         public void LlenarCampos(TiposUsuarios TipoUsuario)
         {
-            CodigoTextBox.Text = Convert.ToString(TipoUsuario.IdTipoUsuario);
+            TipoUsuarioIdTextBox.Text = Convert.ToString(TipoUsuario.TipoUsuarioId);
             DescripcionTextBox.Text = TipoUsuario.Descripcion;
         }
         public void Limpiar()
         {
-            CodigoTextBox.Text = "";
+            TipoUsuarioIdTextBox.Text = "";
             DescripcionTextBox.Text = "";
         }
         public void Habilitar()
         {
-            CodigoTextBox.Enabled = !CodigoTextBox.Enabled;
+            TipoUsuarioIdTextBox.Enabled = !TipoUsuarioIdTextBox.Enabled;
             DescripcionTextBox.Enabled = !DescripcionTextBox.Enabled;
-            BtnBuscar.Enabled = !BtnBuscar.Enabled;
+            BuscarButton.Enabled = !BuscarButton.Enabled;
             BtnNuevo.Enabled = !BtnNuevo.Enabled;
             BtnCancelar.Enabled = !BtnCancelar.Enabled;
             BtnModificar.Enabled = !BtnModificar.Enabled;
@@ -38,19 +38,18 @@ namespace FinanzasPersonalesWeb.Registro
             BtnEliminar.Enabled = !BtnEliminar.Enabled;
         }
 
-        protected void BtnBuscar_Click(object sender, EventArgs e)
+        protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            if (CodigoTextBox.Text == "")
+            if (TipoUsuarioIdTextBox.Text == "")
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco.');", true);
+                Utilitarios.ShowToastr(this.Page, "El ID no puede estar en Blanco.", "Advertencia", "Warning");
                 return;
-
             }
 
             TiposUsuarios TipoUsuario = new TiposUsuarios();
-            if (!(TipoUsuario.Buscar(Convert.ToInt16(CodigoTextBox.Text))))
+            if (!(TipoUsuario.Buscar(Convert.ToInt16(TipoUsuarioIdTextBox.Text))))
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro No Encontrado.');", true);
+                Utilitarios.ShowToastr(this.Page, "Registro no encontrado.", "Error", "Error");
                 Limpiar();
                 return;
             }
@@ -67,17 +66,17 @@ namespace FinanzasPersonalesWeb.Registro
 
         protected void BtnModificar_Click(object sender, EventArgs e)
         {
-            if (CodigoTextBox.Text == "")
+            if (TipoUsuarioIdTextBox.Text == "")
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco');", true);
+                Utilitarios.ShowToastr(this.Page, "El ID no puede estar en Blanco.", "Advertencia", "Warning");
                 return;
 
             }
             TiposUsuarios TipoUsuario = new TiposUsuarios();
 
-            if (!(TipoUsuario.Buscar(Convert.ToInt16(CodigoTextBox.Text))))
+            if (!(TipoUsuario.Buscar(Convert.ToInt16(TipoUsuarioIdTextBox.Text))))
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro No Encontrado.');", true);
+                Utilitarios.ShowToastr(this.Page, "Registro no encontrado.", "Error", "Error");
                 Limpiar();
                 return;
             }
@@ -100,7 +99,7 @@ namespace FinanzasPersonalesWeb.Registro
             TiposUsuarios TipoUsuario = new TiposUsuarios();
             LlenarClase(TipoUsuario);
 
-            if (TipoUsuario.IdTipoUsuario == 0)
+            if (TipoUsuario.TipoUsuarioId == 0)
             {
                 Paso = TipoUsuario.Insertar();
             }
@@ -111,7 +110,7 @@ namespace FinanzasPersonalesWeb.Registro
 
             if (Paso)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro  Guardado.');", true);
+                Utilitarios.ShowToastr(this.Page, "Transaccion Exitosa.", "Felicidades", "Success");
                 LlenarCampos(TipoUsuario);
                 Habilitar();
             }
@@ -120,24 +119,24 @@ namespace FinanzasPersonalesWeb.Registro
 
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
-            if (CodigoTextBox.Text == "")
+            if (TipoUsuarioIdTextBox.Text == "")
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El Codigo No Puede Estar en Blanco');", true);
+                Utilitarios.ShowToastr(this.Page, "El ID no puede estar en Blanco.", "Advertencia", "Warning");
                 return;
 
             }
             TiposUsuarios TipoUsuario = new TiposUsuarios();
 
-            if (!(TipoUsuario.Buscar(Convert.ToInt16(CodigoTextBox.Text))))
+            if (!(TipoUsuario.Buscar(Convert.ToInt16(TipoUsuarioIdTextBox.Text))))
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro No Encontrado.');", true);
+                Utilitarios.ShowToastr(this.Page, "Registro no encontrado.", "Error", "Error");
                 Limpiar();
                 return;
             }
 
             if (TipoUsuario.Eliminar())
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro  Eliminado.');", true);
+                Utilitarios.ShowToastr(this.Page, "Transaccion Exitosa.", "Felicidades", "Success");
 
             }
         }

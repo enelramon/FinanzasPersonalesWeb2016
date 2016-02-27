@@ -105,6 +105,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="Registros\rEgresos.aspx" />
     <Content Include="Ejemplo.html" />
@@ -125,14 +126,16 @@
     <Content Include="ReportViewers\ListadoTipoIngresoViewer.aspx" />
     <Content Include="ReportViewers\ListadoUsuarios.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
-    <Content Include="rTiposUsuarios.aspx" />
+    <Content Include="Registros\rTiposUsuarios.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Registros\rTipoEgreso.aspx" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utilitarios.cs" />
     <Content Include="App_Code\FinanzasDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -352,11 +355,11 @@
     <Compile Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx.designer.cs">
       <DependentUpon>ListadoUsuariosxTipoViewer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="rTiposUsuarios.aspx.cs">
+    <Compile Include="Registros\rTiposUsuarios.aspx.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="rTiposUsuarios.aspx.designer.cs">
+    <Compile Include="Registros\rTiposUsuarios.aspx.designer.cs">
       <DependentUpon>rTiposUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rUsuarios.aspx.cs">
