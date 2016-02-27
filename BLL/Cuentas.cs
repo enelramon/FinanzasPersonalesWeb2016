@@ -77,8 +77,8 @@ namespace BLL
                 this.CuentaId = (int)dt.Rows[0]["CuentaId"];
                 this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
                 this.Descripcion = dt.Rows[0]["Descripcion"].ToString();
-                this.Balance = (float)dt.Rows[0]["Balance"];
-                this.Porciento = (float)dt.Rows[0]["Porciento"];
+                this.Balance = float.Parse(dt.Rows[0]["Balance"].ToString());
+                this.Porciento = float.Parse(dt.Rows[0]["Porciento"].ToString());
 
 
             }
