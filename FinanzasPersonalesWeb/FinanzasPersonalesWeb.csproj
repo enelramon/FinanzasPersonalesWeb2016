@@ -119,6 +119,7 @@
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="Registros\rTransferencia.aspx" />
     <Content Include="ReportViewers\ListadoEgresos.aspx" />
+    <Content Include="ReportViewers\ListadoMiembros.aspx" />
     <Content Include="ReportViewers\ListadoPresupuestoReportViewer.aspx" />
     <Content Include="ReportViewers\ListadoTipoEgreso.aspx" />
     <Content Include="ReportViewers\ListadoTipoIngresoViewer.aspx" />
@@ -309,6 +310,13 @@
     <Compile Include="ReportViewers\ListadoEgresos.aspx.designer.cs">
       <DependentUpon>ListadoEgresos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReportViewers\ListadoMiembros.aspx.cs">
+      <DependentUpon>ListadoMiembros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoMiembros.aspx.designer.cs">
+      <DependentUpon>ListadoMiembros.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReportViewers\ListadoPresupuestoReportViewer.aspx.cs">
       <DependentUpon>ListadoPresupuestoReportViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -431,6 +439,7 @@
     <EmbeddedResource Include="Rpts\EgresosRpt.rdlc" />
     <EmbeddedResource Include="Rpts\ListadoPresupuesto.rdlc" />
     <EmbeddedResource Include="Rpts\ListadoUsuariosxTipo.rdlc" />
+    <EmbeddedResource Include="Rpts\MiembrosRpt.rdlc" />
     <EmbeddedResource Include="Rpts\TipoEgreso.rdlc" />
     <EmbeddedResource Include="Rpts\TipoIngresoRpt.rdlc" />
     <EmbeddedResource Include="Rpts\UsuarioReport.rdlc" />
