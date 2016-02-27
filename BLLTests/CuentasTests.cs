@@ -21,10 +21,9 @@ namespace BLL.Tests
         {
             Cuentas cuenta = new Cuentas();
 
-            cuenta.Descripcion = "cta ejemplo";
-            cuenta.Balance = 0;
-
-            cuenta.Porciento = 0;
+            cuenta.Descripcion = "cta ejemplo angel";
+            cuenta.Balance = 0.1f;
+            cuenta.Porciento = 0.4f;
 
             Assert.IsTrue(cuenta.Insertar());
         }

@@ -10,7 +10,7 @@
 namespace FinanzasPersonalesWeb.Registros {
     
     
-    public partial class MiembrosWebFor {
+    public partial class rCuentas {
         
         /// <summary>
         /// Label1 control.
@@ -22,22 +22,22 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// TbMiembroId control.
+        /// TbCuentaId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbMiembroId;
+        protected global::System.Web.UI.WebControls.TextBox TbCuentaId;
         
         /// <summary>
-        /// BtnBuscar control.
+        /// BuscarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnBuscar;
+        protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
         /// Label2 control.
@@ -49,13 +49,13 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// TbNombre control.
+        /// TbDescripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbNombre;
+        protected global::System.Web.UI.WebControls.TextBox TbDescripcion;
         
         /// <summary>
         /// MensajeLabel control.
@@ -76,13 +76,13 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label54;
         
         /// <summary>
-        /// TbApellido control.
+        /// TbBalance control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbApellido;
+        protected global::System.Web.UI.WebControls.TextBox TbBalance;
         
         /// <summary>
         /// Label546 control.
@@ -103,13 +103,13 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// TbParentesco control.
+        /// TbPorciento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbParentesco;
+        protected global::System.Web.UI.WebControls.TextBox TbPorciento;
         
         /// <summary>
         /// Label4 control.
@@ -119,33 +119,6 @@ namespace FinanzasPersonalesWeb.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// Label5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-        
-        /// <summary>
-        /// EstadoRbList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList EstadoRbList;
-        
-        /// <summary>
-        /// Label6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
         /// Label7 control.
@@ -175,31 +148,31 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// BtnLimpiar control.
+        /// LimpiarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLimpiar;
+        protected global::System.Web.UI.WebControls.Button LimpiarButton;
         
         /// <summary>
-        /// BtnGuardar control.
+        /// GuardarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnGuardar;
+        protected global::System.Web.UI.WebControls.Button GuardarButton;
         
         /// <summary>
-        /// BtnEliminar control.
+        /// EliminarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnEliminar;
+        protected global::System.Web.UI.WebControls.Button EliminarButton;
         
         /// <summary>
         /// AlertNotificationDiv control.

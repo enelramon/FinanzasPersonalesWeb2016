@@ -34,7 +34,9 @@
             <td class="auto-style4"></td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td>
+                <asp:HyperLink ID="MiembrosHyperLink" runat="server" NavigateUrl="~/ReportViewers/ListadoMiembros.aspx">Imprimir  Rpt</asp:HyperLink>
+            </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
