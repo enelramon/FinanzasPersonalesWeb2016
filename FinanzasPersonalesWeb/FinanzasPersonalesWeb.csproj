@@ -91,7 +91,7 @@
     <Content Include="App_Data\FinanzasPersonalesWebDb_log.ldf">
       <DependentUpon>FinanzasPersonalesWebDb.mdf</DependentUpon>
     </Content>
-    <Content Include="cCuentas.aspx" />
+    <Content Include="Consultas\cCuentas.aspx" />
     <Content Include="Consultas\cEgresos.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
     <Content Include="Consultas\cMiembros.aspx" />
@@ -111,7 +111,7 @@
     <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="rCuentas.aspx" />
+    <Content Include="Registros\rCuentas.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
     <Content Include="Registros\rPaises.aspx" />
@@ -146,11 +146,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TipoEgresoDataSet.xsd</DependentUpon>
     </Content>
-    <Compile Include="cCuentas.aspx.cs">
+    <Compile Include="Consultas\cCuentas.aspx.cs">
       <DependentUpon>cCuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="cCuentas.aspx.designer.cs">
+    <Compile Include="Consultas\cCuentas.aspx.designer.cs">
       <DependentUpon>cCuentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cEgresos.aspx.cs">
@@ -250,11 +250,11 @@
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rCuentas.aspx.cs">
+    <Compile Include="Registros\rCuentas.aspx.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="rCuentas.aspx.designer.cs">
+    <Compile Include="Registros\rCuentas.aspx.designer.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rMetasWebForm.aspx.cs">
