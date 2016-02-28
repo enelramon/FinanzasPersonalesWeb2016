@@ -91,6 +91,7 @@
     <Content Include="App_Data\FinanzasPersonalesWebDb_log.ldf">
       <DependentUpon>FinanzasPersonalesWebDb.mdf</DependentUpon>
     </Content>
+    <Content Include="Consultas\cCuentas.aspx" />
     <Content Include="Consultas\cEgresos.aspx" />
     <Content Include="Consultas\cIngresos.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
@@ -136,6 +137,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\cCuentas.aspx.cs">
+      <DependentUpon>cCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cCuentas.aspx.designer.cs">
+      <DependentUpon>cCuentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cIngresos.aspx.cs">
       <DependentUpon>cIngresos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
