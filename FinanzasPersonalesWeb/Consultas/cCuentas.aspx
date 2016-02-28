@@ -45,12 +45,17 @@
                             <SortedDescendingCellStyle BackColor="#CAC9C9" />
                             <SortedDescendingHeaderStyle BackColor="#33276A" />
                         </asp:GridView>
-                        
+                                    <td>
+            </td>
                     </div>
                 </div>
+
             </div>
             </td>
+
             
         </tr>
     </table>
+                <asp:HyperLink ID="MiembrosHyperLink" runat="server" NavigateUrl="~/ReportViewers/ListadoMiembros.aspx">Imprimir  Rpt</asp:HyperLink>
+
 </asp:Content>
