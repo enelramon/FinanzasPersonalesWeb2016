@@ -6,8 +6,14 @@ using System.Text;
 
 namespace BLL
 {
-    class Ingresos : ClaseMaestra
+    public class Ingresos : ClaseMaestra
     {
+        public int IngresoId { get; set; }
+        public double Monto { get; set; }
+        public int MiembroId { get; set; }
+        public int CuentaId { get; set; }
+        public int TipoIngresoId { get; set; }
+
         public override bool Buscar(int IdBuscado)
         {
             throw new NotImplementedException();
