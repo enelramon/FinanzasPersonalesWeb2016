@@ -20,7 +20,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+ 
         <div class="panel-body">
             <div class="form-horizontal col-md-12" role="form">
                 <div class="form-group">
@@ -89,7 +89,8 @@
 
 
             </div>
-            <div class="col-md-12">
+            <div class="col-md-3 control-label input-sm"></div>
+            <div class="col-md-8">
                 <asp:Button ID="Nuevobutton" runat="server" Class="btn btn-primary" Text="Nuevo" OnClick="Nuevobutton_Click" />
                 <asp:Button ID="GuardarButton" runat="server" OnClick="GuardarButton_Click1" Class="btn btn-success" Text="Guardar" />
                 <asp:Button ID="Eliminarbutton" runat="server" Text="Eliminar" Class="btn btn-danger" OnClick="Eliminarbutton_Click" />
@@ -99,7 +100,7 @@
 
         </div>
 
-    </div>
+
 
 
 </asp:Content>
