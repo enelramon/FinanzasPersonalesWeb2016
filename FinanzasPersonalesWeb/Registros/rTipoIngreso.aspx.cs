@@ -18,7 +18,7 @@ namespace FinanzasPersonalesWeb.Registros
             if (IsPostBack == false)
             {
                 UsuarioDropDownList.DataSource = Usuario.Listado(" * ", "1=1", "");
-                UsuarioDropDownList.DataTextField = "Nombres";
+                UsuarioDropDownList.DataTextField = "Nombre";
                 UsuarioDropDownList.DataValueField = "UsuarioId";
                 UsuarioDropDownList.DataBind();
             }
@@ -27,13 +27,10 @@ namespace FinanzasPersonalesWeb.Registros
         public int ValidarIdEntero(string IdTextBox)
         {
             int Id = 0;
+
             if (IdTextBox.Length > 0)
             {
                 bool result = Int32.TryParse(IdTextBox, out Id);
-            }
-            else
-            {
-                return 0;
             }
 
             return Id;
@@ -96,7 +93,7 @@ namespace FinanzasPersonalesWeb.Registros
 
                     if (TipodeIngreso.UsuarioId == 0)
                     {
-                        HttpContext.Current.Response.Write("<Script>alert('El Usuario no puede ser Nulo o Cero')</Script>");
+                        Utilitarios.ShowToastr(this.Page, "El Usuario no puede ser Nulo o Cero", "Error", "Error");
                     }
                     else
                     {
@@ -105,75 +102,64 @@ namespace FinanzasPersonalesWeb.Registros
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                    Utilitarios.ShowToastr(this.Page, "No hay Registro", "Error", "Error");
                     Limpiar();
                 }
             }
             else
             {
-                HttpContext.Current.Response.Write("<Script>alert('Ingrese un numero Valido')</Script>");
+                Utilitarios.ShowToastr(this.Page, "Ingrese un numero Valido", "Error", "Error");
                 Limpiar();
             }
     }
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            if (LlenarDatos())
-            {
-                if (TipodeIngreso.Insertar())
-                {
-                    HttpContext.Current.Response.Write("<Script>alert('Se Guardo Correctamente')</Script>");
-
-                    Limpiar();
-                }
-                else
-                {
-                    HttpContext.Current.Response.Write("<Script>alert('Error al Guardar')</Script>");
-                }
-            }
-            else
-            {
-                HttpContext.Current.Response.Write("<Script>alert('Faltan Datos')</Script>");
-            }
-        }
-
-        protected void ModificarButton_Click(object sender, EventArgs e)
-        {
             if (ValidarIdEntero(TipoIngresoTextBox.Text) > 0)
             {
-                if (TipodeIngreso.Buscar(ValidarIdEntero(TipoIngresoTextBox.Text)))
-                {
                     if (LlenarDatos())
                     {
                         TipodeIngreso.TipoIngresoId = ValidarIdEntero(TipoIngresoTextBox.Text);
 
                         if (TipodeIngreso.Editar())
                         {
-                            HttpContext.Current.Response.Write("<Script>alert('Se Modifico Correctamente')</Script>");
-
+                            Utilitarios.ShowToastr(this.Page, "Se Modifico", "Felicidades", "Success");
                             Limpiar();
                         }
                         else
                         {
-                            HttpContext.Current.Response.Write("<Script>alert('Error al Modificar')</Script>");
+                            Utilitarios.ShowToastr(this.Page, "No Modifico", "Error", "Error");
                         }
                     }
                     else
                     {
-                        HttpContext.Current.Response.Write("<Script>alert('Faltan Datos')</Script>");
+                        Utilitarios.ShowToastr(this.Page, "Faltan Datos", "Error", "Error");
+                    }
+            }
+            else
+            {
+                if (LlenarDatos())
+                {
+                    if (TipodeIngreso.Insertar())
+                    {
+                        Utilitarios.ShowToastr(this.Page, "Se Guardo", "Felicidades", "Success");
+                        Limpiar();
+                    }
+                    else
+                    {
+                        Utilitarios.ShowToastr(this.Page, "No Guardo", "Error", "Error");
                     }
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
-                    Limpiar();
+                    Utilitarios.ShowToastr(this.Page, "Faltan Datos", "Error", "Error");
                 }
             }
-            else
-            {
-                HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
-                Limpiar();
-            }
+        }
+
+        protected void LimpiarButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
 
         protected void EliminarButton_Click(object sender, EventArgs e)
@@ -186,24 +172,24 @@ namespace FinanzasPersonalesWeb.Registros
 
                     if (TipodeIngreso.Eliminar())
                     {
-                        HttpContext.Current.Response.Write("<Script>alert('Se Elimino Correctamente')</Script>");
+                        Utilitarios.ShowToastr(this.Page, "Se Elmino", "Felicidades", "Success");
 
                         Limpiar();
                     }
                     else
                     {
-                        HttpContext.Current.Response.Write("<Script>alert('Error al Eliminar')</Script>");
+                        Utilitarios.ShowToastr(this.Page, "No Elimino", "Error", "Error");
                     }
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                    Utilitarios.ShowToastr(this.Page, "No hay Registro", "Error", "Error");
                     Limpiar();
                 }
             }
             else
             {
-                HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                Utilitarios.ShowToastr(this.Page, "Ingrese un numero Valido", "Error", "Error");
                 Limpiar();
             }
         }

@@ -11,51 +11,66 @@
     </style>
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
-        <div class="row">
-        <div class="form-group">
+    <div class="panel panel-success">
+        <div class="panel-heading">Registro de Tipo Ingreso</div>
+        <div class="panel-body">
+        <div class="form-horizontal col-md-12" role="form">
+            <div class="form-group">
 
-            <div class="col-xs-3 col-sm-3 col-lg-2 col-md-3">
-           
-                    <h6><asp:Label ID="Label1" runat="server" Text="Tipo de Ingresos Id"></asp:Label></h6>
-                    <br />
-                    <h6><asp:Label ID="Label2" runat="server" Text="Descripcion"></asp:Label></h6>
-                    <br />
-                    <h6><asp:Label ID="Label3" runat="server" Text="Estado"></asp:Label></h6>
-                    <br />
-                    <h6><asp:Label ID="Label4" runat="server" Text="Usuarios"></asp:Label></h6>
-                    <br />
-                    
-                  
-            </div>
-
-            <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-primary" Text="Buscar" OnClick="BuscarButton_Click" />
-
-            <div class="col-xs-9 col-sm-9 col-lg-5 col-md-6">
-                    
-                    <asp:TextBox ID="TipoIngresoTextBox" CssClass="form-control" runat="server" placeholder ="Escribe un id"></asp:TextBox>
-                    <br />
-                    <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" placeholder ="Escribe una descripcion"></asp:TextBox>
-                    <br />
-                    <asp:RadioButtonList ID="EstadoRadioButtonList" runat="server" RepeatDirection="Horizontal" Width="365px">
-                        <asp:ListItem Selected="True">Activo</asp:ListItem>
-                        <asp:ListItem>No Activo</asp:ListItem>
-                    </asp:RadioButtonList>
-                    <br />
-                    <asp:DropDownList ID="UsuarioDropDownList" CssClass="form-control" runat="server">
-                    </asp:DropDownList>
-                    <br />
-                      
-
-                    <div class="col-lg-12 col-centered">
-                            <asp:Button ID="GuardarButton" CssClass="btn btn-success" runat="server" Text="Guardar" Width="101px" OnClick="GuardarButton_Click" />
-                    
-                            <asp:Button ID="ModificarButton" CssClass="btn btn-default" runat="server" Text="Modificar" Width="98px" OnClick="ModificarButton_Click" />
-                    
-                            <asp:Button ID="EliminarButton" CssClass="btn btn-danger" runat="server" Text="Eliminar" Width="102px" OnClick="EliminarButton_Click" />      
+                <%--TipoIngresoId--%>
+                <div class="form-group">
+                    <asp:Label For="TipoIngresoTexBox" ID="Label1" class="col-md-3 control-label input-sm" runat="server" Text="Id"></asp:Label>
+                    <div class="col-md-6 col-sm-4 col-lg-6">
+                        <asp:TextBox ID="TipoIngresoTextBox" CssClass="form-control" runat="server" placeholder ="Escribe un id"></asp:TextBox>
                     </div>
+                    <div class="col-md-2 col-sm-1 col-lg-2">
+                        <asp:Button For="TipoIngresoTexBox" ID="BuscarButton" runat="server" CssClass="btn btn-primary" Text="Buscar" OnClick="BuscarButton_Click" />
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+
+                <%--Descripcion--%>
+                <div class="form-group">
+                     <asp:Label For="DescripcionTexBox" ID="Label2" class="col-md-3 control-label input-sm" runat="server" Text="Descripcion"></asp:Label>
+                      <div class="col-lg-8 col-md-8">
+                          <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" placeholder ="Escribe una descripcion"></asp:TextBox>
+                      </div>
+                      <div class="col-md-1">
+                      </div>
+                </div>
+
+                <%--Estado--%>
+                <div class="form-group">
+                    <asp:Label For="EstadoRadioButtonList" ID="Label3" class="col-md-3 control-label input-sm" runat="server" Text="Estado"></asp:Label>
+                    <div class="col-lg-8 col-md-6">
+                        <asp:RadioButtonList ID="EstadoRadioButtonList" runat="server" RepeatDirection="Horizontal" Width="365px">
+                            <asp:ListItem Selected="True">Activo</asp:ListItem>
+                            <asp:ListItem>No Activo</asp:ListItem>
+                        </asp:RadioButtonList>
+                    </div>
+                    <div class="col-md-1">
+                     </div>
+                </div>
+
+                <%--Usuario--%>
+                <div class="form-group">
+                        <asp:Label For="UsuarioDropDownList" ID="Label4" class="col-md-3 control-label input-sm" runat="server" Text="Usuarios"></asp:Label>
+                        <div class="col-lg-6 col-md-6">
+                            <asp:DropDownList ID="UsuarioDropDownList" CssClass="form-control" runat="server">
+                            </asp:DropDownList>
+                        </div>
+                </div>
+
+                <div class="col-lg-12 col-centered">
+                        <asp:Button ID="GuardarButton" CssClass="btn btn-success" runat="server" Text="Guardar" Width="101px" OnClick="GuardarButton_Click" />
+                    
+                        <asp:Button ID="LimpiarButton" CssClass="btn btn-default" runat="server" Text="Limpiar" Width="98px" OnClick="LimpiarButton_Click" />
+                    
+                        <asp:Button ID="EliminarButton" CssClass="btn btn-danger" runat="server" Text="Eliminar" Width="102px" OnClick="EliminarButton_Click" />      
+                </div>
             </div>
         </div>
-    </div>
+        </div>
     </div>
 </asp:Content>
