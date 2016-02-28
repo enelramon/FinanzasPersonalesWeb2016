@@ -46,7 +46,7 @@ namespace FinanzasPersonalesWeb.Registros
 
         public bool LlenarDatos()
         {
-            bool retorno = true;
+            bool retorno = false;
 
             if (DescripcionTextBox.Text.Length > 0)
             {
