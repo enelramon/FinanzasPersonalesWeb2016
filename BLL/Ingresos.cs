@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using DAL;
 
 namespace BLL
 {
@@ -36,7 +37,16 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            throw new NotImplementedException();
+            ConexionDb Conexion = new ConexionDb();
+
+            string OrdenFinal = " ";
+
+            if (!Orden.Equals(""))
+            {
+                OrdenFinal = " Orden by " + Orden;
+            }
+
+            return Conexion.ObtenerDatos("select " + Campos + " from Ingresos where " + Condicion + " " + OrdenFinal);
         }
     }
 }
