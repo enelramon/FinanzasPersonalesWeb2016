@@ -49,7 +49,7 @@
                 </div>
                 
                 <div class="form-group"></div>
-            </div>
+            
             <%--GridView--%>
             <div class="form-group">
                 <div class="col-md-8">
@@ -59,7 +59,7 @@
                 </div>
                 
             </div>
-            
+            </div>
 
 
         </div>
