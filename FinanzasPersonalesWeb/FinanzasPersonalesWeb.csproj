@@ -92,6 +92,7 @@
       <DependentUpon>FinanzasPersonalesWebDb.mdf</DependentUpon>
     </Content>
     <Content Include="Consultas\cEgresos.aspx" />
+    <Content Include="Consultas\cIngresos.aspx" />
     <Content Include="Consultas\cMetasWebForm.aspx" />
     <Content Include="Consultas\cMiembros.aspx" />
     <Content Include="Consultas\cPresupuestos.aspx" />
@@ -111,6 +112,7 @@
     <Content Include="Ejemplo.html" />
     <Content Include="Include\Menu.ascx" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="Registros\rIngresos.aspx" />
     <Content Include="Registros\rMetasWebForm.aspx" />
     <Content Include="Registros\rMiembros.aspx" />
     <Content Include="Registros\rPaises.aspx" />
@@ -134,12 +136,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\cIngresos.aspx.cs">
+      <DependentUpon>cIngresos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cIngresos.aspx.designer.cs">
+      <DependentUpon>cIngresos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rCuentas.aspx.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Registros\rCuentas.aspx.designer.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rIngresos.aspx.cs">
+      <DependentUpon>rIngresos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rIngresos.aspx.designer.cs">
+      <DependentUpon>rIngresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios.cs" />
     <Content Include="App_Code\FinanzasDataSet.Designer.cs">
