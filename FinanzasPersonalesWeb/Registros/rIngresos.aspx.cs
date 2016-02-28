@@ -13,13 +13,14 @@ namespace FinanzasPersonalesWeb.Registros
         TiposIngresos TipodeIngreso = new TiposIngresos();
         Cuentas Cuenta = new Cuentas();
         Miembros Miembro = new Miembros();
+        Ingresos Ingreso = new Ingresos();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 MiembroDropDownList.DataSource = Miembro.Listado(" * ", "1=1", "");
-                MiembroDropDownList.DataTextField = "Nombres";
+                MiembroDropDownList.DataTextField = "Nombre";
                 MiembroDropDownList.DataValueField = "MiembroId";
                 MiembroDropDownList.DataBind();
 
@@ -47,6 +48,18 @@ namespace FinanzasPersonalesWeb.Registros
             return Id;
         }
 
+        public double ValidarIdDouble(string IdTextBox)
+        {
+            double Id = 0;
+
+            if (IdTextBox.Length > 0)
+            {
+                bool result = double.TryParse(IdTextBox, out Id);
+            }
+
+            return Id;
+        }
+
         public void Limpiar()
         {
             MontoTexBox.Text = "";
@@ -57,13 +70,19 @@ namespace FinanzasPersonalesWeb.Registros
 
         public bool LlenarDatos()
         {
-            bool retorno = true;
+            bool retorno = false;
 
             if (MontoTexBox.Text.Length > 0)
             {
+                Ingreso.Monto = ValidarIdDouble(MontoTexBox.Text);
                 Ingreso.TipoIngresoId = ValidarIdEntero(TipoIngresoDropDownList.SelectedValue);
                 Ingreso.MiembroId = ValidarIdEntero(MiembroDropDownList.SelectedValue);
                 Ingreso.CuentaId = ValidarIdEntero(CuentaDropDownList.SelectedValue);
+                retorno = true;
+            }
+            else
+            {
+                retorno = false;
             }
 
             return retorno;
@@ -75,13 +94,13 @@ namespace FinanzasPersonalesWeb.Registros
             {
                 if (Ingreso.Buscar(ValidarIdEntero(IngresoTextBox.Text)))
                 {
-                    MontoTexBox.Text =
+                    MontoTexBox.Text = Ingreso.Monto.ToString();
 
-                    CuentaDropDownList.SelectedValue =
+                    CuentaDropDownList.SelectedValue = Ingreso.CuentaId.ToString();
 
-                    TipoIngresoDropDownList.SelectedValue =
+                    TipoIngresoDropDownList.SelectedValue = Ingreso.TipoIngresoId.ToString();
 
-                    MiembroDropDownList.SelectedValue =
+                    MiembroDropDownList.SelectedValue = Ingreso.MiembroId.ToString();
                 }
                 else
                 {

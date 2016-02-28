@@ -25,7 +25,7 @@
                 <%--Monto--%>
                 <div class="form-group">
                      <asp:Label For="MontoTexBox" ID="Label2" class="col-md-3 control-label input-sm" runat="server" Text="Monto"></asp:Label>
-                      <div class="col-lg-8 col-md-8">
+                      <div class="col-lg-6 col-md-6">
                           <asp:TextBox ID="MontoTexBox" CssClass="form-control" runat="server" placeholder ="Escribe un Monto"></asp:TextBox>
                       </div>
                       <div class="col-md-1">
@@ -59,13 +59,13 @@
                         </div>
                 </div>
 
-                <div class="col-lg-12 col-centered">
+                <div class="col-lg-12 col-md-12 col-centered">
                         <asp:Button ID="GuardarButton" CssClass="btn btn-success" runat="server" Text="Guardar" Width="101px" OnClick="GuardarButton_Click" />
                     
                         <asp:Button ID="LimpiarButton" CssClass="btn btn-default" runat="server" Text="Limpiar" Width="98px" OnClick="LimpiarButton_Click" />
                     
-                        <asp:Button ID="EliminarButton" CssClass="btn btn-danger" runat="server" Text="Eliminar" Width="102px" OnClick="EliminarButton_Click" />      
-                </div>
+                        <asp:Button ID="EliminarButton" CssClass="btn btn-danger" runat="server" Text="Eliminar" Width="102px" OnClick="EliminarButton_Click" />     
+                </div>                
             </div>
         </div>
         </div>
