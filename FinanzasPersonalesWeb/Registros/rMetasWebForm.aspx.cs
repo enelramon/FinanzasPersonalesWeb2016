@@ -135,14 +135,21 @@ namespace FinanzasPersonalesWeb.Registros
             if (Id > 0)
             {
                 meta.MetaId = Id;
-                if (meta.Eliminar())
+                if (meta.Buscar(meta.MetaId))
                 {
-                    ShowToast("success", "Eliminado", "Eliminado Correctamente");
-                    Limpiar();
+                    if (meta.Eliminar())
+                    {
+                        ShowToast("success", "Eliminado", "Eliminado Correctamente");
+                        Limpiar();
+                    }
+                    else
+                    {
+                        ShowToast("error", "Error", "Error al Eliminado");
+                    }
                 }
                 else
                 {
-                    ShowToast("error", "Error", "Error al Eliminado");
+                    ShowToast("warning", "Incorrecto", "Id No Existe");
                 }
             }
             else
