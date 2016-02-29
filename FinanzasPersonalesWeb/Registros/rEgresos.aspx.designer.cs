@@ -40,15 +40,6 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
         
         /// <summary>
-        /// CuentaIdDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CuentaIdDropDownList;
-        
-        /// <summary>
         /// MontoTextBox control.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,15 @@ namespace FinanzasPersonalesWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox MontoTextBox;
+        
+        /// <summary>
+        /// CuentaIdDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CuentaIdDropDownList;
         
         /// <summary>
         /// MiembroIdDropDownList control.
@@ -76,13 +76,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.DropDownList TipoEgresoIdDropDownList;
         
         /// <summary>
-        /// ObservacionTextBox control.
+        /// ObservacionesTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ObservacionTextBox;
+        protected global::System.Web.UI.WebControls.TextBox ObservacionesTextBox;
         
         /// <summary>
         /// NuevoButton control.
@@ -94,13 +94,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Button NuevoButton;
         
         /// <summary>
-        /// GuardarButton control.
+        /// GuadarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GuardarButton;
+        protected global::System.Web.UI.WebControls.Button GuadarButton;
         
         /// <summary>
         /// EliminarButton control.
