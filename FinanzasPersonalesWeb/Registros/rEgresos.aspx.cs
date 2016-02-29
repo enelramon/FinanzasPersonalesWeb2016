@@ -118,7 +118,7 @@ namespace FinanzasPersonalesWeb
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al Guardar')</SCRIPT>");
+                    ShowToastr(this, "Error al guardar","Error","Danger");
                 }
             }
             else
@@ -129,18 +129,18 @@ namespace FinanzasPersonalesWeb
                     LlenarDatos(egresos);
                     if (egresos.Editar())
                     {
-                        HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Editado correctamente')</SCRIPT>");
+                        ShowToastr(this,"Egreso editado correctamente","Mensaje","Success");
                         Limpiar();
                     }
                     else
                     {
-                        HttpContext.Current.Response.Write("<SCRIPT>alert('Error al editar')<SCRIPT/>");
+                        ShowToastr(this, "Error al editar", "Error", "Danger");
                     }
                 }
                 else
                 {
 
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('No existe ese Id')<SCRIPT/>");
+                    ShowToastr(this, "No existe ese ID", "Alerta", "Warning");
                 }
             }
         }
@@ -149,13 +149,17 @@ namespace FinanzasPersonalesWeb
         {
             Egresos egreso = new Egresos();
             egreso.EgresoId = Convertir();
+            if(EgresoIdTextBox.Text.Length == 0)
+            {
+                ShowToastr(this, "Debe de especificar el ID","Alerta","Warning");
+            }
             if (egreso.Eliminar())
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso eliminado')</SCRIPT>");
+                ShowToastr(this, "Egreso eliminado", "Mensaje", "Success");
             }
             else
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Error al eliminar')</SCRIPT>");
+                ShowToastr(this, "Error al eliminar", "Error", "Danger");
             }
         }
 
@@ -166,7 +170,7 @@ namespace FinanzasPersonalesWeb
 
             if (EgresoIdTextBox.Text.Length == 0)
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Debe de llenar el campo EgresoId')</SCRIPT>");
+                ShowToastr(this, "Debe especificar el ID", "Alerta", "Warning");
             }
             else
             {
@@ -179,9 +183,9 @@ namespace FinanzasPersonalesWeb
                     ObservacionesTextBox.Text = egreso.Observacion;
                     MiembroIdDropDownList.SelectedValue = egreso.MiembroId.ToString();
                 }
-                else
+                else 
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al buscar')<SCRIPT/>");
+                    ShowToastr(this, "Error al buscar", "Error", "Danger");
                 }
             }
         }

@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <label for="EgresoIdTextBox" class="col-md-3 control-label input-sm">EgresoId: </label>
                     <div class="col-md-4 col-sm-2 col-xs-4">
-                        <asp:TextBox ID="EgresoIdTextBox" runat="server" ReadOnly="True" placeholder="0" class="form-control input-sm"></asp:TextBox>
+                        <asp:TextBox ID="EgresoIdTextBox" runat="server" placeholder="0" class="form-control input-sm" type="number"></asp:TextBox>
                     </div>
                     <div class="col-md-4 col-sm-2 col-xs-4">
                         <asp:Button ID="BuscarButton" runat="server" class="btn btn-info btn-md" Text="Buscar" OnClick="BuscarButton_Click1" />
@@ -64,7 +64,7 @@
                 <div class="form-group">
                     <label for="FechaTextBox" class="col-md-3 control-label input-sm">Fecha:</label>
                     <div class="col-md-5">
-                        <asp:TextBox ID="FechaTextBox" runat="server" Class="form-control input-sm"></asp:TextBox>
+                        <asp:TextBox ID="FechaTextBox" runat="server" Class="form-control input-sm" TextMode="Date"></asp:TextBox>
 
 
                     </div>
@@ -76,7 +76,7 @@
                 <div class="form-group">
                     <label for="MontoTextBox" class="col-md-3 control-label input-sm">Monto:</label>
                     <div class="col-md-5">
-                        <asp:TextBox ID="MontoTextBox" runat="server" Class="form-control input-sm"></asp:TextBox>
+                        <asp:TextBox ID="MontoTextBox" runat="server" Class="form-control input-sm" placeholder="'20,000'"></asp:TextBox>
 
 
                     </div>
@@ -124,7 +124,7 @@
                 <div class="form-group">
                     <label for="ObservacionesTextBox" class="col-md-3 control-label input-sm">Observaciones:</label>
                     <div class="col-md-5">
-                        <asp:TextBox ID="ObservacionesTextBox" runat="server" Class="form-control input-sm" Rows="4" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="ObservacionesTextBox" runat="server" Class="form-control input-sm" Rows="4" placeholder="'Egreso para el colegio'" TextMode="MultiLine"></asp:TextBox>
 
 
                     </div>
