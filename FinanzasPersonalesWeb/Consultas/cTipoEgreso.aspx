@@ -8,6 +8,7 @@
           <div class="panel-body">
             <div class="form-horizontal col-md-12" role="form">
          
+                <%--Campo--%>
                 <div class="form-group">
                    <asp:Label ID="Label2" runat="server" Class=" col-md-3 control-label input-sm" Text="Consultar por:"></asp:Label>
                    <div class="col-md-2">
