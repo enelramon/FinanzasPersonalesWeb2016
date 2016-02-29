@@ -12,7 +12,7 @@ namespace FinanzasPersonalesWeb.Registros
     {  
         protected void Page_Load(object sender, EventArgs e)
         {
-             //LlenarDropDownList();
+             LlenarDropDownList();
         }
 
         public void Limpiar()
@@ -38,15 +38,14 @@ namespace FinanzasPersonalesWeb.Registros
         {
             Metas meta = new Metas();
             meta.Descripcion = DescripcionTextBox.Text;
-            meta.UsuarioId = 1;
+            meta.UsuarioId = 5;
             meta.TipoIngresoId = Convert.ToInt32(TipoDeIngresoDropDownList.SelectedValue);
             meta.LimpiarList();
 
             for (int i = 0; i < MetasListBox.Items.Count; i++)
             {
-                int id = (int)meta.ObtenerMetaId().Rows[0]["MetaId"];
                 Double monto = Convert.ToDouble(MetasListBox.Items[i].ToString());
-                meta.AgregarMetas(id,meta.TipoIngresoId , monto);
+                meta.AgregarMetas(1,meta.TipoIngresoId , monto);
             }
 
             if (MetaIdTextBox.Text.Length <= 0)
@@ -54,12 +53,12 @@ namespace FinanzasPersonalesWeb.Registros
                 
                 if (meta.Insertar())
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Guardado Correctamente')</SCRIPT>");
+                    ShowToast("success", "Correcto", "Guardado Correctamente");
                     Limpiar();
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al Guardar')</SCRIPT>");
+                    ShowToast("error", "Error", "Error Al Guardar");
                 }
             }
             else
@@ -71,17 +70,17 @@ namespace FinanzasPersonalesWeb.Registros
                     meta.MetaId = Id;
                     if (meta.Editar())
                     {
-                        HttpContext.Current.Response.Write("<SCRIPT>alert('Modificado Correctamente')</SCRIPT>");
+                        ShowToast("success", "Modificado", "Modificado Correctamente");
                         Limpiar();
                     }
                     else
                     {
-                        HttpContext.Current.Response.Write("<SCRIPT>alert('Error al Modificar')</SCRIPT>");
+                        ShowToast("error", "Error", "Error Al Modificar");
                     }
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Id Incorrecto')</SCRIPT>");
+                    ShowToast("warning", "Incorrecto", "Id Incorrecto");
                 }
             }
         }
@@ -105,12 +104,12 @@ namespace FinanzasPersonalesWeb.Registros
                 }
                 else
                 {
-                    ShowToast("Error", "Error", "Id No Existe");
+                    ShowToast("error", "Error", "Id No Existe");
                 }
             }
             else
             {
-                ShowToast("Warning", "Incorrecto", "Id Incorrecto");
+                ShowToast("warning", "Incorrecto", "Id Incorrecto");
             }
             
         }
@@ -124,7 +123,7 @@ namespace FinanzasPersonalesWeb.Registros
             }
             else
             {
-                ShowToast("Warning", "Advertencia", "Ingrese un Monto");
+                ShowToast("warning", "Advertencia", "Ingrese un Monto");
             }
         }
 
@@ -143,12 +142,12 @@ namespace FinanzasPersonalesWeb.Registros
                 }
                 else
                 {
-                    ShowToast("Error", "Error", "Error al Eliminado");
+                    ShowToast("error", "Error", "Error al Eliminado");
                 }
             }
             else
             {
-                ShowToast("Warning", "Incorrecto", "Id Incorrecto");
+                ShowToast("warning", "Incorrecto", "Id Incorrecto");
             }
         }
 
