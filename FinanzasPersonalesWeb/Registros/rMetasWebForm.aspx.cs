@@ -105,12 +105,12 @@ namespace FinanzasPersonalesWeb.Registros
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Id No Existe')</SCRIPT>");
+                    ShowToast("Error", "Error", "Id No Existe");
                 }
             }
             else
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Id Incorrecto')</SCRIPT>");
+                ShowToast("Warning", "Incorrecto", "Id Incorrecto");
             }
             
         }
@@ -124,7 +124,7 @@ namespace FinanzasPersonalesWeb.Registros
             }
             else
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Ingrese un Monto')</SCRIPT>");
+                ShowToast("Warning", "Advertencia", "Ingrese un Monto");
             }
         }
 
@@ -138,24 +138,29 @@ namespace FinanzasPersonalesWeb.Registros
                 meta.MetaId = Id;
                 if (meta.Eliminar())
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Eliminado Correctamente')</SCRIPT>");
+                    ShowToast("success", "Eliminado", "Eliminado Correctamente");
                     Limpiar();
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al Eliminado')</SCRIPT>");
+                    ShowToast("Error", "Error", "Error al Eliminado");
                 }
             }
             else
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Id Incorrecto')</SCRIPT>");
+                ShowToast("Warning", "Incorrecto", "Id Incorrecto");
             }
         }
 
         protected void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
+            ShowToast("success", "Limpiar", "Limpio Correctamente");
         }
 
+        public void ShowToast(string tipo, string titulo, string mensaje)
+        {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr." + tipo + "('" + mensaje + "', '" + titulo + "')", true);
+        }
     }
 }
