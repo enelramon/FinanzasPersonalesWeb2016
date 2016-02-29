@@ -76,7 +76,7 @@ namespace FinanzasPersonalesWeb
             }
             else
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Error al buscar el tipo egreso')</SCRIPT>");
+                Utilitarios.ShowToastr(this.Page,"Error","Error al buscar el tipo egreso", "Error");
             }
         }
 
@@ -97,23 +97,24 @@ namespace FinanzasPersonalesWeb
                 LLenarDatos(egreso);
                 if (Validar() == 0 && egreso.Editar())
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Tipo egreso editado')</SCRIPT>");
+                    Utilitarios.ShowToastr(this.Page, "Tipo egreso editado", "Correcto", "Success");
                     Limpiar();
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al editar el tipo egreso')</SCRIPT>");
+                    Utilitarios.ShowToastr(this.Page, "No se  pudo editar el tipo egreso", "Error", "Error");
                 }
             }
             else if (TipoEgresoIdTextBox.Text.Equals(""))
             {
                 if (Validar() == 0 && egreso.Insertar())
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Tipo egreso guardado')</SCRIPT>");
-                    Limpiar();                }
+                    Utilitarios.ShowToastr(this.Page, "Tipo egreso guardado", "Correcto", "Success");
+                    Limpiar();
+                }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al guardar el tipo egreso')</SCRIPT>");
+                    Utilitarios.ShowToastr(this.Page, "No se  pudo guardar el tipo egreso", "Error", "Error");
                 }
             }
            
@@ -123,19 +124,22 @@ namespace FinanzasPersonalesWeb
         {
             TiposEgresos egreso = new TiposEgresos();
 
-            int id;
-            int.TryParse(TipoEgresoIdTextBox.Text, out id);
-            egreso.TipoEgresoId = id;
+
             if (!TipoEgresoIdTextBox.Equals(""))
+            {
+                int id;
+                int.TryParse(TipoEgresoIdTextBox.Text, out id);
+                egreso.TipoEgresoId = id;
                 if (egreso.Eliminar())
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Tipo egreso eliminado')</SCRIPT>");
+                    Utilitarios.ShowToastr(this.Page, "Tipo egreso eliminado", "Correcto", "Success");
                     Limpiar();
                 }
-                else
-                {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al eliminar el tipo egreso')</SCRIPT>");
-                }
+            }
+            else
+            {
+                Utilitarios.ShowToastr(this.Page, "No se pudo eliminar el tipo egreso", "Error", "Error");
+            }
         }
     }
 }
