@@ -96,7 +96,7 @@
     <Content Include="Consultas\cMetasWebForm.aspx" />
     <Content Include="Consultas\cMiembros.aspx" />
     <Content Include="Consultas\cPresupuestos.aspx" />
-    <Content Include="Consultas\cTipoIngresoWebForm.aspx" />
+    <Content Include="Consultas\cTipoIngreso.aspx" />
     <Content Include="Consultas\cTiposUsuarios.aspx" />
     <Content Include="Consultas\cTransferencias.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
@@ -196,12 +196,12 @@
     <Compile Include="Consultas\cPresupuestos.aspx.designer.cs">
       <DependentUpon>cPresupuestos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\cTipoIngresoWebForm.aspx.cs">
-      <DependentUpon>cTipoIngresoWebForm.aspx</DependentUpon>
+    <Compile Include="Consultas\cTipoIngreso.aspx.cs">
+      <DependentUpon>cTipoIngreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\cTipoIngresoWebForm.aspx.designer.cs">
-      <DependentUpon>cTipoIngresoWebForm.aspx</DependentUpon>
+    <Compile Include="Consultas\cTipoIngreso.aspx.designer.cs">
+      <DependentUpon>cTipoIngreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cTiposUsuarios.aspx.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
