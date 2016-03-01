@@ -66,8 +66,9 @@ namespace BLL
 
                 retorno = conexion.Ejecutar(comando.ToString());
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                throw ex;
                 retorno = false;
             }
 
@@ -107,8 +108,10 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("Delete from Metas where MetaId = {0};" +
-                    "Delete from MetasDetalle where MetaId = {0};", this.MetaId));
+                retorno = conexion.Ejecutar(String.Format("Alter table MetasDetalle NOCHECK constraint ALL ;"
+                                      + "Delete from Metas where MetaId = {0};"
+                                      + "Delete from MetasDetalle where MetaId = {0};"
+                                      + "Alter table MetasDetalle CHECK constraint ALL ;", this.MetaId));
             }
             catch (Exception)
             {

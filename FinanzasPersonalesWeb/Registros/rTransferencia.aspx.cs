@@ -14,11 +14,6 @@ namespace FinanzasPersonalesWeb
 
         }
 
-        protected void Guardarbutton_Click(object sender, EventArgs e)
-        {
-            
-
-        }
 
         public void Limpiar()
         {

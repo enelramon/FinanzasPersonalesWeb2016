@@ -122,7 +122,7 @@ namespace BLL
 
             if (!Orden.Equals(""))
             {
-                OrdenFinal = " Orden by " + Orden;
+                OrdenFinal = " Order by " + Orden;
             }
 
             return Conexion.ObtenerDatos("select " + Campos + " from TiposIngresos where " + Condicion + " " + OrdenFinal);

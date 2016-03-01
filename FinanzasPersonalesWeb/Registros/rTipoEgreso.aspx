@@ -4,12 +4,13 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="panel panel-primary">
+    <div class="panel panel-success">
         <div class="panel-heading">Registro de Tipo egresos</div>
 
         <div class="panel-body">
             <div class="form-horizontal col-md-12" role="form">
 
+                <%--TipoEgresoId--%>
                  <div class="form-group">
                    <asp:Label ID="Label1" runat="server" class="col-md-3 control-label input-sm" Text="TipoEgresoId"></asp:Label>
                     <div class="col-md-6 col-sm-2 col-xs-4">
@@ -22,6 +23,7 @@
                     </div>
                   </div>
             
+                <%--Descripcion--%>
                 <div class="form-group">
                    <asp:Label ID="Label2" runat="server" class="col-md-3 control-label input-sm" Text="Descripcion"></asp:Label>
                    <div class="col-md-6">
@@ -32,6 +34,7 @@
                   </div>  
                 </div>
     
+                <%--Estado--%>
                 <div class="form-group">
                    <asp:Label ID="Label4" runat="server" class="col-md-3 control-label input-sm" Text="Estado"></asp:Label>
                    <div class="col-md-8">
@@ -44,6 +47,7 @@
                    </div>
                </div>
            
+                <%--Usuario--%>
                <div class="form-group">
                    <asp:Label ID="Label3" runat="server" class="col-md-3 control-label input-sm" Text="Usuario"></asp:Label>
                    <div class="col-md-7">

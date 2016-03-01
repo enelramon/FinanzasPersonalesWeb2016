@@ -26,54 +26,54 @@
                     <div class="col-md-8">
                         <asp:TextBox ID="NombreTextBox" runat="server" placeholder="Escriba su nombre aqui" Class="form-control input-sm"></asp:TextBox>
                     </div>
-                    <div class="col-md-1">
-                    </div>
                 </div>
 
 
-
-            </div>
-            <div class="form-inline col-md-12" role="form">
+                <div class="form-group"></div>
                 <%--Tipo telefono--%>
                 <div class="form-group">
-                    <label for="TipoTelefonoDropDownLkist" class="col-md-6 control-label input-sm">Tipo Telefono</label>
-                    <div class="col-md-6">
+                    <label for="TipoTelefonoDropDownLkist" class="col-xs-3 control-label input-sm">Tipo Telefono</label>
+                    <div class="col-md-8">
                         <asp:DropDownList ID="TipoTelefonoDropDownList" runat="server" Class="form-control input-sm"></asp:DropDownList>
                     </div>
                 </div>
-
+                <div class="form-group"></div>
                 <%--Telefono--%>
+               
                 <div class="form-group">
-                    <label for="TelefonoTexBox" class="col-md-2 control-label input-sm">Telefono</label>
-
-                    <div class="col-md-2">
-                        <asp:TextBox ID="TelefonoTexBox" runat="server" Class="form-control input-sm"></asp:TextBox>
+                    <label for="TelefonoTexBox" class="col-md-3 control-label input-sm">Telefono</label>
+                    <div class="col-md-8">
+                        <asp:TextBox ID="TelefonoTexBox" runat="server" placeholder="Telefono" Class="form-control input-sm"></asp:TextBox>
                     </div>
-                     
+                    <asp:Button ID="AgregarButton" CssClass="btn btn-primary" runat="server" Text="Agregar" OnClick="AgregarButton_Click" />
+                </div>
+                
+                <div class="form-group"></div>
+            
+            <%--GridView--%>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <asp:GridView class="table" ID="TelefonosGridView" runat="server">
+                </asp:GridView>
 
                 </div>
-                 <asp:Button ID="AgregarButton" CssClass="btn btn-primary" runat="server" Text="Agregar" OnClick="AgregarButton_Click" />
-
-
+                
             </div>
-            
-                <asp:GridView class="table" ID="TelefonosGridView" runat="server" >
-                   
-                </asp:GridView>
-            
+            </div>
+
 
         </div>
     </div>
-     <div class="panel-footer">
-            <div class="text-center">
-                <div class="form-group" style="display: inline-block">
+    <div class="panel-footer">
+        <div class="text-center">
+            <div class="form-group" style="display: inline-block">
 
-                    <asp:Button Text="Nuevo" class ="btn btn-warning btn-sm" runat="server" ID="NuevoButton"  />
-                    <asp:Button Text="Guardar" class ="btn btn-success btn-sm" runat="server" ID="GuadarButton" OnClick="GuadarButton_Click"  />
-                    <asp:Button Text="Eliminar" class ="btn btn-danger btn-sm" runat="server" ID="EliminarButton"  />
+                <asp:Button Text="Nuevo" class="btn btn-warning btn-sm" runat="server" ID="NuevoButton" />
+                <asp:Button Text="Guardar" class="btn btn-success btn-sm" runat="server" ID="GuadarButton" OnClick="GuadarButton_Click" />
+                <asp:Button Text="Eliminar" class="btn btn-danger btn-sm" runat="server" ID="EliminarButton" />
 
-                </div>
             </div>
-
         </div>
+
+    </div>
 </asp:Content>

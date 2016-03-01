@@ -78,6 +78,9 @@ create table MetasDetalle
 );
 
 select * from Metas
+select * from MetasDetalle
+select * from Egresos
+insert into TiposIngresos values('Ganado',0,5)
 
 --Script Angel
 create table Miembros (
