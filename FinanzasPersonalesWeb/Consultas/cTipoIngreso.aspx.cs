@@ -8,7 +8,7 @@ using BLL;
 
 namespace FinanzasPersonalesWeb.Consultas
 {
-    public partial class cTipoIngresoWebForm : System.Web.UI.Page
+    public partial class cTipoIngreso : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,7 @@ namespace FinanzasPersonalesWeb.Consultas
 
             if (ConsultaGridView.Rows.Count == 0)
             {
-                HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                Utilitarios.ShowToastr(this.Page, "No hay Registro", "Error", "Error");
             }
         }
 
@@ -27,10 +27,7 @@ namespace FinanzasPersonalesWeb.Consultas
             {
                 bool result = Int32.TryParse(IdTextBox, out Id);
             }
-            else
-            {
-                return 0;
-            }
+
             return Id;
         }
 
@@ -95,7 +92,7 @@ namespace FinanzasPersonalesWeb.Consultas
 
                 if (ConsultaGridView.Rows.Count == 0)
                 {
-                    HttpContext.Current.Response.Write("<Script>alert('No hay Registro')</Script>");
+                    Utilitarios.ShowToastr(this.Page, "No hay Registro", "Error", "Error");
                     LlenarGrid(" 1=1 ");                       
                 }
 
@@ -103,7 +100,7 @@ namespace FinanzasPersonalesWeb.Consultas
             }
             else
             {
-                HttpContext.Current.Response.Write("<Script>alert('Ingrese un caracter valido')</Script>");
+                Utilitarios.ShowToastr(this.Page, "Ingrese un Caracter Valido", "Error", "Error");
 
                 Limpiar();
             }
