@@ -8,7 +8,7 @@ using BLL;
 
 namespace FinanzasPersonalesWeb.Consultas
 {
-    public partial class cMetasWebForm : System.Web.UI.Page
+    public partial class cMetas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,6 +59,11 @@ namespace FinanzasPersonalesWeb.Consultas
         public void ShowToast(string tipo, string titulo, string mensaje)
         {
             Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr." + tipo + "('" + mensaje + "', '" + titulo + "')", true);
+        }
+
+        protected void ImprimirButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
