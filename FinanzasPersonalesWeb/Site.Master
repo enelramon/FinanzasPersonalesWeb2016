@@ -53,7 +53,7 @@
                                     <a href="/Registros/rCuentas.aspx">Agregar Nueva Cuenta</a>
                                 </li>
                                 <li>
-                                    <a href="/Registros/rMetasWebForm.aspx">Agregar Nueva Meta</a>
+                                    <a href="/Registros/rMetas.aspx">Agregar Nueva Meta</a>
                                 </li>
                                 <li>
                                     <a href="/Registros/rMiembros.aspx">Agregar Nuevo Miembro</a>
@@ -91,7 +91,7 @@
                                     <a href="/Consultas/cCuentas.aspx">Consultar Cuentas</a>
                                 </li>
                                 <li>
-                                    <a href="/Consultas/cMetasWebForm.aspx">Consultar Metas</a>
+                                    <a href="/Consultas/cMetas.aspx">Consultar Metas</a>
                                 </li>
                                 <li>
                                     <a href="/Consultas/cMiembros.aspx">Consultar Miembros</a>
