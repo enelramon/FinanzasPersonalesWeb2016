@@ -1,24 +1,24 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cIngresos.aspx.cs" Inherits="FinanzasPersonalesWeb.Consultas.cIngresos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cTipoIngreso.aspx.cs" Inherits="FinanzasPersonalesWeb.Consultas.cTipoIngreso" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+    
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="panel panel-success">
-        <div class="panel-heading">Consultar de Ingresos</div>
+        <div class="panel-heading">Consultar de Tipo Ingreso</div>
         <div class="panel-body">
         <div class="form-horizontal col-md-12" role="form">
             <div class="form-group">
-
+                    
                     <%--Consultar--%>
                     <div class="form-group">
-                        <asp:Label For="CodigoTextBox" ID="Label1" class="col-md-3 control-label input-sm" runat="server" Text=" Consultar por"></asp:Label>
+                        <asp:Label ID="Label1" class="col-md-3 control-label input-sm" runat="server" Text=" Consultar por"></asp:Label>
                         <div class="col-lg-2 col-md-2">
-                             <asp:DropDownList ID="IngresoDropDownList" CssClass="form-control" runat="server" Height="38px">
-                                 <asp:ListItem Value="IngresoId">IngresoId</asp:ListItem>
-                                 <asp:ListItem Value="Fecha">Fecha</asp:ListItem>
-                                 <asp:ListItem Value="CuentaId">CuentaId</asp:ListItem>
-                                 <asp:ListItem Value="MiembroId">MiembroId</asp:ListItem>
+                             <asp:DropDownList ID="TipoIngresoDropDownList" CssClass="form-control" runat="server" Height="38px">
                                  <asp:ListItem Value="TipoIngresoId">TipoIngresoId</asp:ListItem>
-                                 <asp:ListItem Value="Observacion">Observacion</asp:ListItem>
+                                 <asp:ListItem Value="Descripcion">Descripcion</asp:ListItem>
+                                 <asp:ListItem Value="EsActivo">Activo</asp:ListItem>
+                                 <asp:ListItem Value="UsuarioId">UsuarioId</asp:ListItem>
                              </asp:DropDownList>
                         </div>
                         <div class="col-lg-4 col-md-4">
@@ -42,12 +42,14 @@
                             <SortedAscendingCellStyle BackColor="#FBFBF2" />
                             <SortedAscendingHeaderStyle BackColor="#848384" />
                             <SortedDescendingCellStyle BackColor="#EAEAD3" />
-                            <SortedDescendingHeaderStyle BackColor="#575357" />                          
+                            <SortedDescendingHeaderStyle BackColor="#575357" />
+                            
                         </asp:GridView>
                     </div>
             </div>
         </div>
         </div>
-        </div>    
-            
+        </div>
+        
+    
 </asp:Content>

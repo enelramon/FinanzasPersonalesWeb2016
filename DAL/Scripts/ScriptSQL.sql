@@ -26,6 +26,16 @@ Balance float,
 Porciento int
 )
 
+--Script Edwin 2
+create table Ingresos(
+IngresoId int identity(1,1) primary key,
+Fecha varchar(10),
+CuentaId int references Cuentas(CuentaId),
+Monto float,
+MiembroId int references Miembros(MiembroId),
+TipoIngresoId int references TiposIngresos(TipoIngresoId),
+Observacion varchar(100)
+);
 
 
 --Script Melvin

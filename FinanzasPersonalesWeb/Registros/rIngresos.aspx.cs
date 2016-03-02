@@ -19,6 +19,8 @@ namespace FinanzasPersonalesWeb.Registros
         {
             if (!IsPostBack)
             {
+                FechaTexBox.Text = DateTime.Now.ToString();
+
                 MiembroDropDownList.DataSource = Miembro.Listado(" * ", "1=1", "");
                 MiembroDropDownList.DataTextField = "Nombre";
                 MiembroDropDownList.DataValueField = "MiembroId";
@@ -62,10 +64,12 @@ namespace FinanzasPersonalesWeb.Registros
 
         public void Limpiar()
         {
+            FechaTexBox.Text = DateTime.Now.ToString();
             MontoTexBox.Text = "";
             CuentaDropDownList.ClearSelection();
             MiembroDropDownList.ClearSelection();
             TipoIngresoDropDownList.ClearSelection();
+            ObservacionTexBox.Text = "";
         }
 
         public bool LlenarDatos()
@@ -74,10 +78,12 @@ namespace FinanzasPersonalesWeb.Registros
 
             if (MontoTexBox.Text.Length > 0)
             {
+                Ingreso.Fecha = FechaTexBox.Text;
                 Ingreso.Monto = ValidarIdDouble(MontoTexBox.Text);
                 Ingreso.TipoIngresoId = ValidarIdEntero(TipoIngresoDropDownList.SelectedValue);
                 Ingreso.MiembroId = ValidarIdEntero(MiembroDropDownList.SelectedValue);
                 Ingreso.CuentaId = ValidarIdEntero(CuentaDropDownList.SelectedValue);
+                Ingreso.Observacion = ObservacionTexBox.Text;
                 retorno = true;
             }
             else
@@ -94,6 +100,8 @@ namespace FinanzasPersonalesWeb.Registros
             {
                 if (Ingreso.Buscar(ValidarIdEntero(IngresoTextBox.Text)))
                 {
+                    FechaTexBox.Text = Ingreso.Fecha;
+
                     MontoTexBox.Text = Ingreso.Monto.ToString();
 
                     CuentaDropDownList.SelectedValue = Ingreso.CuentaId.ToString();
@@ -101,6 +109,8 @@ namespace FinanzasPersonalesWeb.Registros
                     TipoIngresoDropDownList.SelectedValue = Ingreso.TipoIngresoId.ToString();
 
                     MiembroDropDownList.SelectedValue = Ingreso.MiembroId.ToString();
+
+                    ObservacionTexBox.Text = Ingreso.Observacion;
                 }
                 else
                 {

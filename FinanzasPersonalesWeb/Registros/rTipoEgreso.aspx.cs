@@ -11,14 +11,13 @@ namespace FinanzasPersonalesWeb
 {
     public partial class TipoEgreso : System.Web.UI.Page
     {
-
         public void Limpiar()
         {
             TipoEgresoIdTextBox.Text = "";
             DescripcionTextBox.Text = "";
         }
 
-        public int  Validar()
+        public int Validar()
         {
             if (DescripcionTextBox.Text.Length == 0)
             {
@@ -43,6 +42,7 @@ namespace FinanzasPersonalesWeb
                 egreso.EsActivo = false;
             egreso.UsuarioId = usuarioId;
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -57,13 +57,18 @@ namespace FinanzasPersonalesWeb
             }
         }
 
+        public int ConvertirId(string tipoEgresoId)
+        {
+            int id;
+            int.TryParse(tipoEgresoId, out id);
+
+            return id;
+        }
+
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             TiposEgresos egreso = new TiposEgresos();
-
-            int idBuscado;
-            int.TryParse(TipoEgresoIdTextBox.Text, out idBuscado);
-            if (egreso.Buscar(idBuscado))
+            if (egreso.Buscar(ConvertirId(TipoEgresoIdTextBox.Text)))
             {
                 TipoEgresoIdTextBox.Text = egreso.TipoEgresoId.ToString();
                 DescripcionTextBox.Text = egreso.Descripcion;
@@ -76,7 +81,7 @@ namespace FinanzasPersonalesWeb
             }
             else
             {
-                Utilitarios.ShowToastr(this.Page,"Error","Error al buscar el tipo egreso", "Error");
+                Utilitarios.ShowToastr(this.Page, "Error", "Error al buscar el tipo egreso", "Error");
             }
         }
 
@@ -88,12 +93,11 @@ namespace FinanzasPersonalesWeb
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
             TiposEgresos egreso = new TiposEgresos();
-            int id;
-            int.TryParse(TipoEgresoIdTextBox.Text, out id);
+
             LLenarDatos(egreso);
             if (!TipoEgresoIdTextBox.Text.Equals(""))
             {
-                egreso.TipoEgresoId = id;
+                egreso.TipoEgresoId = ConvertirId(TipoEgresoIdTextBox.Text);
                 LLenarDatos(egreso);
                 if (Validar() == 0 && egreso.Editar())
                 {
@@ -117,7 +121,7 @@ namespace FinanzasPersonalesWeb
                     Utilitarios.ShowToastr(this.Page, "No se  pudo guardar el tipo egreso", "Error", "Error");
                 }
             }
-           
+
         }
 
         protected void ElimanarButton_Click(object sender, EventArgs e)
@@ -127,9 +131,7 @@ namespace FinanzasPersonalesWeb
 
             if (!TipoEgresoIdTextBox.Equals(""))
             {
-                int id;
-                int.TryParse(TipoEgresoIdTextBox.Text, out id);
-                egreso.TipoEgresoId = id;
+                egreso.TipoEgresoId = ConvertirId(TipoEgresoIdTextBox.Text);
                 if (egreso.Eliminar())
                 {
                     Utilitarios.ShowToastr(this.Page, "Tipo egreso eliminado", "Correcto", "Success");
