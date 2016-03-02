@@ -10,7 +10,7 @@
 namespace FinanzasPersonalesWeb.Registros {
     
     
-    public partial class rMetasWebForm {
+    public partial class rMetas {
         
         /// <summary>
         /// Label1 control.
