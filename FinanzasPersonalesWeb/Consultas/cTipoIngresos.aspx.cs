@@ -8,7 +8,7 @@ using BLL;
 
 namespace FinanzasPersonalesWeb.Consultas
 {
-    public partial class cTipoIngreso : System.Web.UI.Page
+    public partial class cTipoIngresos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

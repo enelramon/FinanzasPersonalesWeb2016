@@ -10,7 +10,7 @@
 namespace FinanzasPersonalesWeb.Consultas {
     
     
-    public partial class cTipoIngreso {
+    public partial class cTipoIngresos {
         
         /// <summary>
         /// Label1 control.
