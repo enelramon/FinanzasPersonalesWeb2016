@@ -12,10 +12,26 @@ namespace FinanzasPersonalesWeb.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                int id = 0;
+                //Leermos el QueryString que llego en la url
+                id = Utilitarios.ToInt(Request.QueryString["Id"].ToString());
 
+                if (id > 0) //si es mayor que cero, buscar el registro
+                {
+                    Cuentas cuenta = new Cuentas();
+                    if (!cuenta.Buscar(id))
+                    {
+                        Utilitarios.ShowToastr(this.Page, "Registro no encontrado.", "Error", "Error");
+                    }
+                    else
+                    {
+                    }
+                }
+            }
         }
-
-        public void LlenarClase( Usuarios Usuario)
+        public void LlenarClase(Usuarios Usuario)
         {
             Usuario.Nombre = NombreTextBox.Text;
             Usuario.Apellidos = ApellidoTextBox.Text;
@@ -28,8 +44,6 @@ namespace FinanzasPersonalesWeb.Registros
         {
             Usuarios Usuario = new Usuarios();
             Boolean paso = false;
-            Boolean control1, control2 = false;
-            LlenarClase(Usuario);
 
             if (PassTextBox.Text != RptPassTextBox.Text)
             {
@@ -56,29 +70,15 @@ namespace FinanzasPersonalesWeb.Registros
                 Utilitarios.ShowToastr(this.Page, "Debe llenar los campos faltantes.", "Advertencia", "Warning");
             }
 
-            else {
-
-                control1 = Usuario.ValidarRegistroUsuario("'" + UsuarioTextBox.Text + "'");
-                control2 = Usuario.ValidarRegistroCorreo("'" + EmailTextBox.Text + "'");
-
-                if (control1)
-                {
-                    Utilitarios.ShowToastr(this.Page, "Este usuario ya existe.", "Error", "Error");
-                }
-                else if (control2)
-                {
-                    Utilitarios.ShowToastr(this.Page, "Este correo ya existe.", "Error", "Error");
-
-                }
+//            else {
+//
+//                ValidarRegistro();
+//                
+//                }
 
                 else
                 {
-                    Usuario.Nombre = NombreTextBox.Text;
-                    Usuario.Apellidos = ApellidoTextBox.Text;
-                    Usuario.TipoUsuarioId = 1;
-                    Usuario.Usuario = UsuarioTextBox.Text;
-                    Usuario.Password = PassTextBox.Text;
-                    Usuario.Email = EmailTextBox.Text;
+                    LlenarClase(Usuario);
 
                     paso = Usuario.Insertar();
                 }
@@ -93,10 +93,28 @@ namespace FinanzasPersonalesWeb.Registros
                 }
 
             }
-        }
-        
+
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
+
+        }
+
+        void ValidarRegistro()
+        {
+            Usuarios Usuario = new Usuarios();
+            Boolean control1, control2 = false;
+
+            control1 = Usuario.ValidarRegistroUsuario("'" + UsuarioTextBox.Text + "'");
+            control2 = Usuario.ValidarRegistroCorreo("'" + EmailTextBox.Text + "'");
+
+            if (control1)
+            {
+                Utilitarios.ShowToastr(this.Page, "Este usuario ya existe.", "Error", "Error");
+            }   
+            else if (control2)
+            {
+                Utilitarios.ShowToastr(this.Page, "Este correo ya existe.", "Error", "Error");
+            }
 
         }
 
