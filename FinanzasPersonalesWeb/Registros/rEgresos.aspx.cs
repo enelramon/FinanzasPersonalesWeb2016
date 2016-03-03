@@ -11,17 +11,15 @@ namespace FinanzasPersonalesWeb
 {
     public partial class EgresosWebForm : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
            
-
-            
-
-            if (IsPostBack == false)
+           if (IsPostBack == false)
             {
- Cuentas cuenta = new Cuentas();
-            TiposEgresos tipoEgreso = new TiposEgresos();
-            Miembros miembro = new Miembros();
+                Cuentas cuenta = new Cuentas();
+                TiposEgresos tipoEgreso = new TiposEgresos();
+                Miembros miembro = new Miembros();
 
                 CuentaIdDropDownList.DataSource = cuenta.Listado(" * ", "1=1", "");
                 CuentaIdDropDownList.DataTextField = "Descripcion";
@@ -41,6 +39,11 @@ namespace FinanzasPersonalesWeb
             }
 
         }
+        public static void ShowToastr(Page page, string message, string title, string type)
+        {
+            page.ClientScript.RegisterStartupScript(page.GetType(), "toastr_message",
+                  String.Format("toastr.{0}('{1}', '{2}');", type, message, title), addScriptTags: true);
+        }
 
         [WebMethod]
         public static string[] GetSugestions(string filtro)
@@ -58,7 +61,7 @@ namespace FinanzasPersonalesWeb
 
             if(MontoTextBox.Text == "")
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Debe de completar el campo monto')</SCRIPT>");
+                ShowToastr(this,"No puede dejar el monto vacio","Alerta","warning");
                 contador = 1;
             }
             return contador;
@@ -74,7 +77,7 @@ namespace FinanzasPersonalesWeb
 
             egreso.CuentaId = cuentaId;
             egreso.MiembroId = miembroId;
-            //egreso.Observacion = ObservacionTextBox.Text;
+            egreso.Observacion = ObservacionesTextBox.Text;
             egreso.Fecha = FechaTextBox.Text;
             egreso.Monto = monto;
             egreso.TipoEgresoId = tipoEgresoId;
@@ -86,7 +89,23 @@ namespace FinanzasPersonalesWeb
 
             return id;
         }
-        protected void GuardarButton_Click(object sender, EventArgs e)
+        
+        public void Limpiar()
+        {
+            FechaTextBox.Text = string.Empty;
+            MiembroIdDropDownList.ClearSelection();
+            MontoTextBox.Text = string.Empty;
+            TipoEgresoIdDropDownList.ClearSelection();
+            CuentaIdDropDownList.ClearSelection();
+            ObservacionesTextBox.Text = string.Empty;
+        }
+
+        protected void NuevoButton_Click1(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        protected void GuadarButton_Click(object sender, EventArgs e)
         {
             Egresos egresos = new Egresos();
             if (EgresoIdTextBox.Text.Length == 0)
@@ -94,12 +113,12 @@ namespace FinanzasPersonalesWeb
                 LlenarDatos(egresos);
                 if (MiError() == 0 && egresos.Insertar())
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Guardado')</SCRIPT>");
+                    ShowToastr(this, "Egreso gurdado correctamente", "Mensaje", "success");
                     Limpiar();
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al Guardar')</SCRIPT>");
+                    ShowToastr(this, "Error al guardar","Error","danger");
                 }
             }
             else
@@ -110,57 +129,48 @@ namespace FinanzasPersonalesWeb
                     LlenarDatos(egresos);
                     if (egresos.Editar())
                     {
-                        HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso Editado correctamente')</SCRIPT>");
+                        ShowToastr(this,"Egreso editado correctamente","Mensaje","success");
                         Limpiar();
                     }
                     else
                     {
-                        HttpContext.Current.Response.Write("<SCRIPT>alert('Error al editar')<SCRIPT/>");
+                        ShowToastr(this, "Error al editar", "Error", "danger");
                     }
                 }
                 else
                 {
 
-                        HttpContext.Current.Response.Write("<SCRIPT>alert('No existe ese Id')<SCRIPT/>");
+                    ShowToastr(this, "No existe ese ID", "Alerta", "warning");
                 }
             }
         }
-        public void Limpiar()
-        {
-            FechaTextBox.Text = string.Empty;
-            MiembroIdDropDownList.ClearSelection();
-            MontoTextBox.Text = string.Empty;
-            TipoEgresoIdDropDownList.ClearSelection();
-            CuentaIdDropDownList.ClearSelection();
-            ObservacionTextBox.Text = string.Empty;
-        }
-        protected void NuevoButton_Click(object sender, EventArgs e)
-        {
-            Limpiar();   
-        }
 
-        protected void EliminarButton_Click(object sender, EventArgs e)
+        protected void EliminarButton_Click1(object sender, EventArgs e)
         {
             Egresos egreso = new Egresos();
             egreso.EgresoId = Convertir();
+            if(EgresoIdTextBox.Text.Length == 0)
+            {
+                ShowToastr(this, "Debe de especificar el ID","Alerta","warning");
+            }
             if (egreso.Eliminar())
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Egreso eliminado')</SCRIPT>");
+                ShowToastr(this, "Egreso eliminado", "Mensaje", "success");
             }
             else
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Error al eliminar')</SCRIPT>");
+                ShowToastr(this, "Error al eliminar", "Error", "danger");
             }
         }
 
-        protected void BuscarButton_Click(object sender, EventArgs e)
+        protected void BuscarButton_Click1(object sender, EventArgs e)
         {
             Egresos egreso = new Egresos();
 
 
-            if(EgresoIdTextBox.Text.Length == 0)
+            if (EgresoIdTextBox.Text.Length == 0)
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Debe de llenar el campo EgresoId')</SCRIPT>");
+                ShowToastr(this, "Debe especificar el ID", "Alerta", "warning");
             }
             else
             {
@@ -170,16 +180,14 @@ namespace FinanzasPersonalesWeb
                     MontoTextBox.Text = egreso.Monto.ToString();
                     CuentaIdDropDownList.SelectedValue = egreso.CuentaId.ToString();
                     TipoEgresoIdDropDownList.SelectedValue = egreso.TipoEgresoId.ToString();
-                    ObservacionTextBox.Text = egreso.Observacion;
+                    ObservacionesTextBox.Text = egreso.Observacion;
                     MiembroIdDropDownList.SelectedValue = egreso.MiembroId.ToString();
                 }
                 else 
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al buscar')<SCRIPT/>");
+                    ShowToastr(this, "Error al buscar", "Error", "danger");
                 }
             }
-           
         }
-
     }
 }

@@ -11,4 +11,11 @@ namespace BLL
         Casa = 1,
         Trabajo = 2
     }
+
+    public enum TipoIngresos
+    {
+        Ganado = 0,
+        Portafolio = 1,
+        Pasivo = 2
+    }
 }

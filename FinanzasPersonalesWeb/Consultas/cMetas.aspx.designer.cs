@@ -10,34 +10,25 @@
 namespace FinanzasPersonalesWeb.Consultas {
     
     
-    public partial class cTipoIngresoWebForm {
+    public partial class cMetas {
         
         /// <summary>
-        /// Label1 control.
+        /// ConsultaDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.DropDownList ConsultaDropDownList;
         
         /// <summary>
-        /// TipoIngresoDropDownList control.
+        /// ConsultaTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TipoIngresoDropDownList;
-        
-        /// <summary>
-        /// CodigoTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CodigoTextBox;
+        protected global::System.Web.UI.WebControls.TextBox ConsultaTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -49,12 +40,21 @@ namespace FinanzasPersonalesWeb.Consultas {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// ConsultaGridView control.
+        /// MetasGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ConsultaGridView;
+        protected global::System.Web.UI.WebControls.GridView MetasGridView;
+        
+        /// <summary>
+        /// ImprimirButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ImprimirButton;
     }
 }

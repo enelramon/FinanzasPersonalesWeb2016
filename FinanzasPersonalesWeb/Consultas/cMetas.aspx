@@ -1,6 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cMetasWebForm.aspx.cs" Inherits="FinanzasPersonalesWeb.Consultas.cMetasWebForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cMetas.aspx.cs" Inherits="FinanzasPersonalesWeb.Consultas.cMetas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
     <style>
         body{
 	        font-family:"Helvetica",Arial;
@@ -10,9 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class ="container">
-            <br />
             <h2>Consultas de Metas</h2>
-            <br /><br />
              <div class="row">
                  <div class="col-xs-3 col-md-3">
                      <asp:DropDownList ID="ConsultaDropDownList" CssClass="form-control " runat="server">
@@ -26,15 +23,15 @@
               <div class="col-xs-3 col-md-3">
                 <asp:Button Text="Buscar" runat="server" ID="BuscarButton" CssClass="btn btn-primary" OnClick="BuscarButton_Click1"/>
               </div>
-            </div> <br />
+            </div>
             <center>
                 <asp:GridView ID="MetasGridView" runat="server" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="600px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
                     <Columns>
                         <asp:BoundField FooterText="MetaId" />
                         <asp:BoundField FooterText="Descripcion" />
                         <asp:BoundField FooterText="UsuarioI" />
-<asp:BoundField FooterText="Descripcion"></asp:BoundField>
-<asp:BoundField FooterText="Balance"></asp:BoundField>
+                        <asp:BoundField FooterText="Descripcion" />
+                        <asp:BoundField FooterText="Balance" />
                     </Columns>
                     <Columns>
                         <asp:BoundField FooterText="Descripcion" />
@@ -52,5 +49,6 @@
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
             </center>
+         <asp:Button ID="ImprimirButton" runat="server" CssClass="btn btn-primary" Text="Imprimir" PostBackUrl="~/ReportViewers/ListadoMetas.aspx" />
         </div>
 </asp:Content>

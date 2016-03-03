@@ -59,6 +59,7 @@
     <Compile Include="Cuentas.cs" />
     <Compile Include="Egresos.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Ingresos.cs" />
     <Compile Include="Metas.cs" />
     <Compile Include="Miembros.cs" />
     <Compile Include="Personas.cs" />

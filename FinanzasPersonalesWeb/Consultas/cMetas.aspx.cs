@@ -8,7 +8,7 @@ using BLL;
 
 namespace FinanzasPersonalesWeb.Consultas
 {
-    public partial class cMetasWebForm : System.Web.UI.Page
+    public partial class cMetas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,7 +35,7 @@ namespace FinanzasPersonalesWeb.Consultas
                     MetasGridView.DataBind();
                     if (MetasGridView.Rows.Count <= 0)
                     {
-                        HttpContext.Current.Response.Write("<SCRIPT>alert('La Meta No Existe')</SCRIPT>");
+                        ShowToast("error", "Error", "Id No Existe");
                         ConsultaTextBox.Text = "";
                         CargarGridView();
                     }
@@ -43,7 +43,7 @@ namespace FinanzasPersonalesWeb.Consultas
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Id Incorrecto')</SCRIPT>");
+                    ShowToast("warning", "Incorrecto", "Id Incorrecto");
                     ConsultaTextBox.Text = "";
                 }
 
@@ -54,6 +54,16 @@ namespace FinanzasPersonalesWeb.Consultas
                 MetasGridView.DataSource = meta.Listado(" * ", "Descripcion like '" + ConsultaTextBox.Text + "%'", "");
                 MetasGridView.DataBind();
             }
+        }
+
+        public void ShowToast(string tipo, string titulo, string mensaje)
+        {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr." + tipo + "('" + mensaje + "', '" + titulo + "')", true);
+        }
+
+        protected void ImprimirButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

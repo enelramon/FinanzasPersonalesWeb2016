@@ -10,25 +10,25 @@
 namespace FinanzasPersonalesWeb.Consultas {
     
     
-    public partial class cMetasWebForm {
+    public partial class cCuentas {
         
         /// <summary>
-        /// ConsultaDropDownList control.
+        /// BuscarPorDropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ConsultaDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList BuscarPorDropdown;
         
         /// <summary>
-        /// ConsultaTextBox control.
+        /// FiltroTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConsultaTextBox;
+        protected global::System.Web.UI.WebControls.TextBox FiltroTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -40,12 +40,21 @@ namespace FinanzasPersonalesWeb.Consultas {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// MetasGridView control.
+        /// CuentasGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView MetasGridView;
+        protected global::System.Web.UI.WebControls.GridView CuentasGridView;
+        
+        /// <summary>
+        /// MiembrosHyperLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink MiembrosHyperLink;
     }
 }

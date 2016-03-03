@@ -2,12 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="panel panel-primary">
+     <div class="panel panel-success">
         <div class="panel-heading">Consulta de tipo egresos</div>
         
           <div class="panel-body">
             <div class="form-horizontal col-md-12" role="form">
          
+                <%--Campo--%>
                 <div class="form-group">
                    <asp:Label ID="Label2" runat="server" Class=" col-md-3 control-label input-sm" Text="Consultar por:"></asp:Label>
                    <div class="col-md-2">

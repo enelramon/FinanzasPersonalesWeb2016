@@ -10,7 +10,7 @@
 namespace FinanzasPersonalesWeb.Registros {
     
     
-    public partial class rTipoIngreso {
+    public partial class rIngresos {
         
         /// <summary>
         /// Label1 control.
@@ -22,13 +22,13 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// TipoIngresoTextBox control.
+        /// IngresoTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TipoIngresoTextBox;
+        protected global::System.Web.UI.WebControls.TextBox IngresoTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -40,6 +40,33 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
+        /// Label7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
+        
+        /// <summary>
+        /// FechaTexBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox FechaTexBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -49,13 +76,13 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// DescripcionTextBox control.
+        /// MontoTexBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
+        protected global::System.Web.UI.WebControls.TextBox MontoTexBox;
         
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -67,22 +94,22 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// Label3 control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// EstadoRadioButtonList control.
+        /// CuentaDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList EstadoRadioButtonList;
+        protected global::System.Web.UI.WebControls.DropDownList CuentaDropDownList;
         
         /// <summary>
         /// Label4 control.
@@ -94,13 +121,58 @@ namespace FinanzasPersonalesWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// UsuarioDropDownList control.
+        /// MiembroDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList UsuarioDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList MiembroDropDownList;
+        
+        /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
+        /// TipoIngresoDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList TipoIngresoDropDownList;
+        
+        /// <summary>
+        /// Label6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+        
+        /// <summary>
+        /// ObservacionTexBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ObservacionTexBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// GuardarButton control.

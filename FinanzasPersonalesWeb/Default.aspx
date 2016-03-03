@@ -17,6 +17,7 @@
                 <ItemTemplate>
                     <div class="panel-body">
                         <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion")%>'></asp:Label>
+
                     </div>
                 </ItemTemplate>
             </asp:Repeater>            
@@ -57,14 +58,10 @@
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Balance General</h3>
-            </div>
-            <asp:Repeater ID="Repeater3" runat="server">
-                <ItemTemplate>
-                    <div class="panel-body">
-                        <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion")%>'></asp:Label>
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>            
+            </div>            
+            <div class="panel-body">
+                <span runat="server" class="badge pull-right">1200</span>
+            </div>         
         </div>
     </div>
 </div>

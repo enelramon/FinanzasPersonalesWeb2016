@@ -19,13 +19,12 @@ namespace FinanzasPersonalesWeb
 
             Cuentas cuenta = new Cuentas();
             yourRepeater.DataSource = cuenta.Listado(" * "," 1=1 ","");
-            Repeater1.DataSource = cuenta.Listado(" * ", " 1=1 ", "");
-            Repeater2.DataSource = cuenta.Listado(" * ", " 1=1 ", "");
-            Repeater3.DataSource = cuenta.Listado(" * ", " 1=1 ", "");
-            Repeater1.DataBind();
-            Repeater2.DataBind();
-            Repeater3.DataBind();
             yourRepeater.DataBind();
+            Repeater1.DataSource = cuenta.Listado(" * ", " 1=1 ", "");
+            Repeater1.DataBind();
+            Repeater2.DataSource = cuenta.Listado(" * ", " 1=1 ", "");
+            Repeater2.DataBind();
+            
         }
     }
 }
