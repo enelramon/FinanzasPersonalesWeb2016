@@ -38,9 +38,8 @@ namespace FinanzasPersonalesWeb.Registros
             TbPorciento.Text = "";
             DropDownUsuario.ClearSelection();
         }
-    
-    protected void Page_Load(object sender, EventArgs e)
 
+        void LlenarCombos()
         {
             Usuarios usuario = new Usuarios();
 
@@ -48,6 +47,37 @@ namespace FinanzasPersonalesWeb.Registros
             DropDownUsuario.DataTextField = "Nombre";
             DropDownUsuario.DataValueField = "UsuarioId";
             DropDownUsuario.DataBind();
+        }
+        protected void Page_Load(object sender, EventArgs e)
+
+        {
+
+            if (!Page.IsPostBack)
+            {
+                int id = 0;
+
+                LlenarCombos();
+
+                //Leermos el QueryString que llego en la url
+                id = Utilitarios.ToInt(Request.QueryString["Id"].ToString());
+
+                if (id > 0) //si es mayor que cero, buscar el registro
+                {
+                    Cuentas cuenta = new Cuentas();
+                    if (!cuenta.Buscar(id))
+                    {
+                        Utilitarios.ShowToastr(this.Page, "Registro no encontrado.", "Error", "Error");
+                        Limpiar();
+                    }
+                    else
+                    {
+                        LlenarCampos(cuenta);
+                    }
+
+                }
+
+            }
+
         }
 
         protected void GuardarButton_Click(object sender, EventArgs e)
@@ -104,7 +134,7 @@ namespace FinanzasPersonalesWeb.Registros
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-         if (TbCuentaId.Text == "")
+            if (TbCuentaId.Text == "")
             {
                 Utilitarios.ShowToastr(this.Page, "El ID no puede estar en Blanco.", "Advertencia", "Warning");
                 return;
@@ -117,7 +147,7 @@ namespace FinanzasPersonalesWeb.Registros
                 Limpiar();
                 return;
             }
-            
+
             LlenarCampos(cuenta);
         }
     }
