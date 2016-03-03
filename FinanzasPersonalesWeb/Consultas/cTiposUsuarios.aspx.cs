@@ -40,8 +40,8 @@ namespace FinanzasPersonalesWeb.Consultas
                 }
 
             dt = TipoUsuario.Listado("TipoUsuarioId, Descripcion", filtro, "TipoUsuarioId ASC");
-            //UsuarioGridView.DataSource = dt;
-            //UsuarioGridView.DataBind();
-        }   //
+            DatosGridView.DataSource = dt;
+            DatosGridView.DataBind();
+        }   
     }
 }

@@ -58,13 +58,13 @@ namespace FinanzasPersonalesWeb.Consultas {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// c control.
+        /// DatosGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView c;
+        protected global::System.Web.UI.WebControls.GridView DatosGridView;
         
         /// <summary>
         /// HyperLink1 control.

@@ -21,7 +21,7 @@
         <asp:TextBox runat="server" Width="350px" ID="FiltroTextBox" Style="margin-left: 6px"></asp:TextBox>
         <asp:Button ID="BuscarButton" runat="server"  CssClass=".btn-primary" Text="Buscar" OnClick="BuscarPor_Click" style="margin-left: 2px" />
         <br />
-        <asp:GridView ID="c" runat="server" Height="202px" Width="763px" CssClass="table table-striped" AutoGenerateColumns="False">
+        <asp:GridView ID="DatosGridView" runat="server" Height="202px" Width="763px" CssClass="table table-striped" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="Codigo" HeaderText="Codigo" />
                 <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
