@@ -33,10 +33,9 @@
                         <asp:HyperLinkField DataNavigateUrlFields="UsuarioId" DataNavigateUrlFormatString="/Registros/rUsuarios.aspx?Id={0}" Text="Editar" />
                     </Columns>
                 </asp:GridView>
-
+                </div>
                 <asp:HyperLink ID="ImprimirHyperLink" runat="server" NavigateUrl="~/ReportViewers/ListadoUSuarios.aspx">Imprimir</asp:HyperLink>
 
-            </div>
         </div>
     </div>
 </asp:Content>

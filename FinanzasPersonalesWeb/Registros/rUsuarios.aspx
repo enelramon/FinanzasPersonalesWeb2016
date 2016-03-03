@@ -10,6 +10,19 @@
         <div class="panel-body">
             <div class="form-horizontal col-md-12" role="form">
 
+                <%--UsuarioId--%>
+                <div class="form-group">
+                    <label for="UsuarioIdTextBox" class="col-md-3 control-label input-sm">ID: </label>
+                    <div class="col-md-8 col-sm-2 col-xs-4">
+                        <asp:TextBox ID="UsuarioIdTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="col-md-1 col-sm-2 col-xs-4">
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+
+
                 <%--Nombre--%>
                 <div class="form-group">
                     <label for="NombreTextBox" class="col-md-3 control-label input-sm">Nombre: </label>
@@ -91,6 +104,8 @@
 
                     <asp:Button ID="LimpiarButton" runat="server" Text="Limpiar" CssClass="btn btn-warning" />
                     <asp:Button ID="GuardarButton" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="GuardarButton_Click" />
+                    <asp:Button ID="ModificarButton" runat="server" Text="Modificar" CssClass="btn btn-warning" OnClick="ModificarButton_Click" Enabled="false" />
+
 
                 </div>
             </div>
