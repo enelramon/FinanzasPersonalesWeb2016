@@ -10,11 +10,13 @@
         <div class="panel-body">
             <div class="form-horizontal col-md-12" role="form">
 
+                <asp:ValidationSummary ID="Valid" runat="server" ValidationGroup="1" CssClass="validationsColor" DisplayMode="BulletList" />
+
                 <%--UsuarioId--%>
                 <div class="form-group">
                     <label for="UsuarioIdTextBox" class="col-md-3 control-label input-sm">ID: </label>
-                    <div class="col-md-8 col-sm-2 col-xs-4">
-                        <asp:TextBox ID="UsuarioIdTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+                    <div class="col-md-1  col-sm-12 col-xs-12">
+                        <asp:TextBox ID="UsuarioIdTextBox" CssClass="form-control" runat="server" ReadOnly="true"></asp:TextBox>
                     </div>
                     <div class="col-md-1 col-sm-2 col-xs-4">
                     </div>
@@ -26,9 +28,13 @@
                 <%--Nombre--%>
                 <div class="form-group">
                     <label for="NombreTextBox" class="col-md-3 control-label input-sm">Nombre: </label>
-                    <div class="col-md-8 col-sm-2 col-xs-4">
+                    <div class="col-md-8 col-sm-12 col-xs-12">
                         <asp:TextBox ID="NombreTextBox" CssClass="form-control" runat="server" placeholder="Nombre"></asp:TextBox>
-
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                            ControlToValidate="ApellidoTextBox"
+                            ErrorMessage="Debe poner un Nombre"
+                            ForeColor="Red">
+                        </asp:RequiredFieldValidator>
                     </div>
                     <div class="col-md-1 col-sm-2 col-xs-4">
                     </div>
@@ -41,6 +47,11 @@
                     <label for="ApellidoTextBox" class="col-md-3 control-label input-sm">Apellido:</label>
                     <div class="col-md-8">
                         <asp:TextBox ID="ApellidoTextBox" CssClass="form-control" runat="server" placeholder="Apellido"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+                            ControlToValidate="ApellidoTextBox"
+                            ErrorMessage="Debe poner un Apellido"
+                            ForeColor="Red">
+                        </asp:RequiredFieldValidator>
                     </div>
                     <div class="col-md-1">
                     </div>
@@ -54,6 +65,11 @@
                     <label for="UsuarioTextBox" class="col-md-3 control-label input-sm">Usuario:</label>
                     <div class="col-md-8">
                         <asp:TextBox ID="UsuarioTextBox" CssClass="form-control" runat="server" placeholder="Usuario"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
+                            ControlToValidate="ApellidoTextBox"
+                            ErrorMessage="Debe poner una Contraseña"
+                            ForeColor="Red">
+                        </asp:RequiredFieldValidator>
                     </div>
                     <div class="col-md-1">
                     </div>
@@ -64,6 +80,11 @@
                     <label for="PassTextBox" class="col-md-3 control-label input-sm">Contraseña:</label>
                     <div class="col-md-8">
                         <asp:TextBox ID="PassTextBox" CssClass="form-control" type="password" runat="server" placeholder="Contraseña"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" CssClass=""
+                            ControlToValidate="PassTextBox"
+                            ErrorMessage="Debe poner una contraseña"
+                            ForeColor="Red">
+                        </asp:RequiredFieldValidator>
                     </div>
                     <div class="col-md-1">
                     </div>
@@ -74,6 +95,11 @@
                     <label for="RptPassTextBox" class="col-md-3 control-label input-sm">Repetir Contraseña:</label>
                     <div class="col-md-8">
                         <asp:TextBox ID="RptPassTextBox" CssClass="form-control" type="password" runat="server" placeholder="Repetir Contraseña"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" CssClass=""
+                            ControlToValidate="RptPassTextBox"
+                            ErrorMessage="Las contraseñas deben coincidir."
+                            ForeColor="Red">
+                        </asp:RequiredFieldValidator>
                     </div>
                     <div class="col-md-1">
                     </div>
