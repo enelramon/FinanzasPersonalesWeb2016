@@ -16,8 +16,6 @@ namespace FinanzasPersonalesWeb.Include
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
-            upModal.Update();
         }
     }
 }

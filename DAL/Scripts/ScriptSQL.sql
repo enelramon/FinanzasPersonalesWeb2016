@@ -17,6 +17,7 @@ Usuario nvarchar(15),
 Contrasena nvarchar(10),
 Email nvarchar(30))
 select *from Usuarios
+
 --Script Yahaida
 create table Cuentas(
 CuentaId int identity(1,1) primary key,
@@ -25,7 +26,8 @@ Descripcion varchar(100),
 Balance float,
 Porciento int
 )
-
+select * from Cuentas
+insert into Cuentas(UsuarioId,Descripcion,Balance,Porciento) values(5,'Prueba 2',300,5.2)
 --Script Edwin 2
 create table Ingresos(
 IngresoId int identity(1,1) primary key,
@@ -60,7 +62,7 @@ create table Transferencias(
 			UsuarioId int References Usuarios(UsuarioId)
 			);
 			
-			
+			select *from Transferencias
 --Script Francis
 create table Metas
 (
@@ -133,8 +135,7 @@ Create Table TiposEgresos
 )
 
 
-select * from Cuentas
-insert into Cuentas(UsuarioId,Descripcion,Balance,Porciento) values(5,'Prueba 2',300,5.2)
+
 
 go
 create table Personas(

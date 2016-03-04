@@ -39,10 +39,10 @@ namespace FinanzasPersonalesWeb
             }
 
         }
-        public static void ShowToastr(Page page, string message, string title, string type = "info")
+        public static void ShowToastr(Page page, string message, string title, string type)
         {
             page.ClientScript.RegisterStartupScript(page.GetType(), "toastr_message",
-                  String.Format("toastr.{0}('{1}', '{2}');", type.ToLower(), message, title), addScriptTags: true);
+                  String.Format("toastr.{0}('{1}', '{2}');", type, message, title), addScriptTags: true);
         }
 
         [WebMethod]
@@ -61,7 +61,7 @@ namespace FinanzasPersonalesWeb
 
             if(MontoTextBox.Text == "")
             {
-                ShowToastr(this,"No puede dejar el monto vacio","Alerta","Warning");
+                ShowToastr(this,"No puede dejar el monto vacio","Alerta","warning");
                 contador = 1;
             }
             return contador;
@@ -113,12 +113,12 @@ namespace FinanzasPersonalesWeb
                 LlenarDatos(egresos);
                 if (MiError() == 0 && egresos.Insertar())
                 {
-                    ShowToastr(this, "Egreso gurdado correctamente", "Mensaje", "Success");
+                    ShowToastr(this, "Egreso gurdado correctamente", "Mensaje", "success");
                     Limpiar();
                 }
                 else
                 {
-                    ShowToastr(this, "Error al guardar","Error","Danger");
+                    ShowToastr(this, "Error al guardar","Error","danger");
                 }
             }
             else
@@ -129,18 +129,18 @@ namespace FinanzasPersonalesWeb
                     LlenarDatos(egresos);
                     if (egresos.Editar())
                     {
-                        ShowToastr(this,"Egreso editado correctamente","Mensaje","Success");
+                        ShowToastr(this,"Egreso editado correctamente","Mensaje","success");
                         Limpiar();
                     }
                     else
                     {
-                        ShowToastr(this, "Error al editar", "Error", "Danger");
+                        ShowToastr(this, "Error al editar", "Error", "danger");
                     }
                 }
                 else
                 {
 
-                    ShowToastr(this, "No existe ese ID", "Alerta", "Warning");
+                    ShowToastr(this, "No existe ese ID", "Alerta", "warning");
                 }
             }
         }
@@ -151,15 +151,15 @@ namespace FinanzasPersonalesWeb
             egreso.EgresoId = Convertir();
             if(EgresoIdTextBox.Text.Length == 0)
             {
-                ShowToastr(this, "Debe de especificar el ID","Alerta","Warning");
+                ShowToastr(this, "Debe de especificar el ID","Alerta","warning");
             }
             if (egreso.Eliminar())
             {
-                ShowToastr(this, "Egreso eliminado", "Mensaje", "Success");
+                ShowToastr(this, "Egreso eliminado", "Mensaje", "success");
             }
             else
             {
-                ShowToastr(this, "Error al eliminar", "Error", "Danger");
+                ShowToastr(this, "Error al eliminar", "Error", "danger");
             }
         }
 
@@ -170,7 +170,7 @@ namespace FinanzasPersonalesWeb
 
             if (EgresoIdTextBox.Text.Length == 0)
             {
-                ShowToastr(this, "Debe especificar el ID", "Alerta", "Warning");
+                ShowToastr(this, "Debe especificar el ID", "Alerta", "warning");
             }
             else
             {
@@ -185,7 +185,7 @@ namespace FinanzasPersonalesWeb
                 }
                 else 
                 {
-                    ShowToastr(this, "Error al buscar", "Error", "Danger");
+                    ShowToastr(this, "Error al buscar", "Error", "danger");
                 }
             }
         }
