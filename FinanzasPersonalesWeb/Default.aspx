@@ -12,7 +12,7 @@
                         <asp:Label ID="DescripcionLabel" CssClass="panel-title" runat="server" Text='<%# Eval("Descripcion")%>'></asp:Label>
                     </div>            
                     <div class="panel-body">
-                        <asp:Label ID="CuentaIdLabel" runat="server" Text='<%# Eval("CuentaId")%>'></asp:Label>&nbsp&nbsp
+                        <%--<asp:Label ID="CuentaIdLabel" runat="server" Text='<%# Eval("CuentaId")%>'></asp:Label>&nbsp&nbsp--%>
                         <asp:Label ID="EgresoLabel" runat="server" Text='<%# Eval("Egresos")%>'></asp:Label>&nbsp&nbsp
                         <asp:Label ID="BalanceLabel" runat="server" Text='<%# Eval("Balance")%>'></asp:Label>&nbsp&nbsp
                         <asp:Label ID="IngresoLabel" runat="server" Text='<%# Eval("Ingresos")%>'></asp:Label>
@@ -28,7 +28,7 @@
                 <h3 class="panel-title">Balance General</h3>
             </div>
                 <div class="panel-body">
-                    <asp:Label ID="CuentaIdLabel" runat="server" Text='<%# Eval("Balance")%>'></asp:Label>&nbsp&nbsp
+                    <asp:Label ID="BalanceLabel" runat="server" Text='<%# Eval("Balance")%>'></asp:Label>&nbsp&nbsp
                 </div>          
         </div>
     </div>

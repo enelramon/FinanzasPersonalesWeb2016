@@ -29,11 +29,18 @@ namespace BLL
         public DataTable ObtenerCuentas()
         {
             ConexionDb con = new ConexionDb();
-            return con.ObtenerDatos("select sum(e.Monto) as Egresos,c.Descripcion,c.Balance,sum(i.Monto) as Ingresos,c.CuentaId,(c.Balance + sum((i.Monto) - (e.Monto))) as NuevoBalance from Cuentas c "+
-                                    " left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId "+
+            return con.ObtenerDatos("select sum(e.Monto) as Egresos,c.Descripcion,c.Balance,sum(i.Monto) as Ingresos from Cuentas c "+
+                                    " left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId left join Usuarios u on u.UsuarioId = c.UsuarioId where u.UsuarioId =  " +this.UsuarioId +
                                     " Group by c.CuentaId, c.Descripcion, c.Balance");
         }
 
+        public DataTable ObtenerBalance()
+        {
+            ConexionDb con = new ConexionDb();
+            return con.ObtenerDatos("select (c.Balance + sum((i.Monto) - (e.Monto))) as Balance from Cuentas c" +
+                                     " left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId left join Usuarios u on c.UsuarioId = u.UsuarioId where u.UsuarioId = " +this.UsuarioId +
+                                     " group by c.Balance");
+        }
         public override bool Insertar()
         {
             ConexionDb con = new ConexionDb();

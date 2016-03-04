@@ -22,12 +22,12 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Repeater yourRepeater;
         
         /// <summary>
-        /// CuentaIdLabel control.
+        /// BalanceLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CuentaIdLabel;
+        protected global::System.Web.UI.WebControls.Label BalanceLabel;
     }
 }

@@ -31,10 +31,17 @@ Delete from Egresos
 Delete From Ingresos
 Delete From Cuentas
 select *from Ingresos
+Select *from Usuarios
 
 select sum(e.Monto) as Egresos,c.Descripcion,c.Balance,sum(i.Monto) as Ingresos,c.CuentaId,(c.Balance + sum((i.Monto) - (e.Monto))) as NuevoBalance from Cuentas c
-left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId
+left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId left join Usuarios u on u.UsuarioId = c.UsuarioId where u.UsuarioId = 5
 Group by c.CuentaId,c.Descripcion,c.Balance
+
+
+
+select (c.Balance + sum((i.Monto) - (e.Monto))) as NuevoBalance from Cuentas c
+left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId left join Usuarios u on c.UsuarioId = u.UsuarioId where u.UsuarioId = 5
+group by c.Balance
 
 --Script Edwin 2
 create table Ingresos(
@@ -49,7 +56,7 @@ Observacion varchar(100)
 
 Insert into Ingresos(Monto,CuentaId) values(3000,7)
 
-Insert into Cuentas(Descripcion,Balance) values('Para la bebida',20000)
+Update Cuentas set UsuarioId = 5 where CuentaId = 7
 
 Insert into Egresos(Monto,CuentaId) values(500,7)
 
