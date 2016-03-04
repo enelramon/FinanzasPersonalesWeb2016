@@ -72,7 +72,7 @@ namespace BLL
 
             if (dt.Rows.Count > 0)
             {
-                this.TipoUsuarioId = (int)dt.Rows[0]["IdTipoUsuario"];
+                this.TipoUsuarioId = (int)dt.Rows[0]["TipoUsuarioId"];
                 this.Descripcion = (string)dt.Rows[0]["Descripcion"];
                
             }
