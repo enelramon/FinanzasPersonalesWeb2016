@@ -3,65 +3,33 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:Label ID="Label1" runat="server" Text="Esta es la pagina Default, FinanzasPersonaslWeb 1-2016 Universidad Catolica Nordestana (UCNE)"></asp:Label>
-
-
-
 <div class="row">
+    <asp:Repeater ID="yourRepeater" runat="server">
+        <ItemTemplate>
+            <div class="col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <asp:Label ID="DescripcionLabel" CssClass="panel-title" runat="server" Text='<%# Eval("Descripcion")%>'></asp:Label>
+                    </div>            
+                    <div class="panel-body">
+                        <asp:Label ID="CuentaIdLabel" runat="server" Text='<%# Eval("CuentaId")%>'></asp:Label>&nbsp&nbsp
+                        <asp:Label ID="EgresoLabel" runat="server" Text='<%# Eval("Egresos")%>'></asp:Label>&nbsp&nbsp
+                        <asp:Label ID="BalanceLabel" runat="server" Text='<%# Eval("Balance")%>'></asp:Label>&nbsp&nbsp
+                        <asp:Label ID="IngresoLabel" runat="server" Text='<%# Eval("Ingresos")%>'></asp:Label>
+                    </div>         
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater> 
+
     <div class="col-sm-6">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">Cuentas</h3>
-            </div>
-            <asp:Repeater ID="yourRepeater" runat="server">
-                <ItemTemplate>
-                    <div class="panel-body">
-                        <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion")%>'></asp:Label>
-
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>            
-        </div>
-    </div>
-
-    <div class="col-sm-6">
-        <div class="panel panel-success">
-            <div class="panel-heading">
-                <h3 class="panel-title">Ingreso</h3>
-            </div>
-            <asp:Repeater ID="Repeater1" runat="server">
-                <ItemTemplate>
-                    <div class="panel-body">
-                        <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion")%>'></asp:Label>
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>            
-        </div>
-    </div>
-
-    <div class="col-sm-6">
-        <div class="panel panel-danger">
-            <div class="panel-heading">
-                <h3 class="panel-title">Egreso</h3>
-            </div>
-            <asp:Repeater ID="Repeater2" runat="server">
-                <ItemTemplate>
-                    <div class="panel-body">
-                        <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion")%>'></asp:Label>
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>            
-        </div>
-    </div>
-
-    <div class="col-sm-6">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
                 <h3 class="panel-title">Balance General</h3>
-            </div>            
-            <div class="panel-body">
-                <span runat="server" class="badge pull-right">1200</span>
-            </div>         
+            </div>
+                <div class="panel-body">
+                    <asp:Label ID="CuentaIdLabel" runat="server" Text='<%# Eval("Balance")%>'></asp:Label>&nbsp&nbsp
+                </div>          
         </div>
     </div>
 </div>

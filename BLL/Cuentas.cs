@@ -26,6 +26,13 @@ namespace BLL
 
         }
 
+        public DataTable ObtenerCuentas()
+        {
+            ConexionDb con = new ConexionDb();
+            return con.ObtenerDatos("select sum(e.Monto) as Egresos,c.Descripcion,c.Balance,sum(i.Monto) as Ingresos,c.CuentaId,(c.Balance + sum((i.Monto) - (e.Monto))) as NuevoBalance from Cuentas c "+
+                                    " left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId "+
+                                    " Group by c.CuentaId, c.Descripcion, c.Balance");
+        }
 
         public override bool Insertar()
         {

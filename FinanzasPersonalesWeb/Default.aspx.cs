@@ -16,14 +16,18 @@ namespace FinanzasPersonalesWeb
             //{
             //    Label1.Text += @" <div class=""panel panel-default"">    < div class=""panel-body"">Panel Content</div>  </div>";
             //}
-
+            if (!IsPostBack)
+            {
+                LlenarPaneles();
+            }           
+        }
+        
+        public void LlenarPaneles()
+        {
+           
             Cuentas cuenta = new Cuentas();
-            yourRepeater.DataSource = cuenta.Listado(" * "," 1=1 ","");
+            yourRepeater.DataSource = cuenta.ObtenerCuentas();
             yourRepeater.DataBind();
-            Repeater1.DataSource = cuenta.Listado(" * ", " 1=1 ", "");
-            Repeater1.DataBind();
-            Repeater2.DataSource = cuenta.Listado(" * ", " 1=1 ", "");
-            Repeater2.DataBind();
             
         }
     }
