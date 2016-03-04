@@ -1,27 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="cTransferencias.aspx.cs" Inherits="FinanzasPersonalesWeb.Consultas.cTransferencias" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cTransferencias.aspx.cs" Inherits="FinanzasPersonalesWeb.Consultas.cTransferencias" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <div>
+         <div class="panel-body">
+            <div class="form-horizontal col-md-12" role="form">
+                <div class="form-group">
+         <asp:DropDownList ID="DatosDropDownList" class="col-xs-3 control-label input-sm" runat="server"></asp:DropDownList>
+                    <div class="col-xs-3">
+                        <asp:TextBox ID="DatosTextBox" runat="server" placeholder="Buscar por" Class="form-control input-sm"></asp:TextBox>
+                    </div>
+                    <asp:Button ID="BuscarButton" Class="btn btn-info" runat="server" Text="Buscar" />
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-        <asp:DropDownList ID="DatosDropDownList" runat="server" Width="108px">
-            <asp:ListItem>TransferenciaId</asp:ListItem>
-            <asp:ListItem>Fecha</asp:ListItem>
-            <asp:ListItem>UsuarioId</asp:ListItem>
-        </asp:DropDownList>
-        <asp:TextBox ID="DatosTextBox" runat="server" Width="286px"></asp:TextBox>
-        <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="97px" OnClick="BuscarButton_Click" />
-        <br />
+      </div>
         <asp:GridView ID="DatosGridView" runat="server" Width="645px" BorderColor="green" BorderWidth="3px" BackColor="#16a085" Height="234px">
         </asp:GridView>
-    
     </div>
-    </form>
-</body>
-</html>
+    </div>
+         </div>
+</asp:Content>

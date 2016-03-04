@@ -36,12 +36,12 @@ namespace FinanzasPersonalesWeb
                 transferencia.UsuarioId = Convert.ToInt32(UsuarioIdTextBox.Text);
                 if (transferencia.Insertar())
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Transferencia Realizada')</SCRIPT>");
+                    Utilitarios.ShowToastr(this.Page, "Se ha realizado la transferencia", "Transferido", "Success");
                     Limpiar();
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Transferencia no Realizada')</SCRIPT>");
+                    Utilitarios.ShowToastr(this.Page, "Error al realizar la transferencia", "Error", "Warning");
                 }
             }
             else
@@ -51,12 +51,12 @@ namespace FinanzasPersonalesWeb
                 transferencia.TransferenciaId = id;
                 if (transferencia.Editar())
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Actualizacion Realizada')</SCRIPT>");
+                    Utilitarios.ShowToastr(this.Page, "Se ha actualizado la transferencia", "Actualizacion", "Success");
                     Limpiar();
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Error al Actualizar Datos')</SCRIPT>");
+                    Utilitarios.ShowToastr(this.Page, "Error al actualizar", "Error", "Warning");
                 }
             }
         }
@@ -69,12 +69,12 @@ namespace FinanzasPersonalesWeb
             transferencias.TransferenciaId = id;
             if (transferencias.Eliminar())
             {
-                HttpContext.Current.Response.Write("<Script>alert('Datos eliminados')</Script>");
+                Utilitarios.ShowToastr(this.Page, "Se han eliminado los datos", "Eliminado", "Success");
 
             }
             else
             {
-                HttpContext.Current.Response.Write("<Script>alert('Error, no se han eliminado los datos')</Script>");
+                Utilitarios.ShowToastr(this.Page, "Error al eliminar", "Error", "Warning");
             }
         }
 
@@ -98,12 +98,12 @@ namespace FinanzasPersonalesWeb
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("<SCRIPT>alert('Id No Existe')</SCRIPT>");
+                    Utilitarios.ShowToastr(this.Page, "Ingrese un id", "Error", "Warning");
                 }
             }
             else
             {
-                HttpContext.Current.Response.Write("<SCRIPT>alert('Id Incorrecto')</SCRIPT>");
+                Utilitarios.ShowToastr(this.Page, "El id no existe", "Error", "Warning");
             }
         }
 
