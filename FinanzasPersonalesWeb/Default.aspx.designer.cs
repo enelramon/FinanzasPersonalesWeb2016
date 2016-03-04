@@ -13,15 +13,6 @@ namespace FinanzasPersonalesWeb {
     public partial class Default {
         
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
         /// yourRepeater control.
         /// </summary>
         /// <remarks>
@@ -31,21 +22,12 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Repeater yourRepeater;
         
         /// <summary>
-        /// Repeater1 control.
+        /// CuentaIdLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
-        
-        /// <summary>
-        /// Repeater2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater2;
+        protected global::System.Web.UI.WebControls.Label CuentaIdLabel;
     }
 }
