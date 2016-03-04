@@ -47,7 +47,9 @@
                       <div class="col-lg-6 col-md-6">
                           <asp:TextBox ID="FechaTexBox" CssClass="form-control" runat="server"></asp:TextBox>
                       </div>
-                      <div class="col-md-1">
+                      <div class="col-md-6">
+                                 <asp:requiredfieldvalidator id="RequiredFieldValidator3" forecolor="Red" errormessage="Por Favor Ingrese una Fecha" controltovalidate="FechaTexBox" runat="server">
+                                 </asp:requiredfieldvalidator>
                       </div>
                 </div>
 
@@ -57,7 +59,9 @@
                       <div class="col-lg-6 col-md-6">
                           <asp:TextBox ID="MontoTexBox" CssClass="form-control" runat="server" placeholder ="Escribe un Monto"></asp:TextBox>
                       </div>
-                      <div class="col-md-1">
+                      <div class="col-md-6">
+                                 <asp:requiredfieldvalidator id="RequiredFieldValidator1" forecolor="Red" errormessage="Por Favor Ingrese una Monto" controltovalidate="MontoTexBox" runat="server">
+                                 </asp:requiredfieldvalidator>
                       </div>
                 </div>
 
@@ -94,7 +98,9 @@
                       <div class="col-lg-6 col-md-6">
                           <asp:TextBox ID="ObservacionTexBox" CssClass="form-control" runat="server" placeholder ="Escribe una Observacion" Height="122px"></asp:TextBox>
                       </div>
-                      <div class="col-md-1">
+                      <div class="col-md-6">
+                                 <asp:requiredfieldvalidator id="RequiredFieldValidator2" forecolor="Red" errormessage="Por Favor Ingrese una Observacion" controltovalidate="ObservacionTexBox" runat="server">
+                                 </asp:requiredfieldvalidator>
                       </div>
                 </div>
 

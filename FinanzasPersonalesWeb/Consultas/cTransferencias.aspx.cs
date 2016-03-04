@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using BLL;
+using System.Data;
+
 namespace FinanzasPersonalesWeb.Consultas
 {
     public partial class cTransferencias : System.Web.UI.Page
@@ -18,8 +19,8 @@ namespace FinanzasPersonalesWeb.Consultas
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             Transferencias transferencia = new Transferencias();
-           
-            
+
+
             DataTable dt = new DataTable();
             string filtro = "1=1";
 
@@ -69,7 +70,9 @@ namespace FinanzasPersonalesWeb.Consultas
                 DatosGridView.DataBind();
             }
 
-            
+
         }
+
+
     }
 }

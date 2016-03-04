@@ -42,6 +42,7 @@ namespace FinanzasPersonalesWeb.Registros
             DescripcionTextBox.Text = "";
             EstadoRadioButtonList.SelectedIndex = 0;
             UsuarioDropDownList.ClearSelection();
+            RequiredFieldValidator1.IsValid = true;
         }
 
         public bool LlenarDatos()

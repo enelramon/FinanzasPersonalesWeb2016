@@ -36,7 +36,9 @@
                       <div class="col-lg-6 col-md-6">
                           <asp:TextBox ID="DescripcionTextBox" CssClass="form-control" runat="server" placeholder ="Escribe una descripcion"></asp:TextBox>
                       </div>
-                      <div class="col-md-1">
+                      <div class="col-md-6">
+                                 <asp:requiredfieldvalidator id="RequiredFieldValidator1" forecolor="Red" errormessage="Por Favor Ingrese una Descripcion" controltovalidate="DescripcionTextBox" runat="server">
+                                 </asp:requiredfieldvalidator>
                       </div>
                 </div>
 

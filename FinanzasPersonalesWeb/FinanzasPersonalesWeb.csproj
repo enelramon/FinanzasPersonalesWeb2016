@@ -165,6 +165,13 @@
     <Compile Include="Consultas\cTipoIngresos.aspx.designer.cs">
       <DependentUpon>cTipoIngresos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\cTransferencias.aspx.cs">
+      <DependentUpon>cTransferencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cTransferencias.aspx.designer.cs">
+      <DependentUpon>cTransferencias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rCuentas.aspx.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -224,13 +231,6 @@
     </Compile>
     <Compile Include="Consultas\cTiposUsuarios.aspx.designer.cs">
       <DependentUpon>cTiposUsuarios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultas\cTransferencias.aspx.cs">
-      <DependentUpon>cTransferencias.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Consultas\cTransferencias.aspx.designer.cs">
-      <DependentUpon>cTransferencias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>

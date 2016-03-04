@@ -70,13 +70,16 @@ namespace FinanzasPersonalesWeb.Registros
             MiembroDropDownList.ClearSelection();
             TipoIngresoDropDownList.ClearSelection();
             ObservacionTexBox.Text = "";
+            RequiredFieldValidator1.IsValid = true;
+            RequiredFieldValidator2.IsValid = true;
+            RequiredFieldValidator3.IsValid = true;
         }
 
         public bool LlenarDatos()
         {
             bool retorno = false;
 
-            if (MontoTexBox.Text.Length > 0)
+            if (FechaTexBox.Text.Length > 0 || MontoTexBox.Text.Length > 0 || ObservacionTexBox.Text.Length > 0)
             {
                 Ingreso.Fecha = FechaTexBox.Text;
                 Ingreso.Monto = ValidarIdDouble(MontoTexBox.Text);

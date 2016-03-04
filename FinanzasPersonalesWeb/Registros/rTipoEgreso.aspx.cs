@@ -47,6 +47,7 @@ namespace FinanzasPersonalesWeb
         {
             DataTable dt = new DataTable();
             Usuarios usuario = new Usuarios();
+            TiposEgresos egreso = new TiposEgresos();
             if (IsPostBack == false)
             {
                 dt = usuario.Listado(" *", "1=1", "");
@@ -54,6 +55,26 @@ namespace FinanzasPersonalesWeb
                 UsuarioDropDownList.DataTextField = "Nombre";
                 UsuarioDropDownList.DataValueField = "UsuarioId";
                 UsuarioDropDownList.DataBind();
+
+                int idBuscado;
+                if (Request.QueryString["idBuscado"] != null)
+                {
+                    idBuscado = ConvertirId(Request.QueryString["idBuscado"].ToString());
+
+                    if (idBuscado > 0) //si es mayor que cero, buscar el registro
+                    {
+                        if (!egreso.Buscar(idBuscado))
+                        {
+                            Utilitarios.ShowToastr(this.Page, "Registro no encontrado.", "Error", "Error");
+                            Limpiar();
+                        }
+                        else
+                        {
+                            LlenarCampos(egreso);
+                        }
+
+                    }
+                }
             }
         }
 
@@ -64,20 +85,23 @@ namespace FinanzasPersonalesWeb
 
             return id;
         }
+        public void LlenarCampos(TiposEgresos egreso)
+        {
+            TipoEgresoIdTextBox.Text = egreso.TipoEgresoId.ToString();
+            DescripcionTextBox.Text = egreso.Descripcion;
+            if (egreso.EsActivo)
+                EstadoRadioButtonList.SelectedIndex = 0;
+            else
+                EstadoRadioButtonList.SelectedIndex = 1;
 
+            UsuarioDropDownList.SelectedValue = egreso.UsuarioId.ToString();
+        }
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             TiposEgresos egreso = new TiposEgresos();
             if (egreso.Buscar(ConvertirId(TipoEgresoIdTextBox.Text)))
             {
-                TipoEgresoIdTextBox.Text = egreso.TipoEgresoId.ToString();
-                DescripcionTextBox.Text = egreso.Descripcion;
-                if (egreso.EsActivo)
-                    EstadoRadioButtonList.SelectedIndex = 0;
-                else
-                    EstadoRadioButtonList.SelectedIndex = 1;
-
-                UsuarioDropDownList.SelectedValue = egreso.UsuarioId.ToString();
+                LlenarCampos(egreso);
             }
             else
             {
