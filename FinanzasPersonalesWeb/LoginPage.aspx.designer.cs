@@ -13,24 +13,6 @@ namespace FinanzasPersonalesWeb {
     public partial class LoginPage {
         
         /// <summary>
-        /// AlertNotificationDiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AlertNotificationDiv;
-        
-        /// <summary>
-        /// AlertNotificationBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AlertNotificationBox;
-        
-        /// <summary>
         /// UsuarioTextBox control.
         /// </summary>
         /// <remarks>
@@ -83,14 +65,5 @@ namespace FinanzasPersonalesWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Submit1;
-        
-        /// <summary>
-        /// Msg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Msg;
     }
 }

@@ -25,6 +25,13 @@
                     </div>
                  </div>
                 <asp:GridView ID="DatoGridView" runat="server" style="margin-top: 7px; margin-bottom: 0px" Width="580px">
+                    <Columns>
+                        <asp:HyperLinkField 
+                             DataNavigateUrlFields="TipoEgresoId" 
+                             DataNavigateUrlFormatString="~/Registros/rTipoEgreso.aspx?idBuscado={0}" 
+                              Text="Editar" />
+
+                    </Columns>
                 </asp:GridView>
      </div>
     </div> 

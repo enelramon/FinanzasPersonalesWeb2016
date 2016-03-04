@@ -10,7 +10,34 @@ namespace FinanzasPersonalesWeb.Registro
 {
     public partial class rTiposUsuarios : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
 
+                int id = 0;
+                //Leermos el QueryString que llego en la url
+                if (Request.QueryString["Id"] != null)
+                {
+                    id = Utilitarios.ToInt(Request.QueryString["Id"].ToString());
+
+                    if (id > 0) //si es mayor que cero, buscar el registro
+                    {
+
+                        TiposUsuarios TipoUsuario = new TiposUsuarios();
+                        if (!TipoUsuario.Buscar(id))
+                        {
+                            Utilitarios.ShowToastr(this.Page, "Registro no encontrado.", "Error", "Error");
+                        }
+                        else
+                        {
+                            LlenarCampos(TipoUsuario);
+                            Habilitar();
+                        }
+                    }
+                }
+            }
+        }
         public void LlenarClase(TiposUsuarios TipoUsuario)
         {
             TipoUsuario.TipoUsuarioId = (TipoUsuarioIdTextBox.Text == "") ? 0 : Convert.ToInt16(TipoUsuarioIdTextBox.Text);
@@ -53,7 +80,7 @@ namespace FinanzasPersonalesWeb.Registro
                 Limpiar();
                 return;
             }
-            
+
             LlenarCampos(TipoUsuario);
         }
 

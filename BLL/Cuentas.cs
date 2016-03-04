@@ -95,7 +95,8 @@ namespace BLL
             {
                 OrdenFinal = " Order by " + Orden;
             }
-            return con.ObtenerDatos("Select " + Campos + "from Cuentas where " + Condicion + " " + OrdenFinal);
+            return con.ObtenerDatos("Select " + Campos + 
+                " from Cuentas where " + Condicion + " " + OrdenFinal);
         }
     }
 }
