@@ -40,24 +40,29 @@
                     </div>
 
                 </div>
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate ><div class="form-group">
+                    <asp:Label ID="Label7" runat="server" Text="Cuenta origen" class="col-md-3 control-label input-sm"></asp:Label>
+                    <div class="col-md-8">
+                        
+                        <asp:DropDownList ID="CuentaOrigenDropDownList" Class="form-control" runat="server" AutoPostBack="true" OnSelectedIndexChanged="CuentaOrigenDropDownList_SelectedIndexChanged"></asp:DropDownList>
+                    </div> 
+                </div>
 
                 <div class="form-group">
-                    <asp:Label ID="Label7" runat="server" Text="Cuenta origen Id" class="col-md-3 control-label input-sm"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="Cuenta Destino" class="col-md-3 control-label input-sm"></asp:Label>
                     <div class="col-md-8">
-                        <asp:TextBox ID="CuentaOrigenTextBox" placeholder="Cuenta origen" Class="form-control input-sm" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="CuentaDestinoDropDownList" Class="form-control" runat="server"></asp:DropDownList>
 
                     </div>
 
                 </div>
 
-                <div class="form-group">
-                    <asp:Label ID="Label1" runat="server" Text="Cuenta Destino Id" class="col-md-3 control-label input-sm"></asp:Label>
-                    <div class="col-md-8">
-                        <asp:TextBox ID="CuentaDestinoTextBox" placeholder="Cuenta destino" Class="form-control input-sm" runat="server"></asp:TextBox>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
 
-                    </div>
-
-                </div>
+                
 
                 <div class="form-group">
                     <asp:Label ID="Label2" runat="server" Text="Monto" class="col-md-3 control-label input-sm"></asp:Label>
@@ -65,7 +70,6 @@
                         <asp:TextBox ID="MontoTextBox" placeholder="Monto" Class="form-control input-sm" runat="server"></asp:TextBox>
 
                     </div>
-
                 </div>
 
 

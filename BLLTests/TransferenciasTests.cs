@@ -21,7 +21,7 @@ namespace BLL.Tests
         {
             Transferencias transferencias = new Transferencias();
             transferencias.Fecha = "Prueba";
-            transferencias.CuentaOrigenId = 1;
+            transferencias.CuentaOrigenId = 0;
             transferencias.CuentaDestinoId = 2;
             transferencias.Monto = 1;
             transferencias.Observacion = "Prueba";
@@ -34,7 +34,7 @@ namespace BLL.Tests
             Transferencias transferencias = new Transferencias();
             transferencias.TransferenciaId = 1;
             transferencias.Fecha = "Prueba";
-            transferencias.CuentaOrigenId = 2;
+            transferencias.CuentaOrigenId = 0;
             transferencias.CuentaDestinoId = 2;
             transferencias.Monto = 2;
             transferencias.Observacion = "Prueba";

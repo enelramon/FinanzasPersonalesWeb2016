@@ -29,10 +29,14 @@
             <h1>ENCABEZADO</h1>
             <hr />
         </div>
+        
+
 
         <div class="container-fluid">
+            
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+            
         </div>
         <div>
             <hr />

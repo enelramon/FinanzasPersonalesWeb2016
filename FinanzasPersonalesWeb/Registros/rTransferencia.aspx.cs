@@ -11,6 +11,20 @@ namespace FinanzasPersonalesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            if (!IsPostBack)
+            {
+                Cuentas cuenta = new Cuentas();
+                CuentaOrigenDropDownList.DataSource = cuenta.Listado(" * ", "1=1", "");
+                CuentaOrigenDropDownList.DataTextField = "Descripcion";
+                CuentaOrigenDropDownList.DataValueField = "CuentaId";
+                CuentaOrigenDropDownList.DataBind();
+
+                CuentaDestinoDropDownList.DataSource = cuenta.Listado(" * ", "CuentaId <> " + CuentaOrigenDropDownList.SelectedValue, "");
+                CuentaDestinoDropDownList.DataTextField = "Descripcion";
+                CuentaDestinoDropDownList.DataValueField = "CuentaId";
+                CuentaDestinoDropDownList.DataBind();
+            }
 
         }
 
@@ -19,6 +33,9 @@ namespace FinanzasPersonalesWeb
         {
             FechaTextBox.Text = string.Empty;
             ObservacionTextBox.Text = string.Empty;
+            MontoTextBox.Text = string.Empty;
+            UsuarioIdTextBox.Text = string.Empty;
+            TransferenciaIdTextBox.Text = string.Empty;
         }
 
         protected void GuardarButton_Click1(object sender, EventArgs e)
@@ -29,8 +46,8 @@ namespace FinanzasPersonalesWeb
             {
 
                 transferencia.Fecha = FechaTextBox.Text;
-                transferencia.CuentaOrigenId = Convert.ToInt32(CuentaOrigenTextBox.Text);
-                transferencia.CuentaDestinoId = Convert.ToInt32(CuentaDestinoTextBox.Text);
+                transferencia.CuentaOrigenId = Convert.ToInt32( CuentaOrigenDropDownList.SelectedValue);
+                transferencia.CuentaDestinoId = Convert.ToInt32(CuentaDestinoDropDownList.SelectedValue);
                 transferencia.Monto = Convert.ToDouble(MontoTextBox.Text);
                 transferencia.Observacion = ObservacionTextBox.Text;
                 transferencia.UsuarioId = Convert.ToInt32(UsuarioIdTextBox.Text);
@@ -49,6 +66,12 @@ namespace FinanzasPersonalesWeb
                 int id;
                 id = Convert.ToInt32(TransferenciaIdTextBox.Text);
                 transferencia.TransferenciaId = id;
+                transferencia.Fecha = FechaTextBox.Text;
+                transferencia.CuentaOrigenId = Convert.ToInt32(CuentaOrigenDropDownList.SelectedValue);
+                transferencia.CuentaDestinoId = Convert.ToInt32(CuentaDestinoDropDownList.SelectedValue);
+                transferencia.Monto = Convert.ToDouble(MontoTextBox.Text);
+                transferencia.Observacion = ObservacionTextBox.Text;
+                transferencia.UsuarioId = Convert.ToInt32(UsuarioIdTextBox.Text);
                 if (transferencia.Editar())
                 {
                     Utilitarios.ShowToastr(this.Page, "Se ha actualizado la transferencia", "Actualizacion", "Success");
@@ -90,8 +113,8 @@ namespace FinanzasPersonalesWeb
                 if (transferencia.Buscar(Id))
                 {
                     FechaTextBox.Text = transferencia.Fecha;
-                    CuentaOrigenTextBox.Text = transferencia.CuentaOrigenId.ToString();
-                    CuentaDestinoTextBox.Text = transferencia.CuentaDestinoId.ToString();
+                    CuentaOrigenDropDownList.SelectedValue = transferencia.CuentaDestinoId.ToString();
+                    CuentaDestinoDropDownList.SelectedValue = transferencia.CuentaOrigenId.ToString();
                     MontoTextBox.Text = transferencia.Monto.ToString();
                     ObservacionTextBox.Text = transferencia.Observacion;
                     UsuarioIdTextBox.Text = transferencia.UsuarioId.ToString();
@@ -110,6 +133,15 @@ namespace FinanzasPersonalesWeb
         protected void Nuevobutton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void CuentaOrigenDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cuentas cuenta = new Cuentas();
+            CuentaDestinoDropDownList.DataSource = cuenta.Listado(" * ", "CuentaId <> " + CuentaOrigenDropDownList.SelectedValue, "");
+            CuentaDestinoDropDownList.DataTextField = "Descripcion";
+            CuentaDestinoDropDownList.DataValueField = "CuentaId";
+            CuentaDestinoDropDownList.DataBind();
         }
     }
 }
