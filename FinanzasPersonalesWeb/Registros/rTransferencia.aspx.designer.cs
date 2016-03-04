@@ -58,6 +58,24 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// Label7 control.
         /// </summary>
         /// <remarks>
@@ -67,13 +85,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// CuentaOrigenTextBox control.
+        /// CuentaOrigenDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CuentaOrigenTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList CuentaOrigenDropDownList;
         
         /// <summary>
         /// Label1 control.
@@ -85,13 +103,13 @@ namespace FinanzasPersonalesWeb {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// CuentaDestinoTextBox control.
+        /// CuentaDestinoDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CuentaDestinoTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList CuentaDestinoDropDownList;
         
         /// <summary>
         /// Label2 control.

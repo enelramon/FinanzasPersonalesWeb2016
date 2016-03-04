@@ -72,12 +72,14 @@ TipoEgresoId int references TiposEgresos(TipoEgresoId),
 Observacion varchar(100)
 )
 
+Insert Into Transferencias (Fecha, CuentaOrigenId, CuentaDestinoId, Monto, Observacion, UsuarioId) values('28/2/2016', 3, 2, 80000, 'Transferencia', 1)
+select *from Cuentas 
 --Script Juan Alberto
 create table Transferencias(
 			TransferenciaId int primary key identity, 
 			Fecha varchar(20), 
-			CuentaOrigenId int,
-			CuentaDestinoId int,
+			CuentaOrigenId int References Cuentas(CuentaId),
+			CuentaDestinoId int References Cuentas(CuentaId),
 			Monto float,
 			Observacion nvarchar(100),
 			UsuarioId int References Usuarios(UsuarioId)
