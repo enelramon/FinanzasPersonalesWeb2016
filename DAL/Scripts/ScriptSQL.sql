@@ -17,7 +17,6 @@ Usuario nvarchar(15),
 Contrasena nvarchar(10),
 Email nvarchar(30))
 select *from Usuarios
-
 --Script Yahaida
 create table Cuentas(
 CuentaId int identity(1,1) primary key,
@@ -26,8 +25,17 @@ Descripcion varchar(100),
 Balance float,
 Porciento int
 )
-select * from Cuentas
-insert into Cuentas(UsuarioId,Descripcion,Balance,Porciento) values(5,'Prueba 2',300,5.2)
+select *from Cuentas
+Select *from Egresos
+Delete from Egresos
+Delete From Ingresos
+Delete From Cuentas
+select *from Ingresos
+
+select sum(e.Monto) as Egresos,c.Descripcion,c.Balance,sum(i.Monto) as Ingresos,c.CuentaId,(c.Balance + sum((i.Monto) - (e.Monto))) as NuevoBalance from Cuentas c
+left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId
+Group by c.CuentaId,c.Descripcion,c.Balance
+
 --Script Edwin 2
 create table Ingresos(
 IngresoId int identity(1,1) primary key,
@@ -38,6 +46,12 @@ MiembroId int references Miembros(MiembroId),
 TipoIngresoId int references TiposIngresos(TipoIngresoId),
 Observacion varchar(100)
 );
+
+Insert into Ingresos(Monto,CuentaId) values(3000,7)
+
+Insert into Cuentas(Descripcion,Balance) values('Para la bebida',20000)
+
+Insert into Egresos(Monto,CuentaId) values(500,7)
 
 
 --Script Melvin
@@ -62,7 +76,7 @@ create table Transferencias(
 			UsuarioId int References Usuarios(UsuarioId)
 			);
 			
-			select *from Transferencias
+			
 --Script Francis
 create table Metas
 (
@@ -135,7 +149,8 @@ Create Table TiposEgresos
 )
 
 
-
+select * from Cuentas
+insert into Cuentas(UsuarioId,Descripcion,Balance,Porciento) values(5,'Prueba 2',300,5.2)
 
 go
 create table Personas(
