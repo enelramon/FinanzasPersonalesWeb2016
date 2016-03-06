@@ -10,24 +10,15 @@
 namespace FinanzasPersonalesWeb.ReportViewers {
     
     
-    public partial class ListadoTipoIngresoTipoViewer {
+    public partial class ListadoIngreso {
         
         /// <summary>
-        /// ReportViewer1 control.
+        /// IngresoRptViewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
-        
-        /// <summary>
-        /// RptViewer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer RptViewer;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer IngresoRptViewer;
     }
 }
