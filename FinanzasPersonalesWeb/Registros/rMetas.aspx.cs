@@ -12,7 +12,33 @@ namespace FinanzasPersonalesWeb.Registros
     {  
         protected void Page_Load(object sender, EventArgs e)
         {
-             LlenarDropDownList();
+            if (!IsPostBack)
+            {
+                int Id = 0;
+                LlenarDropDownList();
+
+                if (Request.QueryString["Id"] != null)
+                {
+                    Id = Utilitarios.ToInt(Request.QueryString["Id"].ToString());
+
+                    if (Id > 0)
+                    {
+                        Metas meta = new Metas();
+                        if (!meta.Buscar(Id))
+                        {
+                            ShowToast("error", "Error", "Registro no encontrado.");
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MetaIdTextBox.Text = Id.ToString();
+                            LlenarMetas(meta);
+                        }
+
+                    }
+                }
+            }
+             
         }
 
         public void Limpiar()
@@ -32,6 +58,15 @@ namespace FinanzasPersonalesWeb.Registros
             TipoDeIngresoDropDownList.DataTextField = "Descripcion";
             TipoDeIngresoDropDownList.DataValueField = "TipoIngresoId";
             TipoDeIngresoDropDownList.DataBind();
+        }
+
+        public void LlenarMetas(Metas meta)
+        {
+            DescripcionTextBox.Text = meta.Descripcion;
+            foreach (var item in meta.metas)
+            {
+                MetasListBox.Items.Add(item.Monto.ToString());
+            }
         }
 
         protected void GuadarButton_Click1(object sender, EventArgs e)
@@ -95,11 +130,7 @@ namespace FinanzasPersonalesWeb.Registros
                 MetasListBox.Items.Clear();
                 if (meta.Buscar(Id))
                 {
-                    DescripcionTextBox.Text = meta.Descripcion;
-                    foreach (var item in meta.metas)
-                    {
-                        MetasListBox.Items.Add(item.Monto.ToString());
-                    }
+                    LlenarMetas(meta);
                     GuadarButton.Text = "Modificar";
                 }
                 else
