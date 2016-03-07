@@ -122,10 +122,12 @@
     <Content Include="Registros\rTipoIngreso.aspx" />
     <Content Include="Registros\rTransferencia.aspx" />
     <Content Include="ReportViewers\ListadoEgresos.aspx" />
+    <Content Include="ReportViewers\ListadoIngreso.aspx" />
+    <Content Include="ReportViewers\ListadoMetas.aspx" />
     <Content Include="ReportViewers\ListadoMiembros.aspx" />
     <Content Include="ReportViewers\ListadoPresupuestoReportViewer.aspx" />
     <Content Include="ReportViewers\ListadoTipoEgreso.aspx" />
-    <Content Include="ReportViewers\ListadoTipoIngresoViewer.aspx" />
+    <Content Include="ReportViewers\ListadoTipoIngreso.aspx" />
     <Content Include="ReportViewers\ListadoUsuarios.aspx" />
     <Content Include="ReportViewers\ListadoUsuariosxTipoViewer.aspx" />
     <Content Include="Registros\rTiposUsuarios.aspx" />
@@ -172,6 +174,11 @@
     <Compile Include="Consultas\cTransferencias.aspx.designer.cs">
       <DependentUpon>cTransferencias.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\IngresosFinanzasPersonalesWebDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngresosFinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rCuentas.aspx.cs">
       <DependentUpon>rCuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -192,6 +199,27 @@
     </Compile>
     <Compile Include="Registros\rMetas.aspx.designer.cs">
       <DependentUpon>rMetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoIngreso.aspx.cs">
+      <DependentUpon>ListadoIngreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoIngreso.aspx.designer.cs">
+      <DependentUpon>ListadoIngreso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoMetas.aspx.cs">
+      <DependentUpon>ListadoMetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoMetas.aspx.designer.cs">
+      <DependentUpon>ListadoMetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoTipoIngreso.aspx.cs">
+      <DependentUpon>ListadoTipoIngreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\ListadoTipoIngreso.aspx.designer.cs">
+      <DependentUpon>ListadoTipoIngreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios.cs" />
     <Content Include="App_Code\FinanzasDataSet.Designer.cs">
@@ -350,13 +378,6 @@
     <Compile Include="ReportViewers\ListadoTipoEgreso.aspx.designer.cs">
       <DependentUpon>ListadoTipoEgreso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ReportViewers\ListadoTipoIngresoViewer.aspx.cs">
-      <DependentUpon>ListadoTipoIngresoViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReportViewers\ListadoTipoIngresoViewer.aspx.designer.cs">
-      <DependentUpon>ListadoTipoIngresoViewer.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ReportViewers\ListadoUsuarios.aspx.cs">
       <DependentUpon>ListadoUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -441,6 +462,17 @@
     <Content Include="FinanzasPersonalesWebDbDataSet.xss">
       <DependentUpon>FinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="App_Code\IngresosFinanzasPersonalesWebDbDataSet.xsc">
+      <DependentUpon>IngresosFinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="App_Code\IngresosFinanzasPersonalesWebDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IngresosFinanzasPersonalesWebDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Code\IngresosFinanzasPersonalesWebDbDataSet.xss">
+      <DependentUpon>IngresosFinanzasPersonalesWebDbDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -456,8 +488,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Rpts\EgresosRpt.rdlc" />
+    <EmbeddedResource Include="Rpts\IngresosRpt.rdlc" />
     <EmbeddedResource Include="Rpts\ListadoPresupuesto.rdlc" />
     <EmbeddedResource Include="Rpts\ListadoUsuariosxTipo.rdlc" />
+    <EmbeddedResource Include="Rpts\MetasRpt.rdlc" />
     <EmbeddedResource Include="Rpts\MiembrosRpt.rdlc" />
     <EmbeddedResource Include="Rpts\TipoEgreso.rdlc" />
     <EmbeddedResource Include="Rpts\TipoIngresoRpt.rdlc" />
