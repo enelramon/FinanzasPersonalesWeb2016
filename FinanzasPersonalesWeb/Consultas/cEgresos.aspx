@@ -2,9 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table style="width: 100%; height: 139px;">
-        <tr>
-            <td>Consultar por:
+         
+   <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+       <ContentTemplate>
+                Consultar por:
             <div class="container">
                <div class ="row">
                 <div class="col-md-2">
@@ -25,10 +26,6 @@
                     </div>
                 </div>
             </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
             <div class="container">
                 <div class ="row">
                     <div class ="col-md-12">
@@ -40,10 +37,9 @@
                         </asp:GridView>
                         <asp:LinkButton ID="ImprimirLinkButton" runat="server" Text="Imprimir" CssClass="btn btn-success btn-block" PostBackUrl="~/ReportViewers/ListadoEgresos.aspx" />
                     </div>
-                </div>
+                  </div>
             </div>
-            </td>
-            
-        </tr>
-    </table>
+     </ContentTemplate>
+  </asp:UpdatePanel>
+              
 </asp:Content>

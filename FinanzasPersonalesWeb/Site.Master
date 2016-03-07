@@ -26,7 +26,7 @@
         <uc1:Menu runat="server" ID="Menu1" />
         <div>
 
-            <h1>ENCABEZADO</h1>
+             <h1>ENCABEZADO</h1>
             <hr />
         </div>
         
@@ -34,8 +34,10 @@
 
         <div class="container-fluid">
             
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            
             
         </div>
         <div>
