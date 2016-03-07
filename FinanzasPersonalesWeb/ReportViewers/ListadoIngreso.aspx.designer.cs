@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonalesWeb {
+namespace FinanzasPersonalesWeb.ReportViewers {
     
     
-    public partial class Default {
+    public partial class ListadoIngreso {
         
         /// <summary>
-        /// yourRepeater control.
+        /// IngresoRptViewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater yourRepeater;
-        
-        /// <summary>
-        /// BalanceLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label BalanceLabel;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer IngresoRptViewer;
     }
 }

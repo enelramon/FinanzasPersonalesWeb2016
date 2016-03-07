@@ -59,7 +59,7 @@ namespace FinanzasPersonalesWeb.Registros
                 LlenarCombos();
 
                 //Leermos el QueryString que llego en la url
-                id = Utilitarios.ToInt(Request.QueryString["Id"].ToString());
+                //id = Utilitarios.ToInt(Request.QueryString["Id"].ToString());
 
                 if (id > 0) //si es mayor que cero, buscar el registro
                 {

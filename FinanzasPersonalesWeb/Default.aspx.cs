@@ -23,12 +23,19 @@ namespace FinanzasPersonalesWeb
         }
         
         public void LlenarPaneles()
-        {
-           
+        {           
             Cuentas cuenta = new Cuentas();
+            cuenta.UsuarioId = 8;
             yourRepeater.DataSource = cuenta.ObtenerCuentas();
             yourRepeater.DataBind();
-            
+            if (cuenta.ObtenerBalance().Rows.Count > 0)
+            {
+                BalanceLabel.Text = cuenta.ObtenerBalance().Rows[0]["Balance"].ToString();
+            }
+            else
+            {
+                BalanceLabel.Text = "0.00";
+            }
         }
     }
 }

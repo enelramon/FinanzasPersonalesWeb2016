@@ -21,29 +21,20 @@
                                  <asp:ListItem Value="UsuarioId">UsuarioId</asp:ListItem>
                              </asp:DropDownList>
                         </div>
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-3 col-md-3">
                             <asp:TextBox ID="CodigoTextBox" runat="server" CssClass="form-control" placeholder="Escribe un caracter valido"></asp:TextBox>
                         </div>
                         <div class="col-xs-1 col-sm-1 col-lg-2 col-md-2">
                             <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-primary" OnClick="BuscarButton_Click" Text="Buscar"/>
-                        </div>
-                        <div class="col-md-1">
+                            <asp:Button ID="ImprimirButton" runat="server" CssClass="btn btn-primary" Text="Imprimir" PostBackUrl="~/ReportViewers/ListadoTipoIngreso.aspx" />
                         </div>
                     </div>
                     <%--Grid--%>
                     <div class="col-lg-12">
                         <asp:GridView ID="ConsultaGridView" runat="server" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" HorizontalAlign="Center" BackColor="White">
-                            <AlternatingRowStyle BackColor="White" />
-                            <FooterStyle BackColor="#CCCC99" />
-                            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-                            <RowStyle BackColor="#F7F7DE" />
-                            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                            <SortedAscendingCellStyle BackColor="#FBFBF2" />
-                            <SortedAscendingHeaderStyle BackColor="#848384" />
-                            <SortedDescendingCellStyle BackColor="#EAEAD3" />
-                            <SortedDescendingHeaderStyle BackColor="#575357" />
-                            
+                            <Columns>
+                                <asp:HyperLinkField DataNavigateUrlFields="TipoIngresoId" DataNavigateUrlFormatString="/Registros/rTipoIngreso.aspx?Id={0}" Text="Editar" />
+                            </Columns>  
                         </asp:GridView>
                     </div>
             </div>

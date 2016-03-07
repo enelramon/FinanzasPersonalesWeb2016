@@ -24,31 +24,18 @@
                 <asp:Button Text="Buscar" runat="server" ID="BuscarButton" CssClass="btn btn-primary" OnClick="BuscarButton_Click1"/>
               </div>
             </div>
-            <center>
-                <asp:GridView ID="MetasGridView" runat="server" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="600px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
-                    <Columns>
-                        <asp:BoundField FooterText="MetaId" />
-                        <asp:BoundField FooterText="Descripcion" />
-                        <asp:BoundField FooterText="UsuarioI" />
-                        <asp:BoundField FooterText="Descripcion" />
-                        <asp:BoundField FooterText="Balance" />
-                    </Columns>
-                    <Columns>
-                        <asp:BoundField FooterText="Descripcion" />
-                    </Columns>
-                    <Columns>
-                        <asp:BoundField FooterText="Balance" />
-                    </Columns>
-                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                    <SortedDescendingHeaderStyle BackColor="#242121" />
-                </asp:GridView>
-            </center>
+              <center>
+                 <div class="table table-responsive col-md-12 col-xs-12 col-lg-12">
+                    <asp:GridView ID="MetasGridView" runat="server" CssClass="table table-bordered table-hover table-striped" AutoGenerateColumns="False">
+                        <Columns>
+                            <asp:HyperLinkField DataNavigateUrlFields="MetaId" DataNavigateUrlFormatString="~/Registros/rMetas.aspx?Id={0}" Text="Editar" />
+                            <asp:BoundField DataField="MetaId" HeaderText="MetaId" />
+                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
+                            <asp:BoundField DataField="UsuarioId" HeaderText="UsuarioId" />
+                        </Columns>
+                    </asp:GridView>
+                </div>
+             </center>
          <asp:Button ID="ImprimirButton" runat="server" CssClass="btn btn-primary" Text="Imprimir" PostBackUrl="~/ReportViewers/ListadoMetas.aspx" />
         </div>
 </asp:Content>

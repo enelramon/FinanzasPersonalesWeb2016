@@ -43,7 +43,7 @@ namespace BLL
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
             
-            retorno = conexion.Ejecutar(String.Format("Update Egresos Set Fecha = '{0}', CuentaId = {1}, Monto = {2}, TipoEgresoId = {3}, Observacion = '{4}', MiembroId Where EgresoId = {5}", this.Fecha, this.CuentaId, this.Monto,this.TipoEgresoId, this.Observacion,this.MiembroId,this.EgresoId));
+            retorno = conexion.Ejecutar(String.Format("Update Egresos Set Fecha = '{0}', CuentaId = {1}, Monto = {2}, TipoEgresoId = {3}, Observacion = '{4}', MiembroId = {5} Where EgresoId = {6}", this.Fecha, this.CuentaId, this.Monto,this.TipoEgresoId, this.Observacion,this.MiembroId,this.EgresoId));
             return retorno;
         }
 

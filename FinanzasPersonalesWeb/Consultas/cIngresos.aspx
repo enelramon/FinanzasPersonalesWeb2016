@@ -26,6 +26,7 @@
                         </div>
                         <div class="col-xs-1 col-sm-1 col-lg-2 col-md-2">
                             <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-primary" OnClick="BuscarButton_Click" Text="Buscar"/>
+                            <asp:Button ID="ImprimirButton" runat="server" CssClass="btn btn-primary" Text="Imprimir" PostBackUrl="~/ReportViewers/ListadoIngreso.aspx" />
                         </div>
                         <div class="col-md-1">
                         </div>
@@ -33,6 +34,10 @@
                     <%--Grid--%>
                     <div class="col-lg-12">
                         <asp:GridView ID="ConsultaGridView" runat="server" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" HorizontalAlign="Center" BackColor="White">
+                            <Columns>
+                                <asp:HyperLinkField DataNavigateUrlFields="IngresoId" DataNavigateUrlFormatString="/Registros/rIngreso.aspx?Id={0}" Text="Editar" />
+                            </Columns> 
+                            
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle BackColor="#CCCC99" />
                             <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
