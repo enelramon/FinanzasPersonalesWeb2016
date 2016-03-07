@@ -14,7 +14,7 @@ namespace BLL.Tests
         public void InsertarTest()
         {
             Personas persona = new Personas();
-            persona.Nombre = "Cris";
+            persona.Nombre = "Padilla";
             persona.AgregarTelefono(TiposTelefonos.Celular, "809-881-8988");
             persona.AgregarTelefono(TiposTelefonos.Casa, "809-881-8988");
 
