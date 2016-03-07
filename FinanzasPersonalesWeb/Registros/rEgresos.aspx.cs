@@ -14,30 +14,54 @@ namespace FinanzasPersonalesWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-           if (IsPostBack == false)
+            int Id;
+            if (IsPostBack == false)
             {
-                Cuentas cuenta = new Cuentas();
-                TiposEgresos tipoEgreso = new TiposEgresos();
-                Miembros miembro = new Miembros();
+                LlenarDropDownList();
 
-                CuentaIdDropDownList.DataSource = cuenta.Listado(" * ", "1=1", "");
-                CuentaIdDropDownList.DataTextField = "Descripcion";
-                CuentaIdDropDownList.DataValueField = "CuentaId";
-                CuentaIdDropDownList.DataBind();
+                if (Request.QueryString["Id"] != null)
+                {
+                    Id = Utilitarios.ToInt(Request.QueryString["Id"].ToString());
 
-                TipoEgresoIdDropDownList.DataSource = tipoEgreso.Listado(" * ", "1=1", "");
-                TipoEgresoIdDropDownList.DataTextField = "Descripcion";
-                TipoEgresoIdDropDownList.DataValueField = "TipoEgresoId";
-                TipoEgresoIdDropDownList.DataBind();
+                    if (Id > 0)
+                    {
+                        Egresos egreso = new Egresos();
+                        if (!egreso.Buscar(Id))
+                        {
+                            Utilitarios.ShowToastr(this, "Registro no encontrado", "Error", "Danger");
+                            Limpiar();
+                        }
+                        else
+                        {
+                            EgresoIdTextBox.Text = Id.ToString();
+                            DevolverDatos(egreso);
+                        }
 
-                MiembroIdDropDownList.DataSource = miembro.Listado(" * ", "1=1", "");
-                MiembroIdDropDownList.DataTextField = "Nombre";
-                MiembroIdDropDownList.DataValueField = "MiembroId";
-                MiembroIdDropDownList.DataBind();
-
+                    }
+                }
             }
 
+        }
+        public void LlenarDropDownList()
+        {
+            Cuentas cuenta = new Cuentas();
+            TiposEgresos tipoEgreso = new TiposEgresos();
+            Miembros miembro = new Miembros();
+
+            CuentaIdDropDownList.DataSource = cuenta.Listado(" * ", "1=1", "");
+            CuentaIdDropDownList.DataTextField = "Descripcion";
+            CuentaIdDropDownList.DataValueField = "CuentaId";
+            CuentaIdDropDownList.DataBind();
+
+            TipoEgresoIdDropDownList.DataSource = tipoEgreso.Listado(" * ", "1=1", "");
+            TipoEgresoIdDropDownList.DataTextField = "Descripcion";
+            TipoEgresoIdDropDownList.DataValueField = "TipoEgresoId";
+            TipoEgresoIdDropDownList.DataBind();
+
+            MiembroIdDropDownList.DataSource = miembro.Listado(" * ", "1=1", "");
+            MiembroIdDropDownList.DataTextField = "Nombre";
+            MiembroIdDropDownList.DataValueField = "MiembroId";
+            MiembroIdDropDownList.DataBind();
         }
         public static void ShowToastr(Page page, string message, string title, string type)
         {
@@ -163,6 +187,15 @@ namespace FinanzasPersonalesWeb
             }
         }
 
+        public void DevolverDatos(Egresos egreso)
+        {
+            FechaTextBox.Text = egreso.Fecha;
+            MontoTextBox.Text = egreso.Monto.ToString();
+            CuentaIdDropDownList.SelectedValue = egreso.CuentaId.ToString();
+            TipoEgresoIdDropDownList.SelectedValue = egreso.TipoEgresoId.ToString();
+            ObservacionesTextBox.Text = egreso.Observacion;
+            MiembroIdDropDownList.SelectedValue = egreso.MiembroId.ToString();
+        }
         protected void BuscarButton_Click1(object sender, EventArgs e)
         {
             Egresos egreso = new Egresos();
@@ -176,12 +209,8 @@ namespace FinanzasPersonalesWeb
             {
                 if (egreso.Buscar(Convertir()))
                 {
-                    FechaTextBox.Text = egreso.Fecha;
-                    MontoTextBox.Text = egreso.Monto.ToString();
-                    CuentaIdDropDownList.SelectedValue = egreso.CuentaId.ToString();
-                    TipoEgresoIdDropDownList.SelectedValue = egreso.TipoEgresoId.ToString();
-                    ObservacionesTextBox.Text = egreso.Observacion;
-                    MiembroIdDropDownList.SelectedValue = egreso.MiembroId.ToString();
+
+                    DevolverDatos(egreso);
                 }
                 else 
                 {
