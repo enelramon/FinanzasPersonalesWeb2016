@@ -40,7 +40,6 @@
                     </div>
 
                 </div>
-                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate ><div class="form-group">
                     <asp:Label ID="Label7" runat="server" Text="Cuenta origen" class="col-md-3 control-label input-sm"></asp:Label>
