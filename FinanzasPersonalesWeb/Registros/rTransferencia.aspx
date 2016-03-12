@@ -29,7 +29,7 @@
                         <asp:TextBox ID="TransferenciaIdTextBox" placeholder="Transferencia Id" Class="form-control input-sm" runat="server"></asp:TextBox>
 
                     </div>
-                    <asp:Button ID="BuscarButton" runat="server" Text="Button" Class="btn btn-info" />
+                    <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Class="btn btn-info" />
                 </div>
 
                 <div class="form-group">
