@@ -17,14 +17,18 @@ namespace FinanzasPersonalesWeb.Registros
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios();
+            if (!Page.IsPostBack)
+            {
+                Usuarios usuario = new Usuarios();
 
-            DropDownUsuario.DataSource = usuario.Listado(" * ", "1=1", "");
-            DropDownUsuario.DataTextField = "Nombre";
-            DropDownUsuario.DataValueField = "UsuarioId";
-            DropDownUsuario.DataBind();
-            AlertNotificationDiv.Visible = false;
-            AlertNotificationBox.Text = "";
+                DropDownUsuario.DataSource = usuario.Listado(" * ", "1=1", "");
+                DropDownUsuario.DataTextField = "Nombre";
+                DropDownUsuario.DataValueField = "UsuarioId";
+                DropDownUsuario.DataBind();
+                AlertNotificationDiv.Visible = false;
+                AlertNotificationBox.Text = "";
+
+            }
         }
 
         protected void BtnLimpiar_Click(object sender, EventArgs e)
@@ -36,7 +40,7 @@ namespace FinanzasPersonalesWeb.Registros
         {
             if (TextoValidar.Text.Equals(string.Empty))
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor llenar los campos');", true);
+                Utilitarios.ShowToastr(this.Page, "Favor llenar debidamente los campos.", "Error", "Error");
                 return;
             }
         }
@@ -98,7 +102,7 @@ namespace FinanzasPersonalesWeb.Registros
 
             if (paso)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro guardado exitosamente.');", true);
+                Utilitarios.ShowToastr(this.Page, "Transaccion Exitosa.", "Felicidades", "Success");
                 Limpiar();
             }
 
@@ -116,14 +120,14 @@ namespace FinanzasPersonalesWeb.Registros
         {
             if (TbMiembroId.Text == "")
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El ID no debe estar vacío.');", true);
+                Utilitarios.ShowToastr(this.Page, "E ID No debe estar vacío.", "Error", "Error");
             }
 
             Miembros miembro = new Miembros();
             miembro.MiembroId = Convertir();
             if (miembro.Eliminar())
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registro eliminado exitosamente.');", true);
+                Utilitarios.ShowToastr(this.Page, "Registro Eliminado Exitosamente.", "Felicidades", "Success");
             }
         }
 
@@ -133,14 +137,14 @@ namespace FinanzasPersonalesWeb.Registros
 
             if (TbMiembroId.Text.Equals(string.Empty))
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor llenar debidamente el campo ID');", true);
+                Utilitarios.ShowToastr(this.Page, "Favor llenar debidamente el campo ID.", "Error", "Error");
                 Limpiar();
                 return;
             }
 
             if (!(miembro.Buscar(Convert.ToInt16(TbMiembroId.Text))))
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No se encontro ningún registro con ese ID.');", true);
+                Utilitarios.ShowToastr(this.Page, "No se encontro ningun registro con ese ID.", "Error", "Error");
                 Limpiar();
                 return;
             } 
