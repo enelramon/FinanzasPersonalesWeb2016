@@ -24,6 +24,26 @@ namespace FinanzasPersonalesWeb
                 CuentaDestinoDropDownList.DataTextField = "Descripcion";
                 CuentaDestinoDropDownList.DataValueField = "CuentaId";
                 CuentaDestinoDropDownList.DataBind();
+                int id;
+                Transferencias tran = new Transferencias();
+                if (Request.QueryString["id"] != null)
+                {
+                   int.TryParse (Request.QueryString["id"].ToString(),out id);
+
+                    if (id > 0)
+                    {
+                        if (!tran.Buscar(id))
+                        {
+                            Utilitarios.ShowToastr(this.Page, "Registro no encontrado.", "Error", "Error");
+                            Limpiar();
+                        }
+                        else
+                        {
+                            Llenar(tran);
+                        }
+
+                    }
+                }
             }
 
         }
@@ -101,6 +121,15 @@ namespace FinanzasPersonalesWeb
             }
         }
 
+        public void Llenar(Transferencias transferencia)
+        {
+            FechaTextBox.Text = transferencia.Fecha;
+            CuentaOrigenDropDownList.SelectedValue = transferencia.CuentaDestinoId.ToString();
+            CuentaDestinoDropDownList.SelectedValue = transferencia.CuentaOrigenId.ToString();
+            MontoTextBox.Text = transferencia.Monto.ToString();
+            ObservacionTextBox.Text = transferencia.Observacion;
+            UsuarioIdTextBox.Text = transferencia.UsuarioId.ToString();
+        }
         protected void Buscarbutton_Click(object sender, EventArgs e)
         {
             Transferencias transferencia = new Transferencias();
@@ -112,12 +141,7 @@ namespace FinanzasPersonalesWeb
 
                 if (transferencia.Buscar(Id))
                 {
-                    FechaTextBox.Text = transferencia.Fecha;
-                    CuentaOrigenDropDownList.SelectedValue = transferencia.CuentaDestinoId.ToString();
-                    CuentaDestinoDropDownList.SelectedValue = transferencia.CuentaOrigenId.ToString();
-                    MontoTextBox.Text = transferencia.Monto.ToString();
-                    ObservacionTextBox.Text = transferencia.Observacion;
-                    UsuarioIdTextBox.Text = transferencia.UsuarioId.ToString();
+                    Llenar(transferencia);
                 }
                 else
                 {

@@ -6,17 +6,18 @@ using System.Text;
 using DAL;
 
 namespace BLL
-{ 
-   public  class Cuentas : ClaseMaestra 
+{
+    public class Cuentas : ClaseMaestra
     {
 
         public int CuentaId { get; set; }
         public int UsuarioId { get; set; }
         public string Descripcion { get; set; }
         public float Balance { get; set; }
-        public float Porciento{ get; set; }
+        public float Porciento { get; set; }
 
-        public Cuentas(){
+        public Cuentas()
+        {
 
             CuentaId = 0;
             UsuarioId = 0;
@@ -26,11 +27,20 @@ namespace BLL
 
         }
 
+        public Cuentas(int id, string descripcion, float balance, float pcto)
+        {
+            CuentaId = id;
+            UsuarioId = 0;
+            Descripcion = descripcion;
+            Balance = balance;
+            Porciento = pcto;
+        }
+
         public DataTable ObtenerCuentas()
         {
             ConexionDb con = new ConexionDb();
-            return con.ObtenerDatos("select sum(e.Monto) as Egresos,c.Descripcion,c.Balance,sum(i.Monto) as Ingresos from Cuentas c "+
-                                    " left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId left join Usuarios u on u.UsuarioId = c.UsuarioId where u.UsuarioId =  " +this.UsuarioId +
+            return con.ObtenerDatos("select sum(e.Monto) as Egresos,c.Descripcion,c.Balance,sum(i.Monto) as Ingresos from Cuentas c " +
+                                    " left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId left join Usuarios u on u.UsuarioId = c.UsuarioId where u.UsuarioId =  " + this.UsuarioId +
                                     " Group by c.CuentaId, c.Descripcion, c.Balance");
         }
 
@@ -38,7 +48,7 @@ namespace BLL
         {
             ConexionDb con = new ConexionDb();
             return con.ObtenerDatos("select (c.Balance + sum((i.Monto) - (e.Monto))) as Balance from Cuentas c" +
-                                     " left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId left join Usuarios u on c.UsuarioId = u.UsuarioId where u.UsuarioId = " +this.UsuarioId +
+                                     " left join Egresos e on c.CuentaId = e.CuentaId left join Ingresos i on c.CuentaId = i.CuentaId left join Usuarios u on c.UsuarioId = u.UsuarioId where u.UsuarioId = " + this.UsuarioId +
                                      " group by c.Balance");
         }
         public override bool Insertar()
@@ -109,12 +119,32 @@ namespace BLL
             {
                 OrdenFinal = " Order by " + Orden;
             }
-            return con.ObtenerDatos("Select " + Campos + 
+            return con.ObtenerDatos("Select " + Campos +
                 " from Cuentas where " + Condicion + " " + OrdenFinal);
+        }
+
+        public static List<Cuentas> CuentasList()
+        {
+            ConexionDb con = new ConexionDb();
+            List<Cuentas> lista = new List<Cuentas>();
+            DataTable dt;
+            Cuentas cuenta;
+
+            dt = con.ObtenerDatos("Select * from Cuentas");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                cuenta = new Cuentas((int)row["CuentaId"], row["Descripcion"].ToString(), (float)row["Balance"], (float)row["Porciento"]);
+
+                lista.Add(cuenta);
+            }
+
+
+            return lista;
         }
     }
 }
 
-    
 
-        
+
+
