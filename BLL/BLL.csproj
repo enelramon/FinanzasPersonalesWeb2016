@@ -62,6 +62,7 @@
     <Compile Include="Ingresos.cs" />
     <Compile Include="Metas.cs" />
     <Compile Include="Miembros.cs" />
+    <Compile Include="Personas.cs" />
     <Compile Include="PersonasTelefonos.cs" />
     <Compile Include="Presupuesto.cs" />
     <Compile Include="PresupuestoDetalle.cs" />
