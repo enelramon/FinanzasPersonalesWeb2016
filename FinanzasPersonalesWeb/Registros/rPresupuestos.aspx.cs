@@ -40,14 +40,32 @@ namespace FinanzasPersonalesWeb.Consultas
         }
 
 
-        public void LlenarDatos(Presupuesto presupuesto) {
+        public void LlenarDatos(Presupuesto presupuesto)
+        {
             presupuesto.UsuarioId = Convert.ToInt32(UsuarioDropDownList.SelectedValue);
             presupuesto.Descripcion = DescripcionTextBox.Text;
             foreach (GridViewRow dr in DetalleGridView.Rows)
             {
                 presupuesto.AgregarDetalle(Convert.ToInt32(dr.Cells[0].Text), Convert.ToSingle(dr.Cells[1].Text));
             }
-            
+
+        }
+
+        public void LlenarRegistro(Presupuesto presupuesto)
+        {
+            Limpiar();
+            PresupuestoTextBox.Text = presupuesto.PresupuestoId.ToString();
+            UsuarioDropDownList.SelectedValue = presupuesto.UsuarioId.ToString();
+            DescripcionTextBox.Text = presupuesto.Descripcion;
+            foreach (var li in presupuesto.Detalle)
+            {
+                DataTable dt = (DataTable)ViewState["Detalle"];
+                dt.Rows.Add(li.TipoEgresoId, li.Monto);
+                ViewState["Detalle"] = dt;
+                this.BindGrid();
+            }
+
+
         }
 
         protected void AgregarButton_Click(object sender, EventArgs e)
@@ -59,11 +77,13 @@ namespace FinanzasPersonalesWeb.Consultas
             MontoTextBox.Text = "";
         }
 
-        protected void Limpiar() {
+        protected void Limpiar()
+        {
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[2] { new DataColumn("Tipo Egreso"), new DataColumn("Monto") });
 
             PresupuestoTextBox.Text = "";
+            PresupuestoTextBox.Enabled = true;
             DescripcionTextBox.Text = "";
             MontoTextBox.Text = "";
             ViewState["Detalle"] = dt;
@@ -77,10 +97,23 @@ namespace FinanzasPersonalesWeb.Consultas
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            Presupuesto presupuesto = new Presupuesto();
-            LlenarDatos(presupuesto);
-            presupuesto.Insertar();
-            Limpiar();
+            if (PresupuestoTextBox.Enabled)
+            {
+                Presupuesto presupuesto = new Presupuesto();
+                LlenarDatos(presupuesto);
+                if(presupuesto.Insertar())
+                    Utilitarios.ShowToastr(this, "Edicion exitosa", "Exito", "success");
+                Limpiar();
+            }
+            else
+            {
+                Presupuesto presupuesto = new Presupuesto();
+                presupuesto.PresupuestoId = Convert.ToInt16(PresupuestoTextBox.Text);
+                LlenarDatos(presupuesto);
+               if (presupuesto.Editar())
+                    Utilitarios.ShowToastr(this, "Edicion exitosa", "Exito", "success");
+                Limpiar();
+            }
         }
 
         protected void EliminarButton_Click(object sender, EventArgs e)
@@ -88,16 +121,31 @@ namespace FinanzasPersonalesWeb.Consultas
             Presupuesto presupuesto = new Presupuesto();
             if (presupuesto.Buscar(Convert.ToInt32(PresupuestoTextBox.Text)))
             {
-                presupuesto.Eliminar();
+                if (presupuesto.Eliminar())
+                    Utilitarios.ShowToastr(this, "Registro eliminado", "Exito", "success");
                 Limpiar();
             }
             else {
                 EliminarRequiredFieldValidator.IsValid = false;
                 Limpiar();
             }
-            
+
         }
 
-       
+        protected void BuscarButton_Click(object sender, EventArgs e)
+        {
+            Presupuesto presupuesto = new Presupuesto();
+            if (presupuesto.Buscar(Convert.ToInt16(PresupuestoTextBox.Text)))
+            {
+                LlenarRegistro(presupuesto);
+                Utilitarios.ShowToastr(this, "Busqueda exitosa", "Exito");
+                PresupuestoTextBox.Enabled = false;
+            }
+            else
+            {
+                Limpiar();
+                Utilitarios.ShowToastr(this, "No se pudo encontrar el presupuesto especificado", "Error", "error");
+            }
+        }
     }
 }
