@@ -19,8 +19,6 @@ namespace FinanzasPersonalesWeb.Registros
                 //Leermos el QueryString que llego en la url
                 if (Request.QueryString["Id"] != null)
                 {
-                    RequiredFieldValidator5.Enabled = !RequiredFieldValidator5.Enabled;
-                    RequiredFieldValidator6.Enabled = !RequiredFieldValidator6.Enabled;
                     id = Utilitarios.ToInt(Request.QueryString["Id"].ToString());
 
                     if (id > 0) //si es mayor que cero, buscar el registro
