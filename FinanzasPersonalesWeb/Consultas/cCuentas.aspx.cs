@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
 using System.Data;
+using System.Web.Services;
 
 namespace FinanzasPersonalesWeb.Consultas
 {
@@ -19,7 +20,11 @@ namespace FinanzasPersonalesWeb.Consultas
             CuentasGridView.DataSource = c.Listado(" * ", filtro, "");
             CuentasGridView.DataBind();
         }
-
+        [WebMethod]
+        public static List<Cuentas> GetCuentas()
+        {
+           return  Cuentas.CuentasList();
+        }
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             Cuentas c = new Cuentas();

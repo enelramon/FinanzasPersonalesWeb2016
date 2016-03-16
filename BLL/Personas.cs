@@ -45,7 +45,7 @@ namespace BLL
                 this.PersonaId = retorno;
                 foreach (PersonasTelefonos item in this.Telefonos)
                 {
-                    conexion.Ejecutar(string.Format("Insert into PersonasTelefonos(PersonaId,TipoId,Telefono) Values ({0},{1},'{2}')", 
+                    conexion.Ejecutar(string.Format("Insert into PersonasTelefonos(PersonaId,TipoId,Telefono) Values ({0},{1},'{2}')",
                         retorno, (int)item.TipoTelefono, item.Telefono));
                 }
 
@@ -87,7 +87,7 @@ namespace BLL
             {
                 retorno = conexion.Ejecutar(string.Format("delete from Personas where PersonaId=", this.PersonaId));
 
-                if (retorno )
+                if (retorno)
                     conexion.Ejecutar("Delete from PersonasTelefonos Where PersonaId=" + this.PersonaId.ToString());
             }
             catch (Exception ex)

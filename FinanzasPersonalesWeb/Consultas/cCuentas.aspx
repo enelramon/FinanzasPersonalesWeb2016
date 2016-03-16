@@ -1,6 +1,39 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cCuentas.aspx.cs" Inherits="FinanzasPersonalesWeb.Consultas.cCuentas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+     <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: "POST",
+                url: "cCuentas.aspx/GetCuentas",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccess,
+                failure: function (response) {
+                    alert(response.d);
+                },
+                error: function (response) {
+                    alert(response.d);
+                }
+            });
+        });
+
+        function OnSuccess(response) {
+            var table = $("#dvCustomers table").eq(0).clone(true);
+            var cuentas = response.d;
+            $("#dvCustomers table").eq(0).remove();
+            $(cuentas).each(function () {
+                $(".id", table).html(this.CuentaId);
+                $(".descripcion", table).html(this.Descripcion);
+                $(".balance", table).html(this.Balance);
+                $(".porciento", table).html(this.Porciento);
+                $("#dvCustomers").append(table).append("<br />");
+                table = $("#dvCustomers table").eq(0).clone(true);
+            });
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width: 100%; height: 139px;">
@@ -40,10 +73,10 @@
                                 Width="100%"
                                 BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None">
                                 <Columns>
-                                    <asp:HyperLinkField 
-                                        DataNavigateUrlFields="CuentaId" 
-                                        DataNavigateUrlFormatString="~/Registros/rCuentas.aspx?Id={0}" 
-                                         Text="Editar" />
+                                    <asp:HyperLinkField
+                                        DataNavigateUrlFields="CuentaId"
+                                        DataNavigateUrlFormatString="~/Registros/rCuentas.aspx?Id={0}"
+                                        Text="Editar" />
 
                                 </Columns>
                                 <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
@@ -68,4 +101,31 @@
     </table>
     <asp:HyperLink ID="MiembrosHyperLink" runat="server" NavigateUrl="~/ReportViewers/ListadoMiembros.aspx">Imprimir  Rpt</asp:HyperLink>
 
+
+    <hr />
+    <div id="dvCustomers">
+        <asp:Repeater ID="rptCustomers" runat="server">
+            <ItemTemplate>
+                <table class="tblCustomer" cellpadding="2" cellspacing="0" border="1">
+                    <tr>
+                        <th>
+                            <b><u><span class="id">
+                                <%# Eval("CuentaId") %></span></u></b>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Descripcion: </b><span class="descripcion">
+                                <%# Eval("Descripcion") %></span><br />
+                            <b>Balance: </b><span class="balance">
+                                <%# Eval("Balance") %></span><br />
+                            <b>Pcto: </b><span class="porciento" >
+                                <%# Eval("Porciento")%></span><br />
+                            
+                        </td>
+                    </tr>
+                </table>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
 </asp:Content>

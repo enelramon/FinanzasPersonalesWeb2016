@@ -10,8 +10,10 @@
         .vertical-center {
             position: relative;          
             transform: translateY(50%);
-        }   
-        
+        }
+        .bottom-row {
+            margin-top: 1em;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
@@ -23,7 +25,10 @@
                 </div>
                 <div class="col-md-10 col-sm-10">
                     <asp:TextBox ID="PresupuestoTextBox" CssClass="col-md-4 col-sm-4" runat="server"  Height="2.5em"></asp:TextBox>         
-                    <asp:Button ID="BuscarButton" CssClass="col-md-4 col-sm-4 btn btn-default" runat="server" Text="Buscar" Height="2.5em" Width="75px" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="PresupuestoTextBox" ErrorMessage="*" ValidationGroup="Buscar"></asp:RequiredFieldValidator>
+                    <asp:Button ID="BuscarButton" CssClass="col-md-4 col-sm-4 btn btn-default" runat="server" Text="Buscar" Height="2.5em" Width="75px" OnClick="BuscarButton_Click" ValidationGroup="Buscar" />
+                    <asp:RegularExpressionValidator ID="IdRegularExpressionValidator" CssClass="col-md-1 col-sm-1" runat="server" ControlToValidate="PresupuestoTextBox" ErrorMessage="Porfavor ingrese un numero" ValidationExpression="(^\d*\.?\d*[0-9]+\d*$)|(^[0-9]+\d*\.\d*$)" ValidationGroup="Buscar"></asp:RegularExpressionValidator>
+
                 </div>
             </div>
         </div>
@@ -94,7 +99,7 @@
             </asp:GridView>
 
         </div>
-        <div class="row">
+        <div class="row bottom-row">
             <div class="col-md-4 col-sm-4">
                 <asp:Button ID="LimpiarButton" CssClass="col-md-3 col-sm-4 btn btn-primary" runat="server" Text="Limpiar" Height="2.5em" Width="10em"  OnClick="LimpiarButton_Click" />
             </div>
@@ -105,7 +110,6 @@
                 <asp:Button ID="EliminarButton" CssClass="col-md-3 col-sm-4 btn btn-danger" runat="server" Text="Eliminar"  Height="2.5em" Width="10em"  OnClick="EliminarButton_Click" ValidationGroup="Eliminar" />
                 <asp:RequiredFieldValidator ID="EliminarRequiredFieldValidator" CssClass="col-md-1 col-sm-1" runat="server" ControlToValidate="PresupuestoTextBox" ErrorMessage="Es necesario elegir un Presupuesto valido para eliminar" ValidationGroup="Eliminar">Porfavor elige un Presupuesto valido.</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="EliminarRegularExpressionValidator" CssClass="col-md-1 col-sm-1 col-md-offset-1 col-sm-offset-1" runat="server" ControlToValidate="PresupuestoTextBox" ErrorMessage="RegularExpressionValidator" ValidationExpression="\d+ " ValidationGroup="Eliminar" Visible="False"></asp:RegularExpressionValidator>
-                <br />
             </div>
         </div>
     </div>

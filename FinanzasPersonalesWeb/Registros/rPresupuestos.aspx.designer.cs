@@ -22,6 +22,15 @@ namespace FinanzasPersonalesWeb.Consultas {
         protected global::System.Web.UI.WebControls.TextBox PresupuestoTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        
+        /// <summary>
         /// BuscarButton control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace FinanzasPersonalesWeb.Consultas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BuscarButton;
+        
+        /// <summary>
+        /// IdRegularExpressionValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator IdRegularExpressionValidator;
         
         /// <summary>
         /// UsuarioDropDownList control.

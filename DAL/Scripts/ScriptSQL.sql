@@ -84,7 +84,7 @@ create table Transferencias(
 			Observacion nvarchar(100),
 			UsuarioId int References Usuarios(UsuarioId)
 			);
-			
+			select  * from Transferencias
 			
 --Script Francis
 create table Metas

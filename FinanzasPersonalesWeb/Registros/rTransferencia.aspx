@@ -29,7 +29,7 @@
                         <asp:TextBox ID="TransferenciaIdTextBox" placeholder="Transferencia Id" Class="form-control input-sm" runat="server"></asp:TextBox>
 
                     </div>
-                    <asp:Button ID="BuscarButton" runat="server" Text="Button" Class="btn btn-info" />
+                    <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Class="btn btn-info" />
                 </div>
 
                 <div class="form-group">
@@ -40,7 +40,6 @@
                     </div>
 
                 </div>
-                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate ><div class="form-group">
                     <asp:Label ID="Label7" runat="server" Text="Cuenta origen" class="col-md-3 control-label input-sm"></asp:Label>

@@ -61,7 +61,7 @@ namespace FinanzasPersonalesWeb
                 {
                     idBuscado = ConvertirId(Request.QueryString["idBuscado"].ToString());
 
-                    if (idBuscado > 0) //si es mayor que cero, buscar el registro
+                    if (idBuscado > 0) 
                     {
                         if (!egreso.Buscar(idBuscado))
                         {
