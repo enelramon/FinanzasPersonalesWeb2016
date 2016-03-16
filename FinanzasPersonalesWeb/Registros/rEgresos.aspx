@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="rEgresos.aspx.cs" Inherits="FinanzasPersonalesWeb.EgresosWebForm" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-       <script type="text/javascript">
+    <script type="text/javascript">
         $(function () {
             $("[id$=ObservacionTextBox]").autocomplete({
                 source: function (request, response) {
@@ -15,7 +16,7 @@
                             response($.map(data.d, function (item) {
                                 return {
                                     label: item,
-                                    val:0 //item.split('-')[1]
+                                    val: 0 //item.split('-')[1]
                                 }
                             }))
                         },
@@ -32,14 +33,14 @@
                 },
                 minLength: 1
             });
-        });   
+        });
     </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-            
-        <div class="panel panel-success">
+
+
+    <div class="panel panel-success">
         <div class="panel-heading">Registro de egreso</div>
 
         <div class="panel-body">
@@ -72,7 +73,7 @@
                     </div>
                 </div>
 
-                 <%--Monto--%>
+                <%--Monto--%>
                 <div class="form-group">
                     <label for="MontoTextBox" class="col-md-3 control-label input-sm">Monto:</label>
                     <div class="col-md-5">
@@ -84,7 +85,7 @@
                     </div>
                 </div>
 
-                 <%--CuentaId--%>
+                <%--CuentaId--%>
                 <div class="form-group">
                     <label for="CuentaIdDropDownList" class="col-md-3 control-label input-sm">CuentaId:</label>
                     <div class="col-md-5">
@@ -96,7 +97,7 @@
                     </div>
                 </div>
 
-                 <%--MiembroId--%>
+                <%--MiembroId--%>
                 <div class="form-group">
                     <label for="MiembroIdDropDownList" class="col-md-3 control-label input-sm">MiembroId:</label>
                     <div class="col-md-5">
@@ -108,7 +109,7 @@
                     </div>
                 </div>
 
-                 <%--TipoEgresoId--%>
+                <%--TipoEgresoId--%>
                 <div class="form-group">
                     <label for="TipoEgresoIdDropDownList" class="col-md-3 control-label input-sm">TipoEgresoId:</label>
                     <div class="col-md-5">
@@ -120,7 +121,7 @@
                     </div>
                 </div>
 
-                  <%--Observaciones--%>
+                <%--Observaciones--%>
                 <div class="form-group">
                     <label for="ObservacionesTextBox" class="col-md-3 control-label input-sm">Observaciones:</label>
                     <div class="col-md-5">
@@ -131,7 +132,7 @@
                     <div class="col-md-1">
                     </div>
                 </div>
-                
+
 
             </div>
         </div>
@@ -140,14 +141,14 @@
             <div class="text-center">
                 <div class="form-group" style="display: inline-block">
 
-                    <asp:Button Text="Nuevo" class ="btn btn-warning btn-md" runat="server" ID="NuevoButton" OnClick="NuevoButton_Click1"  />
-                    <asp:Button Text="Guardar" class ="btn btn-success btn-md" runat="server" ID="GuadarButton" OnClick="GuadarButton_Click"  />
-                    <asp:Button Text="Eliminar" class ="btn btn-danger btn-md" runat="server" ID="EliminarButton" OnClick="EliminarButton_Click1"  />
+                    <asp:Button Text="Nuevo" class="btn btn-warning btn-md" runat="server" ID="NuevoButton" OnClick="NuevoButton_Click1" />
+                    <asp:Button Text="Guardar" class="btn btn-success btn-md" runat="server" ID="GuadarButton" OnClick="GuadarButton_Click" />
+                    <asp:Button Text="Eliminar" class="btn btn-danger btn-md" runat="server" ID="EliminarButton" OnClick="EliminarButton_Click1" />
 
                 </div>
             </div>
 
         </div>
     </div>
-   
+
 </asp:Content>
